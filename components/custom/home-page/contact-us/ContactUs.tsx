@@ -1,6 +1,7 @@
 import { Button, Container, Grid, InputLabel, Stack, TextField, Typography, useMediaQuery } from '@mui/material';
 import CustomButton from 'components/custom/CustomButton';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 // import styles from './ContactUs.module.scss';
 
@@ -36,27 +37,33 @@ const ContactUs = () => {
             fontWeight: 600,
           }}>
             <p style={{ color: '#F0B270' }}>Address</p>
-            <a>
-              <p style={{ textDecoration: 'underline' }}>Медеу парк, жилой комплекс Бегалина, 7, Алматы</p>
-            </a>
+            <Link href='/' passHref>
+              <a>
+                <p style={{ textDecoration: 'underline' }}>Медеу парк, жилой комплекс Бегалина, 7, Алматы</p>
+              </a>
+            </Link>
           </Typography>
           <Typography sx={{
             fontSize: '16px',
             fontWeight: 600,
           }}>
             <p style={{ color: '#F0B270' }}>Sales Department</p>
-            <a>
-              <p style={{ textDecoration: 'underline' }}>Медеу парк, жилой комплекс Бегалина, 7, Алматы</p>
-            </a>
+            <Link href='/' passHref>
+              <a>
+                <p style={{ textDecoration: 'underline' }}>Медеу парк, жилой комплекс Бегалина, 7, Алматы</p>
+              </a>
+            </Link>
           </Typography>
           <Typography sx={{
             fontSize: '16px',
             fontWeight: 600,
           }}>
             <p style={{ color: '#F0B270' }}>HR Department</p>
-            <a>
-              <p style={{ textDecoration: 'underline' }}>Медеу парк, жилой комплекс Бегалина, 7, Алматы</p>
-            </a>
+            <Link href='/' passHref>
+              <a>
+                <p style={{ textDecoration: 'underline' }}>Медеу парк, жилой комплекс Бегалина, 7, Алматы</p>
+              </a>
+            </Link>
           </Typography>
           <Typography sx={{
             fontSize: '16px',

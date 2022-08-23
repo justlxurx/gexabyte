@@ -19,8 +19,8 @@ const TechStack = () => {
       </Typography>
       <div className="slider">
         <div className="slider-track">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 1].map(() => (
-            <div className="slide">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 1].map((i,j) => (
+            <div className="slide" key={j}>
               <Image src='/icons/kotlin.svg' width='40px' height='40px' />
             </div>
           ))}

@@ -39,8 +39,8 @@ const AppBarDesktop: React.FC = () => {
           </Link>
 
           <Stack direction='row' gap='2rem' fontSize='10px'>
-            {navRoutes.map(route => (
-              <Link href={route.link} passHref>
+            {navRoutes.map((route, idx) => (
+              <Link key={idx} href={route.link} passHref>
                 <a>
                   <Typography color={theme.palette.text.secondary}>
                     {route.title}

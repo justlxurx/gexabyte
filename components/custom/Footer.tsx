@@ -1,5 +1,6 @@
 import { Button, Container, Grid, Stack, Typography } from '@mui/material'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import { theme } from 'utils/theme'
 import CustomButton from './CustomButton'
@@ -72,10 +73,10 @@ const Footer = () => {
             <Stack direction='column'>
               <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro' }}>Keep in touch</Typography>
               <Stack direction='row'>
-                <a href='/'><Image src='/icons/social-media/Instagram.svg' width='24px' height='24px' /></a>
-                <a href='/'><Image src='/icons/social-media/LinkdIn.svg' width='24px' height='24px' /></a>
-                <a href='/'><Image src='/icons/social-media/Telegram.svg' width='24px' height='24px' /></a>
-                <a href='/'><Image src='/icons/social-media/Facebook.svg' width='24px' height='24px' /></a>
+                <Link href='/'><Image src='/icons/social-media/Instagram.svg' width='24px' height='24px' /></Link>
+                <Link href='/'><Image src='/icons/social-media/LinkdIn.svg' width='24px' height='24px' /></Link>
+                <Link href='/'><Image src='/icons/social-media/Telegram.svg' width='24px' height='24px' /></Link>
+                <Link href='/'><Image src='/icons/social-media/Facebook.svg' width='24px' height='24px' /></Link>
               </Stack>
             </Stack>
           </Grid>

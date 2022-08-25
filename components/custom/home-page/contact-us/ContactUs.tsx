@@ -71,17 +71,17 @@ const ContactUs = () => {
             color: '#F0B270'
           }}>Social Media</Typography>
           <Stack direction='row'>
-            <Link href='/'>
-              <a href='/'><Image src='/icons/social-media/Instagram.svg' width='24px' height='24px' /></a>
+            <Link href='/' passHref>
+              <a><Image src='/icons/social-media/Instagram.svg' width='24px' height='24px' /></a>
             </Link>
-            <Link href='/'>
-              <a href='/'><Image src='/icons/social-media/LinkdIn.svg' width='24px' height='24px' /></a>
+            <Link href='/' passHref>
+              <a><Image src='/icons/social-media/LinkdIn.svg' width='24px' height='24px' /></a>
             </Link>
-            <Link href='/'>
-              <a href='/'><Image src='/icons/social-media/Telegram.svg' width='24px' height='24px' /></a>
+            <Link href='/' passHref>
+              <a><Image src='/icons/social-media/Telegram.svg' width='24px' height='24px' /></a>
             </Link>
-            <Link href='/'>
-              <a href='/'><Image src='/icons/social-media/Facebook.svg' width='24px' height='24px' /></a>
+            <Link href='/' passHref>
+              <a><Image src='/icons/social-media/Facebook.svg' width='24px' height='24px' /></a>
             </Link>
           </Stack>
         </Grid>

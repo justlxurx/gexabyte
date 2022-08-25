@@ -22,7 +22,7 @@ const ContactUs = () => {
     }}>
       <Grid container direction={isMobileScreen ? 'column-reverse' : 'row'} alignItems='center' justifyContent='center'>
         <Grid item xs p='10%' sx={{ position: 'relative' }}>
-          <video autoPlay muted loop id="myVideo" style={{ height: '80%', visibility: 'visible', position: 'absolute', zIndex: -1, left: '-30%', transform: 'rotate(90deg)' }}>
+          <video autoPlay muted loop id="myVideo" style={{ width: '60%', visibility: 'visible', position: 'absolute', zIndex: -1, left: '-30%', transform: 'rotate(90deg)' }}>
             <source src="/videos/Emitter.mp4" type="video/mp4" />
           </video>
           <Typography sx={{
@@ -71,10 +71,18 @@ const ContactUs = () => {
             color: '#F0B270'
           }}>Social Media</Typography>
           <Stack direction='row'>
-            <a href='/'><Image src='/icons/social-media/Instagram.svg' width='24px' height='24px' /></a>
-            <a href='/'><Image src='/icons/social-media/LinkdIn.svg' width='24px' height='24px' /></a>
-            <a href='/'><Image src='/icons/social-media/Telegram.svg' width='24px' height='24px' /></a>
-            <a href='/'><Image src='/icons/social-media/Facebook.svg' width='24px' height='24px' /></a>
+            <Link href='/'>
+              <a href='/'><Image src='/icons/social-media/Instagram.svg' width='24px' height='24px' /></a>
+            </Link>
+            <Link href='/'>
+              <a href='/'><Image src='/icons/social-media/LinkdIn.svg' width='24px' height='24px' /></a>
+            </Link>
+            <Link href='/'>
+              <a href='/'><Image src='/icons/social-media/Telegram.svg' width='24px' height='24px' /></a>
+            </Link>
+            <Link href='/'>
+              <a href='/'><Image src='/icons/social-media/Facebook.svg' width='24px' height='24px' /></a>
+            </Link>
           </Stack>
         </Grid>
         <Grid item xs p='5%'>

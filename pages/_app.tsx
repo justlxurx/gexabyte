@@ -5,20 +5,21 @@ import '../styles/global/globals.scss';
 // import { theme } from '../utils/theme'
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import { locales } from '../utils/locales';
 import { theme } from '../utils/theme';
 import './../styles/TechStack.scss';
+import { CssBaseline } from '@mui/material';
 
-i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
-  .init({
-    resources: locales,
-    lng: 'en'
-  });
+// i18n
+//   .use(initReactI18next) // passes i18n down to react-i18next
+//   .init({
+//     resources: locales,
+//     lng: 'en'
+//   });
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <GlobalLayout>
         <Component {...pageProps} />
       </GlobalLayout>

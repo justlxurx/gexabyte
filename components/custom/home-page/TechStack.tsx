@@ -4,8 +4,14 @@ import Link from 'next/link'
 import Image from "next/image";
 import { Typography } from "@mui/material";
 
+const icons = [
+  '/icons/kotlin.svg',
+  '/icons/etherium.svg',
+  '/icons/js.svg',
+  '/icons/ruby.svg',
+]
+
 const TechStack = () => {
-  // const [emblaRef] = useEmblaCarousel({ loop: true });
 
   return (
     <div className="stack-bar">
@@ -19,9 +25,24 @@ const TechStack = () => {
       </Typography>
       <div className="slider">
         <div className="slider-track">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 1].map((i,j) => (
+          {icons.map((src, j) => (
             <div className="slide" key={j}>
-              <Image src='/icons/kotlin.svg' width='40px' height='40px' />
+              <Image src={src} width='40px' height='40px' />
+            </div>
+          ))}
+          {icons.map((src, j) => (
+            <div className="slide" key={j}>
+              <Image src={src} width='40px' height='40px' />
+            </div>
+          ))}
+          {icons.map((src, j) => (
+            <div className="slide" key={j}>
+              <Image src={src} width='40px' height='40px' />
+            </div>
+          ))}
+          {icons.map((src, j) => (
+            <div className="slide" key={j}>
+              <Image src={src} width='40px' height='40px' />
             </div>
           ))}
         </div>

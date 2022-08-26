@@ -25,10 +25,9 @@ const serviceTypes = [
 const Services = () => {
   return (
     <Container sx={{
-      // border: '1px solid red',
       mb: '6rem',
       padding: '0 3rem',
-      minWidth: '375px'
+      minWidth: '375px',
     }}>
       <Box sx={{
         display: 'flex',
@@ -62,7 +61,7 @@ const Services = () => {
           </Typography>
         </Stack>
         <Link href='/projects'>
-          <MUILink sx={{ cursor: 'pointer', fontFamily: 'Poppins', color: theme.palette.text.secondary }}>
+          <MUILink sx={{ cursor: 'pointer', fontFamily: 'Poppins', color: '#B3B3B3' }}>
             EXPLORE OUT PROJECTS {'>'}
           </MUILink>
         </Link>
@@ -102,7 +101,9 @@ const Services = () => {
               lineHeight: '110%',
               color: theme.palette.secondary.main,
               width: '50%',
-              mb: '1rem'
+              mb: '1rem',
+              textTransform: 'uppercase',
+              fontFamily: 'Helvetica Neue',
             }}>{service.title}</Typography>
             <Typography sx={{
               fontSize: '16px',
@@ -111,7 +112,7 @@ const Services = () => {
               color: theme.palette.text.secondary,
               width: '85%'
             }}>{service.description}</Typography>
-            <Typography m='1rem'>
+            <Typography m='1rem' sx={{ color: '#736AE4', fontSize: '18px', fontWeight: 600 }}>
               {idx === 0 && 'More Details'}
               {'>'}
             </Typography>

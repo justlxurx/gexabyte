@@ -14,8 +14,8 @@ import Image from 'next/image';
 import { navRoutes } from '../../../utils/routes';
 
 const AppBarDesktop: React.FC = () => {
-  const { asPath, locale } = useRouter();
-  const [value, setValue] = React.useState('ru');
+  // const { asPath, locale } = useRouter();
+  // const [value, setValue] = React.useState('ru');
 
   // React.useEffect(() => {
   //   setValue(locale)
@@ -52,14 +52,14 @@ const AppBarDesktop: React.FC = () => {
 
           <Stack direction='row' gap='0.5rem'>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-              <Tabs value={value} aria-label="locale-state">
+              {/* <Tabs value={value} aria-label="locale-state">
                 <Link href={asPath} locale='en'>
                   <Tab label='ENG' value='en' sx={{ p: 0, m: 0 }} />
                 </Link>
                 <Link href={asPath} locale='ru'>
                   <Tab label='RUS' value='ru' />
                 </Link>
-              </Tabs>
+              </Tabs> */}
             </Box>
             <CustomButton title='Get in Touch' bgcolor={theme.palette.secondary.main} />
           </Stack>

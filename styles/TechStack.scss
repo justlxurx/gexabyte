@@ -7,6 +7,7 @@
   display: space-around;
   padding: 1rem 6rem;
   margin-bottom: 6rem;
+  background: #000000;
 
   &:before {
     content: '';
@@ -52,7 +53,7 @@
 }
 
 .slider {
-  height: 100px;
+  // height: 100px;
   position: relative;
   // width: 60%;
   display: grid;
@@ -84,13 +85,13 @@
 
 .slider-track {
   display: flex;
-  width: calc(100px * 20);
+  width: calc(100px * 12);
   animation: scroll 40s linear infinite;
 }
 
-.slider-track:hover {
-  animation-play-state: paused;
-}
+// .slider-track:hover {
+//   animation-play-state: paused;
+// }
 
 .slide {
   height: 50px;

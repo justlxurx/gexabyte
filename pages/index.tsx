@@ -1,4 +1,4 @@
-import { Container, Stack, Typography } from '@mui/material'
+import { Button, Container, Stack, Typography } from '@mui/material'
 import Accomplishments from 'components/custom/home-page/Accomplishments'
 import ContactUs from 'components/custom/home-page/contact-us/ContactUs'
 import TechStack from 'components/custom/home-page/TechStack'
@@ -12,7 +12,6 @@ import styles from '../styles/components/Home.module.scss'
 import { theme } from '../utils/theme'
 
 const Home: NextPage = () => {
-  const { t } = useTranslation();
 
   return (
     <div className={styles.container}>
@@ -23,48 +22,49 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <video autoPlay muted loop id="myVideo" style={{width: '100%', position: 'absolute', zIndex: -1}}>
-          <source src="/videos/klava.mp4" type="video/mp4" />
-        </video>
-        <Container disableGutters sx={{
-          padding: {
-            xs: 0,
-            md: '4rem 3rem',
-            minHeight: '60vh',
-          }
-        }}>
-          <Stack direction='column' maxWidth='692px' gap='16px'>
-            <Typography sx={{
-              fontSize: {
-                xs: '40px',
-                md: '64px',
-                fontWeight: 700,
-                lineHeight: '110%',
-                letterSpacing: '0.025rem'
-              }
-            }}>
-              {t('home_title')}
-            </Typography>
-            <Typography
-              fontSize='16px'
-              fontWeight='400'
-              color={theme.palette.text.secondary}
-              lineHeight='150%'
-              mt='1rem'
-            >
-              {t('home_subtitle')}
-            </Typography>
-            <CustomButton bgcolor={theme.palette.primary.main} title="LET'S TALK" rounded={true} />
-          </Stack>
-        </Container>
+        <div style={{ position: 'relative', overflow: 'hidden' }}>
+          <video autoPlay muted loop id="myVideo" style={{ width: '100%', position: 'absolute', zIndex: -1 }}>
+            <source src="/videos/klava.mp4" type="video/mp4" />
+          </video>
+          <Container disableGutters sx={{
+            padding: {
+              xs: 0,
+              md: '4rem 3rem',
+              minHeight: '60vh',
+            }
+          }}>
+            <Stack direction='column' maxWidth='692px' gap='16px'>
+              <Typography sx={{
+                fontSize: {
+                  xs: '40px',
+                  md: '64px',
+                  fontWeight: 700,
+                  lineHeight: '110%',
+                  letterSpacing: '0.025rem'
+                }
+              }}>
+                Blockchain development {'&'} consulting company
+              </Typography>
+              <Typography
+                fontSize='16px'
+                fontWeight='400'
+                color={theme.palette.text.secondary}
+                lineHeight='150%'
+                mt='1rem'
+              >
+                We create complex products using artificial intelligence, cloud solutions, blockchain and computer vision
+              </Typography>
+              <Button sx={{ width: '50%', bgcolor: theme.palette.primary.main, color: '#FFFFFF', fontFamily: 'Poppins', fontWeight: 700, fontSize: '18px', ':hover': { bgcolor: theme.palette.primary.main } }} size='large'>LET'S TALK</Button>
+              {/* <CustomButton bgcolor={theme.palette.primary.main} title="LET'S TALK" rounded={true} /> */}
+            </Stack>
+          </Container>
+        </div>
         <TechStack />
         <Services />
         <AllProjects />
         <Accomplishments />
         <ContactUs />
       </main>
-      {/* list of page components */}
-
     </div>
   )
 }

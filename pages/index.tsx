@@ -54,7 +54,7 @@ const Home: NextPage = () => {
               >
                 We create complex products using artificial intelligence, cloud solutions, blockchain and computer vision
               </Typography>
-              <Button sx={{ width: '50%', bgcolor: theme.palette.primary.main, color: '#FFFFFF', fontFamily: 'Poppins', fontWeight: 700, fontSize: '18px', ':hover': { bgcolor: theme.palette.primary.main } }} size='large'>LET'S TALK</Button>
+              <Button sx={{ width: '50%', bgcolor: theme.palette.primary.main, color: '#FFFFFF', fontFamily: 'Poppins', fontWeight: 700, fontSize: '18px', ':hover': { bgcolor: theme.palette.primary.main } }} size='large'>LET&apos;S TALK</Button>
               {/* <CustomButton bgcolor={theme.palette.primary.main} title="LET'S TALK" rounded={true} /> */}
             </Stack>
           </Container>

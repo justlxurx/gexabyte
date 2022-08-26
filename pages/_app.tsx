@@ -3,8 +3,8 @@ import type { AppProps } from 'next/app';
 import GlobalLayout from '../components/layouts/GlobalLayout';
 import '../styles/global/globals.scss';
 // import { theme } from '../utils/theme'
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
+// import i18n from "i18next";
+// import { initReactI18next } from "react-i18next";
 import { theme } from '../utils/theme';
 import './../styles/TechStack.scss';
 import { CssBaseline } from '@mui/material';

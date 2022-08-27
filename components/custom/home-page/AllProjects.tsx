@@ -62,6 +62,10 @@ const AllProjects = () => {
                 width: {
                   xs: '100%',
                   md: '60%'
+                },
+                ':hover': {
+                  cursor: 'pointer',
+                  textDecoration: 'underline'
                 }
               }}>Musical platform on Binance Smart Chain</Typography>
             </Box>
@@ -75,7 +79,7 @@ const AllProjects = () => {
               transform: {
                 xs: 'translate(50%, 0)',
                 md: 'translate(0, 0)'
-              }
+              },
             }}>
               <img src={isMobileScreen ? '/images/music-nft.svg' : '/images/music-nft-large.svg'} alt='music-nft' />
             </Box>
@@ -92,7 +96,12 @@ const AllProjects = () => {
             },
             p: '1.5rem'
           }}>
-            {isMobileScreen && <Typography variant='h1' sx={{ fontSize: '25px', fontWeight: 800, mb: '25%' }}>
+            {isMobileScreen && <Typography variant='h1' sx={{
+              fontSize: '25px', fontWeight: 800, mb: '25%', ':hover': {
+                cursor: 'pointer',
+                textDecoration: 'underline'
+              }
+            }}>
               Crowdfunding platform for projects
             </Typography>}
             <img
@@ -108,7 +117,15 @@ const AllProjects = () => {
                 marginRight: 'auto',
                 width: '100%',
               }} />
-            {!isMobileScreen && <Typography variant='h1' sx={{ fontSize: '56px', fontWeight: 800, mt: '25%' }}>
+            {!isMobileScreen && <Typography variant='h1' sx={{
+              fontSize: '56px',
+              fontWeight: 800,
+              mt: '25%',
+              ':hover': {
+                cursor: 'pointer',
+                textDecoration: 'underline'
+              }
+            }}>
               Crowdfunding platform for projects
             </Typography>}
           </Box>
@@ -121,7 +138,7 @@ const AllProjects = () => {
             height: {
               xs: '341px',
               md: '723px'
-            }
+            },
           }}>
             <Box sx={{
               position: {
@@ -166,7 +183,11 @@ const AllProjects = () => {
                 xs: '18px',
                 md: '48px'
               },
-              fontWeight: 700
+              fontWeight: 700,
+              ':hover': {
+                cursor: 'pointer',
+                textDecoration: 'underline'
+              }
             }}>
               MORE
             </Typography>

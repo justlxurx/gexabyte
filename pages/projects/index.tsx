@@ -1,19 +1,12 @@
-import { Container } from '@mui/material'
-import Accomplishments from 'components/custom/home-page/Accomplishments'
-import ContactUs from 'components/custom/home-page/ContactUs'
-import TechStack from 'components/custom/home-page/TechStack'
 import FirstBlockLayout from 'components/layouts/FirstBlockLayout'
-import type { NextPage } from 'next'
 import Head from 'next/head'
-import AllProjects from '../components/custom/home-page/AllProjects'
-import Services from '../components/custom/home-page/Services'
+import React from 'react'
 
-const Home: NextPage = () => {
-
+const Projects = () => {
   return (
     <>
       <Head>
-        <title>Home - TechCulture</title>
+        <title>Projects - TechCulture</title>
         <meta property="og:title" content="TechCulture" key="title" />
         <meta name="description" content="Free Web tutorials" />
         <link rel="icon" href="/favicon.ico" />
@@ -25,14 +18,10 @@ const Home: NextPage = () => {
           subTitle='We create complex products using artificial intelligence, cloud solutions, blockchain and computer vision'
           bgAnimationSrc='/videos/klava.mp4'
         />
-        <TechStack />
-        <Services />
-        <AllProjects />
-        <Accomplishments />
-        <ContactUs />
+        <h1>ТУТ БУДЕТ НОВЫЙ ДИЗАЙН</h1>
       </div>
     </>
   )
 }
 
-export default Home
+export default Projects

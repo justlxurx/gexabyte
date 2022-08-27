@@ -103,7 +103,7 @@ const Services = () => {
               width: '50%',
               mb: '1rem',
               textTransform: 'uppercase',
-              fontFamily: 'Helvetica Neue',
+              fontFamily: 'Readex Pro',
             }}>{service.title}</Typography>
             <Typography sx={{
               fontSize: '16px',

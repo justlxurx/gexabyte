@@ -4,6 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import axios from 'axios';
+import { useFormik } from 'formik';
+import { IContactUsForm } from 'types/IContactUsForm';
+import { contactUsSchema } from 'utils/validations/contactUsSchema';
+import SocialMedia from '../SocialMedia';
 // import styles from './ContactUs.module.scss';
 
 const ContactUs = () => {
@@ -14,33 +18,31 @@ const ContactUs = () => {
     wd: false
   });
 
-  const [form, setForm] = React.useState({
-    name: '',
-    email: '',
-    company: '',
-    info: '',
-    type: 'test'
+  const formik = useFormik<IContactUsForm>({
+    initialValues: {
+      name: '',
+      email: '',
+      company: '',
+      info: '',
+      type: ''
+    },
+    onSubmit: async values => {
+      try {
+        const res = await axios.post('https://techculture.tech/api/contact/us', values);
+        if (res.status === 200) {
+          alert('Успешно')
+        }
+      } catch (e) {
+        alert('Ошибочка... Попробуйте позже')
+      }
+    },
+    validationSchema: contactUsSchema,
+    validateOnChange: false,
+    validateOnBlur: false,
+    validateOnMount: false
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    try {
-      const res = await axios.post('https://techculture.tech/api/contact/us', form);
-      setForm({
-        name: '',
-        email: '',
-        company: '',
-        info: '',
-        type: ''
-      });
-      if (res.status === 200) {
-        alert('Успешно')
-      }
-    } catch (e) {
-      alert('Ошибочка... Попробуйте позже')
-    }
-  }
+  const { values: form, handleSubmit, handleChange, errors } = formik;
 
   return (
     <Container disableGutters sx={{
@@ -74,9 +76,10 @@ const ContactUs = () => {
           <a href='https://go.2gis.com/kkjlw'>
             <Typography sx={{
               textDecoration: 'underline',
-              fontSize: '16px',
-              fontWeight: 600,
-              mb: '1rem'
+              fontFamily: 'Source Sans Pro',
+              fontSize: '18px',
+              fontWeight: 700,
+              mb: '1rem',
             }}>Медеу парк, жилой комплекс Бегалина, 7, Алматы</Typography>
           </a>
           <Typography sx={{
@@ -111,23 +114,10 @@ const ContactUs = () => {
             fontWeight: 600,
             color: '#F0B270'
           }}>Social Media</Typography>
-          <Stack direction='row' spacing={1}>
-            <a href='https://instagram.com/tech.culture.it?igshid=YmMyMTA2M2Y='>
-              <Image src='/icons/social-media/Instagram.svg' width='24px' height='24px' />
-            </a>
-            <a href='https://kz.linkedin.com/in/techculture'>
-              <Image src='/icons/social-media/LinkdIn.svg' width='24px' height='24px' />
-            </a>
-            <a href='https://t.me/techcultureconsult'>
-              <Image src='/icons/social-media/Telegram.svg' width='24px' height='24px' />
-            </a>
-            <a href='https://www.facebook.com/tech.culture.it'>
-              <Image src='/icons/social-media/Facebook.svg' width='24px' height='24px' />
-            </a>
-          </Stack>
+          <SocialMedia />
         </Grid>
         <Grid item xs p='5%'>
-          <form onSubmit={e => handleSubmit(e)}>
+          <form onSubmit={handleSubmit}>
             <Typography sx={{
               fontSize: '48px',
               fontWeight: 600,
@@ -152,61 +142,100 @@ const ContactUs = () => {
               id="bootstrap-input1"
               placeholder='Your name'
               value={form.name}
-              onChange={e => setForm(prev => ({ ...prev, name: e.target.value }))}
+              name='name'
+              onChange={handleChange}
               fullWidth
               required
+              error={!!errors.name}
               sx={{
                 bgcolor: '#FFFFFF',
-                border: '1px solid #D0D5DD',
                 borderRadius: '8px',
-                mb: '16px',
-                input: { color: '#B3B8C2' }
+                input: { color: '#B3B8C2' },
+                mb: !!!errors.name ? '16px' : '0px',
               }}
             />
+            {!!errors.name &&
+              <Typography variant='caption' color='red'>
+                {errors.name}
+              </Typography>
+            }
             <InputLabel shrink htmlFor="bootstrap-input2">
               Email
             </InputLabel>
             <TextField
+              id="bootstrap-input2"
               value={form.email}
+              type='email'
+              name='email'
+              onChange={handleChange}
+              error={!!errors.email}
+              fullWidth
               required
-              onChange={e => setForm(prev => ({ ...prev, email: e.target.value }))}
-              id="bootstrap-input2" fullWidth placeholder='you@company.com' sx={{ bgcolor: '#FFFFFF', border: '1px solid #D0D5DD', borderRadius: '8px', mb: '16px', input: { color: '#B3B8C2' } }} />
+              placeholder='you@company.com'
+              sx={{
+                bgcolor: '#FFFFFF',
+                borderRadius: '8px',
+                input: { color: '#B3B8C2' },
+                mb: !!!errors.email ? '16px' : '0px',
 
+              }} />
+            {!!errors.email &&
+              <Typography variant='caption' color='red'>
+                {errors.email}
+              </Typography>
+            }
             <InputLabel shrink htmlFor="bootstrap-input3">
               Company
             </InputLabel>
             <TextField
               value={form.company}
+              name='company'
+              onChange={handleChange}
+              error={!!errors.company}
               required
-              onChange={e => setForm(prev => ({ ...prev, company: e.target.value }))}
-              id="bootstrap-input3" fullWidth placeholder='Company name' sx={{ bgcolor: '#FFFFFF', border: '1px solid #D0D5DD', borderRadius: '8px', mb: '16px', input: { color: '#B3B8C2' } }} />
-
+              id="bootstrap-input3" fullWidth placeholder='Company name' sx={{
+                bgcolor: '#FFFFFF',
+                borderRadius: '8px',
+                mb: !!!errors.company ? '16px' : '0px',
+                input: { color: '#B3B8C2' }
+              }} />
+            {!!errors.company &&
+              <Typography variant='caption' color='red'>
+                {errors.company}
+              </Typography>
+            }
             <InputLabel shrink htmlFor="bootstrap-input4">
               How can we help?
             </InputLabel>
             <TextField
               id="bootstrap-input4"
               value={form.info}
-              onChange={e => setForm(prev => ({ ...prev, info: e.target.value }))}
+              name='info'
+              onChange={handleChange}
               fullWidth
               multiline
               required
               rows={3}
+              error={!!errors.info}
               placeholder='Tell us a little about the project...'
               inputProps={{ style: { color: '#B3B8C2' } }}
               sx={{
                 bgcolor: '#FFFFFF',
-                border: '1px solid #D0D5DD',
                 borderRadius: '8px',
-                mb: '16px',
+                mb: !!!errors.info ? '16px' : '0px',
                 input: { color: '#B3B8C2' }
               }}
             />
-            <InputLabel shrink htmlFor="bootstrap-input5" sx={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+            {!!errors.info &&
+              <Typography variant='caption' color='red'>
+                {errors.info}
+              </Typography>
+            }
+            {/* <InputLabel shrink htmlFor="bootstrap-input5" sx={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
               <Image src='/icons/attach.svg' width='24px' height='24px' />
               Add attachment
             </InputLabel>
-            <input type='file' id="bootstrap-input6" style={{ display: 'none' }} />
+            <input type='file' id="bootstrap-input6" style={{ display: 'none' }} /> */}
             <InputLabel shrink htmlFor="bootstrap-input4">
               Services
             </InputLabel>
@@ -214,7 +243,8 @@ const ContactUs = () => {
               <Grid item xs={1}>
                 <Button variant='outlined' onClick={() => setServices(prev => ({ ...prev, bd: !prev.bd }))} sx={{
                   borderColor: services.bd ? '#F0B270' : '#2D2D2D',
-                  color: services.bd ? '#F0B270' : '#2D2D2D'
+                  color: services.bd ? '#F0B270' : '#2D2D2D',
+                  fontSize: '0.8rem'
                 }}>
                   Blockchain Development
                 </Button>

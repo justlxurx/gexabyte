@@ -15,6 +15,7 @@ import { navRoutes } from '../../../utils/routes';
 import DropdownIcon from '../../../public/icons/sr-chevron-right.svg';
 import Dropdown from '../Dropdown';
 import LocaleButton from '../home-page/LocaleButton';
+import { useTranslation } from 'react-i18next';
 
 const dropdownContent = [
   {
@@ -37,11 +38,7 @@ const dropdownContent = [
 ]
 
 const AppBarDesktop: React.FC = () => {
-  const [age, setAge] = React.useState('');
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
-  };
 
   return (
     <AppBar position="sticky" sx={{
@@ -67,8 +64,8 @@ const AppBarDesktop: React.FC = () => {
           </Stack>
 
           <Stack direction='row' gap='0.5rem' spacing={2} alignItems='center'>
-            <LocaleButton text='ENG' active={true} />
-            <LocaleButton text='RUS' active={false} />
+            <LocaleButton text='ENG' locale='en' />
+            <LocaleButton text='RUS' locale='ru' />
             <CustomButton title='Get in Touch' bgcolor={theme.palette.secondary.main} />
           </Stack>
         </Toolbar>

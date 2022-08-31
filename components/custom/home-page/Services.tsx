@@ -1,4 +1,4 @@
-import { Box, Container, Stack, Typography, Link as MUILink, Grid } from '@mui/material';
+import { Box, Container, Stack, Typography, Link as MUILink, Grid, TextField } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -112,10 +112,17 @@ const Services = () => {
               color: theme.palette.text.secondary,
               width: '85%'
             }}>{service.description}</Typography>
-            <Typography m='1rem' sx={{ color: '#736AE4', fontSize: '18px', fontWeight: 600 }}>
-              {idx === 0 && 'More Details'}
-              {'>'}
-            </Typography>
+            <Link href='/'>
+              <Typography m='1rem' sx={{
+                color: '#736AE4',
+                fontSize: '18px',
+                fontWeight: 600,
+                ':hover': { cursor: 'pointer', textDecoration: 'underline' }
+              }}>
+                {idx === 0 && 'More Details'}
+                {'>'}
+              </Typography>
+            </Link>
           </Stack>
         ))}
       </Box>

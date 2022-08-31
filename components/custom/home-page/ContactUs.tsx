@@ -1,4 +1,4 @@
-import { Button, Container, Grid, InputLabel, Stack, TextField, Typography, useMediaQuery } from '@mui/material';
+import { Box, Button, Container, Grid, InputLabel, Stack, TextField, Typography, useMediaQuery } from '@mui/material';
 import CustomButton from 'components/custom/CustomButton';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,7 +10,11 @@ import { contactUsSchema } from 'utils/validations/contactUsSchema';
 import SocialMedia from '../SocialMedia';
 // import styles from './ContactUs.module.scss';
 
-const ContactUs = () => {
+interface ContactUsProps {
+  // ref: any
+}
+
+const ContactUs: React.FC<ContactUsProps> = () => {
   const isMobileScreen = useMediaQuery('(max-width:768px)');
   const [services, setServices] = React.useState({
     bd: false,
@@ -84,7 +88,6 @@ const ContactUs = () => {
           </a>
           <Typography sx={{
             color: '#F0B270',
-            textDecoration: 'underline',
             fontSize: '16px',
             fontWeight: 600,
           }}>Sales Department</Typography>
@@ -116,7 +119,7 @@ const ContactUs = () => {
           }}>Social Media</Typography>
           <SocialMedia />
         </Grid>
-        <Grid item xs p='5%'>
+        <Grid item xs p='5%' id='#get-in-touch'>
           <form onSubmit={handleSubmit}>
             <Typography sx={{
               fontSize: '48px',
@@ -135,7 +138,7 @@ const ContactUs = () => {
             }}>
               You can reach us anytime via <span style={{ color: '#736AE4' }}>techculturellp@gmail.com</span>
             </Typography>
-            <InputLabel shrink htmlFor="bootstrap-input1">
+            <InputLabel shrink htmlFor="bootstrap-input4" sx={{ color: '#FFFFFF' }}>
               Name
             </InputLabel>
             <TextField
@@ -150,7 +153,7 @@ const ContactUs = () => {
               sx={{
                 bgcolor: '#FFFFFF',
                 borderRadius: '8px',
-                input: { color: '#B3B8C2' },
+                input: { color: '#667085' },
                 mb: !!!errors.name ? '16px' : '0px',
               }}
             />
@@ -159,7 +162,7 @@ const ContactUs = () => {
                 {errors.name}
               </Typography>
             }
-            <InputLabel shrink htmlFor="bootstrap-input2">
+            <InputLabel shrink htmlFor="bootstrap-input4" sx={{ color: '#FFFFFF' }}>
               Email
             </InputLabel>
             <TextField
@@ -175,7 +178,7 @@ const ContactUs = () => {
               sx={{
                 bgcolor: '#FFFFFF',
                 borderRadius: '8px',
-                input: { color: '#B3B8C2' },
+                input: { color: '#667085' },
                 mb: !!!errors.email ? '16px' : '0px',
 
               }} />
@@ -184,7 +187,7 @@ const ContactUs = () => {
                 {errors.email}
               </Typography>
             }
-            <InputLabel shrink htmlFor="bootstrap-input3">
+            <InputLabel shrink htmlFor="bootstrap-input4" sx={{ color: '#FFFFFF' }}>
               Company
             </InputLabel>
             <TextField
@@ -197,14 +200,14 @@ const ContactUs = () => {
                 bgcolor: '#FFFFFF',
                 borderRadius: '8px',
                 mb: !!!errors.company ? '16px' : '0px',
-                input: { color: '#B3B8C2' }
+                input: { color: '#667085' },
               }} />
             {!!errors.company &&
               <Typography variant='caption' color='red'>
                 {errors.company}
               </Typography>
             }
-            <InputLabel shrink htmlFor="bootstrap-input4">
+            <InputLabel shrink htmlFor="bootstrap-input4" sx={{ color: '#FFFFFF' }}>
               How can we help?
             </InputLabel>
             <TextField
@@ -223,7 +226,7 @@ const ContactUs = () => {
                 bgcolor: '#FFFFFF',
                 borderRadius: '8px',
                 mb: !!!errors.info ? '16px' : '0px',
-                input: { color: '#B3B8C2' }
+                input: { color: '#667085' },
               }}
             />
             {!!errors.info &&
@@ -236,7 +239,7 @@ const ContactUs = () => {
               Add attachment
             </InputLabel>
             <input type='file' id="bootstrap-input6" style={{ display: 'none' }} /> */}
-            <InputLabel shrink htmlFor="bootstrap-input4">
+            <InputLabel shrink htmlFor="bootstrap-input4" sx={{color: '#FFFFFF'}}>
               Services
             </InputLabel>
             <Grid container columns={3} spacing={1}>
@@ -244,7 +247,8 @@ const ContactUs = () => {
                 <Button variant='outlined' onClick={() => setServices(prev => ({ ...prev, bd: !prev.bd }))} sx={{
                   borderColor: services.bd ? '#F0B270' : '#2D2D2D',
                   color: services.bd ? '#F0B270' : '#2D2D2D',
-                  fontSize: '0.8rem'
+                  fontSize: '0.8rem',
+                  fontWeight: 600
                 }}>
                   Blockchain Development
                 </Button>
@@ -252,7 +256,8 @@ const ContactUs = () => {
               <Grid item xs={1}>
                 <Button variant='outlined' onClick={() => setServices(prev => ({ ...prev, bc: !prev.bc }))} sx={{
                   borderColor: services.bc ? '#F0B270' : '#2D2D2D',
-                  color: services.bc ? '#F0B270' : '#2D2D2D'
+                  color: services.bc ? '#F0B270' : '#2D2D2D',
+                  fontWeight: 600
                 }}>
                   Blockchain Consulting
                 </Button>
@@ -260,7 +265,8 @@ const ContactUs = () => {
               <Grid item xs={1}>
                 <Button variant='outlined' onClick={() => setServices(prev => ({ ...prev, wd: !prev.wd }))} sx={{
                   borderColor: services.wd ? '#F0B270' : '#2D2D2D',
-                  color: services.wd ? '#F0B270' : '#2D2D2D'
+                  color: services.wd ? '#F0B270' : '#2D2D2D',
+                  fontWeight: 600
                 }}>
                   Web&mobile development
                 </Button>

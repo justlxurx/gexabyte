@@ -5,10 +5,14 @@ import TechStack from 'components/custom/home-page/TechStack'
 import FirstBlockLayout from 'components/layouts/FirstBlockLayout'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import AllProjects from '../components/custom/home-page/AllProjects'
 import Services from '../components/custom/home-page/Services'
 
 const Home: NextPage = () => {
+
+  const { t } = useTranslation();
 
   return (
     <>
@@ -21,7 +25,8 @@ const Home: NextPage = () => {
 
       <div style={{ minHeight: '100vh', marginBottom: '4rem' }}>
         <FirstBlockLayout
-          title='Blockchain development & consulting company'
+          // title='Blockchain development & consulting company'
+          title={t('home.title')}
           subTitle='We create complex products using artificial intelligence, cloud solutions, blockchain and computer vision'
           bgAnimationSrc='/videos/klava.mp4'
         />

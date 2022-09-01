@@ -26,8 +26,8 @@ const Dropdown: React.FC<DropdownProps> = ({ data }) => {
       </Link>
       {data.menu && <img src={DropdownIcon.src} />}
       <div className={styles.dropdown_content}>
-        {data.items?.map(i => (
-          <Link href={i.link}>
+        {data.items?.map((i, idx) => (
+          <Link href={i.link} key={idx}>
             {i.title}
           </Link>
         ))}

@@ -1,22 +1,14 @@
-import * as React from 'react';
+import { Stack } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import CustomButton from '../CustomButton';
-import { theme } from '../../../utils/theme';
-import { InputLabel, Menu, MenuItem, Select, SelectChangeEvent, Stack, SvgIcon, Tab, Tabs } from '@mui/material';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Toolbar from '@mui/material/Toolbar';
 import Image from 'next/image';
-import { navRoutes } from '../../../utils/routes';
-import DropdownIcon from '../../../public/icons/sr-chevron-right.svg';
+import Link from 'next/link';
+import * as React from 'react';
+import { theme } from '../../../utils/theme';
+import CustomButton from '../CustomButton';
 import Dropdown from '../Dropdown';
 import LocaleButton from '../home-page/LocaleButton';
-import { useTranslation } from 'react-i18next';
-import useScroll from 'hooks/useScroll';
 
 export const dropdownContent = [
   {
@@ -63,11 +55,10 @@ const AppBarDesktop: React.FC = () => {
           </Link>
 
           <Stack direction='row' gap='2rem' fontSize='16px'>
-            {dropdownContent.map((i) => (
-              <Dropdown data={i} />
+            {dropdownContent.map((i, idx) => (
+              <Dropdown data={i} key={idx} />
             ))}
           </Stack>
-
           <Stack direction='row' gap='0.5rem' spacing={2} alignItems='center'>
             <LocaleButton text='ENG' locale='en' />
             <LocaleButton text='RUS' locale='ru' />

@@ -4,10 +4,6 @@ import ArrowIcon from '../../public/icons/sr-arrow-upright-4x.svg';
 import StarIcon from '../../public/icons/Star.svg';
 import Image from 'next/image';
 
-const text = [
-  <Image src={StarIcon.src} width={10} height={10} />
-]
-
 const RoundedAnimation = () => {
   return (
     <div className={styles.circle}>

@@ -38,8 +38,8 @@ const AllProjects = () => {
       </Typography>
       <Grid container gridTemplateColumns={'repeat(auto-fill, minmax(700px, 1fr))'} spacing={1}>
         {isMobileScreen ?
-          projects.mobile.map((src) => (
-            <Grid item xs={12} md={12}>
+          projects.mobile.map((src, idx) => (
+            <Grid item xs={12} md={12} key={idx}>
               <Link href='/' passHref>
                 <a><img src={src} width='100%' /></a>
               </Link>
@@ -47,7 +47,7 @@ const AllProjects = () => {
           ))
           :
           projects.desktop.map((src, idx) => (
-            <Grid item xs={12} md={idx === 0 ? 12 : 6}>
+            <Grid item xs={12} md={idx === 0 ? 12 : 6} key={idx}>
               <Link href='/' passHref>
                 <a><img src={src} width='100%' /></a>
               </Link>
@@ -57,8 +57,8 @@ const AllProjects = () => {
         {isExtended &&
           <>
             {isMobileScreen ?
-              projects.mobile.map((src) => (
-                <Grid item xs={12} md={12}>
+              projects.mobile.map((src, idx) => (
+                <Grid item xs={12} md={12} key={idx}>
                   <Link href='/' passHref>
                     <a><img src={src} width='100%' /></a>
                   </Link>
@@ -66,7 +66,7 @@ const AllProjects = () => {
               ))
               :
               projects.desktop.map((src, idx) => (
-                <Grid item xs={12} md={idx === 0 ? 12 : 6}>
+                <Grid item xs={12} md={idx === 0 ? 12 : 6} key={idx}>
                   <Link href='/' passHref>
                     <a><img src={src} width='100%' /></a>
                   </Link>

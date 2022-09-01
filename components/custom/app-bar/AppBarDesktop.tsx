@@ -16,8 +16,9 @@ import DropdownIcon from '../../../public/icons/sr-chevron-right.svg';
 import Dropdown from '../Dropdown';
 import LocaleButton from '../home-page/LocaleButton';
 import { useTranslation } from 'react-i18next';
+import useScroll from 'hooks/useScroll';
 
-const dropdownContent = [
+export const dropdownContent = [
   {
     title: 'Projects',
     menu: false,
@@ -38,7 +39,11 @@ const dropdownContent = [
 ]
 
 const AppBarDesktop: React.FC = () => {
+  const reftp = document.getElementById("contact-us");
 
+  const handleScroll = () => {
+    reftp?.scrollIntoView({ behavior: 'smooth' });
+  }
 
   return (
     <AppBar position="sticky" sx={{
@@ -57,7 +62,7 @@ const AppBarDesktop: React.FC = () => {
             <Image src={'/logo.svg'} alt='logo' width={100} height={50} style={{ cursor: 'pointer' }} />
           </Link>
 
-          <Stack direction='row' gap='2rem' fontSize='10px'>
+          <Stack direction='row' gap='2rem' fontSize='16px'>
             {dropdownContent.map((i) => (
               <Dropdown data={i} />
             ))}
@@ -66,7 +71,13 @@ const AppBarDesktop: React.FC = () => {
           <Stack direction='row' gap='0.5rem' spacing={2} alignItems='center'>
             <LocaleButton text='ENG' locale='en' />
             <LocaleButton text='RUS' locale='ru' />
-            <CustomButton title='Get in Touch' bgcolor={theme.palette.secondary.main} />
+            <Link href='#contact-us'>
+              <CustomButton
+                title='Get in Touch'
+                bgcolor={theme.palette.secondary.main}
+                handleClick={handleScroll}
+              />
+            </Link>
           </Stack>
         </Toolbar>
       </Container >

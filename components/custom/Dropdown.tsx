@@ -20,7 +20,9 @@ const Dropdown: React.FC<DropdownProps> = ({ data }) => {
   return (
     <div className={styles.dropdown}>
       <Link href={data.link}>
-        {data.title}
+        <Typography sx={{fontSize: '16px', fontWeight: 500}}>
+          {data.title}
+        </Typography>
       </Link>
       {data.menu && <img src={DropdownIcon.src} />}
       <div className={styles.dropdown_content}>

@@ -1,5 +1,6 @@
-import { Button, Container, Stack, Typography } from '@mui/material'
+import { Box, Button, Container, Stack, Typography, useMediaQuery } from '@mui/material'
 import RoundedAnimation from 'components/custom/RoundedAnimation'
+import { useRouter } from 'next/router'
 import React from 'react'
 import { theme } from 'utils/theme'
 
@@ -10,21 +11,32 @@ interface FirstBlockLayoutProps {
 }
 
 const FirstBlockLayout: React.FC<FirstBlockLayoutProps> = ({ title, bgAnimationSrc, subTitle }) => {
+  const isMobileScreen = useMediaQuery('(max-width:768px)');
+  const { locale } = useRouter();
+
   return (
     <div style={{ position: 'relative', overflow: 'hidden', marginBottom: '2rem' }}>
       {bgAnimationSrc &&
-        <video autoPlay muted loop id="myVideo" style={{ width: '95%', position: 'absolute', zIndex: -1, top: 0, right: 0, }}>
-          <source src="/videos/klava.mp4" type="video/mp4" />
-        </video>
+        <Box sx={{ position: 'absolute', zIndex: -1, top: { xs: '400px', md: 0 }, right: { xs: '65%', md: '-5%' }, width: { xs: '120%', md: '100%' } }}>
+          <video autoPlay muted loop id="myVideo" style={{ width: isMobileScreen ? '170%' : '95%' }}>
+            <source src="/videos/klava.mp4" type="video/mp4" />
+          </video>
+        </Box>
       }
-      <div style={{ position: 'absolute', top: '65%', left: '35%' }}>
+      <Box sx={{ position: 'absolute', top: { xs: '45%', md: '62.5%' }, left: { xs: '10%', md: '40%' } }}>
         <RoundedAnimation />
-      </div>
+      </Box>
       <Container disableGutters sx={{
         padding: {
-          xs: 0,
+          xs: '1rem',
           md: '4rem 3rem',
-          minHeight: '60vh',
+        },
+        minHeight: {
+          xs: '90vh',
+          md: '60vh'
+        },
+        mt: {
+          md: '4rem'
         }
       }}>
         <Stack direction='column' maxWidth='692px' gap='16px'>
@@ -34,7 +46,8 @@ const FirstBlockLayout: React.FC<FirstBlockLayoutProps> = ({ title, bgAnimationS
               md: '64px',
               fontWeight: 700,
               lineHeight: '110%',
-              letterSpacing: '0.025rem'
+              letterSpacing: '0.025rem',
+              fontFamily: locale === 'ru' ? 'Source Sans Pro' : 'Poppins'
             }
           }}>
             {title}
@@ -51,13 +64,16 @@ const FirstBlockLayout: React.FC<FirstBlockLayoutProps> = ({ title, bgAnimationS
               {subTitle}
             </Typography>
           }
-          <Button sx={{ width: '50%', bgcolor: theme.palette.primary.main, color: '#FFFFFF', fontFamily: 'Poppins', fontWeight: 700, fontSize: '18px', ':hover': { bgcolor: theme.palette.primary.main } }} size='large'>LET&apos;S TALK</Button>
-          {/* <CustomButton bgcolor={theme.palette.primary.main} title="LET'S TALK" rounded={true} /> */}
+          <Button sx={{ width: { xs: '100%', md: '50%' }, bgcolor: theme.palette.primary.main, color: '#FFFFFF', fontFamily: 'Poppins', fontWeight: 700, fontSize: '18px', ':hover': { bgcolor: theme.palette.primary.main } }} size='large'>LET&apos;S TALK</Button>
         </Stack>
       </Container>
-      <div style={{ width: '100%', height: '100px', background: 'linear-gradient(7.57deg, #000000 40%, rgba(0, 0, 0, 0) 94.72%)' }}>
-      </div>
-    </div>
+      <Box sx={{
+        width: '100%',
+        height: '100px',
+        background: 'linear-gradient(7.57deg, #000000 40.09%, rgba(0, 0, 0, 0) 94.72%)',
+      }}>
+      </Box>
+    </div >
   )
 }
 

@@ -1,9 +1,20 @@
 import { Box, Container, Grid, Typography, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
+
+const projects = {
+  desktop: ['/images/project1.jpg', '/images/project2.jpg', '/images/project3.jpg'],
+  mobile: ['/images/project1-mobile.jpg', '/images/project2-mobile.jpg', '/images/project3-mobile.jpg']
+}
 
 const AllProjects = () => {
   const isMobileScreen = useMediaQuery('(max-width:768px)');
+  const [isExtended, setIsExtended] = React.useState(false);
+
+  const changeIsExtended = () => {
+    setIsExtended(prev => !prev)
+  }
 
   return (
     <Container disableGutters sx={{
@@ -25,160 +36,52 @@ const AllProjects = () => {
       }}>
         OUR ALL PROJECTS
       </Typography>
-      <Grid container columns={2} spacing={1}>
-        <Grid item xs={2} md={2}>
-          <Box sx={{
-            display: 'flex',
-            width: '100%',
-            bgcolor: '#E31D38',
-            position: 'relative',
-            overflow: 'hidden',
-            padding: '2rem 2rem',
-            height: {
-              xs: '341px',
-              md: '723px'
+      <Grid container gridTemplateColumns={'repeat(auto-fill, minmax(700px, 1fr))'} spacing={1}>
+        {isMobileScreen ?
+          projects.mobile.map((src) => (
+            <Grid item xs={12} md={12}>
+              <Link href='/' passHref>
+                <a><img src={src} width='100%' /></a>
+              </Link>
+            </Grid>
+          ))
+          :
+          projects.desktop.map((src, idx) => (
+            <Grid item xs={12} md={idx === 0 ? 12 : 6}>
+              <Link href='/' passHref>
+                <a><img src={src} width='100%' /></a>
+              </Link>
+            </Grid>
+          ))
+        }
+        {isExtended &&
+          <>
+            {isMobileScreen ?
+              projects.mobile.map((src) => (
+                <Grid item xs={12} md={12}>
+                  <Link href='/' passHref>
+                    <a><img src={src} width='100%' /></a>
+                  </Link>
+                </Grid>
+              ))
+              :
+              projects.desktop.map((src, idx) => (
+                <Grid item xs={12} md={idx === 0 ? 12 : 6}>
+                  <Link href='/' passHref>
+                    <a><img src={src} width='100%' /></a>
+                  </Link>
+                </Grid>
+              ))
             }
-          }}>
-            <Box sx={{
-              mt: {
-                xs: 0,
-                md: 'auto',
-              }
-            }}>
-              <Typography sx={{
-                color: '#450710',
-                fontSize: {
-                  xs: '16px',
-                  md: '20px'
-                },
-                fontWeight: 800
-              }}>Confidential</Typography>
-              <Typography variant='h1' sx={{
-                fontSize: {
-                  xs: '25px',
-                  md: '56px'
-                },
-                fontWeight: 800,
-                width: {
-                  xs: '100%',
-                  md: '60%'
-                },
-                ':hover': {
-                  cursor: 'pointer',
-                  textDecoration: 'underline'
-                }
-              }}>Musical platform on Binance Smart Chain</Typography>
-            </Box>
-            <Box sx={{
-              position: 'absolute',
-              bottom: '-1%',
-              right: {
-                xs: '50%',
-                md: 0
-              },
-              transform: {
-                xs: 'translate(50%, 0)',
-                md: 'translate(0, 0)'
-              },
-            }}>
-              <img src={isMobileScreen ? '/images/music-nft.svg' : '/images/music-nft-large.svg'} alt='music-nft' />
-            </Box>
-          </Box>
-        </Grid>
-        <Grid item xs={2} sm={2} md={1}>
-          <Box sx={{
-            width: '100%',
-            bgcolor: '#18A0FB',
-            overflow: 'hidden',
-            height: {
-              xs: '341px',
-              md: '723px'
-            },
-            p: '1.5rem'
-          }}>
-            {isMobileScreen && <Typography variant='h1' sx={{
-              fontSize: '25px', fontWeight: 800, mb: '25%', ':hover': {
-                cursor: 'pointer',
-                textDecoration: 'underline'
-              }
-            }}>
-              Crowdfunding platform for projects
-            </Typography>}
-            <img
-              src={
-                isMobileScreen ?
-                  '/images/screenshot-mobile.svg'
-                  :
-                  '/images/screenshot.svg'
-              }
-              alt='music-nft'
-              style={{
-                marginLeft: 'auto',
-                marginRight: 'auto',
-                width: '100%',
-              }} />
-            {!isMobileScreen && <Typography variant='h1' sx={{
-              fontSize: '56px',
-              fontWeight: 800,
-              mt: '25%',
-              ':hover': {
-                cursor: 'pointer',
-                textDecoration: 'underline'
-              }
-            }}>
-              Crowdfunding platform for projects
-            </Typography>}
-          </Box>
-        </Grid>
-        <Grid item xs={2} sm={2} md={1}>
-          <Box sx={{
-            width: '100%',
-            bgcolor: '#FF5C3E',
-            position: 'relative',
-            height: {
-              xs: '341px',
-              md: '723px'
-            },
-          }}>
-            <Box sx={{
-              position: {
-                xs: 'relative',
-                md: 'absolute'
-              },
-              bottom: 0,
-              right: 0,
-            }}>
-              <img src='/icons/edinorog.svg' alt='music-nft' />
-            </Box>
-            <Box sx={{
-              position: {
-                xs: 'relative',
-                md: 'absolute'
-              },
-              // bottom: 0,
-              right: 0,
-            }}>
-              <img src='/icons/duh.svg' alt='music-nft' />
-            </Box>
-            <Box sx={{
-              position: {
-                xs: 'relative',
-                md: 'absolute'
-              },
-              bottom: 0,
-              // right: 0,
-            }}>
-              <img src='/icons/polki.svg' alt='music-nft' />
-            </Box>
-          </Box>
-        </Grid>
-        <Grid item xs={2}>
+          </>
+        }
+        <Grid item xs={12}>
           <Box sx={{
             bgcolor: '#111318',
             p: '1.5rem',
             textAlign: 'center'
           }}>
-            <Typography sx={{
+            <Typography onClick={changeIsExtended} sx={{
               fontSize: {
                 xs: '18px',
                 md: '48px'
@@ -189,7 +92,7 @@ const AllProjects = () => {
                 textDecoration: 'underline'
               }
             }}>
-              MORE
+              {isExtended ? 'LESS' : 'MORE'}
             </Typography>
           </Box>
         </Grid>

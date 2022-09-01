@@ -66,29 +66,19 @@ const Services = () => {
           </MUILink>
         </Link>
       </Box>
-      <Box sx={{
-        display: 'flex',
-        flexDirection: {
-          xs: 'column',
-          md: 'row'
-        },
-        justifyContent: 'space-between',
-        alignItems: {
-          xs: 'flex-start',
-          md: 'flex-end'
-        },
-      }}>
+      <Grid container columns={3} spacing={1} gridAutoRows='1fr' rowGap={3}>
         {serviceTypes.map((service, idx) => (
-          <Stack key={idx} direction='column' alignItems='center' textAlign='center'>
-            <Box sx={{
+          <Grid item xs={3} md={1} key={idx}>
+            <Box key={idx} sx={{
               bgcolor: 'rgba(115, 106, 228, 0.15)',
               borderRadius: '50%',
               width: '60px',
               height: '60px',
+              m: 'auto',
               mb: '1rem',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center'
+              justifyContent: 'center',
             }}>
               <Image src={service.icon} width='40px' height='40px' />
             </Box>
@@ -100,32 +90,38 @@ const Services = () => {
               fontWeight: 700,
               lineHeight: '110%',
               color: theme.palette.secondary.main,
-              width: '50%',
+              m: 'auto',
               mb: '1rem',
               textTransform: 'uppercase',
               fontFamily: 'Readex Pro',
+              textAlign: 'center',
             }}>{service.title}</Typography>
             <Typography sx={{
               fontSize: '16px',
               fontWeight: 400,
               lineHeight: '24px',
               color: theme.palette.text.secondary,
-              width: '85%'
+              width: '85%',
+              textAlign: 'center',
+              m: 'auto',
+              height: '40%'
             }}>{service.description}</Typography>
             <Link href='/'>
               <Typography m='1rem' sx={{
                 color: '#736AE4',
                 fontSize: '18px',
                 fontWeight: 600,
-                ':hover': { cursor: 'pointer', textDecoration: 'underline' }
+                ':hover': { cursor: 'pointer', textDecoration: 'underline' },
+                mt: 'auto',
+                textAlign: 'center'
               }}>
                 {idx === 0 && 'More Details'}
                 {'>'}
               </Typography>
             </Link>
-          </Stack>
+          </Grid>
         ))}
-      </Box>
+      </Grid>
     </Container>
   )
 }

@@ -249,8 +249,8 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                   <Button variant='outlined' onClick={() => setServices(prev => ({ ...prev, bd: !prev.bd }))} sx={{
                     borderColor: services.bd ? '#F0B270' : '#2D2D2D',
                     color: services.bd ? '#F0B270' : '#2D2D2D',
-                    fontSize: '0.8rem',
-                    fontWeight: 600
+                    fontSize: { xs: '0.6rem', md: '0.8rem' },
+                    fontWeight: { xs: 600, md: 600 }
                   }}>
                     Blockchain Development
                   </Button>
@@ -259,7 +259,8 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                   <Button variant='outlined' onClick={() => setServices(prev => ({ ...prev, bc: !prev.bc }))} sx={{
                     borderColor: services.bc ? '#F0B270' : '#2D2D2D',
                     color: services.bc ? '#F0B270' : '#2D2D2D',
-                    fontWeight: 600
+                    fontSize: { xs: '0.6rem', md: '0.8rem' },
+                    fontWeight: { xs: 600, md: 600 }
                   }}>
                     Blockchain Consulting
                   </Button>
@@ -268,7 +269,8 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                   <Button variant='outlined' onClick={() => setServices(prev => ({ ...prev, wd: !prev.wd }))} sx={{
                     borderColor: services.wd ? '#F0B270' : '#2D2D2D',
                     color: services.wd ? '#F0B270' : '#2D2D2D',
-                    fontWeight: 600
+                    fontSize: { xs: '0.6rem', md: '0.8rem' },
+                    fontWeight: { xs: 600, md: 600 }
                   }}>
                     Web&mobile development
                   </Button>

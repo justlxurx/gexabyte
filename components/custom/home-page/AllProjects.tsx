@@ -22,7 +22,7 @@ const AllProjects = () => {
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
-      padding: '0.75rem'
+      padding: {xs: '0.75rem', md: 0}
     }}>
       <Typography variant='h1' sx={{
         fontSize: {

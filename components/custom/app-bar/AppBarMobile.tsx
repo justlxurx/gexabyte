@@ -67,9 +67,9 @@ const AppBarMobile: React.FC = () => {
         disableScrollLock={true}
       >
         <Toolbar />
-        {dropdownContent.map((item) => (
+        {dropdownContent.map((item, idx) => (
           item.items?.length ?
-            <Accordion sx={{ bgcolor: '#000000' }}>
+            <Accordion sx={{ bgcolor: '#000000' }} key={idx}>
               <AccordionSummary
                 expandIcon={<img src='/icons/sr-chevron-right.svg' />}
                 aria-controls="panel2a-content"
@@ -78,13 +78,13 @@ const AppBarMobile: React.FC = () => {
                 <Typography sx={{ fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                {item.items.map(itemY => (
-                  <Typography sx={{ m: '1rem', fontSize: '22px', fontWeight: 500, color: '#A8B1D1' }}>{itemY.title}</Typography>
+                {item.items.map((itemY, idy) => (
+                  <Typography key={idy} sx={{ m: '1rem', fontSize: '22px', fontWeight: 500, color: '#A8B1D1' }}>{itemY.title}</Typography>
                 ))}
               </AccordionDetails>
             </Accordion>
             :
-            <Typography sx={{ m: '1rem', fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
+            <Typography key={idx} sx={{ m: '1rem', fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
         ))}
         <Stack direction='row' sx={{ mt: 'auto' }}>
           <SocialMedia />

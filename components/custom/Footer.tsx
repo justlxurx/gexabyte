@@ -6,6 +6,15 @@ import { theme } from 'utils/theme'
 import CustomButton from './CustomButton'
 
 const Footer = () => {
+  let reftp: HTMLElement | null = null;
+  if (typeof window !== 'undefined') {
+    reftp = document.getElementById("contact-us");
+  }
+
+  const handleScroll = () => {
+    reftp?.scrollIntoView({ behavior: 'smooth' });
+  }
+
   return (
     <footer>
       <Container disableGutters maxWidth="xl" sx={{ padding: { xs: '16px 16px', md: '12px 80px' } }}>
@@ -13,7 +22,7 @@ const Footer = () => {
           <Grid item xs={2} md={1}>
             <Stack direction='column' spacing={1} alignItems='flex-start'>
               <Image src={'/logo.svg'} alt='logo' width={120} height={50} />
-              <Button fullWidth sx={{
+              <Button fullWidth onClick={handleScroll} sx={{
                 bgcolor: '#F000000',
                 border: '2px solid #F0B270',
                 // p: '1rem',

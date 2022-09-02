@@ -91,7 +91,7 @@
 
 .slider-track {
   display: flex;
-  width: calc(100px * 16);
+  width: calc(75px * 16);
 }
 
 // .slider-track:hover {
@@ -100,13 +100,14 @@
 
 .slide {
   height: 50px;
-  width: 100px;
+  width: 75px;
   display: flex;
   align-items: center;
   padding: 1rem;
 }
 
 .slide-first {
+  @extend .slide;
   animation: scroll 5s linear infinite;
 }
 
@@ -123,6 +124,6 @@
   }
 
   100% {
-    margin-left: -400px;
+    margin-left: -300px;
   }
 }

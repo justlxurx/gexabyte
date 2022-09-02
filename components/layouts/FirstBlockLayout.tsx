@@ -17,19 +17,25 @@ const FirstBlockLayout: React.FC<FirstBlockLayoutProps> = ({ title, bgAnimationS
   return (
     <div style={{ position: 'relative', overflow: 'hidden', marginBottom: '2rem' }}>
       {bgAnimationSrc &&
-        <Box sx={{ position: 'absolute', zIndex: -1, top: { xs: '400px', md: 0 }, right: { xs: '65%', md: '-5%' }, width: { xs: '120%', md: '100%' } }}>
-          <video autoPlay muted loop id="myVideo" style={{ width: isMobileScreen ? '170%' : '95%' }}>
+        <Box sx={{
+          position: 'absolute',
+          zIndex: -1,
+          top: { xs: '400px', md: 0 },
+          right: { xs: '65%', md: '-5%' },
+          width: { xs: '120%', md: '100%' }
+        }}>
+          <video autoPlay muted loop playsInline id="myVideo" style={{ width: isMobileScreen ? '170%' : '95%' }}>
             <source src="/videos/klava.mp4" type="video/mp4" />
           </video>
         </Box>
       }
-      <Box sx={{ position: 'absolute', top: { xs: '45%', md: '62.5%' }, left: { xs: '10%', md: '40%' } }}>
+      <Box sx={{ position: 'absolute', top: { xs: '400px', md: '62.5%' }, left: { xs: '10%', md: '40%' } }}>
         <RoundedAnimation />
       </Box>
       <Container disableGutters sx={{
         padding: {
           xs: '1rem',
-          md: '4rem 3rem',
+          md: '1rem 3rem',
         },
         minHeight: {
           xs: '90vh',

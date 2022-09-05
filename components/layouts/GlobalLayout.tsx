@@ -24,7 +24,7 @@ const GlobalLayout: React.FC<MainLayoutProps> = ({ children }) => {
         <meta name="keywords" content={SEOkeywords?.join(",")} />
       </Head>
       {matches ? <AppBarDesktop /> : <AppBarMobile />}
-      <Container disableGutters maxWidth='xl' sx={{ minWidth: '375px' }}>
+      <Container disableGutters maxWidth='xl' sx={{ minWidth: '400px' }}>
         {children}
       </Container>
       <Footer />

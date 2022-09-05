@@ -254,7 +254,10 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                     borderColor: services.bd ? '#F0B270' : '#2D2D2D',
                     color: services.bd ? '#F0B270' : '#2D2D2D',
                     fontSize: { xs: '0.6rem', md: '0.8rem' },
-                    fontWeight: { xs: 600, md: 600 }
+                    fontWeight: { xs: 600, md: 600 },
+                    ':hover': {
+                      borderColor: services.bd ? '#F0B270' : '#2D2D2D',
+                    }
                   }}>
                     Blockchain Development
                   </Button>
@@ -264,7 +267,10 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                     borderColor: services.bc ? '#F0B270' : '#2D2D2D',
                     color: services.bc ? '#F0B270' : '#2D2D2D',
                     fontSize: { xs: '0.6rem', md: '0.8rem' },
-                    fontWeight: { xs: 600, md: 600 }
+                    fontWeight: { xs: 600, md: 600 },
+                    ':hover': {
+                      borderColor: services.bc ? '#F0B270' : '#2D2D2D',
+                    }
                   }}>
                     Blockchain Consulting
                   </Button>
@@ -274,7 +280,10 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                     borderColor: services.wd ? '#F0B270' : '#2D2D2D',
                     color: services.wd ? '#F0B270' : '#2D2D2D',
                     fontSize: { xs: '0.6rem', md: '0.8rem' },
-                    fontWeight: { xs: 600, md: 600 }
+                    fontWeight: { xs: 600, md: 600 },
+                    ':hover': {
+                      borderColor: services.wd ? '#F0B270' : '#2D2D2D',
+                    }
                   }}>
                     Web&mobile development
                   </Button>

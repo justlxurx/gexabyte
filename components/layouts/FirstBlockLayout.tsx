@@ -73,7 +73,13 @@ const FirstBlockLayout: React.FC<FirstBlockLayoutProps> = ({ title, bgAnimationS
           <Button sx={{ width: { xs: '100%', md: '50%' }, bgcolor: theme.palette.primary.main, color: '#FFFFFF', fontFamily: 'Poppins', fontWeight: 700, fontSize: '18px', ':hover': { bgcolor: theme.palette.primary.main } }} size='large'>LET&apos;S TALK</Button>
         </Stack>
       </Container>
-      <Box sx={{ position: 'absolute', bottom: 0, height: '50px', width: '100%', zIndex: -1, background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)' }}>
+      <Box sx={{ position: 'absolute', bottom: 0, height: '50px', width: '100%', zIndex: -1 }}>
+      </Box>
+      <Box sx={{
+        width: '100%',
+        height: '100px',
+        background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)'
+      }}>
       </Box>
     </div >
   )

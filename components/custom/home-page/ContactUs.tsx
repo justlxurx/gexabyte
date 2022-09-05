@@ -65,9 +65,20 @@ const ContactUs: React.FC<ContactUsProps> = () => {
         </Box>
         <Grid container direction={isMobileScreen ? 'column-reverse' : 'row'} alignItems='center' justifyContent='center'>
           <Grid item xs p='5%'>
-            <video autoPlay muted loop id="myVideo" style={{ height: '100%', visibility: 'visible', position: 'absolute', zIndex: -2, left: '-30%', transform: 'rotate(90deg)' }}>
-              <source src="/videos/Emitter.mp4" type="video/mp4" />
-            </video>
+            {isMobileScreen ?
+              <>
+                <Box sx={{ position: 'absolute', top: '105vh', height: '100px', width: '100%', zIndex: -1, background: 'linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)' }}>
+                </Box>
+                <video autoPlay muted loop id="myVideo" style={{ width: '100vh', top: '130vh', visibility: 'visible', position: 'absolute', zIndex: -2, left: '-55%', transform: 'rotate(90deg)' }}>
+                  <source src="/videos/Emitter.mp4" type="video/mp4" />
+                </video>
+              </>
+              :
+              <video autoPlay muted loop id="myVideo" style={{ height: '100%', visibility: 'visible', position: 'absolute', zIndex: -2, left: '-30%', transform: 'rotate(90deg)' }}>
+                <source src="/videos/Emitter.mp4" type="video/mp4" />
+              </video>
+            }
+
             <Typography sx={{
               fontSize: '32px',
               fontWeight: 700,

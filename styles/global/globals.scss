@@ -1,11 +1,16 @@
-// @import "../variables/breakpoints";
-// @import "../variables/mixins";
+@import "../variables/breakpoints";
+@import "../variables/mixins";
+@import "../variables/colors";
+@import "../theme/classes";
 
 html,
 body {
   padding: 0;
   margin: 0;
   min-width: 425px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
   *::-webkit-media-controls-panel {
     display: none !important;

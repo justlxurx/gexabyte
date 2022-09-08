@@ -8,17 +8,20 @@ const serviceTypes = [
   {
     title: 'Blockchain Development',
     description: 'We create and deploy public, closed, hybrid blockchain solutions for various spheres, as well as DEFI and blockchain projects for the crypto industry.',
-    icon: '/icons/boxes.svg'
+    icon: '/icons/boxes.svg',
+    link: '/blockchain'
   },
   {
     title: 'Blockchain Consulting',
     description: 'We provide consulting services in the following areas: tokenomics, smart contract audit, business analytics, White&Light paper and technical documentation',
-    icon: '/icons/phone.svg'
+    icon: '/icons/phone.svg',
+    link: '/consulting'
   },
   {
     title: 'Web&mobile development',
     description: 'Development of web and mobile applications for iOS and Android with a user-friendly interface for automating processes and solving business problems using modern technologies',
-    icon: '/icons/laptop.svg'
+    icon: '/icons/laptop.svg',
+    link: '/webdev'
   }
 ]
 
@@ -106,7 +109,7 @@ const Services = () => {
               m: 'auto',
               height: '40%'
             }}>{service.description}</Typography>
-            <Link href='/'>
+            <Link href={service.link}>
               <Typography m='1rem' sx={{
                 color: '#736AE4',
                 fontSize: '18px',

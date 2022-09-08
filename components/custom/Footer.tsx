@@ -1,3 +1,4 @@
+import styled from '@emotion/styled'
 import { Button, Container, Grid, Stack, Typography } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -16,7 +17,7 @@ const Footer = () => {
   }
 
   return (
-    <footer>
+    <StyledFooter>
       <Container disableGutters maxWidth="xl" sx={{ padding: { xs: '16px 16px', md: '12px 80px' } }}>
         <Grid container columns={{ xs: 2, md: 5 }} spacing={5}>
           <Grid item xs={2} md={1}>
@@ -86,7 +87,7 @@ const Footer = () => {
           </Grid>
         </Grid>
       </Container>
-    </footer>
+    </StyledFooter>
   )
 }
 
@@ -104,3 +105,7 @@ const StyledTypography: React.FC<StyledTypographyProps> = ({ title, link }) => (
     </Typography>
   </Link>
 )
+
+const StyledFooter = styled.footer`
+  margin-top: auto;
+`

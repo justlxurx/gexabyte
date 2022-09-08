@@ -27,7 +27,7 @@ i18n
     lng: 'en',
     fallbackLng: 'en',
     debug: process.env.NODE_ENV === 'production' ? false : true
-  });
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();

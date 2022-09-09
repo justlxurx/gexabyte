@@ -1,9 +1,13 @@
 import styled from '@emotion/styled'
+import AllProjects from 'components/custom/home-page/AllProjects'
 import ContactUs from 'components/custom/home-page/ContactUs'
 import TechStack from 'components/custom/home-page/TechStack'
 import RoundedAnimation from 'components/custom/RoundedAnimation'
 import FirstBlockLayout from 'components/layouts/FirstBlockLayout'
 import { RButton } from 'components/UI/atoms/RButton'
+import { BlockchainAnimation } from 'components/UI/molecules/BlockchainAnimation/BlockchainAnimation'
+import { DeFiService } from 'components/UI/molecules/DeFiService/DeFiService'
+import { OurExpertise } from 'components/UI/molecules/OurExpertise/OurExpertise'
 import React from 'react'
 
 export default () => {
@@ -24,6 +28,7 @@ export default () => {
           </StyledTextButton>
 
         </BlockChainLeftSide>
+        <BlockchainAnimation />
       </FirstBlock>
 
       <SecondBlock>
@@ -60,7 +65,10 @@ export default () => {
         </SecondBlockAnimation>
       </SecondBlock>
 
+      <OurExpertise />
+      <DeFiService />
       <TechStack />
+      <AllProjects />
       <ContactUs />
 
     </Wrapper>
@@ -78,6 +86,8 @@ const FirstBlock = styled.div`
   grid-template-columns: 50% 50%;
   gap: 10px;
   padding: 76px;
+  position: relative;
+  overflow: hidden;
 `
 
 const BlockChainLeftSide = styled.div`
@@ -124,7 +134,6 @@ const StyledContainedButton = styled.button`
     cursor: pointer;
   }
   margin-right: 40px;
-
 `
 
 const StyledTextButton = styled.button`

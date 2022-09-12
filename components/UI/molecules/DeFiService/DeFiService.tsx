@@ -42,6 +42,8 @@ export const DeFiService: FC = () => {
   )
 }
 
+DeFiService.displayName = 'DeFiService'
+
 const StyledWrapper = styled.div`
   padding: 76px;
   margin-bottom: 53px;;

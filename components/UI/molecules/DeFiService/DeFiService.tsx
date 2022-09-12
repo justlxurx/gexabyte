@@ -2,10 +2,7 @@ import styled from '@emotion/styled'
 import Image from 'next/image'
 import { FC } from 'react'
 
-interface IProps {
-}
-
-export const DeFiService: FC<IProps> = () => {
+export const DeFiService: FC = () => {
   return (
     <StyledWrapper>
       <StyledTitle>DeFi service we are working with</StyledTitle>

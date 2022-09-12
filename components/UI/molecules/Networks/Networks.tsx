@@ -10,8 +10,8 @@ export const Networks: FC = () => {
       <StyledTitle>Using such networks:</StyledTitle>
       <StyledGridItemNetworks>
         {networks.map((icon, idx) => (
-          <StyledNetworksCard>
-            <Image src={`/icons/${icon}`} width='120px' height='52px' key={idx} />
+          <StyledNetworksCard key={idx} >
+            <Image src={`/icons/${icon}`} width='120px' height='52px' />
           </StyledNetworksCard>
         ))}
       </StyledGridItemNetworks>

@@ -10,8 +10,8 @@ export const Technologies: FC = () => {
       <StyledTitle>Technologies:</StyledTitle>
       <StyledGridItemTechnologies>
         {technologies.map((tech, idx) => (
-          <StyledTechnologiesCard>
-            <Image src={`/icons/${tech}`} width='64px' height='64px' key={idx} />
+          <StyledTechnologiesCard key={idx}>
+            <Image src={`/icons/${tech}`} width='64px' height='64px' />
           </StyledTechnologiesCard>
         ))}
       </StyledGridItemTechnologies>

@@ -26,6 +26,7 @@ export const OurExpertise: FC<IProps> = () => {
             <StyledTab
               onClick={() => handleChangeTab(idx)}
               className={classNames(`${idx === serviceIndex ? 'text text__active' : 'text'}`)}
+              key={idx}
             >
               {tabTitle}
             </StyledTab>

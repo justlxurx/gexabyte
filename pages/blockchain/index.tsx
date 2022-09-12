@@ -10,7 +10,7 @@ import { DeFiService } from 'components/UI/molecules/DeFiService/DeFiService'
 import { OurExpertise } from 'components/UI/molecules/OurExpertise/OurExpertise'
 import React from 'react'
 
-export default () => {
+const BlockChain = () => {
   return (
     <Wrapper>
       <FirstBlock>
@@ -75,6 +75,8 @@ export default () => {
 
   )
 }
+
+export default BlockChain;
 
 const Wrapper = styled.div`
   display: flex;

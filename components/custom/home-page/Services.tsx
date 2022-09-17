@@ -118,7 +118,7 @@ const Services = () => {
                 mt: 'auto',
                 textAlign: 'center'
               }}>
-                {idx === 0 && 'More Details'}
+                {'More Details'}
                 {'>'}
               </Typography>
             </Link>

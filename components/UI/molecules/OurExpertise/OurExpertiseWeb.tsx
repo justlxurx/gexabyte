@@ -1,10 +1,6 @@
 import styled from '@emotion/styled'
-import { Container } from '@mui/material';
-import classNames from 'classnames'
 import { FC, useState } from 'react'
-import { BlockchainDev } from './BlockchainDev/BlockchainDev'
 import { WebTechDev } from './WebTechDev/WebTechDev'
-import { TechnicalSupport } from './TechnicalSupport/TechnicalSupport'
 
 const tabs = ['Smart contract development', 'Full-cycle Blokchain development', 'Technical support'];
 

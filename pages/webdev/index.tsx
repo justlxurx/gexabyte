@@ -15,7 +15,7 @@ const Webdev = () => {
   return (
     <Wrapper>
       <FirstBlock>
-        <BlockChainLeftSide>
+        <WebLeftSide>
 
           <WebTitle>Web & Mobile development</WebTitle>
           <WebSubtitle>
@@ -28,7 +28,7 @@ const Webdev = () => {
             &nbsp;see all projects
           </StyledTextButton>
 
-        </BlockChainLeftSide>
+        </WebLeftSide>
         <WebImage><Image src={`/images/WebFirstblog.svg`} width='665px' height='706px' /></WebImage>
       </FirstBlock>
       <OurExpertiseWeb />
@@ -60,7 +60,7 @@ const FirstBlock = styled.div`
   margin-bottom: 110px;
 `
 
-const BlockChainLeftSide = styled.div`
+const WebLeftSide = styled.div`
 
 `
 

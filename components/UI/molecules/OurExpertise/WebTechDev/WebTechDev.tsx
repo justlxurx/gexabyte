@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import React from 'react'
-import { Networks } from '../../Networks/Networks'
 import { WebTechnologies } from '../../Technologies/WebTechnologies'
 
 const WebApps = ['IOT', 'GameFi', 'iOS App', 'Fintech', 'Сomputer vision', 'Android App']

@@ -33,6 +33,14 @@ const StyledGridItemTechnologies = styled.div`
 
   background: #171717;
   border-radius: 5px;
+
+  @media (max-width: 600px) {
+    padding: 30px 30px 10px 30px;
+    width: 100%;
+    height: 461.55px;
+    gap: 56px;
+    grid-template-columns: 50px 50px 50px 50px;
+  }
 `
 
 const StyledTechnologiesCard = styled.div`
@@ -62,6 +70,10 @@ const StyledTitle = styled.p`
   line-height: 40%;
   font-size: 30px;
   color: #FFFFFF;
+
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
 `
 const StyledSubTitle = styled.p`
   font-family: 'Readex Pro';
@@ -70,4 +82,7 @@ const StyledSubTitle = styled.p`
   font-size: 14px;
   line-height: 100%;
   margin-bottom: 40px;
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
 `

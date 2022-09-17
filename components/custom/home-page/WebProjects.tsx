@@ -4,9 +4,11 @@ import Link from 'next/link';
 import React from 'react';
 
 const projects = {
-  desktop: ['/images/cofi.svg', '/images/sanau.svg', '/images/smart home.svg'],
-  mobile: ['/images/project1-mobile.jpg', '/images/project2-mobile.jpg', '/images/project3-mobile.jpg']
+  desktop: ['/images/cofi.svg', '/images/sanau.svg', '/images/smart home.svg', '/images/factoring.svg', '/images/online marketing.svg', '/images/desktop.svg', '/images/gamefi.svg'],
+  mobile: ['/images/cofiMobile.svg', '/images/sanauMobile.svg', '/images/smartMobile.svg']
 }
+
+const ImageGrid = [8, 4, 6, 6, 4, 4, 4]
 
 const WebProjects = () => {
   const isMobileScreen = useMediaQuery('(max-width:768px)');
@@ -47,7 +49,7 @@ const WebProjects = () => {
           ))
           :
           projects.desktop.map((src, idx) => (
-            <Grid item xs={12} md={idx === 0 ? 12 : 6} key={idx}>
+            <Grid item xs={12} md={ImageGrid[idx]} key={idx}>
               <Link href='/' passHref>
                 <a><img src={src} width='100%' /></a>
               </Link>
@@ -66,7 +68,7 @@ const WebProjects = () => {
               ))
               :
               projects.desktop.map((src, idx) => (
-                <Grid item xs={12} md={idx === 0 ? 12 : 6} key={idx}>
+                <Grid item xs={12} md={ImageGrid[idx]} key={idx}>
                   <Link href='/' passHref>
                     <a><img src={src} width='100%' /></a>
                   </Link>

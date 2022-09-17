@@ -19,55 +19,25 @@ export const OurExpertiseWeb: FC<IProps> = () => {
   }
 
   return (
-    <Container disableGutters sx={{
-        ml: '0px',
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'relative',
-        overflow: 'hidden'
-      }}> <StyledWrapper>
+     <StyledWrapper>
       <StyledFlexArea>
         <StyledTitle>Our expertise\\</StyledTitle>
       </StyledFlexArea>
         <WebTechDev />
-    </StyledWrapper></Container>
+    </StyledWrapper>
   )
 }
 
 const StyledWrapper = styled.div`
-  padding: 76px;
+  padding-left: 76px;
+  padding-right: 76px;
+  @media (max-width: 600px) {
+    padding: 16px;
+  }
 `
 
 const StyledFlexArea = styled.div`
   display: flex;
-`
-
-const StyledTabArea = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 46px;
-  margin-left: auto;
-`
-
-const StyledTab = styled.span`
-  &.text {
-    font-family: 'Readex Pro';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-
-    &:hover {
-      cursor: pointer;
-      text-decoration: underline;
-    }
-
-    &__active {
-      color: #F0B270;
-    }
-  }
 `
 
 const StyledTitle = styled.span`
@@ -78,4 +48,8 @@ const StyledTitle = styled.span`
   line-height: 117.5%;
   color: #FFFFFF;
   width: 414px;
+  @media (max-width: 600px) {
+    font-size: 28px;
+    line-height: 0%;
+  }
 `

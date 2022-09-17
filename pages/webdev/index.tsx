@@ -18,9 +18,9 @@ const Webdev = () => {
         <BlockChainLeftSide>
 
           <WebTitle>Web & Mobile development</WebTitle>
-          <BlockchainSubtitle>
+          <WebSubtitle>
             Web applications for automating processes and solving <br /> business problems using modern technologies.
-          </BlockchainSubtitle>
+          </WebSubtitle>
 
           <StyledContainedButton>contact us</StyledContainedButton>
           <StyledTextButton>
@@ -54,6 +54,10 @@ const FirstBlock = styled.div`
   padding: 76px;
   position: relative;
   overflow: hidden;
+  @media (max-width: 600px) {
+    padding: 16px;
+  }
+  margin-bottom: 110px;
 `
 
 const BlockChainLeftSide = styled.div`
@@ -66,6 +70,10 @@ const WebImage = styled.div`
   height: 706px;
   margin-left: 55vw;
   margin-top: -5vw;
+  @media (max-width: 600px) {
+    width: 328px;
+    height: 350px;
+  }
 `
 
 const WebTitle = styled.p`
@@ -77,24 +85,28 @@ const WebTitle = styled.p`
   letter-spacing: -0.025em;
   color: #FFFFFF;
   margin-bottom: 31px;
+  @media (max-width: 600px) {
+    font-size: 28px;
+  }
 `
 
-const BlockchainSubtitle = styled.p`
+const WebSubtitle = styled.p`
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 300;
   font-size: 20px;
   line-height: 133.5%;
   color: #FFFFFF;
-  margin-bottom: 106px;
+  margin-bottom: 37px;
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `
 
 const StyledContainedButton = styled.button`
   border: none;
   width: 254px;
   height: 80px;
-  left: 76px;
-  top: 626px;
   background: #736AE4;
   border-radius: 4px;
   font-family: 'Readex Pro';
@@ -108,14 +120,17 @@ const StyledContainedButton = styled.button`
     cursor: pointer;
   }
   margin-right: 40px;
+  @media (max-width: 600px) {
+    width: 152px;
+    height: 50px;
+    font-size: 14px;
+  }
 `
 
 const StyledTextButton = styled.button`
   border: none;
   width: 254px;
   height: 80px;
-  left: 76px;
-  top: 626px;
   background: transparent;
   color: white;
   border-radius: 4px;
@@ -129,61 +144,12 @@ const StyledTextButton = styled.button`
   &:hover {
     cursor: pointer;
   }
-
+  @media (max-width: 600px) {
+    font-size: 14px;
+    width: 164px;
+  }
 `
 
 const OrangeText = styled.span`
   color: #F0B270;
-`
-
-const SecondBlock = styled.div`
-  display: grid;
-  grid-template-columns: 45% 55%;
-  padding: 76px;
-  position: relative;
-  height: 480px;
-`
-
-const SecondBlockAnimation = styled.div`
-  position: absolute;
-  left: 470px;
-  top: 170px;
-`
-
-const SecondBlockTitle = styled.div`
-  font-family: 'Readex Pro';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 127.5%;
-  color: #FFFFFF;
-`
-
-const StatsWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-`
-
-const StatsOneBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 120px;
-`
-
-const StatsNumber = styled.div`
-  font-family: 'Readex Pro';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 54px;
-  line-height: 100%;
-  color: #736AE4;
-`
-const StatsText = styled.div`
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 140%;
-  color: #667085;
 `

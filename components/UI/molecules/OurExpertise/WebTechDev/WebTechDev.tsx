@@ -5,21 +5,19 @@ import { Networks } from '../../Networks/Networks'
 import { WebTechnologies } from '../../Technologies/WebTechnologies'
 
 const WebApps = ['IOT', 'GameFi', 'iOS App', 'Fintech', 'Сomputer vision', 'Android App']
-const technologies = ['bitcoin.svg', 'etherium1.svg', 'cosmos.svg', 'fantom.svg', 'avalanche.svg', 'polkadot.svg', 'atom.svg', 'tron.svg', 'polygon.svg', 'arbitrum.svg', 'solana.svg', 'binanceSC.svg', 'cardano.svg']
-
 
 export const WebTechDev = () => {
   return (
     <StyledWrapper>
 
-        <div>
+        <div style={{marginBottom: "200px"}}>
           <StyledTitle>Mobile Application Development for iOS <br/> and Android with a user-friendly interface</StyledTitle>
           <StyledGridItem>
             {WebApps.map((app, idx) => (
-                <StyledLeftCard key={idx}>
-              <StyledLeftTopIcon>
-                <Image src='/icons/top-left-card.svg' width='31px' height='15px' />
-              </StyledLeftTopIcon>
+              <StyledLeftCard key={idx}>
+                <StyledLeftTopIcon>
+                  <Image src='/icons/top-left-card.svg' width='31px' height='15px' />
+                </StyledLeftTopIcon>
               {app}
                 </StyledLeftCard>
             ))}
@@ -39,16 +37,22 @@ const StyledWrapper = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 128px;
-  margin-top: 60px;
+  margin-top: 40px;
   @media (max-width: 600px) {
     grid-template-columns: 100%;
   }
-;
 `
 const StyledGridItem = styled.div`
   display: grid;
   grid-template-columns: 305px 305px; 
   gap: 24px 19px;
+
+  @media (max-width: 600px) {
+    width: 188px;
+    height: 88px;
+    gap: 42px 20px;
+    grid-template-columns: 188px 188px; 
+  }
 `
 
 const StyledTitle = styled.p`
@@ -58,6 +62,9 @@ font-family: 'Readex Pro';
   font-size: 30px;
   line-height: 137%;
   color: #FFFFFF;
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
 `
 
 const StyledLeftCard = styled.div`
@@ -78,6 +85,12 @@ const StyledLeftCard = styled.div`
   padding: 35px 45px;
   margin-bottom: 20px;
   position: relative;
+
+  @media (max-width: 600px) {
+    width: 188px;
+    height: 88px;
+    font-size: 16px;
+  }
 `
 
 const StyledLeftTopIcon = styled.span`

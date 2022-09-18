@@ -10,42 +10,40 @@ export const WebTechnologies: FC = () => {
     <div>
       <StyledTitle>Technology Stack</StyledTitle>
       <StyledSubTitle>programming languages & frameworks // source <br/> code repository & version control system</StyledSubTitle>
-      <StyledGridItemTechnologies>
-        {technologies.map((tech, idx) => (
-          <StyledTechnologiesCard key={idx}>
-            <Image src={`/icons/${tech}`} width='64px' height='64px' />
-            <StyledTechnologyName>{technologiesName[idx]}</StyledTechnologyName>
-          </StyledTechnologiesCard>
-        ))}
-      </StyledGridItemTechnologies>
+      <StyledWebBackground>
+        <StyledGridItemTechnologies>
+          {technologies.map((tech, idx) => (
+            <StyledTechnologiesCard key={idx}>
+              <Image src={`/icons/${tech}`} width='50vw' height='50vw' />
+              <StyledTechnologyName>{technologiesName[idx]}</StyledTechnologyName>
+            </StyledTechnologiesCard>
+          ))}
+        </StyledGridItemTechnologies>
+      </StyledWebBackground>
     </div>
   )
 }
-
-const StyledGridItemTechnologies = styled.div`
-  padding: 30px 50px 10px 50px;
-  width: 522px;
-  height: 441px;
-  display: grid;
-  grid-template-columns: 60px 60px 60px 60px;
-  gap: 56px;
-  row-gap: 20px;
-
+const StyledWebBackground = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 55vh;
   background: #171717;
   border-radius: 5px;
+  padding: 2vw;
+`
 
-  @media (max-width: 600px) {
-    padding: 30px 30px 10px 30px;
-    width: 100%;
-    height: 461.55px;
-    gap: 56px;
-    grid-template-columns: 50px 50px 50px 50px;
-  }
+const StyledGridItemTechnologies = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  gap: 6vh 0vh;
 `
 
 const StyledTechnologiesCard = styled.div`
-  width: 88px;
-  height: 89px;
+  width: 100%;
+  height: 100%;
   border-radius: 3px;
   display: flex;
   flex-direction: column;
@@ -61,15 +59,18 @@ const StyledTechnologyName = styled.div`
     line-height: 140%;
     color: #2A303D;
     mix-blend-mode: luminosity;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
 `
 
 const StyledTitle = styled.p`
   font-family: 'Readex Pro';
   font-style: normal;
-  font-weight: 400;
-  line-height: 40%;
+  font-weight: 500;
   font-size: 30px;
-  color: #FFFFFF;
+  line-height: 127.5%;
 
   @media (max-width: 600px) {
     font-size: 18px;
@@ -80,8 +81,8 @@ const StyledSubTitle = styled.p`
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
-  line-height: 100%;
-  margin-bottom: 40px;
+  line-height: 135.5%;
+  margin-bottom: 36px;
   @media (max-width: 600px) {
     font-size: 16px;
   }

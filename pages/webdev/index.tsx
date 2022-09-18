@@ -19,7 +19,7 @@ const Webdev = () => {
 
           <WebTitle>Web & Mobile development</WebTitle>
           <WebSubtitle>
-            Web applications for automating processes and solving <br /> business problems using modern technologies.
+            Web applications for automating processes and solving business problems using modern technologies.
           </WebSubtitle>
 
           <StyledContainedButton>contact us</StyledContainedButton>
@@ -29,7 +29,7 @@ const Webdev = () => {
           </StyledTextButton>
 
         </WebLeftSide>
-        <WebImage><Image src={`/images/WebFirstblog.svg`} width='665px' height='706px' /></WebImage>
+        <WebImage><Image src={`/images/WebFirstblog.svg`} width='600vw' height='600vw' /></WebImage>
       </FirstBlock>
       <OurExpertiseWeb />
       <WebProjects />
@@ -54,10 +54,11 @@ const FirstBlock = styled.div`
   padding: 76px;
   position: relative;
   overflow: hidden;
-  @media (max-width: 600px) {
+  margin-bottom: 20vh;
+  @media (max-width: 768px) {
     padding: 16px;
+    margin-bottom: 10vh;
   }
-  margin-bottom: 110px;
 `
 
 const WebLeftSide = styled.div`
@@ -80,21 +81,21 @@ const WebTitle = styled.p`
   font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 600;
-  font-size: 83px;
+  font-size: 5.5vw;
   line-height: 115%;
   letter-spacing: -0.025em;
   color: #FFFFFF;
   margin-bottom: 31px;
-  @media (max-width: 600px) {
-    font-size: 28px;
-  }
+  // @media (max-width: 600px) {
+  //   font-size: 28px;
+  // }
 `
 
 const WebSubtitle = styled.p`
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 1.5vw;
   line-height: 133.5%;
   color: #FFFFFF;
   margin-bottom: 37px;

@@ -2,7 +2,9 @@ import { Container } from '@mui/material'
 import Accomplishments from 'components/custom/home-page/Accomplishments'
 import ContactUs from 'components/custom/home-page/ContactUs'
 import TechStack from 'components/custom/home-page/TechStack'
+import WebProjects from 'components/custom/home-page/WebProjects'
 import FirstBlockLayout from 'components/layouts/FirstBlockLayout'
+import { News } from 'components/UI/molecules/News/News'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useRef } from 'react'
@@ -32,7 +34,9 @@ const Home: NextPage = () => {
         />
         <TechStack />
         <Services />
-        <AllProjects />
+        {/* <AllProjects /> */}
+        <WebProjects />
+        <News />
         <Accomplishments />
         <ContactUs />
       </div>

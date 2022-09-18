@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import { Box, Container, Stack, Typography, Link as MUILink, Grid, TextField } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,19 +9,19 @@ const serviceTypes = [
   {
     title: 'Blockchain Development',
     description: 'We create and deploy public, closed, hybrid blockchain solutions for various spheres, as well as DEFI and blockchain projects for the crypto industry.',
-    icon: '/icons/boxes.svg',
+    icon: '/icons/bd.svg',
     link: '/blockchain'
   },
   {
     title: 'Blockchain Consulting',
     description: 'We provide consulting services in the following areas: tokenomics, smart contract audit, business analytics, White&Light paper and technical documentation',
-    icon: '/icons/phone.svg',
+    icon: '/icons/bc.svg',
     link: '/consulting'
   },
   {
     title: 'Web&mobile development',
     description: 'Development of web and mobile applications for iOS and Android with a user-friendly interface for automating processes and solving business problems using modern technologies',
-    icon: '/icons/laptop.svg',
+    icon: '/icons/wd.svg',
     link: '/webdev'
   }
 ]
@@ -29,7 +30,6 @@ const Services = () => {
   return (
     <Container sx={{
       mb: '6rem',
-      padding: '0 3rem',
       minWidth: '375px',
     }}>
       <Box sx={{
@@ -72,56 +72,17 @@ const Services = () => {
       <Grid container columns={3} spacing={1} gridAutoRows='1fr' rowGap={3}>
         {serviceTypes.map((service, idx) => (
           <Grid item xs={3} md={1} key={idx}>
-            <Box key={idx} sx={{
-              bgcolor: 'rgba(115, 106, 228, 0.15)',
-              borderRadius: '50%',
-              width: '60px',
-              height: '60px',
-              m: 'auto',
-              mb: '1rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-              <Image src={service.icon} width='40px' height='40px' />
-            </Box>
-            <Typography sx={{
-              fontSize: {
-                xs: '28px',
-                md: '31.25px'
-              },
-              fontWeight: 700,
-              lineHeight: '110%',
-              color: theme.palette.secondary.main,
-              m: 'auto',
-              mb: '1rem',
-              textTransform: 'uppercase',
-              fontFamily: 'Readex Pro',
-              textAlign: 'center',
-            }}>{service.title}</Typography>
-            <Typography sx={{
-              fontSize: '16px',
-              fontWeight: 400,
-              lineHeight: '24px',
-              color: theme.palette.text.secondary,
-              width: '85%',
-              textAlign: 'center',
-              m: 'auto',
-              height: '40%'
-            }}>{service.description}</Typography>
-            <Link href={service.link}>
-              <Typography m='1rem' sx={{
-                color: '#736AE4',
-                fontSize: '18px',
-                fontWeight: 600,
-                ':hover': { cursor: 'pointer', textDecoration: 'underline' },
-                mt: 'auto',
-                textAlign: 'center'
-              }}>
-                {idx === 0 && 'More Details'}
-                {'>'}
-              </Typography>
-            </Link>
+            <StyledCard>
+              <StyledIcon src={service.icon}/>
+              <StyledTextArea >
+                <p>{service.title}</p>
+                <span>{service.description}</span>
+              </StyledTextArea>
+              <StyledButton>
+                <span>More Details</span>
+                <Image src='/icons/arrow-right.svg' width='25px' height='8px' />
+              </StyledButton>
+            </StyledCard>
           </Grid>
         ))}
       </Grid>
@@ -130,3 +91,81 @@ const Services = () => {
 }
 
 export default Services
+
+const StyledCard = styled.div`
+  width: 100%;
+  max-width: 413px;
+  height: 435px;
+  background: #171717;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 48px;
+  justify-content: space-between;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    max-width: 396px;
+    height: 437px;
+  }
+`
+
+const StyledTextArea = styled.div`
+  & p {
+    font-family: 'Readex Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 118%;
+    text-transform: uppercase;
+    color: #F0B270;
+  }
+
+  & span {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #A8B1D1;
+  }
+`
+
+const StyledIcon = styled.img`
+  width: 60px;
+  height: 60px;
+  padding: 15px;
+  background: rgba(115, 106, 228, 0.15);
+  border-radius: 50%;
+`
+
+const StyledButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 48px;
+  background: rgba(115, 106, 228, 0.15);
+  border-radius: 4px;
+  padding: 12px 24px;
+  border: none;
+  :hover {
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    width: 191.77px;
+    height: 48px;
+  }
+
+  & span {
+    font-family: 'Readex Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #736AE4;
+    :hover {
+      text-decoration: underline;
+    }
+  }
+`

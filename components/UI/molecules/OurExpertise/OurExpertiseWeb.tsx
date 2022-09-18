@@ -27,8 +27,10 @@ export const OurExpertiseWeb: FC<IProps> = () => {
 const StyledWrapper = styled.div`
   padding-left: 76px;
   padding-right: 76px;
-  @media (max-width: 600px) {
+  margin-bottom: 20vh;
+  @media (max-width: 768px) {
     padding: 16px;
+    margin-bottom: 0;
   }
 `
 

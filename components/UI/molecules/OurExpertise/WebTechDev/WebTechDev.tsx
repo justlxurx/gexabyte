@@ -9,8 +9,8 @@ export const WebTechDev = () => {
   return (
     <StyledWrapper>
 
-        <div style={{marginBottom: "200px"}}>
-          <StyledTitle>Mobile Application Development for iOS <br/> and Android with a user-friendly interface</StyledTitle>
+        <StyledTech>
+          <StyledTitle>Mobile Application Development for iOS and Android with a user-friendly interface</StyledTitle>
           <StyledGridItem>
             {WebApps.map((app, idx) => (
               <StyledLeftCard key={idx}>
@@ -21,7 +21,7 @@ export const WebTechDev = () => {
                 </StyledLeftCard>
             ))}
           </StyledGridItem>
-        </div>
+        </StyledTech>
 
       <div>
         <WebTechnologies />
@@ -33,24 +33,28 @@ export const WebTechDev = () => {
 }
 
 const StyledWrapper = styled.div`
+  width: 100%;
   display: grid;
   grid-template-columns: 50% 50%;
-  gap: 128px;
   margin-top: 40px;
-  @media (max-width: 600px) {
+  @media (max-width: 1500px) {
     grid-template-columns: 100%;
+  }
+`
+const StyledTech = styled.div`
+  padding-right: 8vw;
+  @media (max-width: 1500px) {
+    padding-right:0;
+    margin-bottom: 5vh;
   }
 `
 const StyledGridItem = styled.div`
   display: grid;
-  grid-template-columns: 305px 305px; 
-  gap: 24px 19px;
+  grid-template-columns: 50% 50%; 
+  gap: 2.8vh 1vw;
 
   @media (max-width: 600px) {
-    width: 188px;
-    height: 88px;
-    gap: 42px 20px;
-    grid-template-columns: 188px 188px; 
+
   }
 `
 
@@ -59,7 +63,7 @@ font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
-  line-height: 137%;
+  line-height: 125%;
   color: #FFFFFF;
   @media (max-width: 600px) {
     font-size: 18px;
@@ -67,8 +71,8 @@ font-family: 'Readex Pro';
 `
 
 const StyledLeftCard = styled.div`
-  width: 305px;
-  height: 119px;
+  width: 100%;
+  height: 100%;
   background: #171717;
   border-radius: 5px;
   display: flex;
@@ -86,8 +90,6 @@ const StyledLeftCard = styled.div`
   position: relative;
 
   @media (max-width: 600px) {
-    width: 188px;
-    height: 88px;
     font-size: 16px;
   }
 `

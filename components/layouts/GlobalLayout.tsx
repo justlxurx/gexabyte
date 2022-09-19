@@ -1,4 +1,5 @@
 import { Container, ThemeProvider, useMediaQuery, useTheme } from "@mui/material";
+import { Header } from "components/UI/header/Header";
 import Head from "next/head";
 import React from "react"
 import AppBarDesktop from "../custom/app-bar/AppBarDesktop"
@@ -23,7 +24,8 @@ const GlobalLayout: React.FC<MainLayoutProps> = ({ children }) => {
         <link rel="icon" href="/logo.svg" />
         <meta name="keywords" content={SEOkeywords?.join(",")} />
       </Head>
-      {matches ? <AppBarDesktop /> : <AppBarMobile />}
+      {/* {matches ? <AppBarDesktop /> : <AppBarMobile />} */}
+      <Header />
       <Container disableGutters maxWidth='xl' sx={{minHeight: '80vh'}}>
         {children}
       </Container>

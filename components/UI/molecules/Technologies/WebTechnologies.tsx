@@ -14,7 +14,9 @@ export const WebTechnologies: FC = () => {
         <StyledGridItemTechnologies>
           {technologies.map((tech, idx) => (
             <StyledTechnologiesCard key={idx}>
-              <Image src={`/icons/${tech}`} width='50vw' height='50vw' />
+              <TechIcon>
+                <Image src={`/icons/${tech}`} width={"100%"} height={"100%"} />
+              </TechIcon>
               <StyledTechnologyName>{technologiesName[idx]}</StyledTechnologyName>
             </StyledTechnologiesCard>
           ))}
@@ -28,7 +30,7 @@ const StyledWebBackground = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 55vh;
+  flex: 1;
   background: #171717;
   border-radius: 5px;
   padding: 2vw;
@@ -51,11 +53,21 @@ const StyledTechnologiesCard = styled.div`
   align-items: center;
 `
 
+const TechIcon = styled.div`
+  width: 3.5vw;
+  height: 3.5vw;
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
+`
+
 const StyledTechnologyName = styled.div`
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 1.2vw;
     line-height: 140%;
     color: #2A303D;
     mix-blend-mode: luminosity;
@@ -69,10 +81,10 @@ const StyledTitle = styled.p`
   font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 500;
-  font-size: 30px;
-  line-height: 127.5%;
+  font-size: 1.7vw;
+  line-height: 100%;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     font-size: 18px;
   }
 `
@@ -80,10 +92,10 @@ const StyledSubTitle = styled.p`
   font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 300;
-  font-size: 14px;
-  line-height: 135.5%;
-  margin-bottom: 36px;
-  @media (max-width: 600px) {
+  font-size: 0.8vw;
+  line-height: 100%;
+  margin-bottom: 20px;
+  @media (max-width: 768px) {
     font-size: 16px;
   }
 `

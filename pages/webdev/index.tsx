@@ -71,7 +71,7 @@ const WebImage = styled.div`
   height: 706px;
   margin-left: 55vw;
   margin-top: -5vw;
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     width: 328px;
     height: 350px;
   }
@@ -86,9 +86,6 @@ const WebTitle = styled.p`
   letter-spacing: -0.025em;
   color: #FFFFFF;
   margin-bottom: 31px;
-  // @media (max-width: 600px) {
-  //   font-size: 28px;
-  // }
 `
 
 const WebSubtitle = styled.p`
@@ -99,7 +96,7 @@ const WebSubtitle = styled.p`
   line-height: 133.5%;
   color: #FFFFFF;
   margin-bottom: 37px;
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     font-size: 14px;
   }
 `
@@ -121,7 +118,7 @@ const StyledContainedButton = styled.button`
     cursor: pointer;
   }
   margin-right: 40px;
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     width: 152px;
     height: 50px;
     font-size: 14px;
@@ -145,7 +142,7 @@ const StyledTextButton = styled.button`
   &:hover {
     cursor: pointer;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     font-size: 14px;
     width: 164px;
   }

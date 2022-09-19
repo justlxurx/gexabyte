@@ -61,8 +61,8 @@ const StyledGridItem = styled.div`
 `
 
 const StyledTitle = styled.p`
-width: 100%;
-font-family: 'Readex Pro';
+  width: 100%;
+  font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 400;
   font-size: 1.7vw;

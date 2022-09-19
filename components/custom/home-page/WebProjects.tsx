@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 const projects = {
-  desktop: ['/images/cofi.svg', '/images/sanau.svg', '/images/smart home.svg', '/images/factoring.svg', '/images/online marketing.svg', '/images/desktop.svg', '/images/gamefi.svg'],
+  desktop: ['/images/cofi.svg', '/images/sanau.svg', '/images/smart home.svg', '/images/factoring.svg', '/images/online marketing.svg', '/images/desktop.svg', '/images/emm.svg'],
   mobile: ['/images/cofiMobile.svg', '/images/sanauMobile.svg', '/images/smartMobile.svg']
 }
 
@@ -82,7 +82,9 @@ const WebProjects = () => {
             p: '1.5rem',
             textAlign: 'center'
           }}>
-            <Typography onClick={changeIsExtended} sx={{
+            <Typography 
+            // onClick={changeIsExtended} 
+            sx={{
               fontSize: {
                 xs: '18px',
                 md: '48px'
@@ -93,7 +95,7 @@ const WebProjects = () => {
                 textDecoration: 'underline'
               }
             }}>
-              {isExtended ? 'LESS' : 'MORE'}
+              {'MORE'}
             </Typography>
           </Box>
         </Grid>

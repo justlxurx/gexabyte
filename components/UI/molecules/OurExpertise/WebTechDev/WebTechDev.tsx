@@ -106,5 +106,7 @@ const StyledLeftTopIcon = styled.span`
   @media (max-width: 768px) {
     width: 23px;
     height: 11.13px;
+    top: 18px;
+    left: 11px;
   }
 `

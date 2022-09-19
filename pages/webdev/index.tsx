@@ -22,18 +22,19 @@ const Webdev = () => {
             Web applications for automating processes and solving business problems using modern technologies.
           </WebSubtitle>
 
-          <StyledContainedButton>contact us</StyledContainedButton>
+          <a href='#contact'><StyledContainedButton>contact us</StyledContainedButton></a>
           <StyledTextButton>
             <OrangeText>&gt;&gt;</OrangeText>
             &nbsp;see all projects
           </StyledTextButton>
 
         </WebLeftSide>
-        <WebImage><Image src={`/images/WebFirstblog.svg`} width='600vw' height='600vw' /></WebImage>
+        <WebImage><Image src={`/images/WebFirstblog.svg`} layout="fill" /></WebImage>
+        <WebImageMobile><Image src={`/images/WebImageMobile.svg`} layout="fill" /></WebImageMobile>
       </FirstBlock>
       <OurExpertiseWeb />
       <WebProjects />
-      <ContactUs />
+      <div id="contact"><ContactUs/></div>
 
     </Wrapper>
 
@@ -68,12 +69,28 @@ const WebLeftSide = styled.div`
 const WebImage = styled.div`
   position: absolute;
   width: 665px;
-  height: 706px;
+  height: 630px;
+  left: 0px;
   margin-left: 55vw;
   margin-top: -5vw;
   @media (max-width: 768px) {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+`
+
+const WebImageMobile = styled.div`
+  display: none;
+  width: 0;
+  height: 0;
+  @media (max-width: 768px) {
+    position: absolute;
+    right: -60px;
+    top: -50px;
+    display: block;
     width: 328px;
-    height: 350px;
+    height: 400px;
   }
 `
 
@@ -126,6 +143,7 @@ const StyledContainedButton = styled.button`
 `
 
 const StyledTextButton = styled.button`
+  width: 100%;
   border: none;
   width: 254px;
   height: 80px;

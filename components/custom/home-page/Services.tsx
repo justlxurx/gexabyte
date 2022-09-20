@@ -73,15 +73,17 @@ const Services = () => {
         {serviceTypes.map((service, idx) => (
           <Grid item xs={3} md={1} key={idx}>
             <StyledCard>
-              <StyledIcon src={service.icon}/>
+              <StyledIcon src={service.icon} />
               <StyledTextArea >
                 <p>{service.title}</p>
                 <span>{service.description}</span>
               </StyledTextArea>
-              <StyledButton>
-                <span>More Details</span>
-                <Image src='/icons/arrow-right.svg' width='25px' height='8px' />
-              </StyledButton>
+              <Link href={service.link}>
+                <StyledButton>
+                  <span>More Details</span>
+                  <Image src='/icons/arrow-right.svg' width='25px' height='8px' />
+                </StyledButton>
+              </Link>
             </StyledCard>
           </Grid>
         ))}

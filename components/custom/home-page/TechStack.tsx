@@ -5,12 +5,7 @@ import Image from "next/image";
 import { Grid, Typography, useMediaQuery } from "@mui/material";
 import StackSlider from "./StackSlider";
 
-const icons = [
-  '/icons/kotlin.svg',
-  '/icons/etherium.svg',
-  '/icons/js.svg',
-  '/icons/ruby.svg',
-]
+
 
 const TechStack = () => {
   const isMobileScreen = useMediaQuery('(max-width:768px)');

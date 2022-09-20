@@ -9,6 +9,7 @@ import { IContactUsForm } from 'types/IContactUsForm';
 import { contactUsSchema } from 'utils/validations/contactUsSchema';
 import SocialMedia from '../SocialMedia';
 import useScroll from 'hooks/useScroll';
+import styled from '@emotion/styled';
 // import styles from './ContactUs.module.scss';
 
 interface ContactUsProps {
@@ -155,9 +156,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
               }}>
                 You can reach us anytime via <span style={{ color: '#736AE4' }}>techculturellp@gmail.com</span>
               </Typography>
-              <InputLabel shrink htmlFor="bootstrap-input4" sx={{ color: '#FFFFFF' }}>
-                Name
-              </InputLabel>
+              <StyledInputLabel>Name</StyledInputLabel>
               <TextField
                 id="bootstrap-input1"
                 placeholder='Your name'
@@ -179,9 +178,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                   {errors.name}
                 </Typography>
               }
-              <InputLabel shrink htmlFor="bootstrap-input4" sx={{ color: '#FFFFFF' }}>
-                Email
-              </InputLabel>
+              <StyledInputLabel>Email</StyledInputLabel>
               <TextField
                 id="bootstrap-input2"
                 value={form.email}
@@ -204,9 +201,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                   {errors.email}
                 </Typography>
               }
-              <InputLabel shrink htmlFor="bootstrap-input4" sx={{ color: '#FFFFFF' }}>
-                Company
-              </InputLabel>
+              <StyledInputLabel>Company</StyledInputLabel>
               <TextField
                 value={form.company}
                 name='company'
@@ -224,9 +219,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                   {errors.company}
                 </Typography>
               }
-              <InputLabel shrink htmlFor="bootstrap-input4" sx={{ color: '#FFFFFF' }}>
-                How can we help?
-              </InputLabel>
+              <StyledInputLabel>How can we help?</StyledInputLabel>
               <TextField
                 id="bootstrap-input4"
                 value={form.info}
@@ -256,32 +249,34 @@ const ContactUs: React.FC<ContactUsProps> = () => {
               Add attachment
             </InputLabel>
             <input type='file' id="bootstrap-input6" style={{ display: 'none' }} /> */}
-              <InputLabel shrink htmlFor="bootstrap-input4" sx={{ color: '#FFFFFF' }}>
-                Services
-              </InputLabel>
+              <StyledInputLabel>Services</StyledInputLabel>
               <Grid container columns={3} spacing={1}>
                 <Grid item xs={1}>
                   <Button variant='outlined' onClick={() => setServices(prev => ({ ...prev, bd: !prev.bd }))} sx={{
                     borderColor: services.bd ? '#F0B270' : '#2D2D2D',
                     color: services.bd ? '#F0B270' : '#2D2D2D',
-                    fontSize: { xs: '0.6rem', md: '0.8rem' },
+                    fontSize: { xs: '14px', md: '18px' },
                     fontWeight: { xs: 600, md: 600 },
                     ':hover': {
                       borderColor: services.bd ? '#F0B270' : '#2D2D2D',
-                    }
+                    },
+                    fontFamily: 'Helvetica Neue',
+                    width: {xs: '126px', md: '100%'},
                   }}>
                     Blockchain Development
                   </Button>
                 </Grid>
                 <Grid item xs={1}>
                   <Button variant='outlined' onClick={() => setServices(prev => ({ ...prev, bc: !prev.bc }))} sx={{
+                    width: {xs: '126px', md: '100%'},
                     borderColor: services.bc ? '#F0B270' : '#2D2D2D',
                     color: services.bc ? '#F0B270' : '#2D2D2D',
-                    fontSize: { xs: '0.6rem', md: '0.8rem' },
+                    fontSize: { xs: '14px', md: '18px' },
                     fontWeight: { xs: 600, md: 600 },
                     ':hover': {
                       borderColor: services.bc ? '#F0B270' : '#2D2D2D',
-                    }
+                    },
+                    fontFamily: 'Helvetica Neue'
                   }}>
                     Blockchain Consulting
                   </Button>
@@ -290,11 +285,13 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                   <Button variant='outlined' onClick={() => setServices(prev => ({ ...prev, wd: !prev.wd }))} sx={{
                     borderColor: services.wd ? '#F0B270' : '#2D2D2D',
                     color: services.wd ? '#F0B270' : '#2D2D2D',
-                    fontSize: { xs: '0.6rem', md: '0.8rem' },
+                    fontSize: { xs: '14px', md: '18px' },
                     fontWeight: { xs: 600, md: 600 },
                     ':hover': {
                       borderColor: services.wd ? '#F0B270' : '#2D2D2D',
-                    }
+                    },
+                    width: {xs: '126px', md: '100%'},
+                    fontFamily: 'Helvetica Neue'
                   }}>
                     Web&mobile development
                   </Button>
@@ -333,3 +330,14 @@ const ContactUs: React.FC<ContactUsProps> = () => {
 }
 
 export default ContactUs
+
+const StyledInputLabel = styled.p`
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+`

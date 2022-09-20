@@ -19,8 +19,8 @@ const LocaleButton: React.FC<LocaleButtonProps> = ({ text, locale }) => {
         fontSize: '16px',
         fontWeight: currentLocale === locale ? 700 : 500,
         cursor: 'pointer',
-        color: currentLocale === locale ? '#FFFFFF' : '#989898',
-        borderBottom: currentLocale === locale ? '3px solid #736AE4' : '3px solid transparent'
+        color: currentLocale === locale ? '#F0B270' : '#989898',
+        borderBottom: currentLocale === locale ? '3px solid #F0B270' : '3px solid transparent'
       }}>{text}</Typography>
     </Link>
   )

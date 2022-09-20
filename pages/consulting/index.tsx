@@ -1,21 +1,14 @@
 import styled from '@emotion/styled'
-import AllProjects from 'components/custom/home-page/AllProjects'
 import ContactUs from 'components/custom/home-page/ContactUs'
-import TechStack from 'components/custom/home-page/TechStack'
-import RoundedAnimation from 'components/custom/RoundedAnimation'
-import FirstBlockLayout from 'components/layouts/FirstBlockLayout'
-import { RButton } from 'components/UI/atoms/RButton'
-import { BlockchainAnimation } from 'components/UI/molecules/BlockchainAnimation/BlockchainAnimation'
-import { DeFiService } from 'components/UI/molecules/DeFiService/DeFiService'
-import { OurExpertise } from 'components/UI/molecules/OurExpertise/OurExpertise'
-import React from 'react'
+import ConsultingProjects from 'components/custom/projects/ConsultingProjects'
+import { StatsConsulting } from 'components/custom/StatsConsulting'
+import { OurExpertiseConsulting } from 'components/UI/molecules/OurExpertise/OurExpertiseConsulting'
 
 const Consulting = () => {
   return (
     <Wrapper>
       <FirstBlock>
         <BlockChainLeftSide>
-
           <BlockchainTitle>Blockchain Consulting</BlockchainTitle>
           <BlockchainSubtitle>
             Web applications for automating processes and solving business problems using modern technologies.
@@ -30,43 +23,17 @@ const Consulting = () => {
         </BlockChainLeftSide>
         
         <GraphicWrapper>
-          <img src='/images/graphic 1.svg'/>
+          <img src='/images/graphic 1.svg' className='graph'/>
         </GraphicWrapper>
         
       </FirstBlock>
 
-      {/* <SecondBlock>
-        <SecondBlockTitle>
-          We create digital services for large businesses.
-        </SecondBlockTitle>
+      <StatsConsulting />
 
-        <StatsWrapper>
-          <StatsOneBlock>
-            <StatsNumber>10+</StatsNumber>
-            <StatsText>The best blockchain experts</StatsText>
-          </StatsOneBlock>
-
-          <StatsOneBlock>
-            <StatsNumber>5+</StatsNumber>
-            <StatsText>Blockchain consulting experience</StatsText>
-          </StatsOneBlock>
-
-          <StatsOneBlock>
-            <StatsNumber>20+</StatsNumber>
-            <StatsText>Projects successfully operating and receiving our services</StatsText>
-          </StatsOneBlock>
-        </StatsWrapper>
-
-        <SecondBlockAnimation>
-          <RoundedAnimation />
-        </SecondBlockAnimation>
-      </SecondBlock>
-
-      <OurExpertise />
-      <DeFiService />
-      <TechStack />
-      <AllProjects />
-      <ContactUs /> */}
+      <OurExpertiseConsulting />
+      {/* <DeFiService /> */}
+      <ConsultingProjects />
+      <ContactUs />
 
     </Wrapper>
 
@@ -87,6 +54,9 @@ const FirstBlock = styled.div`
   padding: 76px;
   position: relative;
   overflow: hidden;
+  @media (max-width: 600px) {
+    padding: 16px;
+  }
 `
 
 const BlockChainLeftSide = styled.div`
@@ -99,7 +69,14 @@ const GraphicWrapper = styled.div`
   right: 80px;
 
   @media (max-width: 600px) {
-    right: 50%;
+    right: -30%;
+  }
+
+  .graph {
+    @media (max-width: 600px) {
+      width: 287px;
+      height: 279px;
+    }
   }
 
 `
@@ -113,6 +90,10 @@ const BlockchainTitle = styled.p`
   letter-spacing: -0.025em;
   color: #FFFFFF;
   margin-bottom: 31px;
+
+  @media (max-width: 600px) {
+    font-size: 28px;
+  }
 `
 
 const BlockchainSubtitle = styled.p`
@@ -123,6 +104,10 @@ const BlockchainSubtitle = styled.p`
   line-height: 133.5%;
   color: #FFFFFF;
   margin-bottom: 106px;
+  @media (max-width: 600px) {
+    font-size: 12px;
+    margin-bottom: 31px;
+  }
 `
 
 const StyledContainedButton = styled.button`
@@ -144,14 +129,17 @@ const StyledContainedButton = styled.button`
     cursor: pointer;
   }
   margin-right: 40px;
+  @media (max-width: 600px) {
+    width: 152px;
+    height: 50px;
+    font-size: 14px;
+  }
 `
 
 const StyledTextButton = styled.button`
   border: none;
   width: 254px;
   height: 80px;
-  left: 76px;
-  top: 626px;
   background: transparent;
   border-radius: 4px;
   font-family: 'Readex Pro';
@@ -164,63 +152,13 @@ const StyledTextButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+  @media (max-width: 600px) {
+    font-size: 14px;
+    width: auto;
+  }
 
 `
 
 const OrangeText = styled.span`
   color: #F0B270;
-`
-
-const SecondBlock = styled.div`
-  display: grid;
-  grid-template-columns: 45% 55%;
-  padding: 76px;
-  position: relative;
-  height: 480px;
-`
-
-const SecondBlockAnimation = styled.div`
-  position: absolute;
-  left: 470px;
-  top: 170px;
-`
-
-const SecondBlockTitle = styled.div`
-  font-family: 'Readex Pro';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 127.5%;
-  color: #FFFFFF;
-  width: 400px;
-`
-
-const StatsWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-`
-
-const StatsOneBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 120px;
-`
-
-const StatsNumber = styled.div`
-  font-family: 'Readex Pro';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 54px;
-  line-height: 100%;
-  color: #736AE4;
-`
-const StatsText = styled.div`
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 140%;
-  color: #667085;
-  width: 200px;
 `

@@ -87,6 +87,14 @@ const Footer = () => {
           </Grid>
         </Grid>
       </Container>
+      <Container sx={{ px: {xs: '16px', md: '120px'}, py: '30px', display: {xs: 'block', md: 'flex'}, alignItems: 'center', gap: '80px' }}>
+        <StyledCopyright>© 2022 Techculture</StyledCopyright>
+        <Terms>
+          <span className='text'>Terms {`&`} Conditions</span>
+          <span className='dot'>&#183;</span>
+          <span className='text'>Privacy Policy</span>
+        </Terms>
+      </Container>
     </StyledFooter>
   )
 }
@@ -108,4 +116,34 @@ const StyledTypography: React.FC<StyledTypographyProps> = ({ title, link }) => (
 
 const StyledFooter = styled.footer`
   margin-top: auto;
+`
+
+const StyledCopyright = styled.span`
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #556174;
+  cursor: pointer;
+`
+
+const Terms = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  
+  .text {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #88909E;
+  }
+
+  .dot {
+    color: #88909E;
+    font-size: 36px;
+  }
 `

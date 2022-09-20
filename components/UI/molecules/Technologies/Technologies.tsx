@@ -23,6 +23,12 @@ const StyledGridItemTechnologies = styled.div`
   display: grid;
   grid-template-columns: 89px 89px 89px 89px;
   gap: 56px;
+
+  @media (max-width: 600px) {
+    display: none;
+    max-width: 425px;
+    overflow: hidden;
+  }
 `
 
 const StyledTechnologiesCard = styled.div`

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
-import WebProjects from 'components/custom/home-page/WebProjects'
+import WebProjects from 'components/custom/projects/WebProjects'
 import ContactUs from 'components/custom/home-page/ContactUs'
 import TechStack from 'components/custom/home-page/TechStack'
 import RoundedAnimation from 'components/custom/RoundedAnimation'

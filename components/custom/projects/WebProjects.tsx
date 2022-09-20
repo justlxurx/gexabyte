@@ -23,7 +23,7 @@ const WebProjects = () => {
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
-      padding: {xs: '0.75rem', md: 0}
+      padding: { xs: '0.75rem', md: 0 }
     }}>
       <Typography variant='h1' sx={{
         fontSize: {
@@ -35,7 +35,7 @@ const WebProjects = () => {
           md: 'left'
         }
       }}>
-        Web & Mobile <br/>Development Projects
+        Web & Mobile <br />Development Projects
       </Typography>
       <Grid container gridTemplateColumns={'repeat(auto-fill, minmax(700px, 1fr))'} spacing={1}>
         {isMobileScreen ?
@@ -82,21 +82,22 @@ const WebProjects = () => {
             p: '1.5rem',
             textAlign: 'center'
           }}>
-            <Typography 
-            // onClick={changeIsExtended} 
-            sx={{
-              fontSize: {
-                xs: '18px',
-                md: '48px'
-              },
-              fontWeight: 700,
-              ':hover': {
-                cursor: 'pointer',
-                textDecoration: 'underline'
-              }
-            }}>
-              {'MORE'}
-            </Typography>
+            <Link href='/projects'>
+              <Typography
+                sx={{
+                  fontSize: {
+                    xs: '18px',
+                    md: '48px'
+                  },
+                  fontWeight: 700,
+                  ':hover': {
+                    cursor: 'pointer',
+                    textDecoration: 'underline'
+                  }
+                }}>
+                {'MORE'}
+              </Typography>
+            </Link>
           </Box>
         </Grid>
       </Grid>

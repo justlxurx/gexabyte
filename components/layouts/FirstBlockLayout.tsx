@@ -15,7 +15,7 @@ const FirstBlockLayout: React.FC<FirstBlockLayoutProps> = ({ title, bgAnimationS
   const { locale } = useRouter();
 
   return (
-    <div style={{ position: 'relative', overflow: 'hidden', marginBottom: '2rem' }}>
+    <div style={{ position: 'relative', overflow: 'hidden' }}>
       {bgAnimationSrc &&
         <Box sx={{
           position: 'absolute',
@@ -29,9 +29,9 @@ const FirstBlockLayout: React.FC<FirstBlockLayoutProps> = ({ title, bgAnimationS
           </video>
         </Box>
       }
-      <Box sx={{ position: 'absolute', top: { xs: '400px', md: '62.5%' }, left: { xs: '10%', md: '40%' } }}>
+      {/* <Box sx={{ position: 'absolute', top: { xs: '400px', md: '62.5%' }, left: { xs: '10%', md: '40%' } }}>
         <RoundedAnimation />
-      </Box>
+      </Box> */}
       <Container disableGutters sx={{
         padding: {
           xs: '1rem',

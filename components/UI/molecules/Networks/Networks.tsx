@@ -24,6 +24,10 @@ const StyledGridItemNetworks = styled.div`
   grid-template-columns: 154px 154px 154px;
   gap: 30px;
   margin-bottom: 72px;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `
 
 const StyledNetworksCard = styled.div`
@@ -38,7 +42,7 @@ const StyledNetworksCard = styled.div`
 `
 
 const StyledTitle = styled.p`
-font-family: 'Readex Pro';
+  font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;

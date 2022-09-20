@@ -3,6 +3,7 @@ import React from 'react';
 import styles from '../../styles/components/Dropdown.module.scss';
 import DropdownIcon from '../../public/icons/sr-chevron-right.svg';
 import { Typography } from '@mui/material';
+import styled from '@emotion/styled';
 
 interface DropdownProps {
   data: {
@@ -20,9 +21,9 @@ const Dropdown: React.FC<DropdownProps> = ({ data }) => {
   return (
     <div className={styles.dropdown}>
       <Link href={data.link}>
-        <Typography sx={{fontSize: '16px', fontWeight: 500}}>
+        <StyledLink>
           {data.title}
-        </Typography>
+        </StyledLink>
       </Link>
       {data.menu && <img src={DropdownIcon.src} />}
       <div className={styles.dropdown_content}>
@@ -37,3 +38,12 @@ const Dropdown: React.FC<DropdownProps> = ({ data }) => {
 }
 
 export default Dropdown
+
+const StyledLink = styled.span`
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #FFFFFF;
+`

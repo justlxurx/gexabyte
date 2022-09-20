@@ -1,19 +1,17 @@
-import { Accordion, AccordionDetails, AccordionSummary, AppBar, Box, Button, Drawer, IconButton, Stack, Toolbar, Typography, useTheme } from '@mui/material';
-import React from 'react';
-import burgerIcon from '@public/icons/burger.svg';
+import { AppBar, Box, Drawer, IconButton, Stack, Toolbar, Typography } from '@mui/material';
 import Image from 'next/image';
-import CustomButton from '../CustomButton';
-import { theme } from '../../../utils/theme';
-import { dropdownContent } from './AppBarDesktop';
-import DropdownIcon from '../../../public/icons/sr-chevron-right.svg';
 import Link from 'next/link';
-import SocialMedia from '../SocialMedia';
+import React from 'react';
+import { theme } from '../../../utils/theme';
+import CustomButton from '../CustomButton';
 import LocaleButton from '../home-page/LocaleButton';
+import SocialMedia from '../SocialMedia';
+import { dropdownContent } from './AppBarDesktop';
 
 const AppBarMobile: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  let reftp:HTMLElement | null = null;
-  if(typeof window !== 'undefined') {
+  let reftp: HTMLElement | null = null;
+  if (typeof window !== 'undefined') {
     reftp = document.getElementById("contact-us");
   }
 
@@ -54,7 +52,7 @@ const AppBarMobile: React.FC = () => {
             <Image src={'/logo-raw.svg'} width='32px' height='32px' style={{ cursor: 'pointer' }} />
           </Link>
         </Box>
-        <CustomButton title='Get in Touch' bgcolor={theme.palette.secondary.main} handleClick={handleScroll} />
+        <CustomButton title='Get in Touch' bgcolor={'transparent'} handleClick={handleScroll} />
       </Toolbar>
       <Drawer
         anchor={'left'}
@@ -68,6 +66,11 @@ const AppBarMobile: React.FC = () => {
       >
         <Toolbar />
         {dropdownContent.map((item, idx) => (
+          <Link href={item.link}>
+            <Typography key={idx} sx={{ fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
+          </Link>
+        ))}
+        {/* {dropdownContent.map((item, idx) => (
           item.items?.length ?
             <Accordion sx={{ bgcolor: '#000000' }} key={idx}>
               <AccordionSummary
@@ -85,7 +88,7 @@ const AppBarMobile: React.FC = () => {
             </Accordion>
             :
             <Typography key={idx} sx={{ m: '1rem', fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
-        ))}
+        ))} */}
         <Stack direction='row' sx={{ mt: 'auto' }}>
           <SocialMedia />
           <Stack direction='row' spacing={2} sx={{ ml: 'auto' }}>

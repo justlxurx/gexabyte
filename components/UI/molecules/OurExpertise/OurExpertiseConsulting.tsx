@@ -1,16 +1,16 @@
 import styled from '@emotion/styled'
 import classNames from 'classnames'
 import { FC, useState } from 'react'
-import { BlockchainDev } from './BlockchainDev/BlockchainDev'
-import { SmartContractDev } from './SmartContractDev/SmartContractDev'
-import { TechnicalSupport } from './TechnicalSupport/TechnicalSupport'
+import { TechnicalTaskDev } from './TechnicalTaskDev/TechnicalTaskDev'
+import { TokenomicsDev } from './TokenomicsDev/TokenomicsDev'
+import { WhitepaperDev } from './WhitepaperDev/WhitepaperDev'
 
-const tabs = ['Smart contract development', 'Full-cycle Blokchain development', 'Technical support'];
+const tabs = ['Tokenomics development', 'Whitepaper development', 'Technical task development '];
 
 interface IProps {
 }
 
-export const OurExpertise: FC<IProps> = () => {
+export const OurExpertiseConsulting: FC<IProps> = () => {
   const [serviceIndex, setServiceIndex] = useState(0)
 
   const handleChangeTab = (tabIndex: number) => {
@@ -35,13 +35,13 @@ export const OurExpertise: FC<IProps> = () => {
       </StyledFlexArea>
 
       {serviceIndex === 0 ?
-        <SmartContractDev />
+        <TokenomicsDev />
         :
         serviceIndex === 1 ?
-          <BlockchainDev />
+          <WhitepaperDev />
           :
           serviceIndex === 2 ?
-            <TechnicalSupport />
+            <TechnicalTaskDev />
             : null
       }
 
@@ -51,6 +51,9 @@ export const OurExpertise: FC<IProps> = () => {
 
 const StyledWrapper = styled.div`
   padding: 76px;
+  @media (max-width: 600px) {
+    padding: 16px;
+  }
 `
 
 const StyledFlexArea = styled.div`
@@ -63,13 +66,17 @@ const StyledTabArea = styled.div`
   align-items: center;
   gap: 46px;
   margin-left: auto;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `
 
 const StyledTab = styled.span`
   &.text {
     font-family: 'Readex Pro';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 18px;
     line-height: 22px;
 
@@ -84,7 +91,7 @@ const StyledTab = styled.span`
   }
 `
 
-const StyledTitle = styled.span`
+const StyledTitle = styled.p`
   font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 700;

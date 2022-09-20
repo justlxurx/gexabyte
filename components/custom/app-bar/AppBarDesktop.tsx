@@ -14,19 +14,22 @@ export const dropdownContent = [
   {
     title: 'Projects',
     menu: false,
-    link: '/'
+    link: '/projects'
   },
   {
     title: 'Solutions',
-    menu: true,
-    items: [{ title: 'Я', link: '/sol1' }, { title: 'Не знаю', link: '/sol2' }, { title: 'Что тут', link: '/sol2' }, { title: 'должно быть', link: '/sol2' }],
-    link: '/'
+    menu: false,
+    link: '/solutions'
   },
   {
     title: 'Company',
-    menu: true,
-    items: [{ title: 'Я', link: '/sol1' }, { title: 'Не знаю', link: '/sol2' }, { title: 'Что тут', link: '/sol2' }, { title: 'должно быть', link: '/sol2' }],
-    link: '/'
+    menu: false,
+    link: '/company'
+  },
+  {
+    title: 'Blog',
+    menu: false,
+    link: '/blog'
   }
 ]
 
@@ -65,7 +68,7 @@ const AppBarDesktop: React.FC = () => {
             <Link href='#contact-us'>
               <CustomButton
                 title='Get in Touch'
-                bgcolor={theme.palette.secondary.main}
+                bgcolor={'transparent'}
                 handleClick={handleScroll}
               />
             </Link>

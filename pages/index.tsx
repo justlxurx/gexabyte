@@ -1,15 +1,15 @@
 import { Container } from '@mui/material'
 import Accomplishments from 'components/custom/home-page/Accomplishments'
 import ContactUs from 'components/custom/home-page/ContactUs'
+import { Stats } from 'components/custom/home-page/Stats'
 import TechStack from 'components/custom/home-page/TechStack'
-import WebProjects from 'components/custom/home-page/WebProjects'
+import BlockchainProjects from 'components/custom/projects/BlockchainProjects'
+import WebProjects from 'components/custom/projects/WebProjects'
 import FirstBlockLayout from 'components/layouts/FirstBlockLayout'
 import { News } from 'components/UI/molecules/News/News'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import AllProjects from '../components/custom/home-page/AllProjects'
 import Services from '../components/custom/home-page/Services'
 
 const Home: NextPage = () => {
@@ -33,9 +33,10 @@ const Home: NextPage = () => {
           bgAnimationSrc='/videos/klava.mp4'
         />
         <TechStack />
+        <Stats />
         <Services />
         {/* <AllProjects /> */}
-        <WebProjects />
+        <BlockchainProjects />
         <News />
         <Accomplishments />
         <ContactUs />

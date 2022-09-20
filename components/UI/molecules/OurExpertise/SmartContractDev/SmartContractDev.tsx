@@ -13,7 +13,6 @@ const technologies = ['bitcoin.svg', 'etherium1.svg', 'cosmos.svg', 'fantom.svg'
 export const SmartContractDev = () => {
   return (
     <StyledWrapper>
-
       <StyledGridItemLeft>
         <div>
           <StyledTitle>DeFi App</StyledTitle>
@@ -51,23 +50,32 @@ export const SmartContractDev = () => {
 
 const StyledWrapper = styled.div`
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 0.5fr 0.5fr;
   gap: 128px;
   margin-top: 60px;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 `
 
 const StyledGridItemLeft = styled.div`
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 0.5fr 0.5fr;
   gap: 20px;
 `
 const StyledTitle = styled.p`
-font-family: 'Readex Pro';
+  font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 137%;
   color: #FFFFFF;
+
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
 `
 
 const StyledLeftCard = styled.div`
@@ -88,6 +96,13 @@ const StyledLeftCard = styled.div`
   padding: 35px 45px;
   margin-bottom: 20px;
   position: relative;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 94px;
+    font-size: 14px;
+    padding: 15px 30px;
+  }
 `
 
 const StyledLeftTopIcon = styled.span`

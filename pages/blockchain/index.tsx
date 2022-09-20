@@ -1,16 +1,15 @@
 import styled from '@emotion/styled'
-import AllProjects from 'components/custom/home-page/AllProjects'
+import { useMediaQuery } from '@mui/material'
 import ContactUs from 'components/custom/home-page/ContactUs'
 import TechStack from 'components/custom/home-page/TechStack'
+import BlockchainProjects from 'components/custom/projects/BlockchainProjects'
 import RoundedAnimation from 'components/custom/RoundedAnimation'
-import FirstBlockLayout from 'components/layouts/FirstBlockLayout'
-import { RButton } from 'components/UI/atoms/RButton'
 import { BlockchainAnimation } from 'components/UI/molecules/BlockchainAnimation/BlockchainAnimation'
 import { DeFiService } from 'components/UI/molecules/DeFiService/DeFiService'
-import { OurExpertise } from 'components/UI/molecules/OurExpertise/OurExpertise'
-import React from 'react'
+import { OurExpertiseBlockchain } from 'components/UI/molecules/OurExpertise/OurExpertiseBlockchain'
 
 const BlockChain = () => {
+
   return (
     <Wrapper>
       <FirstBlock>
@@ -65,10 +64,9 @@ const BlockChain = () => {
         </SecondBlockAnimation>
       </SecondBlock>
 
-      <OurExpertise />
+      <OurExpertiseBlockchain />
       <DeFiService />
-      <TechStack />
-      <AllProjects />
+      <BlockchainProjects />
       <ContactUs />
 
     </Wrapper>
@@ -90,6 +88,9 @@ const FirstBlock = styled.div`
   padding: 76px;
   position: relative;
   overflow: hidden;
+  @media (max-width: 600px) {
+    padding: 16px;
+  }
 `
 
 const BlockChainLeftSide = styled.div`
@@ -105,6 +106,10 @@ const BlockchainTitle = styled.p`
   letter-spacing: -0.025em;
   color: #FFFFFF;
   margin-bottom: 31px;
+
+  @media (max-width: 600px) {
+    font-size: 28px;
+  }
 `
 
 const BlockchainSubtitle = styled.p`
@@ -115,6 +120,10 @@ const BlockchainSubtitle = styled.p`
   line-height: 133.5%;
   color: #FFFFFF;
   margin-bottom: 106px;
+  @media (max-width: 600px) {
+    font-size: 12px;
+    margin-bottom: 30px;
+  }
 `
 
 const StyledContainedButton = styled.button`
@@ -136,14 +145,17 @@ const StyledContainedButton = styled.button`
     cursor: pointer;
   }
   margin-right: 40px;
+  @media (max-width: 600px) {
+    width: 152px;
+    height: 50px;
+    font-size: 14px;
+  }
 `
 
 const StyledTextButton = styled.button`
   border: none;
   width: 254px;
   height: 80px;
-  left: 76px;
-  top: 626px;
   background: transparent;
   border-radius: 4px;
   font-family: 'Readex Pro';
@@ -155,6 +167,11 @@ const StyledTextButton = styled.button`
   text-transform: uppercase;
   &:hover {
     cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+    width: unset;
   }
 
 `
@@ -169,6 +186,11 @@ const SecondBlock = styled.div`
   padding: 76px;
   position: relative;
   height: 480px;
+  overflow: hidden;
+  @media (max-width: 600px) {
+    padding: 16px;
+    grid-template-columns: 1fr;
+  }
 `
 
 const SecondBlockAnimation = styled.div`
@@ -184,11 +206,18 @@ const SecondBlockTitle = styled.div`
   font-size: 30px;
   line-height: 127.5%;
   color: #FFFFFF;
+  @media (max-width: 600px) {
+    font-size: 28px;
+  }
 `
 
 const StatsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  @media (max-width: 600px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 `
 
 const StatsOneBlock = styled.div`

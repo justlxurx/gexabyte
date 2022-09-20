@@ -66,7 +66,7 @@ const AppBarMobile: React.FC = () => {
       >
         <Toolbar />
         {dropdownContent.map((item, idx) => (
-          <Link href={item.link}>
+          <Link href={item.link} key={idx}>
             <Typography key={idx} sx={{ fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
           </Link>
         ))}

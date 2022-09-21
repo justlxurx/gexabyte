@@ -108,6 +108,7 @@ const StyledTitleArea = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 16px;
   
   @media (max-width: 600px) {
     flex-direction: column;

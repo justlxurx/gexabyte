@@ -15,8 +15,13 @@ const projectsDesktop = [
 ]
 
 const projectsMobile = [
-  { title: 'Orbeem', image: '/images/projects/орбим.png' },
-
+  { title: 'Crypto-Fiat Gateway', image: '/images/projects/mobile/крипто фиат.png' },
+  { title: 'MyRig', image: '/images/projects/mobile/майриг.png' },
+  { title: 'Gemstone', image: '/images/projects/mobile/гемстон консалтинг.png' },
+  { title: 'Сrypto bank', image: '/images/projects/mobile/крипто банк.png' },
+  { title: 'Gambling platform', image: '/images/projects/mobile/гэмблинг платформ.png' },
+  { title: 'Defi Wallet', image: '/images/projects/mobile/дефай валлет.png' },
+  { title: 'astana hub', image: '/images/projects/mobile/астана хаб.png' },
 ]
 
 export const AllProjectsConsulting = () => {
@@ -25,17 +30,28 @@ export const AllProjectsConsulting = () => {
   return (
     <StyledWrapper>
 
-      <Grid container columns={12} spacing={{ xs: '16px', md: '55px' }} rowSpacing={{ xs: '', md: '120px' }}>
-        {!isMobile &&
+      <Grid container columns={12} spacing={{ xs: '16px', md: '55px' }} rowSpacing={{ xs: '60px', md: '120px' }}>
+        {!isMobile ?
           projectsDesktop.map((item, idx) => (
-            <Grid item xs={6} md={FlexItem[idx]}>
+            <Grid item xs={6} md={FlexItem[idx]} key={idx}>
               <img src={item.image} width='100%' height='100%' style={{ objectFit: 'fill' }} />
               <StyledFlex>
                 <span className='title'>{item.title}</span>
                 {/* <span className='action'>VIEW</span> */}
               </StyledFlex>
             </Grid>
-          ))}
+          ))
+          :
+          projectsMobile.map((item, idx) => (
+            <Grid item xs={12} key={idx} mb='16px'>
+              <img src={item.image} width='100%' height='100%' />
+              <StyledFlex>
+                <span className='title'>{item.title}</span>
+                {/* <span className='action'>VIEW</span> */}
+              </StyledFlex>
+            </Grid>
+          ))
+        }
       </Grid>
 
     </StyledWrapper >
@@ -52,6 +68,10 @@ const StyledFlex = styled.div`
   justify-content: space-between;
   margin-top: 18px;
 
+  @media (max-width: 600px) {
+    margin-top: 0;
+  }
+
   .title {
     font-family: 'Poppins';
     font-style: normal;
@@ -61,6 +81,9 @@ const StyledFlex = styled.div`
     letter-spacing: 0.025em;
     text-transform: uppercase;
     color: #FFFFFF;
+    @media (max-width: 600px) {
+      font-size: 18px;
+    }
   }
 
   .action {

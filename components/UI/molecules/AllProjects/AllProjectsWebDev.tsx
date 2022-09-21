@@ -15,8 +15,13 @@ const projectsDesktop = [
 ]
 
 const projectsMobile = [
-  { title: 'Orbeem', image: '/images/projects/орбим.png' },
-
+  { title: 'Sanau saas', image: '/images/projects/mobile/sanau saas.png' },
+  { title: 'Cofi', image: '/images/projects/mobile/cofi.png' },
+  { title: 'desktop app', image: '/images/projects/mobile/desktop app.png' },
+  { title: 'smart home', image: '/images/projects/mobile/smart home.png' },
+  { title: 'factoring', image: '/images/projects/mobile/factoring.png' },
+  { title: 'online marketing', image: '/images/projects/mobile/online marketing.png' },
+  { title: 'Gemm', image: '/images/projects/mobile/gemm.png' },
 ]
 
 export const AllProjectsWebDev = () => {
@@ -25,17 +30,28 @@ export const AllProjectsWebDev = () => {
   return (
     <StyledWrapper>
 
-      <Grid container columns={12} spacing={{ xs: '16px', md: '55px' }} rowSpacing={{ xs: '', md: '120px' }}>
-        {!isMobile &&
+      <Grid container columns={12} spacing={{ xs: '16px', md: '55px' }} rowSpacing={{ xs: '60px', md: '120px' }}>
+        {!isMobile ?
           projectsDesktop.map((item, idx) => (
-            <Grid item xs={6} md={FlexItem[idx]}>
-              <img src={item.image} width='100%' height='100%' style={{ objectFit: 'contain' }} />
+            <Grid item xs={6} md={FlexItem[idx]} key={idx}>
+              <img src={item.image} width='100%' height='100%' />
               <StyledFlex>
                 <span className='title'>{item.title}</span>
                 {/* <span className='action'>VIEW</span> */}
               </StyledFlex>
             </Grid>
-          ))}
+          ))
+          :
+          projectsMobile.map((item, idx) => (
+            <Grid item xs={12} key={idx} mb='16px'>
+              <img src={item.image} width='100%' height='100%' />
+              <StyledFlex>
+                <span className='title'>{item.title}</span>
+                {/* <span className='action'>VIEW</span> */}
+              </StyledFlex>
+            </Grid>
+          ))
+        }
       </Grid>
 
     </StyledWrapper >
@@ -50,7 +66,11 @@ const StyledFlex = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // margin-top: 18px;
+  margin-top: 18px;
+
+  @media (max-width: 600px) {
+    margin-top: 0;
+  }
 
   .title {
     font-family: 'Poppins';
@@ -61,6 +81,10 @@ const StyledFlex = styled.div`
     letter-spacing: 0.025em;
     text-transform: uppercase;
     color: #FFFFFF;
+
+    @media (max-width: 600px) {
+      font-size: 18px;
+    }
   }
 
   .action {

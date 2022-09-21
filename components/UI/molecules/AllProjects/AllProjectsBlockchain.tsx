@@ -7,10 +7,10 @@ const FlexItem = [6, 6, 12, 6, 6, 7, 5, 12, 6, 6]
 const projectsDesktop = [
   { title: 'Orbeem', image: '/images/projects/орбим.png' },
   { title: 'Gemstone mania', image: '/images/projects/гемстон.png' },
-  { title: 'Rocki', image: '/images/projects/роки.png' },
+  { title: 'Roki', image: '/images/projects/роки.png' },
   { title: 'NFT Congrats', image: '/images/projects/нфт конгратс.png' },
   { title: 'NFTime', image: '/images/projects/нфтайм.png' },
-  { title: 'ignite', image: '/images/projects/игнайт.png' },
+  { title: 'Egnite', image: '/images/projects/игнайт.png' },
   { title: 'Dexoo', image: '/images/projects/дексу.png' },
   { title: 'Gambling platform', image: '/images/projects/гэмблинг платформ.png' },
   { title: 'Ton seed', image: '/images/projects/тон сид.png' },
@@ -18,14 +18,14 @@ const projectsDesktop = [
 ]
 
 const projectsMobile = [
-  { title: 'Rocki', image: '/images/projects/mobile/роки моб блокчейн.png' },
+  { title: 'Roki', image: '/images/projects/mobile/роки моб.png' },
   { title: 'Gemstone mania', image: '/images/projects/mobile/геймстоун мания моб блокчейн.png' },
   { title: 'Dexoo', image: '/images/projects/mobile/дексу моб блкчейн.png' },
   { title: 'Gambling platform', image: '/images/projects/mobile/гэмблинг платформа моб блокчейн.png' },
   { title: 'Orbeem', image: '/images/projects/mobile/орбим моб блокчейн.png' },
-  { title: 'NFT Congrats', image: '/images/projects/mobile/нфт конгратс моб блокчейн.png' },
-  { title: 'NFTime', image: '/images/projects/mobile/нфтайм моб блокчейн.png' },
-  { title: 'ignite', image: '/images/projects/mobile/игнайт моб блокчейн.png' },
+  { title: 'NFT Congrats', image: '/images/projects/mobile/нфт конгратс блокчейн моб.png' },
+  { title: 'NFTime', image: '/images/projects/mobile/нфтайм блокчейн моб.png' },
+  { title: 'Egnite', image: '/images/projects/mobile/игнайт моб блокчейн.png' },
   { title: 'Ton seed', image: '/images/projects/mobile/тон сид моб блокчейн.png' },
   { title: 'Brat', image: '/images/projects/mobile/брат моб блокчейн.png' },
 ]
@@ -36,7 +36,7 @@ export const AllProjectsBlockchain = () => {
   return (
     <StyledWrapper>
 
-      <Grid container columns={12} spacing={{ xs: '16px', md: '55px' }} rowSpacing={{ xs: '', md: '120px' }}>
+      <Grid container columns={12} spacing={{ xs: '16px', md: '55px' }} rowSpacing={{ xs: '60px', md: '120px' }}>
         {!isMobile ?
           projectsDesktop.map((item, idx) => (
             <Grid item xs={FlexItem[idx]} key={idx}>
@@ -74,6 +74,10 @@ const StyledFlex = styled.div`
   justify-content: space-between;
   margin-top: 18px;
 
+  @media (max-width: 600px) {
+    margin-top: 0;
+  }
+
   .title {
     font-family: 'Poppins';
     font-style: normal;
@@ -83,6 +87,9 @@ const StyledFlex = styled.div`
     letter-spacing: 0.025em;
     text-transform: uppercase;
     color: #FFFFFF;
+    @media (max-width: 600px) {
+      font-size: 18px;
+    }
   }
 
   .action {

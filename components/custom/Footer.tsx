@@ -7,10 +7,13 @@ import { theme } from 'utils/theme'
 import CustomButton from './CustomButton'
 
 const Footer = () => {
-  let reftp: HTMLElement | null = null;
-  if (typeof window !== 'undefined') {
-    reftp = document.getElementById("contact-us");
-  }
+  const [reftp, setReftp] = React.useState<HTMLElement | null>(null)
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      setReftp(document.getElementById("contact-us"))
+    }
+  }, [])
 
   const handleScroll = () => {
     reftp?.scrollIntoView({ behavior: 'smooth' });
@@ -44,17 +47,9 @@ const Footer = () => {
           <Grid item xs={1} md={1}>
             <Stack direction='column'>
               <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Solutions</Typography>
-              <StyledTypography title='Blockchain Developement' link='/projects' />
-              <StyledTypography title='Web&Mobile development' link='/projects' />
-              <StyledTypography title='Blockchain consulting' link='/projects' />
-            </Stack>
-          </Grid>
-          <Grid item xs={1} md={1}>
-            <Stack direction='column'>
-              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Company</Typography>
-              <StyledTypography title='About' link='/about' />
-              <StyledTypography title='Blog' link='/blog' />
-              <StyledTypography title='Careers' link='/careers' />
+              <StyledTypography title='Blockchain Developement' link='/blockchain' />
+              <StyledTypography title='Web&Mobile development' link='/webdev' />
+              <StyledTypography title='Blockchain consulting' link='/consulting' />
             </Stack>
           </Grid>
           <Grid item xs={1} md={1}>
@@ -66,8 +61,8 @@ const Footer = () => {
               <StyledTypography title='Web app' link='/web-app' />
             </Stack>
           </Grid>
-          <Grid item xs={1} md={1}>
-            <Stack direction='column'>
+          <Grid item xs={2} md={2}>
+            <Stack direction={{ xs: 'row', md: 'column' }} alignItems={{ xs: 'center', md: 'end' }} justifyContent={{ xs: 'space-between' }}>
               <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Keep in touch</Typography>
               <Stack direction='row' spacing={1}>
                 <a href='https://instagram.com/tech.culture.it?igshid=YmMyMTA2M2Y='>
@@ -87,7 +82,7 @@ const Footer = () => {
           </Grid>
         </Grid>
       </Container>
-      <Container sx={{ px: {xs: '16px', md: '120px'}, py: '30px', display: {xs: 'block', md: 'flex'}, alignItems: 'center', gap: '80px' }}>
+      <Container sx={{ px: { xs: '16px', md: '120px' }, py: '30px', display: { xs: 'block', md: 'flex' }, alignItems: 'center', gap: '80px' }}>
         <StyledCopyright>© 2022 Techculture</StyledCopyright>
         <Terms>
           <span className='text'>Terms {`&`} Conditions</span>

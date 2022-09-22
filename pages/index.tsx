@@ -38,7 +38,7 @@ const Home: NextPage = () => {
         {/* <AllProjects /> */}
         <BlockchainProjects />
         <News />
-        <Accomplishments />
+        {/* <Accomplishments /> */}
         <ContactUs />
       </div>
     </>

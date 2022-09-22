@@ -136,10 +136,11 @@ const StyledFlex = styled.div`
 
 const StyledIcon = styled.div`
   width: 161px;
-  height: 100px;
+  height: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
   background: #313131;
   border-radius: 4px;
   padding: 16px 30px;
@@ -151,6 +152,7 @@ const StyledIcon = styled.div`
     font-size: 16px;
     line-height: 140%;
     color: #FFFFFF;
+    margin: 0;
 
     @media (max-width: 600px) {
       font-size: 12px;
@@ -158,15 +160,15 @@ const StyledIcon = styled.div`
   }
 
   .icon {
-    width: 50px;
+    height: 40px;
     @media (max-width: 600px) {
-      width: 30px;
+      height: 20px;
     }
   }
 
   @media (max-width: 600px) {
     width: 114px;
-    height: 71px;
+    height: 81px;
   }
 `
 

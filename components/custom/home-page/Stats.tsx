@@ -43,7 +43,7 @@ const SecondBlock = styled.div`
   @media (max-width: 600px) {
     display: block;
     padding: 16px;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 `
 
@@ -63,7 +63,7 @@ const SecondBlockTitle = styled.div`
   font-style: normal;
   font-weight: 700;
   font-size: 56px;
-  line-height: 100%;
+  line-height: 120%;
   color: #FFFFFF;
 
   @media (max-width: 600px) {

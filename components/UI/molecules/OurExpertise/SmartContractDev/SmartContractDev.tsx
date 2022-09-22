@@ -5,7 +5,8 @@ import { Networks } from '../../Networks/Networks'
 import { Technologies } from '../../Technologies/Technologies'
 
 const DeFiApps = ['Decentralized and Centralized Wallets', 'Crypto Exchange', 'Auction and Exchangers', 'Tokens and Crypto Wallets', 'NFT Marketplace', 'GameFi']
-const SmartContract = ['Farming', 'Staking', 'NFT Mint', 'NFT Generation', 'IDO/ICO', 'Token']
+const Products = ['NFT marketplace', 'Mobile App with integration web3&smart contract', 'Crypto Exchange', 'Staking', 'DeFI&CeFi Wallet', 'Metaverse']
+const SmartContract = ['Tokens and Crypto Wallets', 'Staking&Farming', 'NFT Mint', 'NFT Generation', 'IDO/ICO', 'Token']
 const networks = ['bitcoin.svg', 'etherium1.svg', 'cosmos.svg', 'fantom.svg', 'avalanche.svg', 'polkadot.svg', 'atom.svg', 'tron.svg', 'polygon.svg', 'arbitrum.svg', 'solana.svg', 'binanceSC.svg', 'cardano.svg']
 const technologies = ['bitcoin.svg', 'etherium1.svg', 'cosmos.svg', 'fantom.svg', 'avalanche.svg', 'polkadot.svg', 'atom.svg', 'tron.svg', 'polygon.svg', 'arbitrum.svg', 'solana.svg', 'binanceSC.svg', 'cardano.svg']
 
@@ -15,11 +16,11 @@ export const SmartContractDev = () => {
     <StyledWrapper>
       <StyledGridItemLeft>
         <div>
-          <StyledTitle>DeFi App</StyledTitle>
-          {DeFiApps.map((app, idx) => (
+          <StyledTitle className='orange'>Products</StyledTitle>
+          {Products.map((app, idx) => (
             <StyledLeftCard key={idx}>
               <StyledLeftTopIcon>
-                <Image src='/icons/top-left-card.svg' width='31px' height='15px' />
+                <Image src='/icons/top-left-card-orange.svg' width='31px' height='15px' />
               </StyledLeftTopIcon>
               {app}
             </StyledLeftCard>
@@ -53,6 +54,10 @@ const StyledWrapper = styled.div`
   grid-template-columns: 0.5fr 0.5fr;
   gap: 128px;
   margin-top: 60px;
+
+  .orange {
+    color: #F0B270;
+  }
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
@@ -93,7 +98,7 @@ const StyledLeftCard = styled.div`
   font-size: 20px;
   line-height: 127%;
   color: #FFFFFF;
-  padding: 35px 45px;
+  padding: 35px 35px;
   margin-bottom: 20px;
   position: relative;
 

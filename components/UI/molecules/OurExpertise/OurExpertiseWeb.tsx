@@ -42,12 +42,13 @@ const StyledTitle = styled.span`
   font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 700;
-  font-size: 46px;
-  line-height: 117.5%;
+  font-size: 42px;
+  line-height: 110%;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
   color: #FFFFFF;
-  width: 414px;
+
   @media (max-width: 600px) {
     font-size: 28px;
-    line-height: 0%;
   }
 `

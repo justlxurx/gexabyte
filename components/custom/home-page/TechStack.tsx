@@ -26,7 +26,7 @@ const TechStack = () => {
         <Grid item xs={2} md={8} order={isMobileScreen ? 2 : 1}>
           <StackSlider />
         </Grid>
-        <Grid item xs={1} md={1} order={1}>
+        {/* <Grid item xs={1} md={1} order={1}>
           <Link href='/'>
             <Typography sx={{
               fontSize: '14px',
@@ -39,7 +39,7 @@ const TechStack = () => {
               Show all {'>'}
             </Typography>
           </Link>
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   );

@@ -8,7 +8,6 @@ import { useFormik } from 'formik';
 import { IContactUsForm } from 'types/IContactUsForm';
 import { contactUsSchema } from 'utils/validations/contactUsSchema';
 import SocialMedia from '../SocialMedia';
-import useScroll from 'hooks/useScroll';
 import styled from '@emotion/styled';
 // import styles from './ContactUs.module.scss';
 
@@ -30,13 +29,14 @@ const ContactUs: React.FC<ContactUsProps> = () => {
       email: '',
       company: '',
       info: '',
-      type: ''
+      type: 'consulting, developement'
     },
     onSubmit: async values => {
       try {
         const res = await axios.post('https://techculture.tech/api/contact/us', values);
         if (res.status === 200) {
-          alert('Успешно')
+          alert('Ваша заявка принята!')
+          resetForm()
         }
       } catch (e) {
         alert('Ошибочка... Попробуйте позже')
@@ -48,7 +48,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
     validateOnMount: false
   });
 
-  const { values: form, handleSubmit, handleChange, errors } = formik;
+  const { values: form, handleSubmit, handleChange, errors, resetForm } = formik;
 
   return (
     <div id='contact-us'>
@@ -168,7 +168,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                 error={!!errors.name}
                 sx={{
                   bgcolor: '#FFFFFF',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                   input: { color: '#667085' },
                   mb: !!!errors.name ? '16px' : '0px',
                 }}
@@ -191,7 +191,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                 placeholder='you@company.com'
                 sx={{
                   bgcolor: '#FFFFFF',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                   input: { color: '#667085' },
                   mb: !!!errors.email ? '16px' : '0px',
 
@@ -210,7 +210,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                 required
                 id="bootstrap-input3" fullWidth placeholder='Company name' sx={{
                   bgcolor: '#FFFFFF',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                   mb: !!!errors.company ? '16px' : '0px',
                   input: { color: '#667085' },
                 }} />
@@ -231,10 +231,10 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                 rows={3}
                 error={!!errors.info}
                 placeholder='Tell us a little about the project...'
-                inputProps={{ style: { color: '#B3B8C2' } }}
+                inputProps={{ style: { color: '#667085' } }}
                 sx={{
                   bgcolor: '#FFFFFF',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                   mb: !!!errors.info ? '16px' : '0px',
                   input: { color: '#667085' },
                 }}

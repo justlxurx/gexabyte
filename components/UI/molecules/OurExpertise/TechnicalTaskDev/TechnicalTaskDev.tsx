@@ -11,6 +11,11 @@ const services = [
 ]
 
 export const TechnicalTaskDev = () => {
+  const reftp = document.getElementById("contact-us")
+
+  const handleScroll = () => {
+    reftp?.scrollIntoView({ behavior: 'smooth' });
+  }
   return (
     <StyledWrapper>
       <div className='left'>
@@ -21,6 +26,7 @@ export const TechnicalTaskDev = () => {
             <p className='text'>{item}</p>
           </div>
         ))}
+        <StyledButton onClick={handleScroll}>Resquest a service</StyledButton>
       </div>
       <div className='right'>
         <img src='/icons/quotes.svg' />
@@ -50,6 +56,8 @@ const StyledWrapper = styled.div`
 
   .left {
     padding: 54px;
+    display: flex;
+    flex-direction: column;
 
     .title {
       font-family: 'Readex Pro';
@@ -112,4 +120,23 @@ const StyledWrapper = styled.div`
       margin-top: auto;
     }
   }
+`
+
+const StyledButton = styled.button`
+  width: 340px;
+  height: 80px;
+
+  background: #736AE4;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Readex Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 110%;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-top: auto;
+  cursor: pointer;
 `

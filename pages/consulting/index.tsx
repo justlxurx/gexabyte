@@ -3,8 +3,21 @@ import ContactUs from 'components/custom/home-page/ContactUs'
 import ConsultingProjects from 'components/custom/projects/ConsultingProjects'
 import { StatsConsulting } from 'components/custom/StatsConsulting'
 import { OurExpertiseConsulting } from 'components/UI/molecules/OurExpertise/OurExpertiseConsulting'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 const Consulting = () => {
+  const [reftp, setReftp] = useState<HTMLElement | null>(null)
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setReftp(document.getElementById("contact-us"))
+    }
+  }, [])
+
+  const handleScroll = () => {
+    reftp?.scrollIntoView({ behavior: 'smooth' });
+  }
   return (
     <Wrapper>
       <FirstBlock>
@@ -14,18 +27,20 @@ const Consulting = () => {
             Web applications for automating processes and solving business problems using modern technologies.
           </BlockchainSubtitle>
 
-          <StyledContainedButton>contact us</StyledContainedButton>
-          <StyledTextButton>
-            <OrangeText>&gt;&gt;</OrangeText>
-            &nbsp;see all projects
-          </StyledTextButton>
+          <StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton>
+          <Link href='/projects'>
+            <StyledTextButton>
+              <OrangeText>&gt;&gt;</OrangeText>
+              &nbsp;see all projects
+            </StyledTextButton>
+          </Link>
 
         </BlockChainLeftSide>
-        
+
         <GraphicWrapper>
-          <img src='/images/graphic 1.svg' className='graph'/>
+          <img src='/images/graphic 1.svg' className='graph' />
         </GraphicWrapper>
-        
+
       </FirstBlock>
 
       <StatsConsulting />
@@ -114,8 +129,6 @@ const StyledContainedButton = styled.button`
   border: none;
   width: 254px;
   height: 80px;
-  left: 76px;
-  top: 626px;
   background: #736AE4;
   border-radius: 4px;
   font-family: 'Readex Pro';
@@ -125,6 +138,7 @@ const StyledContainedButton = styled.button`
   line-height: 110%;
   letter-spacing: -0.025em;
   text-transform: uppercase;
+  color: #FFFFFF;
   &:hover {
     cursor: pointer;
   }
@@ -149,6 +163,7 @@ const StyledTextButton = styled.button`
   line-height: 110%;
   letter-spacing: -0.025em;
   text-transform: uppercase;
+  color: #FFFFFF;
   &:hover {
     cursor: pointer;
   }

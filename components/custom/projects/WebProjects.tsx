@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography, useMediaQuery } from '@mui/material';
+import { Box, Button, Container, Grid, Typography, useMediaQuery } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
 
@@ -76,27 +76,32 @@ const WebProjects = () => {
             }
           </>
         }
-        <Grid item xs={12}>
+         <Grid item xs={12}>
           <Box sx={{
-            bgcolor: '#111318',
-            p: '1.5rem',
-            textAlign: 'center'
+            textAlign: 'center',
+            mt: '2rem'
           }}>
             <Link href='/projects'>
-              <Typography
+              <Button
+                variant='contained'
                 sx={{
                   fontSize: {
                     xs: '18px',
-                    md: '48px'
+                    md: '22px'
                   },
                   fontWeight: 700,
-                  ':hover': {
-                    cursor: 'pointer',
-                    textDecoration: 'underline'
+                  width: {
+                    xs: '100%',
+                    md: '254px'
+                  },
+                  height: {
+                    xs: '50px',
+                    md: '80px'
                   }
+
                 }}>
                 {'MORE'}
-              </Typography>
+              </Button>
             </Link>
           </Box>
         </Grid>

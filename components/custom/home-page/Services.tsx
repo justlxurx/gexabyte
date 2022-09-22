@@ -50,17 +50,19 @@ const Services = () => {
             fontSize: {
               xs: '32px',
               md: '56px'
-            }
+            },
+            fontWeight: 700
           }}>
-            WHAT WE CAN
+            What We Can
           </Typography>
           <Typography variant='h1' sx={{
             fontSize: {
               xs: '32px',
               md: '56px'
-            }
+            },
+            fontWeight: 700
           }}>
-            <span style={{ color: theme.palette.primary.main }}>HELP YOU</span> WITH
+            <span style={{ color: theme.palette.primary.main }}>Help You</span> With
           </Typography>
         </Stack>
         <Link href='/projects'>

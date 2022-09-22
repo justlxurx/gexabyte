@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { FC } from 'react'
 
 const technologies = ['jvscrpt.svg', 'vue.svg', 'react.svg', 'kotlin1.svg', 'angular.svg', 'java.svg', 'php.svg', 'git.svg', 'python.svg', 'swift1.svg', 'gitlab.svg', 'github.svg']
-const technologiesName = ['JavaScpirt', 'Vue.js', 'React.js', 'Kotlin', 'Angular', 'Java', 'PHP', 'Git', 'Python', 'swift', 'GitLab', 'GitHub']
+const technologiesName = ['JavaScpirt', 'Vue.js', 'React.js', 'Kotlin', 'Angular', 'Java', 'PHP', 'Git', 'Python', 'Swift', 'GitLab', 'GitHub']
 
 export const WebTechnologies: FC = () => {
   return (
@@ -54,12 +54,12 @@ const StyledTechnologiesCard = styled.div`
 `
 
 const TechIcon = styled.div`
-  width: 3.5vw;
-  height: 3.5vw;
+  width: 50px;
+  height: 50px;
 
   @media (max-width: 768px) {
-    width: 40px;
-    height: 40px;
+    width: 64px;
+    height: 64px;
   }
 `
 

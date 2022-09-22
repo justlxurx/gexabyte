@@ -11,10 +11,10 @@ interface LocaleButtonProps {
 
 const LocaleButton: React.FC<LocaleButtonProps> = ({ text, locale }) => {
   const { i18n } = useTranslation();
-  const { locale: currentLocale } = useRouter();
+  const { locale: currentLocale, pathname } = useRouter();
 
   return (
-    <Link href='/' locale={locale}>
+    <Link href={pathname} locale={locale}>
       <Typography sx={{
         fontSize: '16px',
         fontWeight: currentLocale === locale ? 700 : 500,

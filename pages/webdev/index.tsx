@@ -10,6 +10,7 @@ import { BlockchainAnimation } from 'components/UI/molecules/BlockchainAnimation
 import { DeFiService } from 'components/UI/molecules/DeFiService/DeFiService'
 import { OurExpertiseWeb } from 'components/UI/molecules/OurExpertise/OurExpertiseWeb'
 import React from 'react'
+import Link from 'next/link'
 
 const Webdev = () => {
   return (
@@ -22,19 +23,20 @@ const Webdev = () => {
             Web applications for automating processes and solving business problems using modern technologies.
           </WebSubtitle>
 
-          <a href='#contact'><StyledContainedButton>contact us</StyledContainedButton></a>
-          <StyledTextButton>
-            <OrangeText>&gt;&gt;</OrangeText>
-            &nbsp;see all projects
-          </StyledTextButton>
-
+          <Link href='#contact'><StyledContainedButton>contact us</StyledContainedButton></Link>
+          <Link href='/projects'>
+            <StyledTextButton>
+              <OrangeText>&gt;&gt;</OrangeText>
+              &nbsp;see all projects
+            </StyledTextButton>
+          </Link>
         </WebLeftSide>
         <WebImage><Image src={`/images/WebFirstblog.svg`} layout="fill" /></WebImage>
         <WebImageMobile><Image src={`/images/WebImageMobile.svg`} layout="fill" /></WebImageMobile>
       </FirstBlock>
       <OurExpertiseWeb />
       <WebProjects />
-      <div id="contact"><ContactUs/></div>
+      <div id="contact"><ContactUs /></div>
 
     </Wrapper>
 

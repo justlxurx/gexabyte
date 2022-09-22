@@ -21,11 +21,11 @@ const Projects = () => {
       <StyledWrapper>
         <StyledTitleArea>
           <StyledTitle>Projects</StyledTitle>
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <Box sx={{ borderBottom: 1, borderColor: '#464646' }}>
             <Tabs value={value} onChange={handleChange} textColor='secondary' indicatorColor="secondary">
-              <Tab label="Blockchain" />
-              <Tab label="Consulting" />
-              <Tab label="Web & Mobile" />
+              <Tab label="Blockchain" sx={{fontWeight: 700}} />
+              <Tab label="Consulting" sx={{fontWeight: 700}} />
+              <Tab label="Web & Mobile" sx={{fontWeight: 700}} />
             </Tabs>
           </Box>
         </StyledTitleArea>
@@ -41,7 +41,7 @@ const Projects = () => {
         </TabPanel>
       </StyledWrapper>
 
-      <Box sx={{ px: { xs: '16px', md: '76px' } }}>
+      <Box sx={{ px: { xs: '16px', md: '76px' }, my: {xs: '74px', md: '94px'} }}>
         <Link href='/'>
           <StyledButton>
             <img src='/icons/left.svg' />

@@ -1,75 +1,79 @@
 import styled from '@emotion/styled'
 import { useMediaQuery } from '@mui/material';
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, useRef } from 'react'
+
+const DeFiTechs = [
+  { title: 'compund', icon: '/icons/compound.svg' },
+  { title: 'aave', icon: '/icons/aave.svg' },
+  { title: 'metamask', icon: '/icons/metamask.svg' },
+  { title: 'uniswap', icon: '/icons/uniswap.svg' },
+  { title: 'raydium', icon: '/icons/raydium.svg' },
+  { title: 'pancakeswap', icon: '/icons/pancakeswap-cake-logo 1.svg' },
+  { title: 'trust wallet', icon: '/icons/trust wallet.svg' },
+  { title: '1inch ', icon: '/icons/1inch.svg' },
+  { title: 'venus', icon: '/icons/venus.svg' },
+  { title: 'infura', icon: '/icons/infura.svg' },
+  { title: 'quicknode', icon: '/icons/quicknode.svg' },
+  { title: 'balancer', icon: '/icons/balancer.svg' },
+]
 
 export const DeFiService: FC = () => {
-  const isMobile = useMediaQuery('(max-width: 600px)');
+  const isMobile = useMediaQuery('(max-width: 600px)')
+  const listRef = useRef<HTMLDivElement>(null);
+
+  const swipeIcons = (side: 'left' | 'right') => {
+    if (side === 'left' && isMobile) {
+      listRef.current!.scrollLeft -= 417;
+    }
+    else if (side === 'left' && !isMobile) {
+      listRef.current!.scrollLeft -= 1284;
+    }
+    else if (side === 'right' && isMobile) {
+      listRef.current!.scrollLeft += 417;
+    }
+    else if (side === 'right' && !isMobile) {
+      listRef.current!.scrollLeft += 1284;
+    }
+  }
 
   return (
     <StyledWrapper>
       <StyledFlexArea>
         <StyledTitle>DeFi service we are working with</StyledTitle>
         {!isMobile &&
-          <div>
-            <StyledPaginationButton>
+          <StyledPagination>
+            <StyledPaginationButton onClick={() => swipeIcons('left')}>
               <Image src='/icons/arrow left.svg' width='24px' height='24px' />
             </StyledPaginationButton>
-            <StyledPaginationButton>
+            <StyledPaginationButton onClick={() => swipeIcons('right')}>
               <Image src='/icons/arrow right.svg' width='24px' height='24px' />
             </StyledPaginationButton>
-          </div>
+          </StyledPagination>
         }
       </StyledFlexArea>
 
-      <StyledCardsArea>
+      <StyledCardsArea ref={listRef}>
 
-        <StyledCard>
-          <StyledIconArea>
-            <Image src='/icons/compound.svg' width='74px' height='74px' />
-          </StyledIconArea>
-          <StyledCardText>compound</StyledCardText>
-        </StyledCard>
-
-        <StyledCard>
-          <StyledIconArea>
-            <Image src='/icons/aave.svg' width='74px' height='74px' />
-          </StyledIconArea>
-          <StyledCardText>aave</StyledCardText>
-        </StyledCard>
-        <StyledCard>
-          <StyledIconArea>
-            <Image src='/icons/metamask.svg' width='74px' height='74px' />
-          </StyledIconArea>
-          <StyledCardText>metamask</StyledCardText>
-        </StyledCard>
-
-        {!isMobile &&
-          <>
-            <StyledCard>
-              <StyledIconArea>
-                <Image src='/icons/uniswap.svg' width='74px' height='74px' />
-              </StyledIconArea>
-              <StyledCardText>uniswap</StyledCardText>
-            </StyledCard>
-
-            <StyledCard>
-              <StyledIconArea>
-                <Image src='/icons/raydium.svg' width='74px' height='74px' />
-              </StyledIconArea>
-              <StyledCardText>Raydium</StyledCardText>
-            </StyledCard>
-
-            <StyledCard>
-              <StyledIconArea>
-                <Image src='/icons/pancakeswap-cake-logo 1.svg' width='74px' height='74px' />
-              </StyledIconArea>
-              <StyledCardText>Pancakeswap</StyledCardText>
-            </StyledCard>
-          </>
-        }
-
+        {DeFiTechs.map((item, idx) => (
+          <StyledCard key={idx}>
+            <StyledIconArea>
+              <Image src={item.icon} width='74px' height='74px' className='icon' />
+            </StyledIconArea>
+            <StyledCardText>{item.title}</StyledCardText>
+          </StyledCard>
+        ))}
       </StyledCardsArea>
+      {isMobile &&
+        <StyledPagination>
+          <StyledPaginationButton onClick={() => swipeIcons('left')}>
+            <Image src='/icons/arrow left.svg' width='24px' height='24px' />
+          </StyledPaginationButton>
+          <StyledPaginationButton onClick={() => swipeIcons('right')}>
+            <Image src='/icons/arrow right.svg' width='24px' height='24px' />
+          </StyledPaginationButton>
+        </StyledPagination>
+      }
 
     </StyledWrapper>
   )
@@ -84,10 +88,22 @@ const StyledWrapper = styled.div`
 `
 
 const StyledCardsArea = styled.div`
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 18px;
+  align-items: center;
+  list-style: none;
+  max-width: 100%;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    background: transparent; /* make scrollbar transparent */
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+  }
 `
 
 const StyledTitle = styled.p`
@@ -109,6 +125,7 @@ const StyledCard = styled.div`
   height: 177px;
   background: #1F1F1F;
   border-radius: 7px;
+  flex: 0 0 196px;
 
   display: flex;
   flex-direction: column;
@@ -118,6 +135,7 @@ const StyledCard = styled.div`
   @media (max-width: 600px) {
     width: 121px;
     height: 108.72px;
+    flex: 0 0 121px;
   }
 `
 
@@ -130,8 +148,8 @@ const StyledIconArea = styled.div`
   text-align: center;
 
   @media (max-width: 600px) {
-    width: 45px;
-    height: 45px;
+    width: 64px;
+    height: 64px;
   }
 `
 
@@ -166,4 +184,15 @@ const StyledPaginationButton = styled.button`
   border: none;
   cursor: pointer;
   margin-right: 30px;
+`
+
+const StyledPagination = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  @media (max-width: 600px) {
+    margin-top: 20px;
+    justify-content: space-between;
+  }
 `

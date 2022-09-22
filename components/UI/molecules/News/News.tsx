@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
+import { useMediaQuery } from '@mui/material'
 import Image from 'next/image'
-import React from 'react'
+import React, { useRef } from 'react'
 
 const NewsData = [
   {
@@ -24,24 +25,56 @@ const NewsData = [
     contentShort: 'Collaboration gives IITU students internships opportunities and direct practice on blockchain projects development.',
     contentFull: 'Tech Culture will present Metabank, a bank in Metaverse with financial services available through VR experience. We will also share our experience in blockchain projects development and discuss blockchain potential for Central Asian region and abroad.'
   },
+  {
+    image: '/images/digital bridge_astana hub 4.png',
+    theme: 'Events',
+    title: 'Tech Culture and Astana Hub hosted Blockchain Summer Conference',
+    contentShort: 'Blockchain Summer Conference gathered blockchain experts, developers, startup founders and others interested in blockchain related ...',
+    contentFull: 'Blockchain Summer Conference gathered blockchain experts, developers, startup founders and others interested in blockchain related topics in Nur-Sultan on Aug 17, 2022. Participants discussed crypto investments, blockchain projects’ tokenomics, development of crypto startup companies, NFT marketplaces and other Web 3.0 trends. Overall more than 150 people participated in the event.'
+  },
+  {
+    image: '/images/digital bridge_astana hub 5.png',
+    theme: 'Mass Media about us',
+    title: 'What is Web 3.0 and how it’s different from the state of the current Internet',
+    contentShort: 'About key characteristics of Web 3.0 and brief summary of Blockchain Summer Conference.',
+    contentFull: 'Tech Culture will present Metabank, a bank in Metaverse with financial services available through VR experience. We will also share our experience in blockchain projects development and discuss blockchain potential for Central Asian region and abroad.'
+  }
 ]
 
 export const News = () => {
+  const isMobile = useMediaQuery('(max-width: 600px)')
+  const listRef = useRef<HTMLDivElement>(null);
+
+  const swipeIcons = (side: 'left' | 'right') => {
+    if (side === 'left' && isMobile) {
+      listRef.current!.scrollLeft -= 395;
+    }
+    else if (side === 'left' && !isMobile) {
+      listRef.current!.scrollLeft -= 1400;
+    }
+    else if (side === 'right' && isMobile) {
+      listRef.current!.scrollLeft += 395;
+    }
+    else if (side === 'right' && !isMobile) {
+      listRef.current!.scrollLeft += 1400;
+    }
+  }
+
   return (
     <StyledWrapper>
       <StyledFlexArea>
         <StyledTitle>latest news</StyledTitle>
         <div>
-          <StyledPaginationButton>
+          <StyledPaginationButton onClick={() => swipeIcons('left')}>
             <Image src='/icons/arrow left.svg' width='24px' height='24px' />
           </StyledPaginationButton>
-          <StyledPaginationButton>
+          <StyledPaginationButton onClick={() => swipeIcons('right')}>
             <Image src='/icons/arrow right.svg' width='24px' height='24px' />
           </StyledPaginationButton>
         </div>
       </StyledFlexArea>
 
-      <StyledGridArea>
+      <StyledGridArea ref={listRef}>
         {NewsData.map((item, idx) => (
           <StyledNewCard key={idx}>
             <div className='image'>
@@ -101,9 +134,18 @@ const StyledPaginationButton = styled.button`
 `
 
 const StyledGridArea = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
   gap: 16px;
+  list-style: none;
+  max-width: 100%;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    background: transparent; /* make scrollbar transparent */
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+  }
 
   @media (max-width: 800px) {
     grid-template-columns: 1fr 1fr;
@@ -115,7 +157,7 @@ const StyledGridArea = styled.div`
 `
 
 const StyledNewCard = styled.div`
-  width: 100%;
+  flex: 0 0 100%;
   max-width: 411px;
   min-height: 669px;
   padding: 28px;
@@ -169,7 +211,7 @@ const StyledCardTitle = styled.p`
   font-size: 18px;
   line-height: 28px;
   text-decoration-line: underline;
-
+  cursor: pointer;
   color: #FFFFFF;
 `
 

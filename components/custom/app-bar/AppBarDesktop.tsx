@@ -19,22 +19,28 @@ export const dropdownContent = [
   {
     title: 'Solutions',
     menu: false,
-    link: '/solutions'
+    link: '/home'
   },
-  {
-    title: 'Company',
-    menu: false,
-    link: '/company'
-  },
-  {
-    title: 'Blog',
-    menu: false,
-    link: '/blog'
-  }
+  // {
+  //   title: 'Company',
+  //   menu: false,
+  //   link: '/company'
+  // },
+  // {
+  //   title: 'Blog',
+  //   menu: false,
+  //   link: '/blog'
+  // }
 ]
 
 const AppBarDesktop: React.FC = () => {
-  const reftp = document.getElementById("contact-us");
+  const [reftp, setReftp] = React.useState<HTMLElement | null>(null)
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      setReftp(document.getElementById("contact-us"))
+    }
+  }, [])
 
   const handleScroll = () => {
     reftp?.scrollIntoView({ behavior: 'smooth' });

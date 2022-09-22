@@ -14,6 +14,18 @@ const FirstBlockLayout: React.FC<FirstBlockLayoutProps> = ({ title, bgAnimationS
   const isMobileScreen = useMediaQuery('(max-width:768px)');
   const { locale } = useRouter();
 
+  const [reftp, setReftp] = React.useState<HTMLElement | null>(null)
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      setReftp(document.getElementById("contact-us"))
+    }
+  }, [])
+
+  const handleScroll = () => {
+    reftp?.scrollIntoView({ behavior: 'smooth' });
+  }
+
   return (
     <div style={{ position: 'relative', overflow: 'hidden' }}>
       {bgAnimationSrc &&
@@ -70,7 +82,7 @@ const FirstBlockLayout: React.FC<FirstBlockLayoutProps> = ({ title, bgAnimationS
               {subTitle}
             </Typography>
           }
-          <Button sx={{ width: { xs: '100%', md: '50%' }, bgcolor: theme.palette.primary.main, color: '#FFFFFF', fontFamily: 'Poppins', fontWeight: 700, fontSize: '18px', ':hover': { bgcolor: theme.palette.primary.main } }} size='large'>LET&apos;S TALK</Button>
+          <Button onClick={handleScroll} sx={{ width: { xs: '100%', md: '50%' }, bgcolor: theme.palette.primary.main, color: '#FFFFFF', fontFamily: 'Poppins', fontWeight: 700, fontSize: '18px', ':hover': { bgcolor: theme.palette.primary.main } }} size='large'>LET&apos;S TALK</Button>
         </Stack>
       </Container>
       <Box sx={{ position: 'absolute', bottom: 0, height: '50px', width: '100%', zIndex: -1 }}>

@@ -11,11 +11,7 @@ import SocialMedia from '../SocialMedia';
 import styled from '@emotion/styled';
 // import styles from './ContactUs.module.scss';
 
-interface ContactUsProps {
-  // ref: any
-}
-
-const ContactUs: React.FC<ContactUsProps> = () => {
+const ContactUs: React.FC = () => {
   const isMobileScreen = useMediaQuery('(max-width:768px)');
   const [services, setServices] = React.useState({
     bd: false,

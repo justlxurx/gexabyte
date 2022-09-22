@@ -95,14 +95,13 @@ const ContactUs: React.FC<ContactUsProps> = () => {
               fontSize: '16px',
               fontWeight: 600,
             }}>Address</Typography>
-            <a href='https://go.2gis.com/kkjlw'>
+            <a href='https://go.2gis.com/9h3gey'>
               <Typography sx={{
                 textDecoration: 'underline',
-                fontFamily: 'Source Sans Pro',
-                fontSize: '18px',
-                fontWeight: 700,
-                mb: '1rem',
-              }}>Медеу парк, жилой комплекс Бегалина, 7, Алматы</Typography>
+                fontSize: '16px',
+                fontWeight: 600,
+                mb: '1rem'
+              }}>Almaty, Markova 22/37</Typography>
             </a>
             <Typography sx={{
               color: '#F0B270',

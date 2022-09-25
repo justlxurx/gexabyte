@@ -29,11 +29,11 @@ export const TokenomicsDev = () => {
         </StyledChart>
         <StyledFlex>
           <StyledIcon>
-            <img src='/icons/cadCad.svg' className='icon' />
+            <img src='/icons/cadCAD.svg' className='icon' />
             <p className='text'>cadCAD</p>
           </StyledIcon>
           <StyledIcon>
-            <img src='/icons/tokenspice.svg' className='icon' />
+            <img src='/icons/tokenSPICE.svg' className='icon' />
             <p className='text'>tokenSPICE</p>
           </StyledIcon>
           <StyledIcon>

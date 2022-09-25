@@ -14,23 +14,21 @@ export const dropdownContent = [
   {
     title: 'Projects',
     menu: false,
-    link: '/projects'
+    link: '#',
+    items: [
+      { title: 'Blockchain', link: '/blockchain' }, 
+      { title: 'Consulting', link: '/consulting' }, 
+      { title: 'Web&Mobile', link: '/webdev' }]
   },
   {
     title: 'Solutions',
     menu: false,
-    link: '/home'
+    link: '#',
+    items: [
+            { title: 'Blockchain', link: '/blockchain' }, 
+            { title: 'Consulting', link: '/consulting' }, 
+            { title: 'Web&Mobile', link: '/webdev' }]
   },
-  // {
-  //   title: 'Company',
-  //   menu: false,
-  //   link: '/company'
-  // },
-  // {
-  //   title: 'Blog',
-  //   menu: false,
-  //   link: '/blog'
-  // }
 ]
 
 const AppBarDesktop: React.FC = () => {
@@ -65,8 +63,10 @@ const AppBarDesktop: React.FC = () => {
 
           <Stack direction='row' gap='2rem' fontSize='16px'>
             {dropdownContent.map((i, idx) => (
+              <>
               <Dropdown data={i} key={idx} />
-            ))}
+              </>
+              ))}
           </Stack>
           <Stack direction='row' gap='0.5rem' spacing={2} alignItems='center'>
             <LocaleButton text='ENG' locale='en' />

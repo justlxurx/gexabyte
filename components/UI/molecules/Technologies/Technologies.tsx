@@ -1,20 +1,42 @@
 import styled from '@emotion/styled'
+import { useMediaQuery } from '@mui/material'
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, useRef } from 'react'
 
 const technologies = ['solidity.svg', 'ts.svg', 'rust.svg', 'jvscrpt.svg', 'python.svg', 'kotlin1.svg', 'swift1.svg', 'php.svg']
 
 export const Technologies: FC = () => {
+  const isMobile = useMediaQuery('(max-width: 600px)')
+  const listRef = useRef<HTMLDivElement>(null);
+
+  const swipeIcons = (side: 'left' | 'right') => {
+    if (side === 'left' && isMobile) {
+      listRef.current!.scrollLeft -= 360;
+    }
+    else if (side === 'right' && isMobile) {
+      listRef.current!.scrollLeft += 360;
+    }
+  }
   return (
     <div>
       <StyledTitle>Technologies:</StyledTitle>
-      <StyledGridItemTechnologies>
+      <StyledGridItemTechnologies ref={listRef}>
         {technologies.map((tech, idx) => (
           <StyledTechnologiesCard key={idx}>
             <Image src={`/icons/${tech}`} width='64px' height='64px' />
           </StyledTechnologiesCard>
         ))}
       </StyledGridItemTechnologies>
+      {isMobile &&
+        <StyledPagination>
+          <StyledPaginationButton onClick={() => swipeIcons('left')}>
+            <Image src='/icons/arrow left.svg' width='24px' height='24px' />
+          </StyledPaginationButton>
+          <StyledPaginationButton onClick={() => swipeIcons('right')}>
+            <Image src='/icons/arrow right.svg' width='24px' height='24px' />
+          </StyledPaginationButton>
+        </StyledPagination>
+      }
     </div>
   )
 }
@@ -25,9 +47,19 @@ const StyledGridItemTechnologies = styled.div`
   gap: 56px;
 
   @media (max-width: 600px) {
-    display: none;
-    max-width: 425px;
-    overflow: hidden;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    list-style: none;
+    max-width: 400px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+      background: transparent; /* make scrollbar transparent */
+      -webkit-appearance: none;
+      width: 0;
+      height: 0;
+    }
   }
 `
 
@@ -39,6 +71,9 @@ const StyledTechnologiesCard = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 600px) {
+    flex: 0 0 88px;
+  }
 `
 
 const StyledTitle = styled.p`
@@ -48,4 +83,19 @@ const StyledTitle = styled.p`
   font-size: 24px;
   line-height: 137%;
   color: #FFFFFF;
+`
+
+const StyledPaginationButton = styled.button`
+  width: 40px;
+  height: 40px;
+  background: #171717;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+`
+
+const StyledPagination = styled.div`
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
 `

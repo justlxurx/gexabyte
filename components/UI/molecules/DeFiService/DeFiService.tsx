@@ -183,7 +183,7 @@ const StyledPaginationButton = styled.button`
   border-radius: 4px;
   border: none;
   cursor: pointer;
-  margin-right: 30px;
+  // margin-right: 30px;
 `
 
 const StyledPagination = styled.div`

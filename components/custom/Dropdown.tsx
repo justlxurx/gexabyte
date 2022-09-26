@@ -4,6 +4,7 @@ import styles from '../../styles/components/Dropdown.module.scss';
 import DropdownIcon from '../../public/icons/sr-chevron-right.svg';
 import { Typography } from '@mui/material';
 import styled from '@emotion/styled';
+import Image from 'next/image';
 
 interface DropdownProps {
   data: {
@@ -33,6 +34,7 @@ const Dropdown: React.FC<DropdownProps> = ({ data }) => {
           </Link>
         ))}
       </div>
+        <Image src={'/images/chevron.svg'} alt='logo' width={15} height={16} style={{ cursor: 'pointer' }} />
     </div>
   )
 }

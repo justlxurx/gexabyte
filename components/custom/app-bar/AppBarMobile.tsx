@@ -1,5 +1,4 @@
-import { AppBar, Box, Drawer, IconButton, Stack, Toolbar, Typography } from '@mui/material';
-import Image from 'next/image';
+import { Accordion, AccordionDetails, AccordionSummary, AppBar, Box, Button, Drawer, IconButton, Stack, Toolbar, Typography, useTheme } from '@mui/material';import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { theme } from '../../../utils/theme';
@@ -65,12 +64,12 @@ const AppBarMobile: React.FC = () => {
         disableScrollLock={true}
       >
         <Toolbar />
-        {dropdownContent.map((item, idx) => (
+        {/* {dropdownContent.map((item, idx) => (
           <Link href={item.link} key={idx}>
             <Typography key={idx} sx={{ fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
           </Link>
-        ))}
-        {/* {dropdownContent.map((item, idx) => (
+        ))} */}
+        {dropdownContent.map((item, idx) => (
           item.items?.length ?
             <Accordion sx={{ bgcolor: '#000000' }} key={idx}>
               <AccordionSummary
@@ -78,17 +77,19 @@ const AppBarMobile: React.FC = () => {
                 aria-controls="panel2a-content"
                 id="panel2a-header"
               >
-                <Typography sx={{ fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
+                <Typography  sx={{ fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
               </AccordionSummary>
               <AccordionDetails>
                 {item.items.map((itemY, idy) => (
-                  <Typography key={idy} sx={{ m: '1rem', fontSize: '22px', fontWeight: 500, color: '#A8B1D1' }}>{itemY.title}</Typography>
+                  <Link href={itemY.link} key={idy}>
+                    <Typography  style={{ cursor: 'pointer' }} sx={{ m: '1rem', fontSize: '22px', fontWeight: 500, color: '#A8B1D1' }}>{itemY.title}</Typography>
+                  </Link>
                 ))}
               </AccordionDetails>
             </Accordion>
             :
             <Typography key={idx} sx={{ m: '1rem', fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
-        ))} */}
+        ))}
         <Stack direction='row' sx={{ mt: 'auto' }}>
           <SocialMedia />
           <Stack direction='row' spacing={2} sx={{ ml: 'auto' }}>

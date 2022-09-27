@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { useMediaQuery } from '@mui/material'
 import Image from 'next/image'
 import React, { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const NewsData = [
   { 
@@ -45,7 +46,6 @@ const NewsData = [
 
 export const News = () => {
   const { t } = useTranslation()
-  const { locale } = useRouter()
   const isMobile = useMediaQuery('(max-width: 600px)')
   const listRef = useRef<HTMLDivElement>(null)
 

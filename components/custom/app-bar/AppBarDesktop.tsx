@@ -57,17 +57,19 @@ const AppBarDesktop: React.FC = () => {
           display: 'flex',
           justifyContent: 'space-between'
         }}>
+          <div style={{display: "flex"}}>
           <Link href='/'>
-            <Image src={'/logo.svg'} alt='logo' width={100} height={50} style={{ cursor: 'pointer' }} />
+            <Image src={'/logo.svg'} alt='logo' width={100} height={50} style={{ cursor: 'pointer'}} />
           </Link>
 
-          <Stack direction='row' gap='2rem' fontSize='16px'>
+          <Stack direction='row' gap='2rem' fontSize='16px' style={{marginLeft: "10vw"}}>
             {dropdownContent.map((i, idx) => (
               <>
               <Dropdown data={i} key={idx} />
               </>
               ))}
           </Stack>
+          </div>
           <Stack direction='row' gap='0.5rem' spacing={2} alignItems='center'>
             <LocaleButton text='ENG' locale='en' />
             <LocaleButton text='RUS' locale='ru' />

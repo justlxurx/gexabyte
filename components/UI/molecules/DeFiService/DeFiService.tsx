@@ -2,6 +2,10 @@ import styled from '@emotion/styled'
 import { useMediaQuery } from '@mui/material';
 import Image from 'next/image'
 import { FC, useRef } from 'react'
+import React, { Component } from 'react';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+
 
 const DeFiTechs = [
   { title: 'compund', icon: '/icons/compound.svg' },
@@ -18,8 +22,33 @@ const DeFiTechs = [
   { title: 'balancer', icon: '/icons/balancer.svg' },
 ]
 
+// export const DeFiService: FC = () => {
+//   return(
+//     <div>
+//       <Carousel centerSlidePercentage={20}>
+//         {DeFiTechs.map((item, idx) => (
+//           <StyledCard key={idx}>
+//             <StyledIconArea>
+//               <Image src={item.icon} width='74px' height='74px' className='icon' />
+//             </StyledIconArea>
+//             <StyledCardText>{item.title}</StyledCardText>
+//           </StyledCard>
+//         ))}
+//       </Carousel>
+//     </div>
+//   )
+// }
+
 export const DeFiService: FC = () => {
-  const isMobile = useMediaQuery('(max-width: 600px)')
+    const isMobile = useMediaQuery('(max-width: 600px)')
+  {DeFiTechs.map((item, idx) => (
+     <StyledCard key={idx}>
+       <StyledIconArea>
+         <Image src={item.icon} width='74px' height='74px' className='icon' />
+       </StyledIconArea>
+       <StyledCardText>{item.title}</StyledCardText>
+     </StyledCard>
+   ))}
   const listRef = useRef<HTMLDivElement>(null);
 
   const swipeIcons = (side: 'left' | 'right') => {

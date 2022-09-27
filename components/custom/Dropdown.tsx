@@ -46,6 +46,6 @@ const StyledLink = styled.span`
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 100%;
+  line-height: 150%;
   color: #FFFFFF;
 `

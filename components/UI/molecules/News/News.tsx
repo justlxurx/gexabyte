@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React, { useRef } from 'react'
 
 const NewsData = [
-  {
+  { 
     image: '/images/digital bridge_astana hub 1.png',
     theme: 'events',
     title: 'Tech Culture is the partner of the international forum Digital Bridge!',
@@ -16,7 +16,8 @@ const NewsData = [
     theme: 'Mass Media about us',
     title: 'Web 3.0, metaverse и NFT: What’s common?',
     contentShort: 'Arthur Sundetov, Tech Culture CTO, explains the origin of Web 3.0 and the relative similarities of Internet development generations.',
-    contentFull: 'Tech Culture will present Metabank, a bank in Metaverse with financial services available through VR experience. We will also share our experience in blockchain projects development and discuss blockchain potential for Central Asian region and abroad.'
+    contentFull: 'Tech Culture will present Metabank, a bank in Metaverse with financial services available through VR experience. We will also share our experience in blockchain projects development and discuss blockchain potential for Central Asian region and abroad.',
+    link: "https://5q.kz/posts/chto-obshhego-u-web-3-0-metaverse-i-nft"
   },
   {
     image: '/images/digital bridge_astana hub 3.png',
@@ -37,7 +38,8 @@ const NewsData = [
     theme: 'Mass Media about us',
     title: 'What is Web 3.0 and how it’s different from the state of the current Internet',
     contentShort: 'About key characteristics of Web 3.0 and brief summary of Blockchain Summer Conference.',
-    contentFull: 'Tech Culture will present Metabank, a bank in Metaverse with financial services available through VR experience. We will also share our experience in blockchain projects development and discuss blockchain potential for Central Asian region and abroad.'
+    contentFull: 'Tech Culture will present Metabank, a bank in Metaverse with financial services available through VR experience. We will also share our experience in blockchain projects development and discuss blockchain potential for Central Asian region and abroad.',
+    link: "https://bluescreen.kz/news/11627/chto-takoie-web-30-i-chiem-otlichaietsia-ot-intiernieta-sieichas"
   }
 ]
 
@@ -83,7 +85,7 @@ export const News = () => {
             <p className='theme'>{item.theme}</p>
             <StyledCardTitle>{item.title}</StyledCardTitle>
             <p className='text'>{item.contentShort}</p>
-            <StyledActionButton>learn more</StyledActionButton>
+            {item.link && <StyledActionButton><a href={item.link}>learn more</a></StyledActionButton>}
           </StyledNewCard>
         ))}
 

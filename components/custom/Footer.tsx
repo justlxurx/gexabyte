@@ -48,16 +48,16 @@ const Footer = () => {
             <Stack direction='column'>
               <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Solutions</Typography>
               <StyledTypography title='Blockchain Developement' link='/blockchain' />
-              <StyledTypography title='Web&Mobile development' link='/webdev' />
               <StyledTypography title='Blockchain consulting' link='/consulting' />
+              <StyledTypography title='Web&Mobile development' link='/webdev' />
             </Stack>
           </Grid>
           <Grid item xs={1} md={1}>
             <Stack direction='column'>
               <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Projects</Typography>
               <StyledTypography title='Blockchain' link='/blockchain' />
-              <StyledTypography title='Web&Mobile app' link='/webdev' />
               <StyledTypography title='Consulting' link='/consulting' />
+              <StyledTypography title='Web&Mobile app' link='/webdev' />
             </Stack>
           </Grid>
           <Grid item xs={2} md={2}>
@@ -70,7 +70,7 @@ const Footer = () => {
                 <a href='https://kz.linkedin.com/in/techculture'>
                   <Image src='/icons/social-media/LinkdIn.svg' width='24px' height='24px' />
                 </a>
-                <a href='https://t.me/techcultureconsult'>
+                <a href='https://t.me/adil_akbayev'>
                   <Image src='/icons/social-media/Telegram.svg' width='24px' height='24px' />
                 </a>
                 <a href='https://www.facebook.com/tech.culture.it'>

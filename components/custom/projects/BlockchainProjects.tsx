@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 const projects = {
-  desktop: ['/images/musical.png', '/images/defi app.svg', '/images/crowdfunding.png', '/images/nft.png', '/images/euphoria.png', '/images/dexo.png', '/images/emm.svg'],
+  desktop: ['/images/musical.png', '/images/defi app.svg', '/images/crowdfunding.png', '/images/nft.png', '/images/euphoria.png', '/images/dexoo.svg', '/images/emm.svg'],
   mobile: ['/images/rocki mobile.png', '/images/ton seed mobile.png', '/images/defi mobile.png']
 }
 

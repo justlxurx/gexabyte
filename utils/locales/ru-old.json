@@ -1,0 +1,99 @@
+{
+  "header": {
+    "projects": "projects",
+    "solutions": "solutions"
+  },
+  "button": {
+    "getInTouch": "Связаться",
+    "letstalk": "LET’S TALK",
+    "moreDetails": "Узнать больше",
+    "more": "Больше",
+    "getStarted": "Отправить",
+    "letsChatInTelegram": "Связаться в телеграме",
+    "seeAllProjects": "Посмотреть все проекты",
+    "exploreOurProjects": "Больше о наших проектах",
+    "learnMore": "Подробнее"
+  },
+  "footer": {
+    "solutions": "решения ",
+    "blockchainDev": "блокчейн разрабаотка",
+    "webMobDev": "разработка веб и мобильных проектов",
+    "blockchainConsulting": "блокчейн консалтинг",
+    "projects": "проекты",
+    "blockchain": "блокчейн",
+    "consulting": "консалтинг",
+    "webDev": "веб и мобильные приложения",
+    "keepInTouch": "Оставайтесь на связи"
+  },
+  "home": {
+    "title": "Компания по разработке и консалтингу блокчейн",
+    "subtitle": "Мы создаем продукты, используя искусственный интеллект, облачные решения, блокчейн и компьютерное зрение",
+    "Our Techstack": "Our Techstack",
+    "WHAT WE CAN HELP YOU WITH": "WHAT WE CAN HELP YOU WITH",
+    "BLOCKCHAIN DEVELOPMENT": {
+      "title": "Blockchain development & consulting company",
+      "description": "We create and deploy public, closed, hybrid blockchain solutions for various spheres, as well as DEFI and blockchain projects for the crypto industry."
+    },
+    "stats": {
+      "title": "Мы преоставляем цифровые услуги для крупных биснесов.",
+      "completedProjects": "Количество реализованных проектов",
+      "experience": "Опыт в веб и блокчейн разработке",
+      "blockchainWeb": "Блокчейн и веб-разработка"
+    },
+    "help": {
+      "title": "С чем мы можем вам помочь ",
+      "blockchain": {
+        "title": "блокчейн разработка",
+        "text": "Мы создаем и внедряем публичные, закрытые, гибридные блокчейн-решения для различных сфер, а также DEFI и блокчейн-проекты для криптоиндустрии."
+      },
+      "consulting": {
+        "title": "блокчейн консалтинг",
+        "text": "Мы предоставляем консультационные услуги по таким направлениям как: токеномика, аудит смарт-контрактов, бизнес-аналитика,Уайтпейпер и Лайтпейпер, а так же по технической документации"
+      },
+      "webMobile": {
+        "title": "разработка веб и мобильных проектов",
+        "text": "Разработка веб и мобильных приложений для iOS и Android с удобным интерфейсом для автоматизации процессов и решения бизнес-задач с использованием современных технологий"
+      }
+    },
+    "projects": {
+      "title": "Проекты разработанные на блокчейне"
+    },
+    "news": {
+      "title": "последние новости",
+      "category": {
+        "events": "events",
+        "massMedia": "mas media about us",
+        "cooperation": "cooperation"
+      },
+      "cards": {
+        "title1": "Tech Culture – партнер международного форума Digital Bridge!",
+        "text1": "28-29 сентября в Нур-Султане будет проводится Digital Bridge где соберутся эксперты и компании в сфере цифровых технологии, бизнеса и IT",
+        "title2": "Web 3.0, метавселенная и NFT: что общего?",
+        "text2": "Артур Сундетов, технический директор Tech Culture, объясняет происхождение Web 3.0 и относительное сходство поколений разработки Интернета.",
+        "title3": "Tech Culture подписала меморандум с Международным университетом информационных технологий (МУИТ)",
+        "text3": ""
+      }
+    }
+  },
+  "blockchainPage": {
+
+  },
+  "consultingPage": {
+
+  },
+  "webdevPage": {
+
+  },
+  "contactUsForm": {
+    "title": "Cвяжитесь с нами и воплотите свои идеи",
+    "address": "адрес",
+    "sales": "отдел продаж",
+    "hr": "Hr отдел",
+    "socialMedia": "социальные сети",
+    "name": "имя",
+    "email": "электронная почта",
+    "company": "компания",
+    "help": "чем мы можем вам помочь?",
+    "formTitle": "Давайте"
+  }
+}

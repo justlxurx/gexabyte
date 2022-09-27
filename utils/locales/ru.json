@@ -4,30 +4,30 @@
     "solutions": "solutions"
   },
   "button": {
-    "getInTouch": "Связаться",
+    "getInTouch": "Get in Touch",
     "letstalk": "LET’S TALK",
-    "moreDetails": "Узнать больше",
-    "more": "Больше",
-    "getStarted": "Отправить",
-    "letsChatInTelegram": "Связаться в телеграме",
-    "seeAllProjects": "Посмотреть все проекты",
+    "moreDetails": "More details",
+    "more": "more",
+    "getStarted": "Get started",
+    "letsChatInTelegram": "Let’s chat in Telegram",
+    "seeAllProjects": "See All Projects",
     "exploreOurProjects": "Больше о наших проектах",
-    "learnMore": "Подробнее"
+    "learnMore": "Learn More"
   },
   "footer": {
-    "solutions": "решения ",
-    "blockchainDev": "блокчейн разрабаотка",
-    "webMobDev": "разработка веб и мобильных проектов",
-    "blockchainConsulting": "блокчейн консалтинг",
-    "projects": "проекты",
-    "blockchain": "блокчейн",
-    "consulting": "консалтинг",
-    "webDev": "веб и мобильные приложения",
-    "keepInTouch": "Оставайтесь на связи"
+    "solutions": "solutions",
+    "blockchainDev": "Blockchain Development",
+    "webMobDev": "Web&Mobile development",
+    "blockchainConsulting": "Blockchain consulting",
+    "projects": "projects",
+    "blockchain": "Blockchain",
+    "consulting": "Consulting",
+    "webdev": "Web & Mobile app",
+    "keepInTouch": "Keep In Touch"
   },
   "home": {
-    "title": "Компания по разработке и консалтингу блокчейн",
-    "subtitle": "Мы создаем продукты, используя искусственный интеллект, облачные решения, блокчейн и компьютерное зрение",
+    "title": "Blockchain development & consulting company",
+    "subtitle": "We create complex products using artificial intelligence, cloud solutions, blockchain and computer vision",
     "Our Techstack": "Our Techstack",
     "WHAT WE CAN HELP YOU WITH": "WHAT WE CAN HELP YOU WITH",
     "BLOCKCHAIN DEVELOPMENT": {
@@ -35,39 +35,39 @@
       "description": "We create and deploy public, closed, hybrid blockchain solutions for various spheres, as well as DEFI and blockchain projects for the crypto industry."
     },
     "stats": {
-      "title": "Мы преоставляем цифровые услуги для крупных биснесов.",
-      "completedProjects": "Количество реализованных проектов",
-      "experience": "Опыт в веб и блокчейн разработке",
-      "blockchainWeb": "Блокчейн и веб-разработка"
+      "title": "We create digital services for large businesses.",
+      "completedProjects": "Number of completed projects",
+      "experience": "Blockchain and web development experience",
+      "blockchainWeb": "Blockchain and web development"
     },
     "help": {
-      "title": "С чем мы можем вам помочь ",
+      "title": "what we can help you with",
       "blockchain": {
-        "title": "блокчейн разработка",
-        "text": "Мы создаем и внедряем публичные, закрытые, гибридные блокчейн-решения для различных сфер, а также DEFI и блокчейн-проекты для криптоиндустрии."
+        "title": "blockchain development",
+        "text": "We create and deploy public, closed, hybrid blockchain solutions for various spheres, as well as DEFI and blockchain projects for the crypto industry."
       },
       "consulting": {
-        "title": "блокчейн консалтинг",
-        "text": "Мы предоставляем консультационные услуги по таким направлениям как: токеномика, аудит смарт-контрактов, бизнес-аналитика,Уайтпейпер и Лайтпейпер, а так же по технической документации"
+        "title": "blockchain consulting",
+        "text": "We provide consulting services in the following areas: tokenomics, smart contract audit, business analytics, White&Light paper and technical documentation"
       },
       "webMobile": {
-        "title": "разработка веб и мобильных проектов",
-        "text": "Разработка веб и мобильных приложений для iOS и Android с удобным интерфейсом для автоматизации процессов и решения бизнес-задач с использованием современных технологий"
+        "title": "web and mobile development",
+        "text": "Development of web and mobile applications for iOS and Android with a user-friendly interface for automating processes and solving business problems using modern technologies"
       }
     },
     "projects": {
-      "title": "Проекты разработанные на блокчейне"
+      "title": "Blockchain Development Projects"
     },
     "news": {
-      "title": "последние новости",
+      "title": "latest news",
       "category": {
         "events": "events",
         "massMedia": "mas media about us",
         "cooperation": "cooperation"
       },
       "cards": {
-        "title1": "Tech Culture – партнер международного форума Digital Bridge!",
-        "text1": "28-29 сентября в Нур-Султане будет проводится Digital Bridge где соберутся эксперты и компании в сфере цифровых технологии, бизнеса и IT",
+        "title1": "Tech Culture is the partner of the international forum Digital Bridge!",
+        "text1": "On Sep 28-29 Digital Bridge gathers experts and companies from digital technologies, business and IT spheres in Nur-Sultan.",
         "title2": "Web 3.0, метавселенная и NFT: что общего?",
         "text2": "Артур Сундетов, технический директор Tech Culture, объясняет происхождение Web 3.0 и относительное сходство поколений разработки Интернета.",
         "title3": "Tech Culture подписала меморандум с Международным университетом информационных технологий (МУИТ)",
@@ -75,25 +75,25 @@
       }
     }
   },
-  "blockchainPage": {
+  "blockchain": {
 
   },
-  "consultingPage": {
+  "consulting": {
 
   },
-  "webdevPage": {
+  "webdev": {
 
   },
   "contactUsForm": {
-    "title": "Cвяжитесь с нами и воплотите свои идеи",
-    "address": "адрес",
-    "sales": "отдел продаж",
-    "hr": "Hr отдел",
-    "socialMedia": "социальные сети",
-    "name": "имя",
-    "email": "электронная почта",
-    "company": "компания",
-    "help": "чем мы можем вам помочь?",
-    "formTitle": "Давайте"
+    "title": "Contact us and unleash your ideas",
+    "address": "address",
+    "sales": "Sales Department",
+    "hr": "HR Department",
+    "socialMedia": "Social Media",
+    "name": "name",
+    "email": "email",
+    "company": "company",
+    "help": "how can we help?",
+    "formTitle": "Let’s switch your business to Digital"
   }
 }

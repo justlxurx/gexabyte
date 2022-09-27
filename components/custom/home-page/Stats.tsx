@@ -1,28 +1,31 @@
 import styled from '@emotion/styled'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import RoundedAnimation from '../RoundedAnimation'
 
 export const Stats = () => {
+  const { t } = useTranslation()
+
   return (
     <SecondBlock>
       <SecondBlockTitle>
-        We create digital services for large businesses.
+        {t('home.stats.title')}
       </SecondBlockTitle>
 
       <StatsWrapper>
         <StatsOneBlock>
           <StatsNumber>40+</StatsNumber>
-          <StatsText>Number of completed projects</StatsText>
+          <StatsText>{t('home.stats.completedProjects')}</StatsText>
         </StatsOneBlock>
 
         <StatsOneBlock>
           <StatsNumber>6+</StatsNumber>
-          <StatsText>Blockchain and web development experience</StatsText>
+          <StatsText>{t('home.stats.experience')}</StatsText>
         </StatsOneBlock>
 
         <StatsOneBlock>
           <StatsNumber>211+</StatsNumber>
-          <StatsText>Blockchain and web development </StatsText>
+          <StatsText>{t('home.stats.blockchainWeb')}</StatsText>
         </StatsOneBlock>
       </StatsWrapper>
 

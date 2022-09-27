@@ -2,31 +2,40 @@ import styled from '@emotion/styled';
 import { Box, Container, Stack, Typography, Link as MUILink, Grid, TextField } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import { useRouter } from 'next/router';
+import React, { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { theme } from '../../../utils/theme';
 
-const serviceTypes = [
-  {
-    title: 'Blockchain Development',
-    description: 'We create and deploy public, closed, hybrid blockchain solutions for various spheres, as well as DEFI and blockchain projects for the crypto industry.',
-    icon: '/icons/bd.svg',
-    link: '/blockchain'
-  },
-  {
-    title: 'Blockchain Consulting',
-    description: 'We provide consulting services in the following areas: tokenomics, smart contract audit, business analytics, White&Light paper and technical documentation',
-    icon: '/icons/bc.svg',
-    link: '/consulting'
-  },
-  {
-    title: 'Web&mobile development',
-    description: 'Development of web and mobile applications for iOS and Android with a user-friendly interface for automating processes and solving business problems using modern technologies',
-    icon: '/icons/wd.svg',
-    link: '/webdev'
-  }
-]
+
 
 const Services = () => {
+  const { t } = useTranslation()
+  const { locale } = useRouter()
+
+  const services = useMemo(() => {
+    return [
+      {
+        title: t('home.help.blockchain.title'),
+        description: t('home.help.blockchain.text'),
+        icon: '/icons/bd.svg',
+        link: '/blockchain'
+      },
+      {
+        title: t('home.help.consulting.title'),
+        description: t('home.help.consulting.text'),
+        icon: '/icons/bc.svg',
+        link: '/consulting'
+      },
+      {
+        title: t('home.help.webMobile.title'),
+        description: t('home.help.webMobile.text'),
+        icon: '/icons/wd.svg',
+        link: '/webdev'
+      }
+    ]
+  }, [locale, t])
+
   return (
     <Container sx={{
       mb: '6rem',
@@ -72,7 +81,7 @@ const Services = () => {
         </Link>
       </Box>
       <Grid container columns={3} spacing={1} gridAutoRows='1fr' rowGap={3}>
-        {serviceTypes.map((service, idx) => (
+        {services.map((service, idx) => (
           <Grid item xs={3} md={1} key={idx}>
             <StyledCard>
               <StyledIcon src={service.icon} />
@@ -82,7 +91,7 @@ const Services = () => {
               </StyledTextArea>
               <Link href={service.link}>
                 <StyledButton>
-                  <span>More Details</span>
+                  <span>{t('button.moreDetails')}</span>
                   <Image src='/icons/arrow-right.svg' width='25px' height='8px' />
                 </StyledButton>
               </Link>

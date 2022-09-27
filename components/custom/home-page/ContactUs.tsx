@@ -9,9 +9,11 @@ import { IContactUsForm } from 'types/IContactUsForm';
 import { contactUsSchema } from 'utils/validations/contactUsSchema';
 import SocialMedia from '../SocialMedia';
 import styled from '@emotion/styled';
+import { useTranslation } from 'react-i18next';
 // import styles from './ContactUs.module.scss';
 
 const ContactUs: React.FC = () => {
+  const { t } = useTranslation();
   const isMobileScreen = useMediaQuery('(max-width:768px)');
   const [services, setServices] = React.useState({
     bd: false,
@@ -84,13 +86,13 @@ const ContactUs: React.FC = () => {
               textTransform: 'capitalize',
               mb: '1.25rem'
             }}>
-              Contact Us And Unleash Your Ideas
+              {t('contactUsForm.title')}
             </Typography>
             <Typography sx={{
               color: '#F0B270',
               fontSize: '16px',
               fontWeight: 600,
-            }}>Address</Typography>
+            }}>{t('contactUsForm.address')}</Typography>
             <a href='https://go.2gis.com/9h3gey'>
               <Typography sx={{
                 textDecoration: 'underline',
@@ -103,7 +105,7 @@ const ContactUs: React.FC = () => {
               color: '#F0B270',
               fontSize: '16px',
               fontWeight: 600,
-            }}>Sales Department</Typography>
+            }}>{t('contactUsForm.sales')}</Typography>
             <a href='mailto:aa@techculture.tech'>
               <Typography sx={{
                 textDecoration: 'underline',
@@ -116,7 +118,7 @@ const ContactUs: React.FC = () => {
               color: '#F0B270',
               fontSize: '16px',
               fontWeight: 600,
-            }}>HR Department</Typography>
+            }}>{t('contactUsForm.hr')}</Typography>
             <a href='mailto:hr@techculture.tech'>
               <Typography sx={{
                 textDecoration: 'underline',
@@ -129,7 +131,7 @@ const ContactUs: React.FC = () => {
               fontSize: '16px',
               fontWeight: 600,
               color: '#F0B270'
-            }}>Social Media</Typography>
+            }}>{t('contactUsForm.socialMeda')}</Typography>
             <SocialMedia />
           </Grid>
           <Grid item xs p='5%' id='#get-in-touch'>
@@ -140,7 +142,7 @@ const ContactUs: React.FC = () => {
                 fontFamily: 'Readex Pro',
                 mb: '1rem'
               }}>
-                Let’s switch your business to Digital
+                {t('contactUsForm.formTitle')}
               </Typography>
               <Typography sx={{
                 fontSize: '18px',
@@ -151,7 +153,7 @@ const ContactUs: React.FC = () => {
               }}>
                 You can reach us anytime via <span style={{ color: '#736AE4' }}>techculturellp@gmail.com</span>
               </Typography>
-              <StyledInputLabel>Name</StyledInputLabel>
+              <StyledInputLabel>{t('contactUsForm.name')}</StyledInputLabel>
               <TextField
                 id="bootstrap-input1"
                 placeholder='Your name'
@@ -173,7 +175,7 @@ const ContactUs: React.FC = () => {
                   {errors.name}
                 </Typography>
               }
-              <StyledInputLabel>Email</StyledInputLabel>
+              <StyledInputLabel>{t('contactUsForm.email')}</StyledInputLabel>
               <TextField
                 id="bootstrap-input2"
                 value={form.email}
@@ -196,7 +198,7 @@ const ContactUs: React.FC = () => {
                   {errors.email}
                 </Typography>
               }
-              <StyledInputLabel>Company</StyledInputLabel>
+              <StyledInputLabel>{t('contactUsForm.company')}</StyledInputLabel>
               <TextField
                 value={form.company}
                 name='company'
@@ -214,7 +216,7 @@ const ContactUs: React.FC = () => {
                   {errors.company}
                 </Typography>
               }
-              <StyledInputLabel>How can we help?</StyledInputLabel>
+              <StyledInputLabel>{t('contactUsForm.help')}</StyledInputLabel>
               <TextField
                 id="bootstrap-input4"
                 value={form.info}
@@ -256,14 +258,14 @@ const ContactUs: React.FC = () => {
                       borderColor: services.bd ? '#F0B270' : '#2D2D2D',
                     },
                     fontFamily: 'Helvetica Neue',
-                    width: {xs: '126px', md: '100%'},
+                    width: { xs: '126px', md: '100%' },
                   }}>
                     Blockchain Development
                   </Button>
                 </Grid>
                 <Grid item xs={1}>
                   <Button variant='outlined' onClick={() => setServices(prev => ({ ...prev, bc: !prev.bc }))} sx={{
-                    width: {xs: '126px', md: '100%'},
+                    width: { xs: '126px', md: '100%' },
                     borderColor: services.bc ? '#F0B270' : '#2D2D2D',
                     color: services.bc ? '#F0B270' : '#2D2D2D',
                     fontSize: { xs: '14px', md: '18px' },
@@ -285,7 +287,7 @@ const ContactUs: React.FC = () => {
                     ':hover': {
                       borderColor: services.wd ? '#F0B270' : '#2D2D2D',
                     },
-                    width: {xs: '126px', md: '100%'},
+                    width: { xs: '126px', md: '100%' },
                     fontFamily: 'Helvetica Neue'
                   }}>
                     Web&mobile development
@@ -304,7 +306,7 @@ const ContactUs: React.FC = () => {
                   fontWeight: 700,
                   fontFamily: 'Poppins'
                 }}>
-                Get started
+                {t('button.getStarted')}
               </Button>
               <Button fullWidth size='large' sx={{
                 bgcolor: '#69B1F3',
@@ -314,7 +316,7 @@ const ContactUs: React.FC = () => {
                 fontWeight: 700,
                 fontFamily: 'Poppins'
               }}>
-                Let’s chat in Telegram
+                {t('button.letsChatInTelegram')}
               </Button>
             </form>
           </Grid>
@@ -335,4 +337,5 @@ const StyledInputLabel = styled.p`
   margin: 0;
   margin-bottom: 8px;
   color: #FFFFFF;
+  text-transform: capitalize;
 `

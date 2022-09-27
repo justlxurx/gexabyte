@@ -1,4 +1,30 @@
 {
+  "header": {
+    "projects": "projects",
+    "solutions": "solutions"
+  },
+  "button": {
+    "getInTouch": "Get in Touch",
+    "letstalk": "LET’S TALK",
+    "moreDetails": "More details",
+    "more": "more",
+    "getStarted": "Get started",
+    "letsChatInTelegram": "Let’s chat in Telegram",
+    "seeAllProjects": "See All Projects",
+    "exploreOurProjects": "Больше о наших проектах",
+    "learnMore": "Learn More"
+  },
+  "footer": {
+    "solutions": "solutions",
+    "blockchainDev": "Blockchain Development",
+    "webMobDev": "Web&Mobile development",
+    "blockchainConsulting": "Blockchain consulting",
+    "projects": "projects",
+    "blockchain": "Blockchain",
+    "consulting": "Consulting",
+    "webdev": "Web & Mobile app",
+    "keepInTouch": "Keep In Touch"
+  },
   "home": {
     "title": "Blockchain development & consulting company",
     "subtitle": "We create complex products using artificial intelligence, cloud solutions, blockchain and computer vision",
@@ -7,6 +33,67 @@
     "BLOCKCHAIN DEVELOPMENT": {
       "title": "Blockchain development & consulting company",
       "description": "We create and deploy public, closed, hybrid blockchain solutions for various spheres, as well as DEFI and blockchain projects for the crypto industry."
+    },
+    "stats": {
+      "title": "We create digital services for large businesses.",
+      "completedProjects": "Number of completed projects",
+      "experience": "Blockchain and web development experience",
+      "blockchainWeb": "Blockchain and web development"
+    },
+    "help": {
+      "title": "what we can help you with",
+      "blockchain": {
+        "title": "blockchain development",
+        "text": "We create and deploy public, closed, hybrid blockchain solutions for various spheres, as well as DEFI and blockchain projects for the crypto industry."
+      },
+      "consulting": {
+        "title": "blockchain consulting",
+        "text": "We provide consulting services in the following areas: tokenomics, smart contract audit, business analytics, White&Light paper and technical documentation"
+      },
+      "webMobile": {
+        "title": "web and mobile development",
+        "text": "Development of web and mobile applications for iOS and Android with a user-friendly interface for automating processes and solving business problems using modern technologies"
+      }
+    },
+    "projects": {
+      "title": "Blockchain Development Projects"
+    },
+    "news": {
+      "title": "latest news",
+      "category": {
+        "events": "events",
+        "massMedia": "mas media about us",
+        "cooperation": "cooperation"
+      },
+      "cards": {
+        "title1": "Tech Culture is the partner of the international forum Digital Bridge!",
+        "text1": "On Sep 28-29 Digital Bridge gathers experts and companies from digital technologies, business and IT spheres in Nur-Sultan.",
+        "title2": "Web 3.0, метавселенная и NFT: что общего?",
+        "text2": "Артур Сундетов, технический директор Tech Culture, объясняет происхождение Web 3.0 и относительное сходство поколений разработки Интернета.",
+        "title3": "Tech Culture подписала меморандум с Международным университетом информационных технологий (МУИТ)",
+        "text3": ""
+      }
     }
+  },
+  "blockchain": {
+
+  },
+  "consulting": {
+
+  },
+  "webdev": {
+
+  },
+  "contactUsForm": {
+    "title": "Contact us and unleash your ideas",
+    "address": "address",
+    "sales": "Sales Department",
+    "hr": "HR Department",
+    "socialMedia": "Social Media",
+    "name": "name",
+    "email": "email",
+    "company": "company",
+    "help": "how can we help?",
+    "formTitle": "Let’s switch your business to Digital"
   }
 }

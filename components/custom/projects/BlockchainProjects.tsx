@@ -1,6 +1,7 @@
 import { Box, Button, Container, Grid, Typography, useMediaQuery } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const projects = {
   desktop: ['/images/musical.png', '/images/defi app.svg', '/images/crowdfunding.png', '/images/nft.png', '/images/euphoria.png', '/images/dexo.png', '/images/emm.svg'],
@@ -10,6 +11,7 @@ const projects = {
 const ImageGrid = [8, 4, 6, 6, 4, 4, 4]
 
 const BlockchainProjects = () => {
+  const { t } = useTranslation()
   const isMobileScreen = useMediaQuery('(max-width:768px)');
   const [isExtended, setIsExtended] = React.useState(false);
 
@@ -33,9 +35,10 @@ const BlockchainProjects = () => {
         textAlign: {
           xs: 'start',
           md: 'left'
-        }
+        },
+        maxWidth: '700px'
       }}>
-        Blockchain <br />Development Projects
+        {t('home.projects.title')}
       </Typography>
       <Grid container gridTemplateColumns={'repeat(auto-fill, minmax(700px, 1fr))'} spacing={1}>
         {isMobileScreen ?
@@ -97,10 +100,10 @@ const BlockchainProjects = () => {
                   height: {
                     xs: '50px',
                     md: '80px'
-                  }
-
+                  },
+                  textTransform: 'uppercase'
                 }}>
-                {'MORE'}
+                {t('button.more')}
               </Button>
             </Link>
           </Box>

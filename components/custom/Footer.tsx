@@ -3,10 +3,12 @@ import { Button, Container, Grid, Stack, Typography } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { theme } from 'utils/theme'
 import CustomButton from './CustomButton'
 
 const Footer = () => {
+  const {t} = useTranslation();
   const [reftp, setReftp] = React.useState<HTMLElement | null>(null)
 
   React.useEffect(() => {
@@ -40,29 +42,29 @@ const Footer = () => {
                   md: '100%'
                 }
               }}>
-                Get in Touch
+                {t('button.getInTouch')}
               </Button>
             </Stack>
           </Grid>
           <Grid item xs={1} md={1}>
             <Stack direction='column'>
-              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Solutions</Typography>
-              <StyledTypography title='Blockchain Developement' link='/blockchain' />
-              <StyledTypography title='Web&Mobile development' link='/webdev' />
-              <StyledTypography title='Blockchain consulting' link='/consulting' />
+              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem', textTransform: 'capitalize' }}>{t('footer.solutions')}</Typography>
+              <StyledTypography title={t('footer.blockchainDev')} link='/blockchain' />
+              <StyledTypography title={t('footer.webMobDev')} link='/webdev' />
+              <StyledTypography title={t('footer.blockchainConsulting')} link='/consulting' />
             </Stack>
           </Grid>
           <Grid item xs={1} md={1}>
             <Stack direction='column'>
-              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Projects</Typography>
-              <StyledTypography title='Blockchain' link='/blockchain' />
-              <StyledTypography title='Web&Mobile app' link='/webdev' />
-              <StyledTypography title='Consulting' link='/consulting' />
+              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem', textTransform: 'capitalize' }}>{t('footer.projects')}</Typography>
+              <StyledTypography title={t('footer.blockchain')} link='/blockchain' />
+              <StyledTypography title={t('footer.consulting')} link='/webdev' />
+              <StyledTypography title={t('footer.webDev')} link='/consulting' />
             </Stack>
           </Grid>
           <Grid item xs={2} md={2}>
             <Stack direction={{ xs: 'row', md: 'column' }} alignItems={{ xs: 'center', md: 'end' }} justifyContent={{ xs: 'space-between' }}>
-              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Keep in touch</Typography>
+              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>{t('footer.keepInTouch')}</Typography>
               <Stack direction='row' spacing={1}>
                 <a href='https://instagram.com/tech.culture.it?igshid=YmMyMTA2M2Y='>
                   <Image src='/icons/social-media/Instagram.svg' width='24px' height='24px' />

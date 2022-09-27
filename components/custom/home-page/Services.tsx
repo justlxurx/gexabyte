@@ -114,6 +114,9 @@ const StyledCard = styled.div`
   flex-direction: column;
   padding: 26px 48px;
   justify-content: space-between;
+  :hover {
+    background: #242424;
+  }
 
   @media (max-width: 600px) {
     width: 100%;

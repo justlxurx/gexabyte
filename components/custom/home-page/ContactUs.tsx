@@ -253,7 +253,7 @@ const ContactUs: React.FC = () => {
                     borderColor: services.bd ? '#F0B270' : '#2D2D2D',
                     color: services.bd ? '#F0B270' : '#2D2D2D',
                     fontSize: { xs: '14px', md: '18px' },
-                    fontWeight: { xs: 600, md: 600 },
+                    fontWeight: { xs: 700, md: 700 },
                     ':hover': {
                       borderColor: services.bd ? '#F0B270' : '#2D2D2D',
                     },
@@ -269,7 +269,7 @@ const ContactUs: React.FC = () => {
                     borderColor: services.bc ? '#F0B270' : '#2D2D2D',
                     color: services.bc ? '#F0B270' : '#2D2D2D',
                     fontSize: { xs: '14px', md: '18px' },
-                    fontWeight: { xs: 600, md: 600 },
+                    fontWeight: { xs: 700, md: 700 },
                     ':hover': {
                       borderColor: services.bc ? '#F0B270' : '#2D2D2D',
                     },
@@ -283,12 +283,13 @@ const ContactUs: React.FC = () => {
                     borderColor: services.wd ? '#F0B270' : '#2D2D2D',
                     color: services.wd ? '#F0B270' : '#2D2D2D',
                     fontSize: { xs: '14px', md: '18px' },
-                    fontWeight: { xs: 600, md: 600 },
+                    fontWeight: { xs: 700, md: 700 },
                     ':hover': {
                       borderColor: services.wd ? '#F0B270' : '#2D2D2D',
                     },
-                    width: { xs: '126px', md: '100%' },
-                    fontFamily: 'Helvetica Neue'
+                    width: {xs: '126px', md: '100%'},
+                    fontFamily: 'Helvetica Neue',
+                    fontStyle: 'normal',
                   }}>
                     Web&mobile development
                   </Button>

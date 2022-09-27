@@ -24,7 +24,7 @@ const Consulting = () => {
         <BlockChainLeftSide>
           <BlockchainTitle>Blockchain Consulting</BlockchainTitle>
           <BlockchainSubtitle>
-            Web applications for automating processes and solving business problems using modern technologies.
+            Development of tokenomics, consulting on the technical and business part of your product.
           </BlockchainSubtitle>
 
           <StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton>

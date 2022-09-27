@@ -34,7 +34,6 @@ const Dropdown: React.FC<DropdownProps> = ({ data }) => {
           </Link>
         ))}
       </div>
-        <Image src={'/images/chevron.svg'} alt='logo' width={15} height={16} style={{ cursor: 'pointer' }} />
     </div>
   )
 }
@@ -46,6 +45,6 @@ const StyledLink = styled.span`
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 100%;
+  line-height: 150%;
   color: #FFFFFF;
 `

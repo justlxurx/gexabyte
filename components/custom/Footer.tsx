@@ -8,7 +8,7 @@ import { theme } from 'utils/theme'
 import CustomButton from './CustomButton'
 
 const Footer = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const [reftp, setReftp] = React.useState<HTMLElement | null>(null)
 
   React.useEffect(() => {
@@ -48,18 +48,18 @@ const Footer = () => {
           </Grid>
           <Grid item xs={1} md={1}>
             <Stack direction='column'>
-              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem', textTransform: 'capitalize' }}>{t('footer.solutions')}</Typography>
-              <StyledTypography title={t('footer.blockchainDev')} link='/blockchain' />
-              <StyledTypography title={t('footer.webMobDev')} link='/webdev' />
-              <StyledTypography title={t('footer.blockchainConsulting')} link='/consulting' />
+              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Solutions</Typography>
+              <StyledTypography title='Blockchain Developement' link='/blockchain' />
+              <StyledTypography title='Blockchain consulting' link='/consulting' />
+              <StyledTypography title='Web&Mobile development' link='/webdev' />
             </Stack>
           </Grid>
           <Grid item xs={1} md={1}>
             <Stack direction='column'>
-              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem', textTransform: 'capitalize' }}>{t('footer.projects')}</Typography>
-              <StyledTypography title={t('footer.blockchain')} link='/blockchain' />
-              <StyledTypography title={t('footer.consulting')} link='/webdev' />
-              <StyledTypography title={t('footer.webDev')} link='/consulting' />
+              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Projects</Typography>
+              <StyledTypography title='Blockchain' link='/blockchain' />
+              <StyledTypography title='Consulting' link='/consulting' />
+              <StyledTypography title='Web&Mobile app' link='/webdev' />
             </Stack>
           </Grid>
           <Grid item xs={2} md={2}>
@@ -72,7 +72,7 @@ const Footer = () => {
                 <a href='https://kz.linkedin.com/in/techculture'>
                   <Image src='/icons/social-media/LinkdIn.svg' width='24px' height='24px' />
                 </a>
-                <a href='https://t.me/techcultureconsult'>
+                <a href='https://t.me/tech_culture_dev'>
                   <Image src='/icons/social-media/Telegram.svg' width='24px' height='24px' />
                 </a>
                 <a href='https://www.facebook.com/tech.culture.it'>

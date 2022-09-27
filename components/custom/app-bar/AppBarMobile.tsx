@@ -79,10 +79,10 @@ const AppBarMobile: React.FC = () => {
               >
                 <Typography  sx={{ fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
               </AccordionSummary>
-              <AccordionDetails>
+              <AccordionDetails >
                 {item.items.map((itemY, idy) => (
                   <Link href={itemY.link} key={idy}>
-                    <Typography  style={{ cursor: 'pointer' }} sx={{ m: '1rem', fontSize: '22px', fontWeight: 500, color: '#A8B1D1' }}>{itemY.title}</Typography>
+                    <Typography style={{ cursor: 'pointer' }} sx={{ m: '1rem', fontSize: '22px', fontWeight: 500, color: '#A8B1D1' }}>{itemY.title}</Typography>
                   </Link>
                 ))}
               </AccordionDetails>

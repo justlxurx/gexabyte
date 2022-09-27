@@ -34,7 +34,6 @@ const Dropdown: React.FC<DropdownProps> = ({ data }) => {
           </Link>
         ))}
       </div>
-        <Image src={'/images/chevron.svg'} alt='logo' width={15} height={16} style={{ cursor: 'pointer' }} />
     </div>
   )
 }

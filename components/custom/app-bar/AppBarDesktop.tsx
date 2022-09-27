@@ -12,22 +12,18 @@ import LocaleButton from '../home-page/LocaleButton';
 
 export const dropdownContent = [
   {
-    title: 'Projects',
-    menu: false,
-    link: '#',
-    items: [
-      { title: 'Blockchain', link: '/blockchain' }, 
-      { title: 'Consulting', link: '/consulting' }, 
-      { title: 'Web&Mobile', link: '/webdev' }]
-  },
-  {
     title: 'Solutions',
-    menu: false,
+    menu: true,
     link: '#',
     items: [
             { title: 'Blockchain', link: '/blockchain' }, 
             { title: 'Consulting', link: '/consulting' }, 
             { title: 'Web&Mobile', link: '/webdev' }]
+  },
+  {
+    title: 'Projects',
+    menu: false,
+    link: '/projects',
   },
 ]
 

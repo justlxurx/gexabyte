@@ -70,7 +70,7 @@ const Footer = () => {
                 <a href='https://kz.linkedin.com/in/techculture'>
                   <Image src='/icons/social-media/LinkdIn.svg' width='24px' height='24px' />
                 </a>
-                <a href='https://t.me/adil_akbayev'>
+                <a href='https://t.me/tech_culture_dev'>
                   <Image src='/icons/social-media/Telegram.svg' width='24px' height='24px' />
                 </a>
                 <a href='https://www.facebook.com/tech.culture.it'>

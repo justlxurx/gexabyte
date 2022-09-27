@@ -30,9 +30,8 @@ const BlockChain = () => {
 
           <BlockchainTitle>Blockchain development</BlockchainTitle>
           <BlockchainSubtitle>
-            Web applications for automating processes and solving business problems using modern technologies.
+          Development of blockchain products for your ideas          
           </BlockchainSubtitle>
-
           <StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton>
           <Link href='/projects'>
             <StyledTextButton>

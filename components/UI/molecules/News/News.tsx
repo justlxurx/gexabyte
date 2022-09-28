@@ -54,13 +54,21 @@ export const News = () => {
       listRef.current!.scrollLeft -= 395;
     }
     else if (side === 'left' && !isMobile) {
-      listRef.current!.scrollLeft -= 1400;
+      if(listRef.current!.scrollLeft > 2000) {
+        listRef.current!.scrollLeft = 0;
+      } else {
+        listRef.current!.scrollLeft -= 1400;
+      }
     }
     else if (side === 'right' && isMobile) {
       listRef.current!.scrollLeft += 395;
     }
     else if (side === 'right' && !isMobile) {
-      listRef.current!.scrollLeft += 1400;
+      if(listRef.current!.scrollLeft > 1400) {
+        listRef.current!.scrollLeft = 0;
+      } else {
+        listRef.current!.scrollLeft += 1400;
+      }
     }
   }
 
@@ -163,7 +171,7 @@ const StyledGridArea = styled.div`
 `
 
 const StyledNewCard = styled.div`
-  flex: 0 0 100%;
+  flex: 0 0 33%;
   max-width: 411px;
   min-height: 669px;
   padding: 28px;

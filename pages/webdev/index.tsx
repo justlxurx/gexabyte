@@ -1,18 +1,25 @@
 import styled from '@emotion/styled'
-import Image from 'next/image'
 import WebProjects from 'components/custom/projects/WebProjects'
-import ContactUs from 'components/custom/home-page/ContactUs'
-import TechStack from 'components/custom/home-page/TechStack'
-import RoundedAnimation from 'components/custom/RoundedAnimation'
-import FirstBlockLayout from 'components/layouts/FirstBlockLayout'
-import { RButton } from 'components/UI/atoms/RButton'
-import { BlockchainAnimation } from 'components/UI/molecules/BlockchainAnimation/BlockchainAnimation'
-import { DeFiService } from 'components/UI/molecules/DeFiService/DeFiService'
 import { OurExpertiseWeb } from 'components/UI/molecules/OurExpertise/OurExpertiseWeb'
-import React from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React from 'react'
 
 const Webdev = () => {
+  const { pathname } = useRouter()
+
+  const [reftp, setReftp] = React.useState<HTMLElement | null>(null)
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      setReftp(document.getElementById("contact-us"))
+    }
+  }, [pathname])
+
+  const handleScroll = () => {
+    reftp?.scrollIntoView({ behavior: 'smooth' });
+  }
   return (
     <Wrapper>
       <FirstBlock>
@@ -23,7 +30,7 @@ const Webdev = () => {
             Web applications for automating processes and solving business problems using modern technologies.
           </WebSubtitle>
 
-          <Link href='#contact'><StyledContainedButton>contact us</StyledContainedButton></Link>
+          <Link href='#contact'><StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton></Link>
           <Link href='/projects'>
             <StyledTextButton>
               <OrangeText>&gt;&gt;</OrangeText>
@@ -124,6 +131,7 @@ const StyledContainedButton = styled.button`
   line-height: 110%;
   letter-spacing: -0.025em;
   text-transform: uppercase;
+  color: #FFFFFF;
   &:hover {
     cursor: pointer;
   }
@@ -136,12 +144,10 @@ const StyledContainedButton = styled.button`
 `
 
 const StyledTextButton = styled.button`
-  width: 100%;
   border: none;
   width: 254px;
   height: 80px;
   background: transparent;
-  color: white;
   border-radius: 4px;
   font-family: 'Readex Pro';
   font-style: normal;
@@ -150,12 +156,13 @@ const StyledTextButton = styled.button`
   line-height: 110%;
   letter-spacing: -0.025em;
   text-transform: uppercase;
+  color: #FFFFFF;
   &:hover {
     cursor: pointer;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     font-size: 14px;
-    width: 164px;
+    width: auto;
   }
 `
 

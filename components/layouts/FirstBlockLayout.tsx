@@ -14,7 +14,7 @@ interface FirstBlockLayoutProps {
 const FirstBlockLayout: React.FC<FirstBlockLayoutProps> = ({ title, bgAnimationSrc, subTitle }) => {
   const { t } = useTranslation()
   const isMobileScreen = useMediaQuery('(max-width:768px)')
-  const { locale } = useRouter()
+  const { locale, pathname } = useRouter()
 
   const [reftp, setReftp] = React.useState<HTMLElement | null>(null)
 
@@ -22,7 +22,7 @@ const FirstBlockLayout: React.FC<FirstBlockLayoutProps> = ({ title, bgAnimationS
     if (typeof window !== "undefined") {
       setReftp(document.getElementById("contact-us"))
     }
-  }, [])
+  }, [pathname])
 
   const handleScroll = () => {
     reftp?.scrollIntoView({ behavior: 'smooth' });

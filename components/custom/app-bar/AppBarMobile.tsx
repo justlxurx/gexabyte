@@ -25,7 +25,7 @@ const AppBarMobile: React.FC = () => {
   }
 
   React.useEffect(() => {
-    changeMenu()
+    setIsOpen(false)
   }, [pathname])
 
   return (
@@ -94,7 +94,9 @@ const AppBarMobile: React.FC = () => {
               </AccordionDetails>
             </Accordion>
             :
-            <Typography key={idx} sx={{ m: '1rem', fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
+            <Link href={item.link} >
+              <Typography key={idx} sx={{ m: '1rem', fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
+            </Link>
         ))}
         <Stack direction='row' sx={{ mt: 'auto' }}>
           <SocialMedia />

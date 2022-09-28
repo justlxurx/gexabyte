@@ -100,10 +100,10 @@ const AppBarMobile: React.FC = () => {
         ))}
         <Stack direction='row' sx={{ mt: 'auto' }}>
           <SocialMedia />
-          <Stack direction='row' spacing={2} sx={{ ml: 'auto' }}>
+          {/* <Stack direction='row' spacing={2} sx={{ ml: 'auto' }}>
             <LocaleButton text='ENG' locale='en' />
             <LocaleButton text='RUS' locale='ru' />
-          </Stack>
+          </Stack> */}
         </Stack>
       </Drawer>
     </AppBar >

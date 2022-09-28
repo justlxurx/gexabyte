@@ -1,11 +1,9 @@
 import styled from '@emotion/styled'
-import classNames from 'classnames'
+import { Box, InputBase, Tab, Tabs } from '@mui/material'
 import { FC, useState } from 'react'
 import { TechnicalTaskDev } from './TechnicalTaskDev/TechnicalTaskDev'
 import { TokenomicsDev } from './TokenomicsDev/TokenomicsDev'
 import { WhitepaperDev } from './WhitepaperDev/WhitepaperDev'
-import { Box, Tab, Tabs } from '@mui/material'
-
 
 const tabs = ['Tokenomics development', 'Whitepaper development', 'Technical task development '];
 
@@ -20,44 +18,40 @@ export const OurExpertiseConsulting: FC<IProps> = () => {
     setValue(newValue);
   };
 
-  const handleChangeTab = (tabIndex: number) => {
-    setServiceIndex(tabIndex)
-  }
-
   return (
     <StyledWrapper>
       <StyledFlexArea>
         <StyledTitle>Our expertise\\</StyledTitle>
-  
+
         <StyledTabArea>
-        <Box sx={{ borderBottom: 1, borderColor: '#464646' }}>
-            <Tabs value={value} onChange={handleChange} textColor='secondary' indicatorColor="secondary" sx={{fontWeight: 700}}>
-              {value === 0 
-               ? <Tab label="Tokenomics development" sx={{fontWeight: 700}} />
-               : <Tab label="Tokenomics development" sx={{fontWeight: 400}} />
-               }
-               {value === 1 
-               ? <Tab label="Whitepaper development" sx={{fontWeight: 700}} />
-               : <Tab label="Whitepaper development" sx={{fontWeight: 400}} />
-               }
-               {value === 2 
-               ? <Tab label="Technical task development" sx={{fontWeight: 700}} />
-               : <Tab label="Technical task development" sx={{fontWeight: 400}} />
-               }
+          <Box sx={{ borderBottom: 1, borderColor: '#464646' }}>
+            <Tabs value={value} onChange={handleChange} textColor='secondary' indicatorColor="secondary" sx={{ fontWeight: 700 }}>
+              {value === 0
+                ? <Tab label="Tokenomics development" sx={{ fontWeight: 700 }} />
+                : <Tab label="Tokenomics development" sx={{ fontWeight: 400 }} />
+              }
+              {value === 1
+                ? <Tab label="Whitepaper development" sx={{ fontWeight: 700 }} />
+                : <Tab label="Whitepaper development" sx={{ fontWeight: 400 }} />
+              }
+              {value === 2
+                ? <Tab label="Technical task development" sx={{ fontWeight: 700 }} />
+                : <Tab label="Technical task development" sx={{ fontWeight: 400 }} />
+              }
             </Tabs>
           </Box>
         </StyledTabArea>
       </StyledFlexArea>
 
       <TabPanel value={value} index={0}>
-          <TokenomicsDev />
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <WhitepaperDev />
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          <TechnicalTaskDev />
-        </TabPanel>
+        <TokenomicsDev />
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <WhitepaperDev />
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        <TechnicalTaskDev />
+      </TabPanel>
     </StyledWrapper>
   )
 }
@@ -88,6 +82,7 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
+
 const StyledWrapper = styled.div`
   padding: 76px;
   @media (max-width: 600px) {
@@ -97,6 +92,10 @@ const StyledWrapper = styled.div`
 
 const StyledFlexArea = styled.div`
   display: flex;
+
+  @media (max-width: 600px) {
+    display: block;
+  }
 `
 
 const StyledTabArea = styled.div`
@@ -122,3 +121,24 @@ const StyledTitle = styled.p`
   color: #FFFFFF;
 
 `
+
+const StyledMobileSelectTab = styled.div`
+  width: 100%;
+  @media (min-width: 601px) {
+    display: none;
+  }
+`
+const BootstrapInput = styled(InputBase)(({ theme }) => ({
+  '& .MuiInputBase-input': {
+    border: 'none',
+    position: 'relative',
+    backgroundColor: 'transparent',
+    fontSize: 16,
+    padding: '10px 26px 10px 12px',
+    '&:focus': {
+      borderRadius: 4,
+      borderColor: 'transparent',
+      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
+    },
+  },
+}));

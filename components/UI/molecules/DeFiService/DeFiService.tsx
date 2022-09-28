@@ -1,11 +1,14 @@
 import styled from '@emotion/styled'
-import { useMediaQuery } from '@mui/material';
+import { useMediaQuery } from '@mui/material'
 import Image from 'next/image'
 import { FC, useRef } from 'react'
-import React, { Component } from 'react';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
 
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+
+import { Navigation } from "swiper"
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 const DeFiTechs = [
   { title: 'compund', icon: '/icons/compound.svg' },
@@ -22,87 +25,59 @@ const DeFiTechs = [
   { title: 'balancer', icon: '/icons/balancer.svg' },
 ]
 
-// export const DeFiService: FC = () => {
-//   return(
-//     <div>
-//       <Carousel centerSlidePercentage={20}>
-//         {DeFiTechs.map((item, idx) => (
-//           <StyledCard key={idx}>
-//             <StyledIconArea>
-//               <Image src={item.icon} width='74px' height='74px' className='icon' />
-//             </StyledIconArea>
-//             <StyledCardText>{item.title}</StyledCardText>
-//           </StyledCard>
-//         ))}
-//       </Carousel>
-//     </div>
-//   )
-// }
-
 export const DeFiService: FC = () => {
-    const isMobile = useMediaQuery('(max-width: 600px)')
-  {DeFiTechs.map((item, idx) => (
-     <StyledCard key={idx}>
-       <StyledIconArea>
-         <Image src={item.icon} width='74px' height='74px' className='icon' />
-       </StyledIconArea>
-       <StyledCardText>{item.title}</StyledCardText>
-     </StyledCard>
-   ))}
-  const listRef = useRef<HTMLDivElement>(null);
+  const isMobile = useMediaQuery('(max-width: 600px)')
 
-  const swipeIcons = (side: 'left' | 'right') => {
-    if (side === 'left' && isMobile) {
-      listRef.current!.scrollLeft -= 417;
-    }
-    else if (side === 'left' && !isMobile) {
-      listRef.current!.scrollLeft -= 1284;
-    }
-    else if (side === 'right' && isMobile) {
-      listRef.current!.scrollLeft += 417;
-    }
-    else if (side === 'right' && !isMobile) {
-      listRef.current!.scrollLeft += 1284;
-    }
-  }
+  const listRef = useRef<HTMLDivElement>(null);
 
   return (
     <StyledWrapper>
       <StyledFlexArea>
         <StyledTitle>DeFi service we are working with</StyledTitle>
-        {!isMobile &&
-          <StyledPagination>
-            <StyledPaginationButton onClick={() => swipeIcons('left')}>
-              <Image src='/icons/arrow left.svg' width='24px' height='24px' />
-            </StyledPaginationButton>
-            <StyledPaginationButton onClick={() => swipeIcons('right')}>
-              <Image src='/icons/arrow right.svg' width='24px' height='24px' />
-            </StyledPaginationButton>
-          </StyledPagination>
-        }
-      </StyledFlexArea>
-
-      <StyledCardsArea ref={listRef}>
-
-        {DeFiTechs.map((item, idx) => (
-          <StyledCard key={idx}>
-            <StyledIconArea>
-              <Image src={item.icon} width='74px' height='74px' className='icon' />
-            </StyledIconArea>
-            <StyledCardText>{item.title}</StyledCardText>
-          </StyledCard>
-        ))}
-      </StyledCardsArea>
-      {isMobile &&
         <StyledPagination>
-          <StyledPaginationButton onClick={() => swipeIcons('left')}>
+          <StyledPaginationButton id="swiper-back">
             <Image src='/icons/arrow left.svg' width='24px' height='24px' />
           </StyledPaginationButton>
-          <StyledPaginationButton onClick={() => swipeIcons('right')}>
+          <StyledPaginationButton id="swiper-forward">
             <Image src='/icons/arrow right.svg' width='24px' height='24px' />
           </StyledPaginationButton>
         </StyledPagination>
-      }
+      </StyledFlexArea>
+
+      <Swiper
+        slidesPerView={isMobile ? 3 : 6}
+        spaceBetween={30}
+        slidesPerGroup={isMobile ? 3 : 6}
+        loop={true}
+        loopFillGroupWithBlank={true}
+        pagination={{
+          clickable: false
+        }}
+
+        navigation={{ nextEl: "#swiper-forward", prevEl: "#swiper-back" }}
+        modules={[Navigation]}
+        className="mySwiper"
+      >
+        {DeFiTechs.map((item, idx) => (
+          <SwiperSlide key={idx}>
+            <StyledCard key={idx}>
+              <StyledIconArea>
+                <Image src={item.icon} width='74px' height='74px' className='icon' />
+              </StyledIconArea>
+              <StyledCardText>{item.title}</StyledCardText>
+            </StyledCard>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <StyledPaginationMobile>
+        <StyledPaginationButton id="swiper-back">
+          <Image src='/icons/arrow left.svg' width='24px' height='24px' />
+        </StyledPaginationButton>
+        <StyledPaginationButton id="swiper-forward">
+          <Image src='/icons/arrow right.svg' width='24px' height='24px' />
+        </StyledPaginationButton>
+      </StyledPaginationMobile>
 
     </StyledWrapper>
   )
@@ -223,5 +198,21 @@ const StyledPagination = styled.div`
   @media (max-width: 600px) {
     margin-top: 20px;
     justify-content: space-between;
+    display: none;
+  }
+`
+
+const StyledPaginationMobile = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  @media (max-width: 600px) {
+    margin-top: 20px;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 601px) {
+    display: none;
   }
 `

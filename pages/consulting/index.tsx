@@ -44,9 +44,7 @@ const Consulting = () => {
       </FirstBlock>
 
       <StatsConsulting />
-
       <OurExpertiseConsulting />
-      {/* <DeFiService /> */}
       <ConsultingProjects />
 
     </Wrapper>

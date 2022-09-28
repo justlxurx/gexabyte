@@ -3,40 +3,67 @@ import { useMediaQuery } from '@mui/material'
 import Image from 'next/image'
 import { FC, useRef } from 'react'
 
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+
+import { Navigation } from "swiper"
+import { Swiper, SwiperSlide } from 'swiper/react'
+
 const technologies = ['solidity.svg', 'ts.svg', 'rust.svg', 'jvscrpt.svg', 'python.svg', 'kotlin1.svg', 'swift1.svg', 'php.svg']
 
 export const Technologies: FC = () => {
   const isMobile = useMediaQuery('(max-width: 600px)')
   const listRef = useRef<HTMLDivElement>(null);
 
-  const swipeIcons = (side: 'left' | 'right') => {
-    if (side === 'left' && isMobile) {
-      listRef.current!.scrollLeft -= 360;
-    }
-    else if (side === 'right' && isMobile) {
-      listRef.current!.scrollLeft += 360;
-    }
-  }
   return (
     <div>
       <StyledTitle>Technologies:</StyledTitle>
-      <StyledGridItemTechnologies ref={listRef}>
-        {technologies.map((tech, idx) => (
-          <StyledTechnologiesCard key={idx}>
-            <Image src={`/icons/${tech}`} width='64px' height='64px' />
-          </StyledTechnologiesCard>
-        ))}
-      </StyledGridItemTechnologies>
-      {isMobile &&
-        <StyledPagination>
-          <StyledPaginationButton onClick={() => swipeIcons('left')}>
-            <Image src='/icons/arrow left.svg' width='24px' height='24px' />
-          </StyledPaginationButton>
-          <StyledPaginationButton onClick={() => swipeIcons('right')}>
-            <Image src='/icons/arrow right.svg' width='24px' height='24px' />
-          </StyledPaginationButton>
-        </StyledPagination>
+
+      <StyledSwiperArea>
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={30}
+          slidesPerGroup={4}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          pagination={{
+            clickable: false
+          }}
+          navigation={{ nextEl: "#swiper-forward2", prevEl: "#swiper-back2" }}
+          modules={[Navigation]}
+          className="mySwiper"
+          style={{ maxWidth: '100vw' }}
+        >
+          {technologies.map((tech, idx) => (
+            <SwiperSlide key={idx}>
+              <StyledTechnologiesCard key={idx}>
+                <Image src={`/icons/${tech}`} width='64px' height='64px' />
+              </StyledTechnologiesCard>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </StyledSwiperArea>
+
+      {
+        !isMobile &&
+        <StyledGridItemTechnologies>
+          {technologies.map((tech, idx) => (
+            <StyledTechnologiesCard key={idx}>
+              <Image src={`/icons/${tech}`} width='64px' height='64px' />
+            </StyledTechnologiesCard>
+          ))}
+        </StyledGridItemTechnologies>
       }
+
+      <StyledPagination>
+        <StyledPaginationButton id="swiper-back2">
+          <Image src='/icons/arrow left.svg' width='24px' height='24px' />
+        </StyledPaginationButton>
+        <StyledPaginationButton id="swiper-forward2">
+          <Image src='/icons/arrow right.svg' width='24px' height='24px' />
+        </StyledPaginationButton>
+      </StyledPagination>
     </div>
   )
 }
@@ -98,4 +125,14 @@ const StyledPagination = styled.div`
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
+
+  @media (min-width: 601px) {
+    display: none;
+  }
+`
+
+const StyledSwiperArea = styled.div`
+  @media (min-width: 601px) {
+    display: none;
+  }
 `

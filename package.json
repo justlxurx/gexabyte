@@ -21,6 +21,7 @@
     "react-dom": "18.2.0",
     "react-i18next": "^11.18.4",
     "react-responsive-carousel": "^3.2.23",
+    "swiper": "^8.4.2",
     "yup": "^0.32.11"
   },
   "devDependencies": {

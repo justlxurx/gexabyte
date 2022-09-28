@@ -1,11 +1,17 @@
 import styled from '@emotion/styled'
 import { useMediaQuery } from '@mui/material'
 import Image from 'next/image'
-import React, { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+
+import { Navigation } from "swiper"
+import { Swiper, SwiperSlide } from 'swiper/react'
+
 const NewsData = [
-  { 
+  {
     image: '/images/digital bridge_astana hub 1.png',
     theme: 'events',
     title: 'Tech Culture is the partner of the international forum Digital Bridge!',
@@ -47,59 +53,62 @@ const NewsData = [
 export const News = () => {
   const { t } = useTranslation()
   const isMobile = useMediaQuery('(max-width: 600px)')
-  const listRef = useRef<HTMLDivElement>(null)
-
-  const swipeIcons = (side: 'left' | 'right') => {
-    if (side === 'left' && isMobile) {
-      listRef.current!.scrollLeft -= 395;
-    }
-    else if (side === 'left' && !isMobile) {
-      if(listRef.current!.scrollLeft > 2000) {
-        listRef.current!.scrollLeft = 0;
-      } else {
-        listRef.current!.scrollLeft -= 1400;
-      }
-    }
-    else if (side === 'right' && isMobile) {
-      listRef.current!.scrollLeft += 395;
-    }
-    else if (side === 'right' && !isMobile) {
-      if(listRef.current!.scrollLeft > 1400) {
-        listRef.current!.scrollLeft = 0;
-      } else {
-        listRef.current!.scrollLeft += 1400;
-      }
-    }
-  }
 
   return (
     <StyledWrapper>
       <StyledFlexArea>
         <StyledTitle>{t('home.news.title')}</StyledTitle>
         <div>
-          <StyledPaginationButton onClick={() => swipeIcons('left')}>
+          <StyledPaginationButton id="swiper-back">
             <Image src='/icons/arrow left.svg' width='24px' height='24px' />
           </StyledPaginationButton>
-          <StyledPaginationButton onClick={() => swipeIcons('right')}>
+          <StyledPaginationButton id="swiper-forward">
             <Image src='/icons/arrow right.svg' width='24px' height='24px' />
           </StyledPaginationButton>
         </div>
       </StyledFlexArea>
 
-      <StyledGridArea ref={listRef}>
-        {NewsData.map((item, idx) => (
-          <StyledNewCard key={idx}>
-            <div className='image'>
-              <img src={item.image} width='100%' height='100%' />
-            </div>
-            <p className='theme'>{item.theme}</p>
-            <StyledCardTitle>{item.title}</StyledCardTitle>
-            <p className='text'>{item.contentShort}</p>
-            {item.link && <StyledActionButton><a href={item.link}>learn more</a></StyledActionButton>}
-          </StyledNewCard>
-        ))}
+      <Swiper
+        slidesPerView={isMobile ? 1 : 3}
+        spaceBetween={30}
+        slidesPerGroup={isMobile ? 1 : 3}
+        loop={true}
+        loopFillGroupWithBlank={true}
+        pagination={{
+          clickable: false
+        }}
 
-      </StyledGridArea>
+        navigation={{ nextEl: "#swiper-forward", prevEl: "#swiper-back" }}
+        modules={[Navigation]}
+        className="mySwiper"
+      >
+        {NewsData.map((item, idx) => (
+          <SwiperSlide key={idx}>
+            <StyledNewCard>
+              <div className='image'>
+                <img src={item.image} width='100%' height='100%' />
+              </div>
+              <p className='theme'>{item.theme}</p>
+              <StyledCardTitle>{item.title}</StyledCardTitle>
+              <p className='text'>{item.contentShort}</p>
+              {item.link && <StyledActionButton><a href={item.link}>learn more</a></StyledActionButton>}
+            </StyledNewCard>
+          </SwiperSlide>
+        ))}
+        {!isMobile &&
+          <SwiperSlide>
+            <StyledNewCard>
+              <div className='image'>
+                <img src={NewsData[0].image} width='100%' height='100%' />
+              </div>
+              <p className='theme'>{NewsData[0].theme}</p>
+              <StyledCardTitle>{NewsData[0].title}</StyledCardTitle>
+              <p className='text'>{NewsData[0].contentShort}</p>
+              {NewsData[0].link && <StyledActionButton><a href={NewsData[0].link}>learn more</a></StyledActionButton>}
+            </StyledNewCard>
+          </SwiperSlide>
+        }
+      </Swiper>
 
     </StyledWrapper>
   )
@@ -109,6 +118,7 @@ const StyledWrapper = styled.div`
   padding: 80px;
   max-width: 1400px;
   margin-inline: auto;
+  width: 100%;
   @media (max-width: 800px) {
     padding: 24px;
   }
@@ -171,7 +181,7 @@ const StyledGridArea = styled.div`
 `
 
 const StyledNewCard = styled.div`
-  flex: 0 0 33%;
+  flex: 0 0 100%;
   max-width: 411px;
   min-height: 669px;
   padding: 28px;

@@ -32,7 +32,7 @@ const Webdev = () => {
           </Link>
         </WebLeftSide>
         <WebImage><Image src={`/images/WebFirstblog.svg`} layout="fill" /></WebImage>
-        <WebImageMobile><Image src={`/images/WebImageMobile.svg`} layout="fill" /></WebImageMobile>
+        {/* <WebImageMobile><Image src={`/images/WebImageMobile.svg`} layout="fill" /></WebImageMobile> */}
       </FirstBlock>
       <OurExpertiseWeb />
       <WebProjects />
@@ -59,6 +59,7 @@ const FirstBlock = styled.div`
   @media (max-width: 768px) {
     padding: 16px;
     margin-bottom: 10vh;
+    overflow: hidden;
   }
 `
 
@@ -68,32 +69,24 @@ const WebLeftSide = styled.div`
 
 const WebImage = styled.div`
   position: absolute;
-  width: 665px;
-  height: 630px;
+  width: 100%;
+  height: 100%;
   left: 0px;
-  margin-left: 55vw;
-  margin-top: -5vw;
-  @media (max-width: 768px) {
-    display: none;
-    width: 0;
-    height: 0;
-  }
-`
-
-const WebImageMobile = styled.div`
-  display: none;
-  width: 0;
-  height: 0;
+  margin-left: 25vw;
+  margin-top: -75px;
+  
   @media (max-width: 768px) {
     position: absolute;
+    left: 0px;
     right: -60px;
     top: -50px;
     display: block;
     width: 328px;
     height: 400px;
+    margin-left: 55vw;
+    margin-top: -5vw;
   }
 `
-
 const WebTitle = styled.p`
   font-family: 'Readex Pro';
   font-style: normal;

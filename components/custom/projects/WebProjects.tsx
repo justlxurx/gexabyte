@@ -3,8 +3,8 @@ import Link from 'next/link';
 import React from 'react';
 
 const projects = {
-  desktop: ['/images/cofi.svg', '/images/sanau.svg', '/images/smart home.svg', '/images/factoring.svg', '/images/online marketing.svg', '/images/desktop.svg', '/images/emm.svg'],
-  mobile: ['/images/cofiMobile.svg', '/images/sanauMobile.svg', '/images/smartMobile.svg']
+  desktop: ['/images/cofi.svg', '/images/sanau.svg', '/images/smart home.svg', '/images/factoring.svg', '/images/online marketing.png', '/images/desktop.svg', '/images/emm.svg'],
+  mobile: ['/images/cofiMobile.svg', '/images/sanauMobile.svg', '/images/smart home mobile.svg']
 }
 
 const ImageGrid = [8, 4, 6, 6, 4, 4, 4]

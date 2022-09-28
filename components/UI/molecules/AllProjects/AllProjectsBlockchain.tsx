@@ -7,20 +7,20 @@ const FlexItem = [6, 6, 12, 6, 6, 7, 5, 12, 6, 6]
 const projectsDesktop = [
   { title: 'Orbeem', image: '/images/projects/орбим.png' },
   { title: 'Gamstone', image: '/images/projects/гемстон.png' },
-  { title: 'Roki', image: '/images/projects/роки.png' },
+  { title: 'Rokki', image: '/images/projects/rokki.png' },
   { title: 'NFT Congrats', image: '/images/projects/нфт конгратс.png' },
   { title: 'NFTime', image: '/images/projects/нфтайм.png' },
-  { title: 'Egnite', image: '/images/projects/игнайт.png' },
-  { title: 'Deksu', image: '/images/projects/дексу.png' },
+  { title: 'Egnite', image: '/images/projects/egnite.png' },
+  { title: 'Defi', image: '/images/projects/дексу.png' },
   { title: 'Gambling platform', image: '/images/projects/гэмблинг платформ.png' },
   { title: 'Ton seed', image: '/images/projects/тон сид.png' },
   { title: 'Brat', image: '/images/projects/брат.png' },
 ]
 
 const projectsMobile = [
-  { title: 'Roki', image: '/images/projects/mobile/роки моб.png' },
+  { title: 'Rokki', image: '/images/projects/mobile/роки моб.png' },
   { title: 'Gamestone', image: '/images/projects/mobile/геймстоун мания моб блокчейн.png' },
-  { title: 'Deksu', image: '/images/projects/mobile/дексу моб блкчейн.png' },
+  { title: 'Defi Crypto Waller', image: '/images/projects/mobile/дексу моб блкчейн.png' },
   { title: 'Gambling platform', image: '/images/projects/mobile/гэмблинг платформа моб блокчейн.png' },
   { title: 'Orbeem', image: '/images/projects/mobile/орбим моб блокчейн.png' },
   { title: 'NFT Congrats', image: '/images/projects/mobile/нфт конгратс блокчейн моб.png' },

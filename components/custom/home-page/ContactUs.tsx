@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next';
 
 const ContactUs: React.FC = () => {
   const { t } = useTranslation();
-  const isMobileScreen = useMediaQuery('(max-width:768px)');
+  const isMobileScreen = useMediaQuery('(max-width:600px)');
   const [services, setServices] = React.useState({
     bd: false,
     bc: false,
@@ -58,6 +58,10 @@ const ContactUs: React.FC = () => {
         position: 'relative',
         overflow: 'hidden'
       }}>
+        <Box sx={{ position: 'absolute', left: 0, height: '120vh', width: '100px', zIndex: -1, background: 'linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)' }}>
+        </Box>
+        <Box sx={{ position: 'absolute', left: '32.5%', height: '120vh', width: '200px', zIndex: -1, background: 'linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)' }}>
+        </Box>
         <Box sx={{ position: 'absolute', top: 0, height: '100px', width: '100%', zIndex: -1, background: 'linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)' }}>
         </Box>
         <Box sx={{ position: 'absolute', bottom: 0, height: '100px', width: '100%', zIndex: -1, background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)' }}>
@@ -73,7 +77,7 @@ const ContactUs: React.FC = () => {
                 </video>
               </>
               :
-              <video autoPlay muted loop id="myVideo" style={{ height: '100%', visibility: 'visible', position: 'absolute', zIndex: -2, left: '-30%', transform: 'rotate(90deg)' }}>
+              <video autoPlay muted loop id="myVideo" style={{ height: '70%', visibility: 'visible', position: 'absolute', zIndex: -2, left: '-30%', transform: 'rotate(90deg)' }}>
                 <source src="/videos/Emitter.mp4" type="video/mp4" />
               </video>
             }
@@ -309,16 +313,18 @@ const ContactUs: React.FC = () => {
                 }}>
                 {t('button.getStarted')}
               </Button>
-              <Button fullWidth size='large' sx={{
-                bgcolor: '#69B1F3',
-                my: '0.5rem',
-                color: '#FFFFFF',
-                fontSize: '16px',
-                fontWeight: 700,
-                fontFamily: 'Poppins'
-              }}>
-                {t('button.letsChatInTelegram')}
-              </Button>
+              <a href='https://t.me/tech_culture_dev'>
+                <Button fullWidth size='large' sx={{
+                  bgcolor: '#69B1F3',
+                  my: '0.5rem',
+                  color: '#FFFFFF',
+                  fontSize: '16px',
+                  fontWeight: 700,
+                  fontFamily: 'Poppins'
+                }}>
+                  {t('button.letsChatInTelegram')}
+                </Button>
+              </a>
             </form>
           </Grid>
         </Grid>

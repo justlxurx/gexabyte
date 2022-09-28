@@ -99,6 +99,8 @@ export const News = () => {
 
 const StyledWrapper = styled.div`
   padding: 80px;
+  max-width: 1400px;
+  margin-inline: auto;
   @media (max-width: 800px) {
     padding: 24px;
   }

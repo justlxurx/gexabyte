@@ -33,7 +33,6 @@ const Home: NextPage = () => {
         <Services />
         <BlockchainProjects />
         <News />
-        <ContactUs />
       </div>
     </>
   )

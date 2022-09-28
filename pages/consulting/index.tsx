@@ -48,7 +48,6 @@ const Consulting = () => {
       <OurExpertiseConsulting />
       {/* <DeFiService /> */}
       <ConsultingProjects />
-      <ContactUs />
 
     </Wrapper>
 

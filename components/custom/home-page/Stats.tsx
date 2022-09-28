@@ -42,6 +42,8 @@ const SecondBlock = styled.div`
   padding: 76px;
   position: relative;
   height: 480px;
+  max-width: 1400px;
+  margin-inline: auto;
 
   @media (max-width: 600px) {
     display: block;

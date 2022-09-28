@@ -36,8 +36,6 @@ const Webdev = () => {
       </FirstBlock>
       <OurExpertiseWeb />
       <WebProjects />
-      <div id="contact"><ContactUs /></div>
-
     </Wrapper>
 
   )

@@ -80,7 +80,6 @@ const BlockChain = () => {
       <OurExpertiseBlockchain />
       <DeFiService />
       <BlockchainProjects />
-      <ContactUs />
 
     </Wrapper>
 

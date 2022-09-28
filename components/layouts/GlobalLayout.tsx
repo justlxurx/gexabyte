@@ -1,4 +1,5 @@
 import { Container, ThemeProvider, useMediaQuery, useTheme } from "@mui/material";
+import ContactUs from "components/custom/home-page/ContactUs";
 import Head from "next/head";
 import React from "react"
 import AppBarDesktop from "../custom/app-bar/AppBarDesktop"
@@ -28,6 +29,7 @@ const GlobalLayout: React.FC<MainLayoutProps> = ({ children }) => {
       <Container disableGutters maxWidth='xl' sx={{minHeight: '80vh'}}>
         {children}
       </Container>
+      <ContactUs />
       <Footer />
     </>
   )

@@ -14,6 +14,8 @@ export const OurExpertiseBlockchain = () => {
 
 const StyledWrapper = styled.div`
   padding: 76px;
+  max-width: 1400px;
+  margin-inline: auto;
   @media (max-width: 600px) {
     padding: 16px;
   }

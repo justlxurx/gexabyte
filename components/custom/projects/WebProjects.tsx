@@ -41,7 +41,7 @@ const WebProjects = () => {
         {isMobileScreen ?
           projects.mobile.map((src, idx) => (
             <Grid item xs={12} md={12} key={idx}>
-              <Link href='/' passHref>
+              <Link href='/projects' passHref>
                 <a><img src={src} width='100%' /></a>
               </Link>
             </Grid>
@@ -49,7 +49,7 @@ const WebProjects = () => {
           :
           projects.desktop.map((src, idx) => (
             <Grid item xs={12} md={ImageGrid[idx]} key={idx}>
-              <Link href='/' passHref>
+              <Link href='/projects' passHref>
                 <a><img src={src} width='100%' /></a>
               </Link>
             </Grid>
@@ -60,7 +60,7 @@ const WebProjects = () => {
             {isMobileScreen ?
               projects.mobile.map((src, idx) => (
                 <Grid item xs={12} md={12} key={idx}>
-                  <Link href='/' passHref>
+                  <Link href='/projects' passHref>
                     <a><img src={src} width='100%' /></a>
                   </Link>
                 </Grid>
@@ -68,7 +68,7 @@ const WebProjects = () => {
               :
               projects.desktop.map((src, idx) => (
                 <Grid item xs={12} md={ImageGrid[idx]} key={idx}>
-                  <Link href='/' passHref>
+                  <Link href='/projects' passHref>
                     <a><img src={src} width='100%' /></a>
                   </Link>
                 </Grid>

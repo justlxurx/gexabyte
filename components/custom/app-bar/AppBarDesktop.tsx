@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import * as React from 'react';
 import { theme } from '../../../utils/theme';
 import CustomButton from '../CustomButton';
@@ -16,9 +17,9 @@ export const dropdownContent = [
     menu: true,
     link: '#',
     items: [
-            { title: 'Blockchain', link: '/blockchain' }, 
-            { title: 'Consulting', link: '/consulting' }, 
-            { title: 'Web&Mobile', link: '/webdev' }]
+      { title: 'Blockchain', link: '/blockchain' },
+      { title: 'Consulting', link: '/consulting' },
+      { title: 'Web&Mobile', link: '/webdev' }]
   },
   {
     title: 'Projects',
@@ -28,13 +29,14 @@ export const dropdownContent = [
 ]
 
 const AppBarDesktop: React.FC = () => {
+  const { pathname } = useRouter()
   const [reftp, setReftp] = React.useState<HTMLElement | null>(null)
 
   React.useEffect(() => {
     if (typeof window !== "undefined") {
       setReftp(document.getElementById("contact-us"))
     }
-  }, [])
+  }, [pathname])
 
   const handleScroll = () => {
     reftp?.scrollIntoView({ behavior: 'smooth' });
@@ -45,26 +47,25 @@ const AppBarDesktop: React.FC = () => {
       bgcolor: 'rgba(0, 0, 0, 0.65)',
       padding: '12px 80px',
       backdropFilter: 'blur(21px)',
-      maxWidth: '1920px',
-      m: 'auto'
+      m: 'auto',
     }}>
       <Container disableGutters maxWidth="xl">
         <Toolbar disableGutters sx={{
           display: 'flex',
           justifyContent: 'space-between'
         }}>
-          <div style={{display: "flex"}}>
-          <Link href='/'>
-            <Image src={'/logo.svg'} alt='logo' width={100} height={50} style={{ cursor: 'pointer'}} />
-          </Link>
+          <div style={{ display: "flex" }}>
+            <Link href='/'>
+              <Image src={'/logo.svg'} alt='logo' width={100} height={50} style={{ cursor: 'pointer' }} />
+            </Link>
 
-          <Stack direction='row' gap='2rem' fontSize='16px' style={{marginLeft: "10vw"}}>
-            {dropdownContent.map((i, idx) => (
-              <>
-              <Dropdown data={i} key={idx} />
-              </>
+            <Stack direction='row' gap='2rem' fontSize='16px' style={{ marginLeft: "10vw" }}>
+              {dropdownContent.map((i, idx) => (
+                <>
+                  <Dropdown data={i} key={idx} />
+                </>
               ))}
-          </Stack>
+            </Stack>
           </div>
           <Stack direction='row' gap='0.5rem' spacing={2} alignItems='center'>
             <LocaleButton text='ENG' locale='en' />

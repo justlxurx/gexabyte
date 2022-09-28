@@ -48,6 +48,7 @@ const StyledWrapper = styled.div`
   width: 1285px;
   height: 724px;
   background: #1F1F1F;
+  margin-inline: auto;
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;

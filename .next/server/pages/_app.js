@@ -301,8 +301,10 @@ var SocialMedia = __webpack_require__(3978);
 
 
 
+
 const AppBarMobile = ()=>{
     const [isOpen, setIsOpen] = external_react_default().useState(false);
+    const { pathname  } = (0,router_.useRouter)();
     let reftp = null;
     if (false) {}
     const changeMenu = ()=>{
@@ -313,6 +315,11 @@ const AppBarMobile = ()=>{
             behavior: "smooth"
         });
     };
+    external_react_default().useEffect(()=>{
+        changeMenu();
+    }, [
+        pathname
+    ]);
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(material_.AppBar, {
         position: "sticky",
         sx: {
@@ -473,12 +480,16 @@ const AppBarMobile = ()=>{
 
 
 
+
 const Footer = ()=>{
     const { t  } = (0,external_react_i18next_.useTranslation)();
+    const { asPath  } = (0,router_.useRouter)();
     const [reftp, setReftp] = external_react_default().useState(null);
     external_react_default().useEffect(()=>{
         if (false) {}
-    }, []);
+    }, [
+        asPath
+    ]);
     const handleScroll = ()=>{
         reftp?.scrollIntoView({
             behavior: "smooth"

@@ -2,20 +2,20 @@ import styled from '@emotion/styled'
 import { Button, Container, Grid, Stack, Typography } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { theme } from 'utils/theme'
-import CustomButton from './CustomButton'
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
+  const { asPath } = useRouter()
   const [reftp, setReftp] = React.useState<HTMLElement | null>(null)
 
   React.useEffect(() => {
     if (typeof window !== "undefined") {
       setReftp(document.getElementById("contact-us"))
     }
-  }, [])
+  }, [asPath])
 
   const handleScroll = () => {
     reftp?.scrollIntoView({ behavior: 'smooth' });

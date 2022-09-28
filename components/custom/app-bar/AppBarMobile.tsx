@@ -1,5 +1,6 @@
-import { Accordion, AccordionDetails, AccordionSummary, AppBar, Box, Button, Drawer, IconButton, Stack, Toolbar, Typography, useTheme } from '@mui/material';import Image from 'next/image';
+import { Accordion, AccordionDetails, AccordionSummary, AppBar, Box, Button, Drawer, IconButton, Stack, Toolbar, Typography, useTheme } from '@mui/material'; import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { theme } from '../../../utils/theme';
 import CustomButton from '../CustomButton';
@@ -8,7 +9,8 @@ import SocialMedia from '../SocialMedia';
 import { dropdownContent } from './AppBarDesktop';
 
 const AppBarMobile: React.FC = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false)
+  const { pathname } = useRouter()
   let reftp: HTMLElement | null = null;
   if (typeof window !== 'undefined') {
     reftp = document.getElementById("contact-us");
@@ -21,6 +23,10 @@ const AppBarMobile: React.FC = () => {
   const handleScroll = () => {
     reftp?.scrollIntoView({ behavior: 'smooth' });
   }
+
+  React.useEffect(() => {
+    changeMenu()
+  }, [pathname])
 
   return (
     <AppBar position="sticky" sx={{
@@ -77,7 +83,7 @@ const AppBarMobile: React.FC = () => {
                 aria-controls="panel2a-content"
                 id="panel2a-header"
               >
-                <Typography  sx={{ fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
+                <Typography sx={{ fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
               </AccordionSummary>
               <AccordionDetails >
                 {item.items.map((itemY, idy) => (

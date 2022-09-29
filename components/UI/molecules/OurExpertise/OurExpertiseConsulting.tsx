@@ -4,7 +4,9 @@ import { FC, useState } from 'react'
 import { TechnicalTaskDev } from './TechnicalTaskDev/TechnicalTaskDev'
 import { TokenomicsDev } from './TokenomicsDev/TokenomicsDev'
 import { WhitepaperDev } from './WhitepaperDev/WhitepaperDev'
+import styles from '../../../../styles/components/ConsultingDropdown.module.scss'
 import { Box, Tab, Tabs } from '@mui/material'
+import Image from 'next/image';
 
 
 const tabs = ['Tokenomics development', 'Whitepaper development', 'Technical task development '];
@@ -14,11 +16,12 @@ interface IProps {
 
 export const OurExpertiseConsulting: FC<IProps> = () => {
   const [value, setValue] = useState(0);
-  const [serviceIndex, setServiceIndex] = useState(0)
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
+  const [serviceIndex, setServiceIndex] = useState(0)
 
   const handleChangeTab = (tabIndex: number) => {
     setServiceIndex(tabIndex)
@@ -28,7 +31,6 @@ export const OurExpertiseConsulting: FC<IProps> = () => {
     <StyledWrapper>
       <StyledFlexArea>
         <StyledTitle>Our expertise\\</StyledTitle>
-  
         <StyledTabArea>
         <Box sx={{ borderBottom: 1, borderColor: '#464646' }}>
             <Tabs value={value} onChange={handleChange} textColor='secondary' indicatorColor="secondary" sx={{fontWeight: 700}}>
@@ -46,10 +48,29 @@ export const OurExpertiseConsulting: FC<IProps> = () => {
                }
             </Tabs>
           </Box>
-        </StyledTabArea>
+        </StyledTabArea> 
+        <StyledTabAreaMobile>
+        <div className={styles.dropdown}>
+          <StyledLabel>
+            <button className={styles.dropbtn}>{tabs[serviceIndex]}</button>
+            <Image src={'/icons/arrow down.svg'} alt='arrow' width={30} height={28} style={{ cursor: 'pointer'}} />
+          </StyledLabel>
+           <div className={styles.dropdowncontent}>
+            {tabs.map((tabTitle, idx) => (
+              <StyledTab
+                onClick={() => handleChangeTab(idx)}
+                className={classNames(`${idx === serviceIndex ? 'text text__active' : 'text'}`)}
+                key={idx}
+              >
+                {tabTitle}
+              </StyledTab>
+            ))}
+          </div>
+        </div>
+        </StyledTabAreaMobile>
       </StyledFlexArea>
-
-      <TabPanel value={value} index={0}>
+      <TabDesktop>
+        <TabPanel value={value} index={0}>
           <TokenomicsDev />
         </TabPanel>
         <TabPanel value={value} index={1}>
@@ -58,10 +79,23 @@ export const OurExpertiseConsulting: FC<IProps> = () => {
         <TabPanel value={value} index={2}>
           <TechnicalTaskDev />
         </TabPanel>
+      </TabDesktop>
+      <TabMobile>
+      {serviceIndex === 0 ?
+        <TokenomicsDev />
+        :
+        serviceIndex === 1 ?
+          <WhitepaperDev />
+          :
+          serviceIndex === 2 ?
+            <TechnicalTaskDev />
+            : null
+      }
+      </TabMobile>
+
     </StyledWrapper>
   )
 }
-
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -88,6 +122,19 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
+const TabMobile = styled.div`
+  display:none;
+  @media (max-width: 600px) {
+    display: flex;
+  }
+`
+
+const TabDesktop = styled.div`
+  @media (max-width: 600px) {
+    display:none;
+  }
+`
+
 const StyledWrapper = styled.div`
   padding: 76px;
   @media (max-width: 600px) {
@@ -97,6 +144,15 @@ const StyledWrapper = styled.div`
 
 const StyledFlexArea = styled.div`
   display: flex;
+  @media (max-width: 600px){
+    flex-direction: column;
+  }
+`
+
+const StyledLabel = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const StyledTabArea = styled.div`
@@ -105,9 +161,32 @@ const StyledTabArea = styled.div`
   align-items: center;
   gap: 46px;
   margin-left: auto;
-
   @media (max-width: 600px) {
     display: none;
+  }
+`
+const StyledTabAreaMobile = styled.div`
+  display: none;
+  @media (max-width: 600px) {
+    display: flex;
+    align-items: center;
+  }
+`
+const StyledTab = styled.span`
+  &.text {
+    font-family: 'Readex Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 15px;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    &__active {
+      color: #F0B270;
+    }
   }
 `
 
@@ -115,10 +194,8 @@ const StyledTitle = styled.p`
   font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 700;
-  font-size: 42px;
-  line-height: 110%;
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
+  font-size: 46px;
+  line-height: 117.5%;
   color: #FFFFFF;
-
+  width: 414px;
 `

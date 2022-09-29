@@ -28,7 +28,7 @@ export const TechnicalTaskDev = () => {
         ))}
         <StyledButton onClick={handleScroll}>Resquest a service</StyledButton>
       </div>
-      <div className='right'>
+      <StyledRight>
         <img src='/icons/quotes.svg' />
         <p className='text'>
           As a result, the client receives a
@@ -37,7 +37,7 @@ export const TechnicalTaskDev = () => {
           <span className='orange'> faster and with better quality. </span>
         </p>
         <img src='/logo.svg' className='logo' />
-      </div>
+      </StyledRight>
     </StyledWrapper>
   )
 }
@@ -52,6 +52,7 @@ const StyledWrapper = styled.div`
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
     background: transparent;
+    height: 200vh;
   }
 
   .left {
@@ -92,8 +93,9 @@ const StyledWrapper = styled.div`
     height: 15px;
     background: #736AE4;
   }
+`
 
-  .right {
+const StyledRight = styled.div`
     width: 100%;
     background: #292929;
     padding: 54px;
@@ -119,7 +121,7 @@ const StyledWrapper = styled.div`
     .logo {
       margin-top: auto;
     }
-  }
+
 `
 
 const StyledButton = styled.button`

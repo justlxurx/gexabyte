@@ -69,7 +69,11 @@ const Services = () => {
               xs: '32px',
               md: '56px'
             },
-            fontWeight: 700
+            fontWeight: 700,
+            mb: {
+              xs: '34px',
+              md: 0
+            }
           }}>
             <span style={{ color: theme.palette.primary.main }}>Help You</span> With
           </Typography>
@@ -107,25 +111,28 @@ export default Services
 
 const StyledCard = styled.div`
   width: 100%;
-  max-width: 413px;
+  // max-width: 413px;
   height: 435px;
   background: #171717;
   display: flex;
   flex-direction: column;
   padding: 26px 48px;
-  justify-content: space-between;
+  // justify-content: space-between;
   :hover {
     background: #242424;
   }
 
   @media (max-width: 600px) {
     width: 100%;
-    max-width: 396px;
-    height: 437px;
+    height: 100%;
+    // max-width: 396px;
+    // height: 437px;
   }
 `
 
 const StyledTextArea = styled.div`
+  margin-bottom: 27px;
+
   & p {
     font-family: 'Readex Pro';
     font-style: normal;
@@ -152,6 +159,7 @@ const StyledIcon = styled.img`
   padding: 15px;
   background: rgba(115, 106, 228, 0.15);
   border-radius: 50%;
+  margin-bottom: 20px;
 `
 
 const StyledButton = styled.button`

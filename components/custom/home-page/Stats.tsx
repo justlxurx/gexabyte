@@ -1,10 +1,12 @@
 import styled from '@emotion/styled'
+import { useMediaQuery } from '@mui/material'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import RoundedAnimation from '../RoundedAnimation'
 
 export const Stats = () => {
   const { t } = useTranslation()
+  const isMobile = useMediaQuery('(max-width: 900px)')
 
   return (
     <SecondBlock>
@@ -18,15 +20,22 @@ export const Stats = () => {
           <StatsText>{t('home.stats.completedProjects')}</StatsText>
         </StatsOneBlock>
 
+        {isMobile &&
+          <StatsOneBlock>
+            <StatsNumber>211+</StatsNumber>
+            <StatsText>{t('home.stats.blockchainWeb')}</StatsText>
+          </StatsOneBlock>
+        }
+
         <StatsOneBlock>
           <StatsNumber>6+</StatsNumber>
           <StatsText>{t('home.stats.experience')}</StatsText>
         </StatsOneBlock>
 
-        <StatsOneBlock>
+        {!isMobile && <StatsOneBlock>
           <StatsNumber>211+</StatsNumber>
           <StatsText>{t('home.stats.blockchainWeb')}</StatsText>
-        </StatsOneBlock>
+        </StatsOneBlock>}
       </StatsWrapper>
 
       <SecondBlockAnimation>
@@ -42,8 +51,6 @@ const SecondBlock = styled.div`
   padding: 76px;
   position: relative;
   height: 480px;
-  max-width: 1400px;
-  margin-inline: auto;
 
   @media (max-width: 900px) {
     display: block;
@@ -54,8 +61,8 @@ const SecondBlock = styled.div`
 
 const SecondBlockAnimation = styled.div`
   position: absolute;
-  left: 560px;
-  top: 200px;
+  left: 500px;
+  top: 220px;
 
   @media (max-width: 900px) {
     left: 220px;
@@ -79,10 +86,11 @@ const SecondBlockTitle = styled.div`
 const StatsWrapper = styled.div`
   display: flex;
   justify-content: space-around;
-  gap: 54px;
+  margin-top: 50px;
   @media (max-width: 900px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 34px;
   }
 `
 
@@ -90,7 +98,8 @@ const StatsOneBlock = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 120px;
+  max-width: 223px;
+  width: 100%;
 `
 
 const StatsNumber = styled.div`
@@ -104,11 +113,12 @@ const StatsNumber = styled.div`
 const StatsText = styled.div`
   font-family: 'Poppins';
   font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
+  font-weight: 500;
+  font-size: 16px;
   line-height: 140%;
   color: #667085;
   @media (min-width: 601px) {
-    width: 150px;
+    width: 100%;
   }
+
 `

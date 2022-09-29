@@ -9,6 +9,7 @@ import "swiper/css/pagination"
 
 import { Navigation } from "swiper"
 import { Swiper, SwiperSlide } from 'swiper/react'
+import classNames from 'classnames'
 
 const NewsData = [
   {
@@ -89,7 +90,7 @@ export const News = () => {
                 <img src={item.image} width='100%' height='100%' />
               </div>
               <p className='theme'>{item.theme}</p>
-              <StyledCardTitle>{item.title}</StyledCardTitle>
+              <StyledCardTitle className={classNames(`${item.link && 'link'}`)}>{item.title}</StyledCardTitle>
               <p className='text'>{item.contentShort}</p>
               {item.link && <StyledActionButton><a href={item.link}>learn more</a></StyledActionButton>}
             </StyledNewCard>
@@ -157,29 +158,6 @@ const StyledPaginationButton = styled.button`
   margin-right: 30px;
 `
 
-const StyledGridArea = styled.div`
-  display: flex;
-  gap: 16px;
-  list-style: none;
-  max-width: 100%;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  &::-webkit-scrollbar {
-    background: transparent; /* make scrollbar transparent */
-    -webkit-appearance: none;
-    width: 0;
-    height: 0;
-  }
-
-  @media (max-width: 800px) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-  }
-`
-
 const StyledNewCard = styled.div`
   flex: 0 0 100%;
   max-width: 411px;
@@ -191,6 +169,8 @@ const StyledNewCard = styled.div`
 
   background: #171717;
   border-radius: 4px;
+
+  text-align: start;
 
   .image {
     width: 100%;
@@ -207,6 +187,7 @@ const StyledNewCard = styled.div`
     text-transform: uppercase;
     color: #F0B270;
     mix-blend-mode: normal;
+    margin-bottom: 0;
   }
 
   .text {
@@ -219,13 +200,6 @@ const StyledNewCard = styled.div`
     mix-blend-mode: luminosity;
   }
 
-  .content-short {
-
-  }
-
-  .content-more {
-
-  }
 `
 
 const StyledCardTitle = styled.p`
@@ -234,13 +208,17 @@ const StyledCardTitle = styled.p`
   font-weight: 700;
   font-size: 18px;
   line-height: 28px;
-  text-decoration-line: underline;
   cursor: pointer;
   color: #FFFFFF;
+
+  &.link {
+    text-decoration-line: underline;
+  }
 `
 
 const StyledActionButton = styled(StyledCardTitle)`
   text-transform: capitalize;
   cursor: pointer;
   margin-top: auto;
+  text-decoration-line: underline;
 `

@@ -12,7 +12,8 @@ const desktopDegree = 6.5;
 const RoundedAnimation = () => {
   const isMobileScreen = useMediaQuery('(max-width:768px)');
 
-  const memoizedWidth = useMemo(() => isMobileScreen ? 50 : 75, [isMobileScreen]);
+  // const memoizedWidth = useMemo(() => isMobileScreen ? 50 : 75, [isMobileScreen]);
+  const memoizedWidth = useMemo(() => isMobileScreen ? 75 : 75, [isMobileScreen]);
 
   return (
     <div className={styles.circle}>

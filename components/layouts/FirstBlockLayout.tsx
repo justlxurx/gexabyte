@@ -1,5 +1,4 @@
 import { Box, Button, Container, Stack, Typography, useMediaQuery } from '@mui/material'
-import RoundedAnimation from 'components/custom/RoundedAnimation'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
@@ -43,9 +42,6 @@ const FirstBlockLayout: React.FC<FirstBlockLayoutProps> = ({ title, bgAnimationS
           </video>
         </Box>
       }
-      {/* <Box sx={{ position: 'absolute', top: { xs: '400px', md: '62.5%' }, left: { xs: '10%', md: '40%' } }}>
-        <RoundedAnimation />
-      </Box> */}
       <Container disableGutters sx={{
         padding: {
           xs: '1rem',
@@ -84,7 +80,7 @@ const FirstBlockLayout: React.FC<FirstBlockLayoutProps> = ({ title, bgAnimationS
               {subTitle}
             </Typography>
           }
-          <Button onClick={handleScroll} sx={{ width: { xs: '100%', md: '50%' }, bgcolor: theme.palette.primary.main, color: '#FFFFFF', fontFamily: 'Poppins', fontWeight: 700, fontSize: '18px', ':hover': { bgcolor: theme.palette.primary.main } }} size='large'>{t('button.letstalk')}</Button>
+          <Button onClick={handleScroll} sx={{ width: { xs: '100%', md: '185px' }, bgcolor: theme.palette.primary.main, color: '#FFFFFF', fontFamily: 'Poppins', fontWeight: 700, fontSize: '18px', ':hover': { bgcolor: theme.palette.primary.main } }} size='large'>{t('button.letstalk')}</Button>
         </Stack>
       </Container>
       <Box sx={{ position: 'absolute', bottom: 0, height: '50px', width: '100%', zIndex: -1 }}>

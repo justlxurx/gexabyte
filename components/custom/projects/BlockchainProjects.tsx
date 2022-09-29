@@ -13,15 +13,9 @@ const ImageGrid = [8, 4, 6, 6, 4, 4, 4]
 const BlockchainProjects = () => {
   const { t } = useTranslation()
   const isMobileScreen = useMediaQuery('(max-width:768px)');
-  const [isExtended, setIsExtended] = React.useState(false);
-
-  const changeIsExtended = () => {
-    setIsExtended(prev => !prev)
-  }
 
   return (
     <Container disableGutters sx={{
-      mb: '6rem',
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
@@ -43,7 +37,7 @@ const BlockchainProjects = () => {
       <Grid container gridTemplateColumns={'repeat(auto-fill, minmax(700px, 1fr))'} spacing={1}>
         {isMobileScreen ?
           projects.mobile.map((src, idx) => (
-            <Grid item xs={12} md={12} key={idx}>
+            <Grid item xs={12} md={12} key={idx} sx={{ my: '12px' }}>
               <Link href='/projects' passHref>
                 <a><img src={src} width='100%' /></a>
               </Link>
@@ -58,31 +52,13 @@ const BlockchainProjects = () => {
             </Grid>
           ))
         }
-        {isExtended &&
-          <>
-            {isMobileScreen ?
-              projects.mobile.map((src, idx) => (
-                <Grid item xs={12} md={12} key={idx}>
-                  <Link href='/projects' passHref>
-                    <a><img src={src} width='100%' /></a>
-                  </Link>
-                </Grid>
-              ))
-              :
-              projects.desktop.map((src, idx) => (
-                <Grid item xs={12} md={ImageGrid[idx]} key={idx}>
-                  <Link href='/projects' passHref>
-                    <a><img src={src} width='100%' /></a>
-                  </Link>
-                </Grid>
-              ))
-            }
-          </>
-        }
         <Grid item xs={12}>
           <Box sx={{
             textAlign: 'center',
-            mt: '2rem'
+            mt: {
+              xs: '12px',
+              md: '2rem'
+            }
           }}>
             <Link href='/projects?tab=blockchain'>
               <Button

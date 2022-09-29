@@ -1,20 +1,29 @@
 import styled from '@emotion/styled'
-import { Box, Button, Tab, Tabs, Typography } from '@mui/material'
-import FirstBlockLayout from 'components/layouts/FirstBlockLayout'
+import { Box, Tab, Tabs } from '@mui/material'
 import { AllProjectsBlockchain } from 'components/UI/molecules/AllProjects/AllProjectsBlockchain'
 import { AllProjectsConsulting } from 'components/UI/molecules/AllProjects/AllProjectsConsulting'
 import { AllProjectsWebDev } from 'components/UI/molecules/AllProjects/AllProjectsWebDev'
-import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 
 const Projects = () => {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(0)
+  const { pathname, query, push } = useRouter()
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
+    setValue(newValue)
   };
+
+  React.useEffect(() => {
+    if (query.tab === 'blockchain') {
+      setValue(0)
+    } else if (query.tab === 'consulting') {
+      setValue(1)
+    } else if (query.tab === 'webdev') {
+      setValue(2)
+    }
+  }, [query, pathname])
 
   return (
     <div>

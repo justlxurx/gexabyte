@@ -81,7 +81,7 @@ const WebProjects = () => {
             textAlign: 'center',
             mt: '2rem'
           }}>
-            <Link href='/projects'>
+            <Link href='/projects?tab=webdev'>
               <Button
                 variant='contained'
                 sx={{

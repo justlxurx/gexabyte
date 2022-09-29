@@ -82,7 +82,7 @@ const ConsultingProjects = () => {
             textAlign: 'center',
             mt: '2rem'
           }}>
-            <Link href='/projects'>
+            <Link href='/projects?tab=consulting'>
               <Button
                 variant='contained'
                 sx={{

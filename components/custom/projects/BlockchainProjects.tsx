@@ -84,7 +84,7 @@ const BlockchainProjects = () => {
             textAlign: 'center',
             mt: '2rem'
           }}>
-            <Link href='/projects'>
+            <Link href='/projects?tab=blockchain'>
               <Button
                 variant='contained'
                 sx={{

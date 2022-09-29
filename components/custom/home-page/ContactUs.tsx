@@ -1,15 +1,12 @@
-import { Box, Button, Container, Grid, InputLabel, Stack, TextField, Typography, useMediaQuery } from '@mui/material';
-import CustomButton from 'components/custom/CustomButton';
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useRef } from 'react';
+import styled from '@emotion/styled';
+import { Box, Button, Container, Grid, TextField, Typography, useMediaQuery } from '@mui/material';
 import axios from 'axios';
 import { useFormik } from 'formik';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { IContactUsForm } from 'types/IContactUsForm';
 import { contactUsSchema } from 'utils/validations/contactUsSchema';
 import SocialMedia from '../SocialMedia';
-import styled from '@emotion/styled';
-import { useTranslation } from 'react-i18next';
 // import styles from './ContactUs.module.scss';
 
 const ContactUs: React.FC = () => {

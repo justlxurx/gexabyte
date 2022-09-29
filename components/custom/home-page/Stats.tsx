@@ -45,7 +45,7 @@ const SecondBlock = styled.div`
   max-width: 1400px;
   margin-inline: auto;
 
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     display: block;
     padding: 16px;
     margin-bottom: 4rem;
@@ -57,7 +57,7 @@ const SecondBlockAnimation = styled.div`
   left: 560px;
   top: 200px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     left: 220px;
     top: 320px;
   }
@@ -80,7 +80,7 @@ const StatsWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   gap: 54px;
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
@@ -109,6 +109,6 @@ const StatsText = styled.div`
   line-height: 140%;
   color: #667085;
   @media (min-width: 601px) {
-    width: 230px;
+    width: 150px;
   }
 `

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 const projects = {
   desktop: ['/images/musical platform.svg', '/images/defi app.svg', '/images/crowdfunding.png', '/images/nft.png', '/images/euphoria.png', '/images/defi.svg', '/images/emm.svg'],
-  mobile: ['/images/rokimob.svg', '/images/ton seed mobile.png', '/images/defi mobile.png']
+  mobile: ['/images/projects/mobile/rokkmob.svg', '/images/ton seed mobile.png', '/images/defi mobile.png']
 }
 
 const ImageGrid = [8, 4, 6, 6, 4, 4, 4]

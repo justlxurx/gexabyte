@@ -57,9 +57,9 @@ const Footer = () => {
           <Grid item xs={1} md={1}>
             <Stack direction='column'>
               <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Projects</Typography>
-              <StyledTypography title='Blockchain' link='/blockchain' />
-              <StyledTypography title='Consulting' link='/consulting' />
-              <StyledTypography title='Web&Mobile app' link='/webdev' />
+              <StyledTypography title='Blockchain projects' link='/projects?tab=blockchain'/>
+              <StyledTypography title='Consulting projects' link='/projects?tab=consulting' />
+              <StyledTypography title='Web&Mobile app projects' link='/projects?tab=webdev' />
             </Stack>
           </Grid>
           <Grid item xs={2} md={2}>
@@ -83,7 +83,7 @@ const Footer = () => {
           </Grid>
         </Grid>
       </Container>
-      <Container sx={{ px: { xs: '16px', md: '120px' }, py: '30px', display: { xs: 'block', md: 'flex' }, alignItems: 'center', gap: '80px' }}>
+      <Container sx={{ px: { xs: '16px', md: '0px' }, py: '30px', display: { xs: 'block', md: 'flex' }, alignItems: 'center', gap: '80px' }}>
         <StyledCopyright>© 2022 Techculture</StyledCopyright>
       </Container>
     </StyledFooter>

@@ -4,8 +4,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const projects = {
-  desktop: ['/images/musical.png', '/images/defi app.svg', '/images/crowdfunding.png', '/images/nft.png', '/images/euphoria.png', '/images/defi.svg', '/images/emm.svg'],
-  mobile: ['/images/rocki mobile.png', '/images/ton seed mobile.png', '/images/defi mobile.png']
+  desktop: ['/images/musical platform.svg', '/images/defi app.svg', '/images/crowdfunding.png', '/images/nft.png', '/images/euphoria.png', '/images/defi.svg', '/images/emm.svg'],
+  mobile: ['/images/rokimob.svg', '/images/ton seed mobile.png', '/images/defi mobile.png']
 }
 
 const ImageGrid = [8, 4, 6, 6, 4, 4, 4]

@@ -17,9 +17,9 @@ export const dropdownContent = [
     menu: true,
     link: '#',
     items: [
-      { title: 'Blockchain', link: '/blockchain' },
-      { title: 'Consulting', link: '/consulting' },
-      { title: 'Web&Mobile', link: '/webdev' }]
+      { title: 'Blockchain Development', link: '/blockchain' },
+      { title: 'Blokchain Consulting', link: '/consulting' },
+      { title: 'Web&Mobile Development', link: '/webdev' }]
   },
   {
     title: 'Projects',
@@ -68,8 +68,8 @@ const AppBarDesktop: React.FC = () => {
             </Stack>
           </div>
           <Stack direction='row' gap='0.5rem' spacing={2} alignItems='center'>
-            {/* <LocaleButton text='ENG' locale='en' />
-            <LocaleButton text='RUS' locale='ru' /> */}
+            <LocaleButton text='ENG' locale='en' />
+            <LocaleButton text='RUS' locale='ru' />
             <Link href='#contact-us'>
               <CustomButton
                 title='Get in Touch'

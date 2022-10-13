@@ -94,7 +94,7 @@ const AppBarMobile: React.FC = () => {
               </AccordionDetails>
             </Accordion>
             :
-            <Link href={item.link} >
+            <Link href={item.link} key={idx}>
               <Typography key={idx} sx={{ m: '1rem', fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
             </Link>
         ))}

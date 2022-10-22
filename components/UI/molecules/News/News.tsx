@@ -13,6 +13,14 @@ import classNames from 'classnames'
 
 const NewsData = [
   {
+    image: '/images/internship5_techculture.jpg',
+    theme: 'Events',
+    title: 'Blockchain Internship 5.0 is open!',
+    contentShort: 'If you want to learn the basics of blockchain development and get experience from working on real blockchain projects, apply to Tech Culture internship!',
+    contentFull: 'Tech Culture will present Metabank, a bank in Metaverse with financial services available through VR experience. We will also share our experience in blockchain projects development and discuss blockchain potential for Central Asian region and abroad.',
+    link: "https://www.instagram.com/p/Cj5LAixI2XN/"
+  },
+  {
     image: '/images/digital bridge_astana hub 1.png',
     theme: 'events',
     title: 'Tech Culture is the partner of the international forum Digital Bridge!',
@@ -81,10 +89,10 @@ export const News = () => {
 
         navigation={{ nextEl: "#swiper-forward", prevEl: "#swiper-back" }}
         modules={[Navigation]}
-        className="mySwiper"
+        className="swiper"
       >
         {NewsData.map((item, idx) => (
-          <SwiperSlide key={idx}>
+          <SwiperSlide key={idx} className="swiper-slide">
             <StyledNewCard>
               <div className='image'>
                 <img src={item.image} width='100%' height='100%' />
@@ -96,21 +104,7 @@ export const News = () => {
             </StyledNewCard>
           </SwiperSlide>
         ))}
-        {!isMobile &&
-          <SwiperSlide>
-            <StyledNewCard>
-              <div className='image'>
-                <img src={NewsData[0].image} width='100%' height='100%' />
-              </div>
-              <p className='theme'>{NewsData[0].theme}</p>
-              <StyledCardTitle>{NewsData[0].title}</StyledCardTitle>
-              <p className='text'>{NewsData[0].contentShort}</p>
-              {NewsData[0].link && <StyledActionButton><a href={NewsData[0].link}>learn more</a></StyledActionButton>}
-            </StyledNewCard>
-          </SwiperSlide>
-        }
       </Swiper>
-
     </StyledWrapper>
   )
 }

@@ -13,6 +13,7 @@ import translationRU from 'utils/locales/ru.json';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Script from 'next/script';
+import Head from 'next/head';
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next

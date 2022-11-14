@@ -56,7 +56,7 @@ const ContactUsForm = () => {
       }}>
         {t('contactUsForm.formTitle')}
       </Typography>
-      <Typography sx={{
+      {/* <Typography sx={{
         fontSize: '18px',
         fontWeight: 500,
         color: '#667085',
@@ -67,7 +67,7 @@ const ContactUsForm = () => {
         mb: '2.5rem'
       }}>
         You can reach us anytime via <span style={{ color: '#736AE4' }}>techculturellp@gmail.com</span>
-      </Typography>
+      </Typography> */}
       <StyledInputLabel>{t('contactUsForm.name')}</StyledInputLabel>
       <TextField
         id="bootstrap-input1"

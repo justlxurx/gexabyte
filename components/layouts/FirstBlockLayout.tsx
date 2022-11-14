@@ -70,7 +70,7 @@ const FirstBlockLayout: React.FC<FirstBlockLayoutProps> = ({ title, bgAnimationS
           </Typography>
           {subTitle &&
             <Typography
-              fontSize='16px'
+              fontSize='18px'
               fontWeight='400'
               color={theme.palette.text.secondary}
               lineHeight='150%'

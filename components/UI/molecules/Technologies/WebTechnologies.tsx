@@ -2,8 +2,8 @@ import styled from '@emotion/styled'
 import Image from 'next/image'
 import { FC } from 'react'
 
-const technologies = ['jvscrpt.svg', 'vue.svg', 'react.svg', 'kotlin1.svg', 'angular.svg', 'java.svg', 'php.svg', 'git.svg', 'python.svg', 'swift1.svg', 'gitlab.svg', 'github.svg']
-const technologiesName = ['JavaScpirt', 'Vue.js', 'React.js', 'Kotlin', 'Angular', 'Java', 'PHP', 'Git', 'Python', 'Swift', 'GitLab', 'GitHub']
+const technologies = ['jvscrpt.svg', 'vue.svg', 'react.svg', 'kotlin1.svg', 'angular.svg', 'java.svg', 'rust-lang-icon 1.svg', 'git.svg', 'python.svg', 'swift1.svg', 'gitlab.svg', 'github.svg']
+const technologiesName = ['JavaScpirt', 'Vue.js', 'React.js', 'Kotlin', 'Angular', 'Java', 'Rust', 'Git', 'Python', 'Swift', 'GitLab', 'GitHub']
 
 export const WebTechnologies: FC = () => {
   return (

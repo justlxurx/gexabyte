@@ -60,7 +60,7 @@ const ContactUsInfo = () => {
           fontSize: '16px',
           fontWeight: 600,
           mb: '1rem'
-        }}>aa@techculture.tech</Typography>
+        }}>sales@techculture.tech</Typography>
       </a>
       <Typography style={{
         color: '#F0B270',

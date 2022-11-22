@@ -54,7 +54,7 @@ const ContactUsInfo = () => {
         fontSize: '16px',
         fontWeight: 600,
       }}>{t('contactUsForm.sales')}</Typography>
-      <a href='mailto:aa@techculture.tech'>
+      <a href='mailto:sales@techculture.tech'>
         <Typography sx={{
           textDecoration: 'underline',
           fontSize: '16px',

@@ -47,11 +47,11 @@ const StackSlider = () => {
     <div className="slider">
       <div className="slider-track">
         <div className="slide-first">
-          <Image src={'/icons/techstack/All.svg'} width='40px' height='40px' />
+          <Image src={'/icons/techstack/All.svg'} width='40px' height='40px' alt={'allIcon'} />
         </div>
         {icons.map((item, idx) => (
           <div className="slide" key={idx}>
-            <Image src={item} width='40px' height='40px' />
+            <Image src={item} width='40px' height='40px' alt={`${item}${idx}`} />
           </div>
         ))}
       </div>

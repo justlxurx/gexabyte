@@ -1,40 +1,49 @@
 import Image from 'next/image'
 import React from 'react'
 import styled from '@emotion/styled'
+import {
+  aaveIcon, allIcon, balancerIcon,
+  compoundIcon, infuraIcon,
+  metaMaskIcon, oneInchIcon,
+  pancakesWapIcon, quicknodeIcon,
+  raydiumIcon,
+  trustWalletIcon,
+  uniswapIcon, venusIcon
+} from "@public/icons";
 
 const DeFiTechs = [
-  { title: 'compund', icon: '/icons/compound.svg' },
-  { title: 'aave', icon: '/icons/aave.svg' },
-  { title: 'metamask', icon: '/icons/metamask.svg' },
-  { title: 'uniswap', icon: '/icons/uniswap.svg' },
-  { title: 'raydium', icon: '/icons/raydium.svg' },
-  { title: 'pancakeswap', icon: '/icons/pancakeswap-cake-logo 1.svg' },
-  { title: 'trust wallet', icon: '/icons/trust wallet.svg' },
-  { title: '1inch ', icon: '/icons/1inch.svg' },
-  { title: 'venus', icon: '/icons/venus.svg' },
-  { title: 'infura', icon: '/icons/infura.svg' },
-  { title: 'quicknode', icon: '/icons/quicknode.svg' },
-  { title: 'balancer', icon: '/icons/balancer.svg' },
-  { title: 'compund', icon: '/icons/compound.svg' },
-  { title: 'aave', icon: '/icons/aave.svg' },
-  { title: 'metamask', icon: '/icons/metamask.svg' },
-  { title: 'uniswap', icon: '/icons/uniswap.svg' },
-  { title: 'raydium', icon: '/icons/raydium.svg' },
-  { title: 'pancakeswap', icon: '/icons/pancakeswap-cake-logo 1.svg' },
-  { title: 'trust wallet', icon: '/icons/trust wallet.svg' },
+  { title: 'compund', icon: compoundIcon },
+  { title: 'aave', icon: aaveIcon },
+  { title: 'metamask', icon: metaMaskIcon },
+  { title: 'uniswap', icon: uniswapIcon },
+  { title: 'raydium', icon: raydiumIcon },
+  { title: 'pancakeswap', icon: pancakesWapIcon },
+  { title: 'trust wallet', icon: trustWalletIcon },
+  { title: '1inch ', icon: oneInchIcon },
+  { title: 'venus', icon: venusIcon },
+  { title: 'infura', icon: infuraIcon },
+  { title: 'quicknode', icon: quicknodeIcon },
+  { title: 'balancer', icon: balancerIcon },
+  { title: 'compund', icon: compoundIcon },
+  { title: 'aave', icon: aaveIcon },
+  { title: 'metamask', icon: metaMaskIcon },
+  { title: 'uniswap', icon: uniswapIcon },
+  { title: 'raydium', icon: raydiumIcon },
+  { title: 'pancakeswap', icon: pancakesWapIcon },
+  { title: 'trust wallet', icon: trustWalletIcon },
 ]
 
 const DeFiSlider = () => {
   return (
-    <div className="slider">
-      <div className="slider-track">
-        <div className="slide-first">
-          <Image src={'/icons/techstack/All.svg'} width='40px' height='40px' />
+    <div className={"slider"}>
+      <div className={"slider-track"}>
+        <div className={"slide-first"}>
+          <Image src={allIcon} width={'40px'} height={'40px'} alt={'altIcon'}/>
         </div>
         {DeFiTechs.map((item, idx) => (
             <StyledCard key={idx}>
               <StyledIconArea>
-                <Image src={item.icon} width='74px' height='74px' className='icon' />
+                <Image src={item.icon} width={'74px'} height={'74px'} className={'icon'} alt={item.title}/>
               </StyledIconArea>
               <StyledCardText>{item.title}</StyledCardText>
             </StyledCard>

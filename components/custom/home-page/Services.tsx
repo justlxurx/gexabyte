@@ -1,17 +1,17 @@
 import styled from '@emotion/styled';
-import { Box, Container, Stack, Typography, Link as MUILink, Grid, TextField } from '@mui/material';
+import { Box, Container, Stack, Typography, Link as MUILink, Grid } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { theme } from '../../../utils/theme';
+import {arrowRightBlueIcon} from "@public/icons";
 
 
 
 const Services = () => {
   const { t } = useTranslation()
-  const { locale } = useRouter()
 
   const services = useMemo(() => {
     return [
@@ -34,7 +34,7 @@ const Services = () => {
         link: '/webdev'
       }
     ]
-  }, [locale, t])
+  }, [t])
 
   return (
     <Container sx={{
@@ -54,8 +54,8 @@ const Services = () => {
         },
         mb: '2rem',
       }}>
-        <Stack direction='column'>
-          <Typography variant='h1' sx={{
+        <Stack direction={'column'}>
+          <Typography variant={'h1'} sx={{
             fontSize: {
               xs: '32px',
               md: '56px'
@@ -64,7 +64,7 @@ const Services = () => {
           }}>
             What We Can
           </Typography>
-          <Typography variant='h1' sx={{
+          <Typography variant={'h1'} sx={{
             fontSize: {
               xs: '32px',
               md: '56px'
@@ -78,13 +78,13 @@ const Services = () => {
             <span style={{ color: theme.palette.primary.main }}>Help You</span> With
           </Typography>
         </Stack>
-        <Link href='/projects'>
+        <Link href={'/projects'}>
           <MUILink sx={{ cursor: 'pointer', fontFamily: 'Poppins', color: '#B3B3B3' }}>
             EXPLORE OUT PROJECTS {'>'}
           </MUILink>
         </Link>
       </Box>
-      <Grid container columns={3} spacing={1} gridAutoRows='1fr' rowGap={3}>
+      <Grid container columns={3} spacing={1} gridAutoRows={'1fr'} rowGap={3}>
         {services.map((service, idx) => (
           <Grid item xs={3} md={1} key={idx}>
             <StyledCard>
@@ -96,7 +96,7 @@ const Services = () => {
               <Link href={service.link}>
                 <StyledButton>
                   <span>{t('button.moreDetails')}</span>
-                  <Image src='/icons/arrow-right.svg' width='25px' height='8px' />
+                  <Image src={arrowRightBlueIcon} width={'25px'} height={'8px'} alt={service.title}/>
                 </StyledButton>
               </Link>
             </StyledCard>
@@ -111,13 +111,11 @@ export default Services
 
 const StyledCard = styled.div`
   width: 100%;
-  // max-width: 413px;
   height: 435px;
   background: #171717;
   display: flex;
   flex-direction: column;
   padding: 26px 48px;
-  // justify-content: space-between;
   :hover {
     background: #242424;
   }
@@ -125,8 +123,6 @@ const StyledCard = styled.div`
   @media (max-width: 600px) {
     width: 100%;
     height: 100%;
-    // max-width: 396px;
-    // height: 437px;
   }
 `
 

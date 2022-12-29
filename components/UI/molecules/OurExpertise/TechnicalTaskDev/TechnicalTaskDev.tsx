@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import React from 'react'
+import {quotesIcon} from "@public/icons";
 
 const services = [
   'Project and technology market analytics',
@@ -18,25 +19,25 @@ export const TechnicalTaskDev = () => {
   }
   return (
     <StyledWrapper>
-      <div className='left'>
-        <p className='title'>Services include:</p>
+      <div className={'left'}>
+        <p className={'title'}>Services include:</p>
         {services.map((item, idx) => (
-          <div className='list_item' key={idx}>
-            <div className='bullet' />
-            <p className='text'>{item}</p>
+          <div className={'list_item'} key={idx}>
+            <div className={'bullet'} />
+            <p className={'text'}>{item}</p>
           </div>
         ))}
         <StyledButton onClick={handleScroll}>Resquest a service</StyledButton>
       </div>
       <StyledRight>
-        <img src='/icons/quotes.svg' />
-        <p className='text'>
+        <Image src={quotesIcon} alt={'quotesIcon'}/>
+        <p className={'text'}>
           As a result, the client receives a
-          <span className='orange'> fully developed </span>
+          <span className={'orange'}> fully developed </span>
           document, with the help of which the product will be delivered
-          <span className='orange'> faster and with better quality. </span>
+          <span className={'orange'}> faster and with better quality. </span>
         </p>
-        <img src='/logo.svg' className='logo' />
+        <img src={'/logo.svg'} className={'logo'} alt={'mainLogo'}/>
       </StyledRight>
     </StyledWrapper>
   )

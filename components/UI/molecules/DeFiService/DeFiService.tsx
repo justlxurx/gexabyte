@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { useMediaQuery } from '@mui/material'
 import Image from 'next/image'
-import { FC, useRef } from 'react'
+import { FC} from 'react'
 
 import "swiper/css"
 import "swiper/css/navigation"
@@ -9,37 +9,52 @@ import "swiper/css/pagination"
 
 import { Navigation } from "swiper"
 import { Swiper, SwiperSlide } from 'swiper/react'
+import {
+  aaveIcon,
+  arrowLeftIcon,
+  arrowRightIcon,
+  balancerIcon,
+  compoundIcon,
+  infuraIcon,
+  metaMaskIcon,
+  oneInchIcon,
+  pancakesWapIcon,
+  quicknodeIcon,
+  raydiumIcon,
+  trustWalletIcon,
+  uniswapIcon,
+  venusIcon
+} from "@public/icons";
+
 
 const DeFiTechs = [
-  { title: 'compund', icon: '/icons/compound.svg' },
-  { title: 'aave', icon: '/icons/aave.svg' },
-  { title: 'metamask', icon: '/icons/metamask.svg' },
-  { title: 'uniswap', icon: '/icons/uniswap.svg' },
-  { title: 'raydium', icon: '/icons/raydium.svg' },
-  { title: 'pancakeswap', icon: '/icons/pancakeswap-cake-logo 1.svg' },
-  { title: 'trust wallet', icon: '/icons/trust wallet.svg' },
-  { title: '1inch ', icon: '/icons/1inch.svg' },
-  { title: 'venus', icon: '/icons/venus.svg' },
-  { title: 'infura', icon: '/icons/infura.svg' },
-  { title: 'quicknode', icon: '/icons/quicknode.svg' },
-  { title: 'balancer', icon: '/icons/balancer.svg' },
+  { title: 'compund', icon: compoundIcon },
+  { title: 'aave', icon: aaveIcon },
+  { title: 'metamask', icon: metaMaskIcon },
+  { title: 'uniswap', icon: uniswapIcon },
+  { title: 'raydium', icon: raydiumIcon },
+  { title: 'pancakeswap', icon: pancakesWapIcon },
+  { title: 'trust wallet', icon: trustWalletIcon },
+  { title: '1inch ', icon: oneInchIcon },
+  { title: 'venus', icon: venusIcon },
+  { title: 'infura', icon: infuraIcon },
+  { title: 'quicknode', icon: quicknodeIcon },
+  { title: 'balancer', icon: balancerIcon },
 ]
 
 export const DeFiService: FC = () => {
   const isMobile = useMediaQuery('(max-width: 600px)')
-
-  const listRef = useRef<HTMLDivElement>(null);
 
   return (
     <StyledWrapper>
       <StyledFlexArea>
         <StyledTitle>DeFi service we are working with</StyledTitle>
         <StyledPagination>
-          <StyledPaginationButton id="swiper-back">
-            <Image src='/icons/arrow left.svg' width='24px' height='24px' />
+          <StyledPaginationButton id={"swiper-back"}>
+            <Image src={arrowLeftIcon} width={'24px'} height={'24px'} alt={'arrowLeftIcon'}/>
           </StyledPaginationButton>
           <StyledPaginationButton id="swiper-forward">
-            <Image src='/icons/arrow right.svg' width='24px' height='24px' />
+            <Image src={arrowRightIcon} width={'24px'} height={'24px'} alt={'arrowRightIcon'}/>
           </StyledPaginationButton>
         </StyledPagination>
       </StyledFlexArea>
@@ -56,13 +71,13 @@ export const DeFiService: FC = () => {
 
         navigation={{ nextEl: "#swiper-forward", prevEl: "#swiper-back" }}
         modules={[Navigation]}
-        className="mySwiper"
+        className={"mySwiper"}
       >
         {DeFiTechs.map((item, idx) => (
-          <SwiperSlide key={idx}>
-            <StyledCard key={idx}>
+          <SwiperSlide key={`${item}${idx}`}>
+            <StyledCard>
               <StyledIconArea>
-                <Image src={item.icon} width='74px' height='74px' className='icon' />
+                <Image src={item.icon} width={'74px'} height={'74px'} className={'icon'} alt={item.title}/>
               </StyledIconArea>
               <StyledCardText>{item.title}</StyledCardText>
             </StyledCard>
@@ -71,11 +86,11 @@ export const DeFiService: FC = () => {
       </Swiper>
 
       <StyledPaginationMobile>
-        <StyledPaginationButton id="swiper-back">
-          <Image src='/icons/arrow left.svg' width='24px' height='24px' />
+        <StyledPaginationButton id={"swiper-back"}>
+          <Image src={arrowLeftIcon} width={'24px'} height={'24px'}  alt={'arrowLeftIcon'}/>
         </StyledPaginationButton>
-        <StyledPaginationButton id="swiper-forward">
-          <Image src='/icons/arrow right.svg' width='24px' height='24px' />
+        <StyledPaginationButton id={"swiper-forward"}>
+          <Image src={arrowRightIcon} width={'24px'} height={'24px'} alt={'arrowRightIcon'}/>
         </StyledPaginationButton>
       </StyledPaginationMobile>
 
@@ -88,25 +103,6 @@ const StyledWrapper = styled.div`
   margin-bottom: 53px;
   @media (max-width: 600px) {
     padding: 16px;
-  }
-`
-
-const StyledCardsArea = styled.div`
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  list-style: none;
-  max-width: 100%;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  &::-webkit-scrollbar {
-    background: transparent; /* make scrollbar transparent */
-    -webkit-appearance: none;
-    width: 0;
-    height: 0;
   }
 `
 
@@ -146,7 +142,6 @@ const StyledCard = styled.div`
 const StyledIconArea = styled.div`
   width: 74px;
   height: 74px;
-  // background: #141414;
   border-radius: 5px;
   padding: 10px;
   text-align: center;
@@ -187,7 +182,6 @@ const StyledPaginationButton = styled.button`
   border-radius: 4px;
   border: none;
   cursor: pointer;
-  // margin-right: 30px;
 `
 
 const StyledPagination = styled.div`

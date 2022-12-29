@@ -10,6 +10,7 @@ import "swiper/css/pagination"
 import { Navigation } from "swiper"
 import { Swiper, SwiperSlide } from 'swiper/react'
 import classNames from 'classnames'
+import {arrowLeftIcon, arrowRightIcon} from "@public/icons";
 
 const NewsData = [
   {
@@ -68,11 +69,11 @@ export const News = () => {
       <StyledFlexArea>
         <StyledTitle>{t('home.news.title')}</StyledTitle>
         <div>
-          <StyledPaginationButton id="swiper-back">
-            <Image src='/icons/arrow left.svg' width='24px' height='24px' />
+          <StyledPaginationButton id={"swiper-back"}>
+            <Image src={arrowLeftIcon} width={'24px'} height={'24px'} alt={'arrowLeftIcon'}/>
           </StyledPaginationButton>
-          <StyledPaginationButton id="swiper-forward">
-            <Image src='/icons/arrow right.svg' width='24px' height='24px' />
+          <StyledPaginationButton id={"swiper-forward"}>
+            <Image src={arrowRightIcon} width={'24px'} height={'24px'} alt={'arrowRightIcon'}/>
           </StyledPaginationButton>
         </div>
       </StyledFlexArea>
@@ -92,14 +93,14 @@ export const News = () => {
         className="swiper"
       >
         {NewsData.map((item, idx) => (
-          <SwiperSlide key={idx} className="swiper-slide">
+          <SwiperSlide key={idx} className={"swiper-slide"}>
             <StyledNewCard>
-              <div className='image'>
-                <img src={item.image} width='100%' height='100%' />
+              <div className={'image'}>
+                <img src={item.image} width={'100%'} height={'100%'} alt={item.title}/>
               </div>
-              <p className='theme'>{item.theme}</p>
+              <p className={'theme'}>{item.theme}</p>
               <StyledCardTitle className={classNames(`${item.link && 'link'}`)}>{item.title}</StyledCardTitle>
-              <p className='text'>{item.contentShort}</p>
+              <p className={'text'}>{item.contentShort}</p>
               {item.link && <StyledActionButton><a href={item.link}>learn more</a></StyledActionButton>}
             </StyledNewCard>
           </SwiperSlide>
@@ -185,7 +186,7 @@ const StyledNewCard = styled.div`
   }
 
   .text {
-    ont-family: 'Poppins';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

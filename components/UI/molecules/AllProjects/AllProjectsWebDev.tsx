@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import { Grid, useMediaQuery } from '@mui/material'
-import Image from 'next/image'
 import React from 'react'
 
 const FlexItem = [6, 6, 12, 6, 6, 7, 5]
@@ -34,20 +33,18 @@ export const AllProjectsWebDev = () => {
         {!isMobile ?
           projectsDesktop.map((item, idx) => (
             <Grid item xs={6} md={FlexItem[idx]} key={idx}>
-              <img src={item.image} width='100%' height='100%' />
+              <img src={item.image} width={'100%'} height={'100%'} alt={item.title}/>
               <StyledFlex>
-                <span className='title'>{item.title}</span>
-                {/* <span className='action'>VIEW</span> */}
+                <span className={'title'}>{item.title}</span>
               </StyledFlex>
             </Grid>
           ))
           :
           projectsMobile.map((item, idx) => (
             <Grid item xs={12} key={idx} mb='16px'>
-              <img src={item.image} width='100%' height='100%' />
+              <img src={item.image} width={'100%'} height={'100%'} alt={item.title}/>
               <StyledFlex>
-                <span className='title'>{item.title}</span>
-                {/* <span className='action'>VIEW</span> */}
+                <span className={'title'}>{item.title}</span>
               </StyledFlex>
             </Grid>
           ))

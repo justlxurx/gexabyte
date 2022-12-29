@@ -1,16 +1,15 @@
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/react'
 import React from 'react'
-import Image from 'next/image'
 
 export const BlockchainAnimation = () => {
   return (
     <StyledWrapper>
       <StyledAnimationWrapper>
-        <StyledImgFirst src='/images/no-background-code.png' />
-        <StyledImg src='/images/no-background-code.png' />
-        <StyledImg src='/images/no-background-code.png' />
-        <StyledImg src='/images/no-background-code.png' />
+        <StyledImgFirst src={'/images/no-background-code.png'} alt={'noBackgroundCode'}/>
+        <StyledImg src={'/images/no-background-code.png'} alt={'noBackgroundCode'}/>
+        <StyledImg src={'/images/no-background-code.png'} alt={'noBackgroundCode'}/>
+        <StyledImg src={'/images/no-background-code.png'} alt={'noBackgroundCode'}/>
       </StyledAnimationWrapper>
     </StyledWrapper>
   )

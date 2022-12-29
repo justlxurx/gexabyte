@@ -2,7 +2,6 @@ import { ThemeProvider } from '@emotion/react';
 import type { AppProps } from 'next/app';
 import GlobalLayout from '../components/layouts/GlobalLayout';
 import '../styles/global/globals.scss';
-// import { theme } from '../utils/theme'
 import i18n from "i18next";
 import { initReactI18next, useTranslation } from "react-i18next";
 import { theme } from '../utils/theme';
@@ -13,7 +12,6 @@ import translationRU from 'utils/locales/ru.json';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Script from 'next/script';
-import Head from 'next/head';
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
@@ -28,7 +26,7 @@ i18n
     },
     lng: 'en',
     fallbackLng: 'en',
-    debug: process.env.NODE_ENV === 'production' ? false : true
+    debug: process.env.NODE_ENV !== 'production'
   });
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -43,10 +41,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-QJ0D1VSTY5"
-        strategy="afterInteractive"
+        src={"https://www.googletagmanager.com/gtag/js?id=G-QJ0D1VSTY5"}
+        strategy={"afterInteractive"}
       />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script id={"google-analytics"} strategy={"afterInteractive"}>
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}

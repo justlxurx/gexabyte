@@ -3,8 +3,16 @@ import Image from 'next/image'
 import React from 'react'
 import { Networks } from '../../Networks/Networks'
 import { Technologies } from '../../Technologies/Technologies'
+import {checkIcon} from "@public/icons";
 
-const services = ['ICO launch and support', 'Task Description', 'Tokenomics', 'RoadMap', 'Product Development', 'Landing Page']
+const services = [
+    'ICO launch and support',
+    'Task Description',
+    'Tokenomics',
+    'RoadMap',
+    'Product Development',
+    'Landing Page'
+]
 
 export const BlockchainDev = () => {
   return (
@@ -21,14 +29,14 @@ export const BlockchainDev = () => {
           {services.map((service, idx) => (
             <StyledCard key={idx}>
               <StyledCheckIcon>
-                <Image src='/icons/check.svg' width='56px' height='56px' />
+                <Image src={checkIcon} width={'56px'} height={'56px'} alt={'checkIcon'}/>
               </StyledCheckIcon>
               <StyledCardText>{service}</StyledCardText>
             </StyledCard>
           ))}
         </StyledLeftCardsArea>
       </div>
-      
+
       <div>
         <Networks />
         <Technologies />

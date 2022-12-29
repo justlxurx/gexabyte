@@ -1,8 +1,32 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import { FC } from 'react'
+import {
+    angularIcon, githubIcon,
+    gitIcon, gitlabIcon,
+    javaIcon,
+    jvscrptIcon,
+    kotlin1Icon,
+    pythonIcon,
+    reactIcon,
+    rustIcon, swift1Icon,
+    vueIcon
+} from "@public/icons";
 
-const technologies = ['jvscrpt.svg', 'vue.svg', 'react.svg', 'kotlin1.svg', 'angular.svg', 'java.svg', 'rust-lang-icon 1.svg', 'git.svg', 'python.svg', 'swift1.svg', 'gitlab.svg', 'github.svg']
+const technologies = [
+    jvscrptIcon,
+    vueIcon,
+    reactIcon,
+    kotlin1Icon,
+    angularIcon,
+    javaIcon,
+    rustIcon,
+    gitIcon,
+    pythonIcon,
+    swift1Icon,
+    gitlabIcon,
+    githubIcon,
+]
 const technologiesName = ['JavaScpirt', 'Vue.js', 'React.js', 'Kotlin', 'Angular', 'Java', 'Rust', 'Git', 'Python', 'Swift', 'GitLab', 'GitHub']
 
 export const WebTechnologies: FC = () => {
@@ -15,7 +39,7 @@ export const WebTechnologies: FC = () => {
           {technologies.map((tech, idx) => (
             <StyledTechnologiesCard key={idx}>
               <TechIcon>
-                <Image src={`/icons/${tech}`} width={"100%"} height={"100%"} />
+                <Image src={tech} width={"100%"} height={"100%"} alt={`image${idx}WebTech`}/>
               </TechIcon>
               <StyledTechnologyName>{technologiesName[idx]}</StyledTechnologyName>
             </StyledTechnologiesCard>

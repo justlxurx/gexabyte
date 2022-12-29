@@ -1,5 +1,4 @@
 import { Box, Container, Grid, Typography, useMediaQuery } from '@mui/material';
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -40,16 +39,16 @@ const AllProjects = () => {
         {isMobileScreen ?
           projects.mobile.map((src, idx) => (
             <Grid item xs={12} md={12} key={idx}>
-              <Link href='/' passHref>
-                <a><img src={src} width='100%' /></a>
+              <Link href={'/'} passHref>
+                <a><img src={src} width={'100%'} alt={`image${idx}AllProject`}/></a>
               </Link>
             </Grid>
           ))
           :
           projects.desktop.map((src, idx) => (
             <Grid item xs={12} md={idx === 0 ? 12 : 6} key={idx}>
-              <Link href='/' passHref>
-                <a><img src={src} width='100%' /></a>
+              <Link href={'/'} passHref>
+                <a><img src={src} width={'100%'} alt={`image${idx}AllProject`}/></a>
               </Link>
             </Grid>
           ))
@@ -59,16 +58,16 @@ const AllProjects = () => {
             {isMobileScreen ?
               projects.mobile.map((src, idx) => (
                 <Grid item xs={12} md={12} key={idx}>
-                  <Link href='/' passHref>
-                    <a><img src={src} width='100%' /></a>
+                  <Link href={'/'} passHref>
+                    <a><img src={src} width={'100%'} alt={`image${idx}AllProject`}/></a>
                   </Link>
                 </Grid>
               ))
               :
               projects.desktop.map((src, idx) => (
                 <Grid item xs={12} md={idx === 0 ? 12 : 6} key={idx}>
-                  <Link href='/' passHref>
-                    <a><img src={src} width='100%' /></a>
+                  <Link href={'/'} passHref>
+                    <a><img src={src} width={'100%'} alt={`image${idx}AllProject`}/></a>
                   </Link>
                 </Grid>
               ))

@@ -6,10 +6,12 @@ import { AllProjectsWebDev } from 'components/UI/molecules/AllProjects/AllProjec
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
+import Image from 'next/image'
+import {arrowLeftV2} from "@public/icons";
 
 const Projects = () => {
   const [value, setValue] = React.useState(0)
-  const { pathname, query, push } = useRouter()
+  const { pathname, query } = useRouter()
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
@@ -31,10 +33,10 @@ const Projects = () => {
         <StyledTitleArea>
           <StyledTitle>Projects</StyledTitle>
           <Box sx={{ borderBottom: 1, borderColor: '#464646' }}>
-            <Tabs value={value} onChange={handleChange} textColor='secondary' indicatorColor="secondary">
-              <Tab label="Blockchain" sx={{ fontWeight: 700 }} />
-              <Tab label="Consulting" sx={{ fontWeight: 700 }} />
-              <Tab label="Web & Mobile" sx={{ fontWeight: 700 }} />
+            <Tabs value={value} onChange={handleChange} textColor={'secondary'} indicatorColor={"secondary"}>
+              <Tab label={"Blockchain"} sx={{ fontWeight: 700 }} />
+              <Tab label={"Consulting"} sx={{ fontWeight: 700 }} />
+              <Tab label={"Web & Mobile"} sx={{ fontWeight: 700 }} />
             </Tabs>
           </Box>
         </StyledTitleArea>
@@ -53,8 +55,8 @@ const Projects = () => {
       <Box sx={{ px: { xs: '16px', md: '76px' }, my: { xs: '74px', md: '94px' } }}>
         <Link href='/'>
           <StyledButton>
-            <img src='/icons/left.svg' />
-            <span className='text'>back to main page</span>
+            <Image src={arrowLeftV2} alt={arrowLeftV2}/>
+            <span className={'text'}>back to main page</span>
           </StyledButton>
         </Link>
       </Box>

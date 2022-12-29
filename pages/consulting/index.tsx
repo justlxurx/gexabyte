@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import ContactUs from 'components/custom/home-page/ContactUs'
 import ConsultingProjects from 'components/custom/projects/ConsultingProjects'
 import { StatsConsulting } from 'components/custom/StatsConsulting'
 import { OurExpertiseConsulting } from 'components/UI/molecules/OurExpertise/OurExpertiseConsulting'
@@ -28,7 +27,7 @@ const Consulting = () => {
           </BlockchainSubtitle>
 
           <StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton>
-          <Link href='/projects'>
+          <Link href={'/projects'}>
             <StyledTextButton>
               <OrangeText>&gt;&gt;</OrangeText>
               &nbsp;see all projects
@@ -38,7 +37,7 @@ const Consulting = () => {
         </BlockChainLeftSide>
 
         <GraphicWrapper>
-          <img src='/images/graphic 1.svg' className='graph' />
+          <img src={'/images/graphicConsulting.svg'} className={'graph'} alt={'graphicConsulting'}/>
         </GraphicWrapper>
 
       </FirstBlock>

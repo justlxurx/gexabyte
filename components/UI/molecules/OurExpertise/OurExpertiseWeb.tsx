@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { WebTechDev } from './WebTechDev/WebTechDev'
 
 const tabs = ['Smart contract development', 'Full-cycle Blokchain development', 'Technical support'];
@@ -8,11 +8,6 @@ interface IProps {
 }
 
 export const OurExpertiseWeb: FC<IProps> = () => {
-  const [serviceIndex, setServiceIndex] = useState(0)
-
-  const handleChangeTab = (tabIndex: number) => {
-    setServiceIndex(tabIndex)
-  }
 
   return (
      <StyledWrapper>

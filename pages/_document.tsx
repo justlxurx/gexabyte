@@ -1,33 +1,32 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import Image from 'next/image'
 
 export default function Document() {
   return (
       <Html>
           <Head>
-              <link rel="preconnect" href="https://fonts.googleapis.com" />
-              <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+              <link rel={"preconnect"} href={"https://fonts.googleapis.com"} />
+              <link rel={"preconnect"} href={"https://fonts.gstatic.com"} crossOrigin={"anonymous"} />
               <link
-                  href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-                  rel="stylesheet"
+                  href={"https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"}
+                  rel={"stylesheet"}
               />
               <link
-                  href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap"
-                  rel="stylesheet"
+                  href={"https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap"}
+                  rel={"stylesheet"}
               />
               <link
-                  href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@100;300;400;700&display=swap"
-                  rel="stylesheet"
+                  href={"https://fonts.googleapis.com/css2?family=Readex+Pro:wght@100;300;400;700&display=swap"}
+                  rel={"stylesheet"}
               />
               <link
-                  href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@100;300;400;700&display=swap"
-                  rel="stylesheet"
+                  href={"https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@100;300;400;700&display=swap"}
+                  rel={"stylesheet"}
               />
               <link
-                  href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;300;400;700&display=swap"
-                  rel="stylesheet" />
-              <meta name="yandex-verification" content="7dc73ea1ff609887" />
-              <meta name="google-site-verification" content="google3df4a9246fc2a6df" />
+                  href={"https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;300;400;700&display=swap"}
+                  rel={"stylesheet"} />
+              <meta name={"yandex-verification"} content={"7dc73ea1ff609887"} />
+              <meta name={"google-site-verification"} content={"google3df4a9246fc2a6df"} />
               <script
                   dangerouslySetInnerHTML={{
                       __html: `
@@ -48,7 +47,7 @@ export default function Document() {
               <noscript>
                   <div>
                       <div>
-                          <img src="https://mc.yandex.ru/watch/91778393" style={{ position:'absolute', left:'0px' }} alt=""/>
+                          <img src={"https://mc.yandex.ru/watch/91778393"} style={{ position:'absolute', left:'0px' }} alt="ynd"/>
                       </div>
                   </div>
               </noscript>

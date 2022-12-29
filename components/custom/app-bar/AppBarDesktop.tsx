@@ -6,10 +6,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import * as React from 'react';
-import { theme } from '../../../utils/theme';
 import CustomButton from '../CustomButton';
 import Dropdown from '../Dropdown';
-import LocaleButton from '../home-page/LocaleButton';
+import {logoIcon} from "@public/icons";
 
 export const dropdownContent = [
   {
@@ -43,23 +42,23 @@ const AppBarDesktop: React.FC = () => {
   }
 
   return (
-    <AppBar position="sticky" sx={{
+    <AppBar position={"sticky"} sx={{
       bgcolor: 'rgba(0, 0, 0, 0.65)',
       padding: '12px 80px',
       backdropFilter: 'blur(21px)',
       m: 'auto',
     }}>
-      <Container disableGutters maxWidth="xl">
+      <Container disableGutters maxWidth={"xl"}>
         <Toolbar disableGutters sx={{
           display: 'flex',
           justifyContent: 'space-between'
         }}>
           <div style={{ display: "flex" }}>
-            <Link href='/'>
-              <Image src={'/logo.svg'} alt='logo' width={100} height={50} style={{ cursor: 'pointer' }} />
+            <Link href={'/'}>
+              <Image src={logoIcon} width={100} height={50} style={{ cursor: 'pointer' }} alt={'logo'}/>
             </Link>
 
-            <Stack direction='row' gap='2rem' fontSize='16px' style={{ marginLeft: "10vw" }}>
+            <Stack direction={'row'} gap={'2rem'} fontSize={'16px'} style={{ marginLeft: "10vw" }}>
               {dropdownContent.map((i, idx) => (
                 <>
                   <Dropdown data={i} key={idx} />
@@ -67,12 +66,12 @@ const AppBarDesktop: React.FC = () => {
               ))}
             </Stack>
           </div>
-          <Stack direction='row' gap='0.5rem' spacing={2} alignItems='center'>
+          <Stack direction={'row'} gap={'0.5rem'} spacing={2} alignItems={'center'}>
             {/* <LocaleButton text='ENG' locale='en' />
             <LocaleButton text='RUS' locale='ru' /> */}
-            <Link href='#contact-us'>
+            <Link href={'#contact-us'}>
               <CustomButton
-                title='Get in Touch'
+                title={'Get in Touch'}
                 bgcolor={'transparent'}
                 handleClick={handleScroll}
               />

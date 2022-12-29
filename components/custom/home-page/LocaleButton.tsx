@@ -2,7 +2,6 @@ import { Typography } from '@mui/material'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
-import { useTranslation } from 'react-i18next'
 
 interface LocaleButtonProps {
   text: string,
@@ -10,7 +9,6 @@ interface LocaleButtonProps {
 }
 
 const LocaleButton: React.FC<LocaleButtonProps> = ({ text, locale }) => {
-  const { i18n } = useTranslation();
   const { locale: currentLocale, pathname } = useRouter();
 
   return (
@@ -21,7 +19,9 @@ const LocaleButton: React.FC<LocaleButtonProps> = ({ text, locale }) => {
         cursor: 'pointer',
         color: currentLocale === locale ? '#F0B270' : '#989898',
         borderBottom: currentLocale === locale ? '3px solid #F0B270' : '3px solid transparent'
-      }}>{text}</Typography>
+      }}>
+        {text}
+      </Typography>
     </Link>
   )
 }

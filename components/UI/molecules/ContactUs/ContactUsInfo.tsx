@@ -1,6 +1,7 @@
 import { Box, Typography, useMediaQuery } from '@mui/material';
 import SocialMedia from 'components/custom/SocialMedia';
 import { useTranslation } from 'react-i18next';
+import {socialURL} from "../../../custom/socialURL";
 
 const ContactUsInfo = () => {
   const { t } = useTranslation()
@@ -10,15 +11,22 @@ const ContactUsInfo = () => {
     <div style={{ padding: '30px' }}>
       {isMobileScreen ?
         <>
-          <Box sx={{ position: 'absolute', top: '105vh', height: '100px', width: '100%', zIndex: -1, background: 'linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)' }}>
+          <Box sx={{
+              position: 'absolute',
+              top: '105vh',
+              height: '100px',
+              width: '100%',
+              zIndex: -1,
+              background: 'linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)'
+          }}>
           </Box>
-          <video autoPlay muted loop id="myVideo" style={{ width: '200vw', top: '130vh', visibility: 'visible', position: 'absolute', zIndex: -2, left: '-55%', transform: 'rotate(90deg)' }}>
-            <source src="/videos/Emitter.mp4" type="video/mp4" />
+          <video autoPlay muted loop id={"myVideo"} style={{ width: '200vw', top: '130vh', visibility: 'visible', position: 'absolute', zIndex: -2, left: '-55%', transform: 'rotate(90deg)' }}>
+            <source src={"/videos/Emitter.mp4"} type="video/mp4" />
           </video>
         </>
         :
-        <video autoPlay muted loop id="myVideo" style={{ height: '100%', visibility: 'visible', position: 'absolute', zIndex: -2, left: '-30%', transform: 'rotate(90deg)' }}>
-          <source src="/videos/Emitter.mp4" type="video/mp4" />
+        <video autoPlay muted loop id={"myVideo"} style={{ height: '100%', visibility: 'visible', position: 'absolute', zIndex: -2, left: '-30%', transform: 'rotate(90deg)' }}>
+          <source src={"/videos/Emitter.mp4"} type={"video/mp4"} />
         </video>
       }
 
@@ -41,7 +49,7 @@ const ContactUsInfo = () => {
         fontSize: '16px',
         fontWeight: 600,
       }}>{t('contactUsForm.address')}</Typography>
-      <a href='https://2gis.kz/almaty/search/tech%20culture/firm/70000001054312231/76.929396%2C43.230696?m=76.929749%2C43.230799%2F17.98'>
+        <a href={socialURL.twoGis}>
         <Typography sx={{
           textDecoration: 'underline',
           fontSize: '16px',
@@ -54,7 +62,7 @@ const ContactUsInfo = () => {
         fontSize: '16px',
         fontWeight: 600,
       }}>{t('contactUsForm.sales')}</Typography>
-      <a href='mailto:sales@techculture.tech'>
+      <a href={socialURL.salesDepartment}>
         <Typography sx={{
           textDecoration: 'underline',
           fontSize: '16px',
@@ -67,7 +75,7 @@ const ContactUsInfo = () => {
         fontSize: '16px',
         fontWeight: 600,
       }}>{t('contactUsForm.hr')}</Typography>
-      <a href='mailto:hr@techculture.tech'>
+      <a href={socialURL.hrDepartment}>
         <Typography sx={{
           textDecoration: 'underline',
           fontSize: '16px',

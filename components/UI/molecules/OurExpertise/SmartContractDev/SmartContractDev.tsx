@@ -3,12 +3,59 @@ import Image from 'next/image'
 import React from 'react'
 import { Networks } from '../../Networks/Networks'
 import { Technologies } from '../../Technologies/Technologies'
+import {closeTagIcon, closeTagOrangeIcon} from "@public/icons";
 
-const DeFiApps = ['Decentralized and Centralized Wallets', 'Crypto Exchange', 'Auction and Exchangers', 'Tokens and Crypto Wallets', 'NFT Marketplace', 'GameFi']
-const Products = ['NFT marketplace', 'Mobile App with integration web3&smart contract', 'Crypto Exchange', 'Staking', 'DeFI&CeFi Wallet', 'Metaverse']
-const SmartContract = ['Tokens and Crypto Wallets', 'Staking&Farming', 'NFT Mint', 'NFT Generation', 'IDO/ICO', 'Token']
-const networks = ['bitcoin.svg', 'etherium1.svg', 'cosmos.svg', 'fantom.svg', 'avalanche.svg', 'polkadot.svg', 'atom.svg', 'tron.svg', 'polygon.svg', 'arbitrum.svg', 'solana.svg', 'binanceSC.svg', 'cardano.svg']
-const technologies = ['bitcoin.svg', 'etherium1.svg', 'cosmos.svg', 'fantom.svg', 'avalanche.svg', 'polkadot.svg', 'atom.svg', 'tron.svg', 'polygon.svg', 'arbitrum.svg', 'solana.svg', 'binanceSC.svg', 'cardano.svg']
+const DeFiApps = [
+    'Decentralized and Centralized Wallets',
+    'Crypto Exchange', 'Auction and Exchangers',
+    'Tokens and Crypto Wallets',
+    'NFT Marketplace',
+    'GameFi'
+]
+const Products = [
+    'NFT marketplace',
+    'Mobile App with integration web3&smart contract',
+    'Crypto Exchange',
+    'Staking',
+    'DeFI&CeFi Wallet',
+    'Metaverse'
+]
+const SmartContract = [
+    'Tokens and Crypto Wallets',
+    'Staking&Farming', 'NFT Mint',
+    'NFT Generation', 'IDO/ICO',
+    'Token'
+]
+const networks = [
+    'bitcoin.svg',
+    'etherium1.svg',
+    'cosmos.svg',
+    'fantom.svg',
+    'avalanche.svg',
+    'polkadot.svg',
+    'atom.svg',
+    'tron.svg',
+    'polygon.svg',
+    'arbitrum.svg',
+    'solana.svg',
+    'binanceSC.svg',
+    'cardano.svg'
+]
+const technologies = [
+    'bitcoin.svg',
+    'etherium1.svg',
+    'cosmos.svg',
+    'fantom.svg',
+    'avalanche.svg',
+    'polkadot.svg',
+    'atom.svg',
+    'tron.svg',
+    'polygon.svg',
+    'arbitrum.svg',
+    'solana.svg',
+    'binanceSC.svg',
+    'cardano.svg'
+]
 
 
 export const SmartContractDev = () => {
@@ -16,11 +63,11 @@ export const SmartContractDev = () => {
     <StyledWrapper>
       <StyledGridItemLeft>
         <div>
-          <StyledTitle className='orange'>Products</StyledTitle>
+          <StyledTitle className={'orange'}>Products</StyledTitle>
           {Products.map((app, idx) => (
             <StyledLeftCard key={idx}>
               <StyledLeftTopIcon>
-                <Image src='/icons/top-left-card-orange.svg' width='31px' height='15px' />
+                <Image src={closeTagOrangeIcon} width={'31px'} height={'15px'} alt={'closeTagOrangeIcon'} />
               </StyledLeftTopIcon>
               {app}
             </StyledLeftCard>
@@ -31,7 +78,7 @@ export const SmartContractDev = () => {
           {SmartContract.map((contract, idx) => (
             <StyledLeftCard key={idx}>
               <StyledLeftTopIcon>
-                <Image src='/icons/top-left-card.svg' width='31px' height='15px' />
+                <Image src={closeTagIcon} width={'31px'} height={'15px'} alt={'closeTagIcon'} />
               </StyledLeftTopIcon>
               {contract}
             </StyledLeftCard>

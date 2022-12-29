@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import Image from 'next/image'
 import React from 'react'
 import { WebTechnologies } from '../../Technologies/WebTechnologies'
+import {closeTagIcon} from "@public/icons";
 
 const WebApps = ['IOT', 'GameFi', 'iOS App', 'Fintech', 'Сomputer vision', 'Android App']
 
@@ -15,7 +16,7 @@ export const WebTechDev = () => {
             {WebApps.map((app, idx) => (
               <StyledLeftCard key={idx}>
                 <StyledLeftTopIcon>
-                  <Image src='/icons/top-left-card.svg' layout="fill" />
+                  <Image src={closeTagIcon} layout={"fill"} alt={'closeTagIcon'}/>
                 </StyledLeftTopIcon>
               {app}
                 </StyledLeftCard>

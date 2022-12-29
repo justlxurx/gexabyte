@@ -1,10 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
 import styles from '../../styles/components/Dropdown.module.scss';
-import DropdownIcon from '../../public/icons/sr-chevron-right.svg';
-import { Typography } from '@mui/material';
+import DropdownIcon from '@public/icons/arrowDownGray.svg';
 import styled from '@emotion/styled';
-import Image from 'next/image';
 
 interface DropdownProps {
   data: {
@@ -26,7 +24,7 @@ const Dropdown: React.FC<DropdownProps> = ({ data }) => {
           {data.title}
         </StyledLink>
       </Link>
-      {data.menu && <img src={DropdownIcon.src} />}
+      {data.menu && <img src={DropdownIcon.src}  alt={'DropdownIcon'}/>}
       <div className={styles.dropdown_content}>
         {data.items?.map((i, idx) => (
           <Link href={i.link} key={idx}>

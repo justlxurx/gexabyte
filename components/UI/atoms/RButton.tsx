@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 import { FC, ButtonHTMLAttributes } from 'react'
 import classNames from 'classnames'
-import { Button } from '@mui/material'
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'text' | 'outlined' | 'contained'

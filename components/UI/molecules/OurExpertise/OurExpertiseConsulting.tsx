@@ -7,6 +7,7 @@ import styles from '../../../../styles/components/ConsultingDropdown.module.scss
 import { TechnicalTaskDev } from './TechnicalTaskDev/TechnicalTaskDev'
 import { TokenomicsDev } from './TokenomicsDev/TokenomicsDev'
 import { WhitepaperDev } from './WhitepaperDev/WhitepaperDev'
+import {arrowDownIcon} from "@public/icons";
 
 
 const tabs = ['Tokenomics development', 'Whitepaper development', 'Technical task development '];
@@ -33,27 +34,27 @@ export const OurExpertiseConsulting: FC<IProps> = () => {
         <StyledTitle>Our expertise\\</StyledTitle>
         <StyledTabArea>
           <Box sx={{ borderBottom: 1, borderColor: '#464646' }}>
-            <Tabs value={value} onChange={handleChange} textColor='secondary' indicatorColor="secondary" sx={{ fontWeight: 700 }}>
+            <Tabs value={value} onChange={handleChange} textColor={'secondary'} indicatorColor={"secondary"} sx={{ fontWeight: 700 }}>
               {value === 0
-                ? <Tab label="Tokenomics development" sx={{ fontWeight: 700 }} />
-                : <Tab label="Tokenomics development" sx={{ fontWeight: 400 }} />
+                ? <Tab label={"Tokenomics development"} sx={{ fontWeight: 700 }} />
+                : <Tab label={"Tokenomics development"} sx={{ fontWeight: 400 }} />
               }
               {value === 1
-                ? <Tab label="Whitepaper development" sx={{ fontWeight: 700 }} />
-                : <Tab label="Whitepaper development" sx={{ fontWeight: 400 }} />
+                ? <Tab label={"Whitepaper development"} sx={{ fontWeight: 700 }} />
+                : <Tab label={"Whitepaper development"} sx={{ fontWeight: 400 }} />
               }
               {value === 2
-                ? <Tab label="Technical task development" sx={{ fontWeight: 700 }} />
-                : <Tab label="Technical task development" sx={{ fontWeight: 400 }} />
+                ? <Tab label={"Technical task development"} sx={{ fontWeight: 700 }} />
+                : <Tab label={"Technical task development"} sx={{ fontWeight: 400 }} />
               }
             </Tabs>
           </Box>
-        </StyledTabArea> 
+        </StyledTabArea>
         <StyledTabAreaMobile>
         <div className={styles.dropdown}>
           <StyledLabel>
             <button className={styles.dropbtn}>{tabs[serviceIndex]}</button>
-            <Image src={'/icons/arrow down.svg'} alt='arrow' width={30} height={28} style={{ cursor: 'pointer'}} />
+            <Image src={arrowDownIcon} alt={'arrowDownIcon'} width={30} height={28} style={{ cursor: 'pointer'}} />
           </StyledLabel>
            <div className={styles.dropdowncontent}>
             {tabs.map((tabTitle, idx) => (
@@ -107,7 +108,7 @@ function TabPanel(props: TabPanelProps) {
 
   return (
     <div
-      role="tabpanel"
+      role={"tabpanel"}
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}

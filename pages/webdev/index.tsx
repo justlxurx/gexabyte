@@ -30,16 +30,17 @@ const Webdev = () => {
             Web applications for automating processes and solving business problems using modern technologies.
           </WebSubtitle>
 
-          <Link href='#contact'><StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton></Link>
-          <Link href='/projects'>
+          <Link href={'#contact'}><StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton></Link>
+          <Link href={'/projects'}>
             <StyledTextButton>
               <OrangeText>&gt;&gt;</OrangeText>
               &nbsp;see all projects
             </StyledTextButton>
           </Link>
         </WebLeftSide>
-        <WebImage><Image src={`/images/WebFirstblog.svg`} layout="fill" /></WebImage>
-        {/* <WebImageMobile><Image src={`/images/WebImageMobile.svg`} layout="fill" /></WebImageMobile> */}
+        <WebImage>
+          <Image src={`/images/WebFirstblog.svg`} layout={"fill"} alt={'WebFirstblog'} priority={true}/>
+        </WebImage>
       </FirstBlock>
       <OurExpertiseWeb />
       <WebProjects />

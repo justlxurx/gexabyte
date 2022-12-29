@@ -14,26 +14,26 @@ export const WhitepaperDev = () => {
   return (
     <div>
       <StyledFlex>
-        <p className='title'>White Paper is a document with actual and technical indicators of a product.</p>
-        <p className='subtitle'>
+        <p className={'title'}>White Paper is a document with actual and technical indicators of a product.</p>
+        <p className={'subtitle'}>
           The task of White paper is
-          <span className='orange'> to provide readers with important information </span>
+          <span className={'orange'}> to provide readers with important information </span>
           about a product or technology,
-          <span className='orange'> to influence the decision </span>
+          <span className={'orange'}> to influence the decision </span>
           that those who read the text will make,
           and
-          <span className='orange'> to establish interaction </span>
+          <span className={'orange'}> to establish interaction </span>
           with existing or potential customers of the company.
         </p>
       </StyledFlex>
 
       <StyledAspects>
-        <p className='title'>The document includes the following aspects:</p>
-        <div className='cards_grid'>
+        <p className={'title'}>The document includes the following aspects:</p>
+        <div className={'cards_grid'}>
           {cards.map((item, idx) => (
-            <div className='card' key={idx}>
-              <div className='number'>{idx + 1}</div>
-              <span className='text'>{item}</span>
+            <div className={'card'} key={idx}>
+              <div className={'number'}>{idx + 1}</div>
+              <span className={'text'}>{item}</span>
             </div>
           ))}
         </div>

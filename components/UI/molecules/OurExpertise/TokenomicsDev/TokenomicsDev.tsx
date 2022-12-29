@@ -16,7 +16,7 @@ export const TokenomicsDev = () => {
     <div>
       <StyledWrapper>
         <StyledTitle>
-          Tokenomics is the <span className='orange'>internal economics</span> of the project.
+          Tokenomics is the <span className={'orange'}>internal economics</span> of the project.
         </StyledTitle>
         <StyledText>
           “The task of any tokenomics is to change the behavior of people under a certain system limitation, so that users do exactly what, according to tokenomics, is necessary in the interests of the project and its goals”
@@ -25,20 +25,20 @@ export const TokenomicsDev = () => {
           Technologies used in the development of the tokenomics model:
         </StyledSubtitle>
         <StyledChart>
-          <Image src='/images/char.png' width='555px' height='611px' />
+          <Image src={'/images/char.png'} width={'555px'} height={'611px'} alt={'char'} priority={false}/>
         </StyledChart>
         <StyledFlex>
           <StyledIcon>
-            <img src='/icons/cadCAD.svg' className='icon' />
-            <p className='text'>cadCAD</p>
+            <img src={'/icons/cadCAD.svg'} className={'icon'} alt={'cadCAD'}/>
+            <p className={'text'}>cadCAD</p>
           </StyledIcon>
           <StyledIcon>
-            <img src='/icons/tokenSPICE.svg' className='icon' />
-            <p className='text'>tokenSPICE</p>
+            <img src={'/icons/tokenSPICE.svg'} className={'icon'} alt={'tokenSPICE'}/>
+            <p className={'text'}>tokenSPICE</p>
           </StyledIcon>
           <StyledIcon>
-            <img src='/icons/Machinations.svg' className='icon' />
-            <p className='text'>Machinations</p>
+            <img src={'/icons/Machinations.svg'} className={'icon'} alt={'Machinations'}/>
+            <p className={'text'}>Machinations</p>
           </StyledIcon>
         </StyledFlex>
       </StyledWrapper>
@@ -51,8 +51,8 @@ export const TokenomicsDev = () => {
       <StyledCardsGrid>
         {stages.map((item, idx) => (
           <StyledCard key={idx}>
-            <div className='number'>{idx + 1}</div>
-            <p className='text'>{item}</p>
+            <div className={'number'}>{idx + 1}</div>
+            <p className={'text'}>{item}</p>
           </StyledCard>
         ))}
       </StyledCardsGrid>

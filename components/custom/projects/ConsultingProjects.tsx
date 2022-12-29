@@ -3,19 +3,28 @@ import Link from 'next/link';
 import React from 'react';
 
 const projects = {
-  desktop: ['/images/fiat.png', '/images/myrig.png', '/images/gamestone.png', '/images/crypto bank.png', '/images/gambling platform.png', '/images/defi wallet.png', '/images/astana hub.png'],
-  mobile: ['/images/fiat mobile.png', '/images/myrig mobile.png', '/images/gamestone mobile.png']
+  desktop: [
+      '/images/fiat.png',
+      '/images/myrig.png',
+      '/images/gamestone.png',
+      '/images/crypto bank.png',
+      '/images/gambling platform.png',
+      '/images/defi wallet.png',
+      '/images/astana hub.png'
+  ],
+  mobile: [
+      '/images/fiat mobile.png',
+      '/images/myrig mobile.png',
+      '/images/gamestone mobile.png'
+  ]
 }
 
 const ImageGrid = [8, 4, 6, 6, 4, 4, 4]
 
 const ConsultingProjects = () => {
   const isMobileScreen = useMediaQuery('(max-width:768px)');
-  const [isExtended, setIsExtended] = React.useState(false);
+  const [isExtended] = React.useState(false);
 
-  const changeIsExtended = () => {
-    setIsExtended(prev => !prev)
-  }
 
   return (
     <Container disableGutters sx={{
@@ -42,16 +51,16 @@ const ConsultingProjects = () => {
         {isMobileScreen ?
           projects.mobile.map((src, idx) => (
             <Grid item xs={12} md={12} key={idx}>
-              <Link href='/projects' passHref>
-                <a><img src={src} width='100%' /></a>
+              <Link href={'/projects'} passHref>
+                <a><img src={src} width={'100%'} alt={`image${idx}`}/></a>
               </Link>
             </Grid>
           ))
           :
           projects.desktop.map((src, idx) => (
             <Grid item xs={12} md={ImageGrid[idx]} key={idx}>
-              <Link href='/projects' passHref>
-                <a><img src={src} width='100%' /></a>
+              <Link href={'/projects'} passHref>
+                <a><img src={src} width={'100%'} alt={`image${idx}`}/></a>
               </Link>
             </Grid>
           ))
@@ -61,16 +70,16 @@ const ConsultingProjects = () => {
             {isMobileScreen ?
               projects.mobile.map((src, idx) => (
                 <Grid item xs={12} md={12} key={idx}>
-                  <Link href='/projects' passHref>
-                    <a><img src={src} width='100%' /></a>
+                  <Link href={'/projects'} passHref>
+                    <a><img src={src} width={'100%'} alt={`image${idx}`}/></a>
                   </Link>
                 </Grid>
               ))
               :
               projects.desktop.map((src, idx) => (
                 <Grid item xs={12} md={ImageGrid[idx]} key={idx}>
-                  <Link href='/projects' passHref>
-                    <a><img src={src} width='100%' /></a>
+                  <Link href={'/projects'} passHref>
+                    <a><img src={src} width={'100%'} alt={`image${idx}`}/></a>
                   </Link>
                 </Grid>
               ))
@@ -82,9 +91,9 @@ const ConsultingProjects = () => {
             textAlign: 'center',
             mt: '2rem'
           }}>
-            <Link href='/projects?tab=consulting'>
+            <Link href={'/projects?tab=consulting'}>
               <Button
-                variant='contained'
+                variant={'contained'}
                 sx={{
                   fontSize: {
                     xs: '18px',

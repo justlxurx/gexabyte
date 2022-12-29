@@ -1,21 +1,23 @@
 import { Stack } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'
+import {socialURL} from "./socialURL";
+import {facebookIcon, instagramIcon, linkedInIcon, telegramIcon} from "@public/icons/social-media";
 
 const SocialMedia = () => {
   return (
-    <Stack direction='row' spacing={1}>
-      <a href='https://instagram.com/tech.culture.it?igshid=YmMyMTA2M2Y='>
-        <Image src='/icons/social-media/Instagram.svg' width='24px' height='24px' />
+    <Stack direction={'row'} spacing={1}>
+      <a href={socialURL.instagram}>
+        <Image src={instagramIcon} width={'24px'} height={'24px'} alt={'instagramIcon'}/>
       </a>
-      <a href='https://kz.linkedin.com/in/techculture'>
-        <Image src='/icons/social-media/LinkdIn.svg' width='24px' height='24px' />
+      <a href={socialURL.linkedIn}>
+        <Image src={linkedInIcon} width={'24px'} height={'24px'} alt={'linkedInIcon'}/>
       </a>
-      <a href='https://t.me/tech_culture_dev'>
-        <Image src='/icons/social-media/Telegram.svg' width='24px' height='24px' />
+      <a href={socialURL.telegram}>
+        <Image src={telegramIcon} width={'24px'} height={'24px'} alt={'telegramIcon'}/>
       </a>
-      <a href='https://www.facebook.com/tech.culture.it'>
-        <Image src='/icons/social-media/Facebook.svg' width='24px' height='24px' />
+      <a href={socialURL.facebook}>
+        <Image src={facebookIcon} width={'24px'} height={'24px'} alt={'facebookIcon'}/>
       </a>
     </Stack>
   )

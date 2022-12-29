@@ -4,8 +4,20 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const projects = {
-  desktop: ['/images/musical platform.svg', '/images/defi app.svg', '/images/crowdfunding.png', '/images/nft.png', '/images/euphoria.png', '/images/defi.svg', '/images/emm.svg'],
-  mobile: ['/images/projects/mobile/rokkmob.svg', '/images/ton seed mobile.png', '/images/defi mobile.png']
+  desktop: [
+      '/images/musical platform.svg',
+      '/images/defi app.svg',
+      '/images/crowdfunding.png',
+      '/images/nft.png',
+      '/images/euphoria.png',
+      '/images/defi.svg',
+      '/images/emm.svg'
+  ],
+  mobile: [
+      '/images/projects/mobile/rokkmob.svg',
+      '/images/ton seed mobile.png',
+      '/images/defi mobile.png'
+  ]
 }
 
 const ImageGrid = [8, 4, 6, 6, 4, 4, 4]
@@ -38,16 +50,16 @@ const BlockchainProjects = () => {
         {isMobileScreen ?
           projects.mobile.map((src, idx) => (
             <Grid item xs={12} md={12} key={idx} sx={{ my: '12px' }}>
-              <Link href='/projects' passHref>
-                <a><img src={src} width='100%' /></a>
+              <Link href={'/projects'} passHref>
+                <a><img src={src} width={'100%'} alt={`image${idx}BlockChainProject`}/></a>
               </Link>
             </Grid>
           ))
           :
           projects.desktop.map((src, idx) => (
             <Grid item xs={12} md={ImageGrid[idx]} key={idx}>
-              <Link href='/projects' passHref>
-                <a><img src={src} width='100%' /></a>
+              <Link href={'/projects'} passHref>
+                <a><img src={src} width={'100%'} alt={`image${idx}BlockChainProject`}/></a>
               </Link>
             </Grid>
           ))
@@ -60,9 +72,9 @@ const BlockchainProjects = () => {
               md: '2rem'
             }
           }}>
-            <Link href='/projects?tab=blockchain'>
+            <Link href={'/projects?tab=blockchain'}>
               <Button
-                variant='contained'
+                variant={'contained'}
                 sx={{
                   fontSize: {
                     xs: '18px',

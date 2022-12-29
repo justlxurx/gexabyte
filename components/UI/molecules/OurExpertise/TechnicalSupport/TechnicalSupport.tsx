@@ -1,12 +1,13 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import React from 'react'
+import {logoRawIcon} from "@public/icons";
 
 export const TechnicalSupport = () => {
   return (
     <StyledWrapper>
       <StyledCard>
-        <Image src='/logo-raw.svg' width='34px' height='34px' />
+        <Image src={logoRawIcon} width={'34px'} height={'34px'} alt={'logoRawIcon'}/>
         <StyledTitle>Technical Support</StyledTitle>
         <StyledSubtitle>
           Turn your idea into reality.
@@ -17,10 +18,10 @@ export const TechnicalSupport = () => {
         <StyledContainedButton>request a service</StyledContainedButton>
 
         <StyledBackgroundImage1>
-          <Image src='/images/artwork1.svg' width='578.4px' height='368.02px' />
+          <Image src={'/images/artwork1.svg'} width={'578.4px'} height={'368.02px'} alt={'artwork1'}/>
         </StyledBackgroundImage1>
         <StyledBackgroundImage2>
-          <Image src='/images/artwork2.svg' width='578.4px' height='368.02px' />
+          <Image src={'/images/artwork2.svg'} width={'578.4px'} height={'368.02px'} alt={'artwork2'}/>
         </StyledBackgroundImage2>
       </StyledCard>
     </StyledWrapper>

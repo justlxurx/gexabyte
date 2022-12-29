@@ -1,6 +1,5 @@
 import { Button } from '@mui/material';
 import React from 'react';
-import { colors } from '../../utils/colors';
 import { theme } from '../../utils/theme';
 
 interface CustomButtonProps {

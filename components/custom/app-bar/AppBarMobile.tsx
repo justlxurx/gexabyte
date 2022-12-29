@@ -1,12 +1,12 @@
-import { Accordion, AccordionDetails, AccordionSummary, AppBar, Box, Button, Drawer, IconButton, Stack, Toolbar, Typography, useTheme } from '@mui/material'; import Image from 'next/image';
+import { Accordion, AccordionDetails, AccordionSummary, AppBar, Box, Drawer, IconButton, Stack, Toolbar, Typography } from '@mui/material'; import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { theme } from '../../../utils/theme';
 import CustomButton from '../CustomButton';
-import LocaleButton from '../home-page/LocaleButton';
 import SocialMedia from '../SocialMedia';
 import { dropdownContent } from './AppBarDesktop';
+import {arrowDownGrayIcon, burgerIcon, closeIcon, logoRawIcon} from "@public/icons";
 
 const AppBarMobile: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -38,26 +38,26 @@ const AppBarMobile: React.FC = () => {
     }}>
       <Toolbar>
         <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="menu"
+          size={"large"}
+          edge={"start"}
+          color={"inherit"}
+          aria-label={"menu"}
           sx={{ mr: 2 }}
           onClick={changeMenu}
         >
           {isOpen ?
-            <Image src={'/icons/close.svg'} width='32px' height='32px' />
+            <Image src={closeIcon} width={'32px'} height={'32px'} alt={'closeIcon'}/>
             :
-            <Image src={'/icons/burger.svg'} width='32px' height='32px' />
+            <Image src={burgerIcon} width={'32px'} height={'32px'} alt={'burgerIcon'}/>
           }
         </IconButton>
 
         <Box sx={{ flexGrow: 1 }}>
           <Link href='/'>
-            <Image src={'/logo-raw.svg'} width='32px' height='32px' style={{ cursor: 'pointer' }} />
+            <Image src={logoRawIcon} width={'32px'} height={'32px'} style={{ cursor: 'pointer' }} alt={'logoRaw'}/>
           </Link>
         </Box>
-        <CustomButton title='Get in Touch' bgcolor={'transparent'} handleClick={handleScroll} />
+        <CustomButton title={'Get in Touch'} bgcolor={'transparent'} handleClick={handleScroll} />
       </Toolbar>
       <Drawer
         anchor={'left'}
@@ -79,9 +79,9 @@ const AppBarMobile: React.FC = () => {
           item.items?.length ?
             <Accordion sx={{ bgcolor: '#000000' }} key={idx}>
               <AccordionSummary
-                expandIcon={<img src='/icons/sr-chevron-right.svg' />}
-                aria-controls="panel2a-content"
-                id="panel2a-header"
+                expandIcon={<Image src={arrowDownGrayIcon} alt={'arrowDownGrayIcon'}/>}
+                aria-controls={"panel2a-content"}
+                id={"panel2a-header"}
               >
                 <Typography sx={{ fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
               </AccordionSummary>

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { useMediaQuery } from '@mui/material'
 import Image from 'next/image'
-import { FC, useRef } from 'react'
+import { FC } from 'react'
 
 import "swiper/css"
 import "swiper/css/navigation"
@@ -9,12 +9,30 @@ import "swiper/css/pagination"
 
 import { Navigation } from "swiper"
 import { Swiper, SwiperSlide } from 'swiper/react'
+import {
+    arrowLeftIcon,
+    arrowRightIcon,
+    jvscrptIcon,
+    kotlin1Icon, phpIcon,
+    pythonIcon,
+    rustIcon,
+    solidityIcon, swift1Icon,
+    tsIcon
+} from "@public/icons";
 
-const technologies = ['solidity.svg', 'ts.svg', 'rust.svg', 'jvscrpt.svg', 'python.svg', 'kotlin1.svg', 'swift1.svg', 'php.svg']
+const technologies = [
+    solidityIcon,
+    tsIcon,
+    rustIcon,
+    jvscrptIcon,
+    pythonIcon,
+    kotlin1Icon,
+    swift1Icon,
+    phpIcon,
+]
 
 export const Technologies: FC = () => {
   const isMobile = useMediaQuery('(max-width: 600px)')
-  const listRef = useRef<HTMLDivElement>(null);
 
   return (
     <div>
@@ -38,7 +56,7 @@ export const Technologies: FC = () => {
           {technologies.map((tech, idx) => (
             <SwiperSlide key={idx}>
               <StyledTechnologiesCard key={idx}>
-                <Image src={`/icons/${tech}`} width='64px' height='64px' />
+                <Image src={tech} width={'64px'} height={'64px'} alt={`image${idx}`}/>
               </StyledTechnologiesCard>
             </SwiperSlide>
           ))}
@@ -50,18 +68,18 @@ export const Technologies: FC = () => {
         <StyledGridItemTechnologies>
           {technologies.map((tech, idx) => (
             <StyledTechnologiesCard key={idx}>
-              <Image src={`/icons/${tech}`} width='64px' height='64px' />
+              <Image src={tech} width={'64px'} height={'64px'} alt={`image${idx}`}/>
             </StyledTechnologiesCard>
           ))}
         </StyledGridItemTechnologies>
       }
 
       <StyledPagination>
-        <StyledPaginationButton id="swiper-back2">
-          <Image src='/icons/arrow left.svg' width='24px' height='24px' />
+        <StyledPaginationButton id={"swiper-back2"}>
+          <Image src={arrowLeftIcon} width={'24px'} height={'24px'} alt={arrowLeftIcon}/>
         </StyledPaginationButton>
-        <StyledPaginationButton id="swiper-forward2">
-          <Image src='/icons/arrow right.svg' width='24px' height='24px' />
+        <StyledPaginationButton id={"swiper-forward2"}>
+          <Image src={arrowRightIcon} width={'24px'} height={'24px'} alt={arrowRightIcon}/>
         </StyledPaginationButton>
       </StyledPagination>
     </div>

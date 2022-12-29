@@ -12,37 +12,36 @@ const desktopDegree = 6.5;
 const RoundedAnimation = () => {
   const isMobileScreen = useMediaQuery('(max-width:768px)');
 
-  // const memoizedWidth = useMemo(() => isMobileScreen ? 50 : 75, [isMobileScreen]);
   const memoizedWidth = useMemo(() => isMobileScreen ? 75 : 75, [isMobileScreen]);
 
   return (
     <div className={styles.circle}>
-      {isMobileScreen 
+      {isMobileScreen
       ? <MobileRotate>
           <div className={styles.center_icon} >
-            <Image src={ArrowIcon.src} width={memoizedWidth} height={memoizedWidth} />
+            <Image src={ArrowIcon.src} width={memoizedWidth} height={memoizedWidth} alt={'ArrowIcon'}/>
           </div>
         </MobileRotate>
       : <div className={styles.center_icon} >
-          <Image src={ArrowIcon.src} width={memoizedWidth} height={memoizedWidth} />
-        </div> 
+          <Image src={ArrowIcon.src} width={memoizedWidth} height={memoizedWidth} alt={'ArrowIcon'}/>
+        </div>
       }
       <div className={styles.text}>
         <p style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase' }}>
           <span style={{ transform: 'rotate(-18deg)' }}>
-            <img src={StarIcon.src} />
+            <img src={StarIcon.src} alt={'StarIcon'}/>
           </span>
           {'EXPLORE OUR PROJECTS'.split('').map((char, idx) => (
             <span key={idx} style={{ transform: `rotate(${(idx) * 7}deg)` }}>{char}</span>
           ))}
           <span style={{ transform: "rotate(147deg)" }}>
-            <img src={StarIcon.src} />
+            <img src={StarIcon.src} alt={'StarIcon'}/>
           </span>
           {'EXPLORE OUR PROJECTS'.split('').map((char, idx) => (
             <span key={idx} style={{ transform: `rotate(${(idx + 24) * 7}deg)` }}>{char}</span>
           ))}
           <span style={{ transform: "rotate(310deg)" }}>
-            <img src={StarIcon.src} />
+            <img src={StarIcon.src} alt={'StarIcon'}/>
           </span>
         </p>
       </div>

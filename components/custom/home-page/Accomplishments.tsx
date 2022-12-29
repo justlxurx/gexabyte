@@ -12,7 +12,7 @@ const Accomplishments = () => {
     }}>
       <Grid container columns={12} spacing={3}>
         <Grid item xs={12} md={6}>
-          <Typography variant='h1' sx={{
+          <Typography variant={'h1'} sx={{
             fontSize: {
               xs: '32px',
               md: '56px',
@@ -22,19 +22,19 @@ const Accomplishments = () => {
           </Typography>
         </Grid>
         <Grid item xs={6} md={2}>
-          <Typography variant='h1' color={theme.palette.primary.main}>40+</Typography>
+          <Typography variant={'h1'} color={theme.palette.primary.main}>40+</Typography>
           <Typography sx={{ fontSize: '16px' }} color={theme.palette.text.secondary}>
             number of completed projects
           </Typography>
         </Grid>
         <Grid item xs={6} md={2}>
-          <Typography variant='h1' color={theme.palette.primary.main}>6+</Typography>
+          <Typography variant={'h1'} color={theme.palette.primary.main}>6+</Typography>
           <Typography sx={{ fontSize: '16px' }} color={theme.palette.text.secondary}>
             Blockchain and web development experience
           </Typography>
         </Grid>
         <Grid item xs={6} md={2}>
-          <Typography variant='h1' color={theme.palette.primary.main}>221+</Typography>
+          <Typography variant={'h1'} color={theme.palette.primary.main}>221+</Typography>
           <Typography sx={{ fontSize: '16px' }} color={theme.palette.text.secondary}>
             Blockchain and web development
           </Typography>

@@ -1,7 +1,4 @@
 import styled from '@emotion/styled'
-import { useMediaQuery } from '@mui/material'
-import ContactUs from 'components/custom/home-page/ContactUs'
-import TechStack from 'components/custom/home-page/TechStack'
 import BlockchainProjects from 'components/custom/projects/BlockchainProjects'
 import RoundedAnimation from 'components/custom/RoundedAnimation'
 import { BlockchainAnimation } from 'components/UI/molecules/BlockchainAnimation/BlockchainAnimation'
@@ -30,10 +27,10 @@ const BlockChain = () => {
 
           <BlockchainTitle>Blockchain development</BlockchainTitle>
           <BlockchainSubtitle>
-          Development of blockchain products for your ideas          
+          Development of blockchain products for your ideas
           </BlockchainSubtitle>
           <StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton>
-          <Link href='/projects'>
+          <Link href={'/projects'}>
             <StyledTextButton>
               <OrangeText>&gt;&gt;</OrangeText>
               &nbsp;see all projects

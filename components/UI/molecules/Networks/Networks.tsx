@@ -9,8 +9,33 @@ import "swiper/css/pagination"
 
 import { Navigation } from "swiper"
 import { Swiper, SwiperSlide } from 'swiper/react'
+import {
+    arbitrumIcon, arrowLeftIcon, arrowRightIcon,
+    atomIcon,
+    avalancheIcon, binanceSCIcon,
+    bitcoinIcon, cardanoIcon,
+    cosmosIcon,
+    etheriumIcon,
+    fantomIcon,
+    polkadotIcon, polygonIcon, solanaIcon,
+    tronIcon
+} from "@public/icons";
 
-const networks = ['bitcoin.svg', 'etherium1.svg', 'cosmos.svg', 'fantom.svg', 'avalanche.svg', 'polkadot.svg', 'atom.svg', 'tron.svg', 'polygon.svg', 'arbitrum.svg', 'solana.svg', 'binanceSC.svg', 'cardano.svg']
+const networks = [
+    bitcoinIcon,
+    etheriumIcon,
+    cosmosIcon,
+    fantomIcon,
+    avalancheIcon,
+    polkadotIcon,
+    atomIcon,
+    tronIcon,
+    polygonIcon,
+    arbitrumIcon,
+    solanaIcon,
+    binanceSCIcon,
+    cardanoIcon,
+]
 
 export const Networks: FC = () => {
   const isMobile = useMediaQuery('(max-width: 600px)')
@@ -32,13 +57,13 @@ export const Networks: FC = () => {
 
           navigation={{ nextEl: "#swiper-forward1", prevEl: "#swiper-back1" }}
           modules={[Navigation]}
-          className="mySwiper"
+          className={"mySwiper"}
           style={{ maxWidth: '100vw' }}
         >
           {networks.map((icon, idx) => (
             <SwiperSlide key={idx} style={{marginInline: '30px'}}>
               <StyledNetworksCard>
-                <Image src={`/icons/${icon}`} width='120px' height='52px' />
+                <Image src={icon} width={'120px'} height={'52px'} alt={`image${idx}`} />
               </StyledNetworksCard>
             </SwiperSlide>
           ))}
@@ -46,7 +71,7 @@ export const Networks: FC = () => {
             <>
               <SwiperSlide style={{marginInline: '30px'}}>
                 <StyledNetworksCard>
-                  <Image src={`/icons/${networks[0]}`} width='120px' height='52px' />
+                  <Image src={networks[0]} width={'120px'} height={'52px'} alt={'bitcoinIcon'} />
                 </StyledNetworksCard>
               </SwiperSlide>
             </>
@@ -56,18 +81,18 @@ export const Networks: FC = () => {
 
       <StyledGridItemNetworks ref={listRef}>
         {networks.map((icon, idx) => (
-          <StyledNetworksCard key={idx} >
-            <Image src={`/icons/${icon}`} width='120px' height='52px' />
+          <StyledNetworksCard key={icon + idx} >
+            <Image src={icon} width={'120px'} height={'52px'} alt={`image${idx}`} />
           </StyledNetworksCard>
         ))}
       </StyledGridItemNetworks>
 
       <StyledPagination>
-        <StyledPaginationButton id='swiper-back1'>
-          <Image src='/icons/arrow left.svg' width='24px' height='24px' />
+        <StyledPaginationButton id={'swiper-back1'}>
+          <Image src={arrowLeftIcon} width={'24px'} height={'24px'} alt={arrowLeftIcon}/>
         </StyledPaginationButton>
-        <StyledPaginationButton id='swiper-forward1'>
-          <Image src='/icons/arrow right.svg' width='24px' height='24px' />
+        <StyledPaginationButton id={'swiper-forward1'}>
+          <Image src={arrowRightIcon} width={'24px'} height={'24px'} alt={arrowRightIcon}/>
         </StyledPaginationButton>
       </StyledPagination>
     </div>

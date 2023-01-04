@@ -45,11 +45,7 @@ export default function Document() {
                   }}
               />
               <noscript>
-                  <div>
-                      <div>
-                          <img src={"https://mc.yandex.ru/watch/91778393"} style={{ position:'absolute', left:'0px' }} alt="ynd"/>
-                      </div>
-                  </div>
+                  <img src={"https://mc.yandex.ru/watch/91778393"} style={{ position:'absolute', left:'0px' }} alt="ynd"/>
               </noscript>
           </Head>
           <body>

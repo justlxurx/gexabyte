@@ -62,7 +62,7 @@ const TestVideo: React.FC<FirstBlockLayoutProps> = ({ title, subTitle }) => {
 export default TestVideo;
 
 const Container = styled.div`
-  margin: 16px;
+  margin: 16px 16px 0px 16px;
   display: flex;
   flex-wrap: wrap;
   position: relative;

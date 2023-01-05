@@ -38,7 +38,7 @@ const FirstBlockLayout: React.FC<FirstBlockLayoutProps> = ({ title, bgAnimationS
           width: { xs: '120%', md: '100%' }
         }}>
           <video autoPlay muted loop playsInline id="myVideo" style={{ width: isMobileScreen ? '170%' : '95%' }}>
-            <source src="/videos/klava.mp4" type="video/mp4" />
+            <source src={"/videos/klava.mp4"} type={"video/mp4"} />
           </video>
         </Box>
       }

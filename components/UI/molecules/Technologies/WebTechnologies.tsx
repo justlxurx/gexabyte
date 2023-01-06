@@ -39,7 +39,7 @@ export const WebTechnologies: FC = () => {
           {technologies.map((tech, idx) => (
             <StyledTechnologiesCard key={idx}>
               <TechIcon>
-                <Image src={tech} width={"100%"} height={"100%"} alt={`image${idx}WebTech`}/>
+                <Image layout={'fill'} src={tech} alt={`image${idx}WebTech`} objectFit={"contain"}/>
               </TechIcon>
               <StyledTechnologyName>{technologiesName[idx]}</StyledTechnologyName>
             </StyledTechnologiesCard>
@@ -78,8 +78,9 @@ const StyledTechnologiesCard = styled.div`
 `
 
 const TechIcon = styled.div`
-  width: 50px;
+  width: 90px;
   height: 50px;
+  position: relative;
 
   @media (max-width: 768px) {
     width: 64px;

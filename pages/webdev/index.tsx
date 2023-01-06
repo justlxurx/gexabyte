@@ -39,7 +39,7 @@ const Webdev = () => {
           </Link>
         </WebLeftSide>
         <WebImage>
-          <Image src={`/images/WebFirstblog.svg`} layout={"fill"} alt={'WebFirstblog'} priority={true}/>
+          <Image src={`/images/WebFirstblog.svg`} layout={"fill"} alt={'WebFirstblog'} priority={true} objectFit={"contain"}/>
         </WebImage>
       </FirstBlock>
       <OurExpertiseWeb />

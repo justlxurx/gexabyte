@@ -63,7 +63,7 @@ export const Networks: FC = () => {
           {networks.map((icon, idx) => (
             <SwiperSlide key={idx} style={{marginInline: '30px'}}>
               <StyledNetworksCard>
-                <Image src={icon} width={'120px'} height={'52px'} alt={`image${idx}`} />
+                <Image src={icon} width={'120px'} height={'52px'} alt={`image${idx}`} objectFit={'contain'}/>
               </StyledNetworksCard>
             </SwiperSlide>
           ))}
@@ -71,7 +71,7 @@ export const Networks: FC = () => {
             <>
               <SwiperSlide style={{marginInline: '30px'}}>
                 <StyledNetworksCard>
-                  <Image src={networks[0]} width={'120px'} height={'52px'} alt={'bitcoinIcon'} />
+                  <Image src={networks[0]} width={'120px'} height={'52px'} alt={'bitcoinIcon'} objectFit={'contain'}/>
                 </StyledNetworksCard>
               </SwiperSlide>
             </>
@@ -82,7 +82,7 @@ export const Networks: FC = () => {
       <StyledGridItemNetworks ref={listRef}>
         {networks.map((icon, idx) => (
           <StyledNetworksCard key={icon + idx} >
-            <Image src={icon} width={'120px'} height={'52px'} alt={`image${idx}`} />
+            <Image src={icon} width={'120px'} height={'52px'} alt={`image${idx}`} objectFit={'contain'}/>
           </StyledNetworksCard>
         ))}
       </StyledGridItemNetworks>

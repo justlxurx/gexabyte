@@ -1,6 +1,47 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
+    const schema =   {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "TechCulture",
+        "description": "Blockchain development & consulting company. We create complex products using blockchain and web technologies.",
+        "url": "https://techculture.tech",
+        "email": "sales@techculture.tech",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "KZ",
+            "addressLocality": "Almaty",
+            "streetAddress": "Markova 22/37"
+        },
+        "founder": [
+            {
+                "@type": "Person",
+                "name": "Adil Akbayev",
+                "gender": "Man",
+                "jobTitle": "Chief Executive Officer, co-founder"
+            },
+            {
+                "@type": "Person",
+                "name": "Arthur Sundetov",
+                "gender": "Man",
+                "jobTitle": "Chief Technical Officer, co-founder"
+            }
+        ],
+        "foundingDate": "21.12.2020",
+        "sameAs" : [
+            "https://digitaldao.asia/",
+            "https://kz.linkedin.com/company/techculturealmaty?trk=public_post_feed-actor-name&original_referer=https%3A%2F%2Fwww.linkedin.com%2F"
+        ],
+        "contactPoint" : [
+            {
+                "@type" : "ContactPoint",
+                "contactType" : "обслуживание клиентов",
+                "email": "hr@techculture.tech",
+                "url": "https://techculture.tech"
+            }
+        ]
+    }
   return (
       <Html>
           <Head>
@@ -47,9 +88,14 @@ export default function Document() {
               <noscript>
                   <img src={"https://mc.yandex.ru/watch/91778393"} style={{ position:'absolute', left:'0px' }} alt="ynd"/>
               </noscript>
+              <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+              />
           </Head>
           <body>
           <Main />
+
           <NextScript />
           </body>
       </Html>

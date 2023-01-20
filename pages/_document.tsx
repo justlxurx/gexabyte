@@ -9,6 +9,12 @@ export default function Document() {
         "url": "https://techculture.tech",
         "email": "sales@techculture.tech",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToDdR0wlXPDtQsXDZC124pHLHiqMKhP1aeio2lVna5IA&s",
+        "sameAs" : [
+            "https://web.facebook.com/tech.culture.it?_rdc=1&_rdr",
+            "https://t.me/tech_culture_dev",
+            "https://www.instagram.com/tech.culture.it/?igshid=YmMyMTA2M2Y%3D",
+            "https://kz.linkedin.com/company/techculturealmaty?trk=public_post_feed-actor-name&original_referer=https%3A%2F%2Fwww.linkedin.com%2F",
+        ],
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "KZ",
@@ -30,10 +36,6 @@ export default function Document() {
             }
         ],
         "foundingDate": "2020-12-21",
-        "sameAs" : [
-            "https://digitaldao.asia/",
-            "https://kz.linkedin.com/company/techculturealmaty?trk=public_post_feed-actor-name&original_referer=https%3A%2F%2Fwww.linkedin.com%2F"
-        ],
         "contactPoint" : [
             {
                 "@type" : "ContactPoint",
@@ -97,6 +99,10 @@ export default function Document() {
               <meta property="og:type" content="website" />
               <meta property="og:url" content="https://techculture.tech" />
               <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToDdR0wlXPDtQsXDZC124pHLHiqMKhP1aeio2lVna5IA&s" />
+              <meta property="og:image:type" content="image/png" />
+              <meta property="og:image:width" content="400" />
+              <meta property="og:image:height" content="300" />
+              <meta property="og:image:alt" content="Logo TechCulture" />
           </Head>
           <body>
           <Main />

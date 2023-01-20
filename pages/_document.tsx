@@ -8,6 +8,7 @@ export default function Document() {
         "description": "Blockchain development & consulting company. We create complex products using blockchain and web technologies.",
         "url": "https://techculture.tech",
         "email": "sales@techculture.tech",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToDdR0wlXPDtQsXDZC124pHLHiqMKhP1aeio2lVna5IA&s",
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "KZ",
@@ -28,7 +29,7 @@ export default function Document() {
                 "jobTitle": "Chief Technical Officer, co-founder"
             }
         ],
-        "foundingDate": "21.12.2020",
+        "foundingDate": "2020-12-21",
         "sameAs" : [
             "https://digitaldao.asia/",
             "https://kz.linkedin.com/company/techculturealmaty?trk=public_post_feed-actor-name&original_referer=https%3A%2F%2Fwww.linkedin.com%2F"
@@ -92,6 +93,10 @@ export default function Document() {
                   type="application/ld+json"
                   dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
               />
+              <meta property="og:title" content="TechCulture" />
+              <meta property="og:type" content="website" />
+              <meta property="og:url" content="https://techculture.tech" />
+              <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToDdR0wlXPDtQsXDZC124pHLHiqMKhP1aeio2lVna5IA&s" />
           </Head>
           <body>
           <Main />

@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { Box, Container, Stack, Typography, Link as MUILink, Grid } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { theme } from '../../../utils/theme';
@@ -37,7 +36,7 @@ const Services = () => {
   }, [t])
 
   return (
-    <Container sx={{
+    <Container id={'services-block'} sx={{
       mb: '6rem',
       minWidth: '375px',
     }}>

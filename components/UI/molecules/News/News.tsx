@@ -65,7 +65,7 @@ export const News = () => {
   const isMobile = useMediaQuery('(max-width: 600px)')
 
   return (
-    <StyledWrapper>
+    <StyledWrapper id={'news-block'}>
       <StyledFlexArea>
         <StyledTitle>{t('home.news.title')}</StyledTitle>
         <div>

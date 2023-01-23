@@ -29,7 +29,7 @@ const TestVideo: React.FC<FirstBlockLayoutProps> = ({ title, subTitle }) => {
     }
 
     return (
-        <Container>
+        <Container id={'main-block'}>
             <BlockTitle>
                 <Title>
                     {title}

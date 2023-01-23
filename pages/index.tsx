@@ -1,12 +1,12 @@
 import { Stats } from 'components/custom/home-page/Stats'
 import TechStack from 'components/custom/home-page/TechStack'
 import BlockchainProjects from 'components/custom/projects/BlockchainProjects'
-import FirstBlockLayout from 'components/layouts/FirstBlockLayout'
 import { News } from 'components/UI/molecules/News/News'
 import type { NextPage } from 'next'
 import { useTranslation } from 'react-i18next'
 import Services from '../components/custom/home-page/Services'
 import TestVideo from "../components/UI/TestVideo";
+import ScrollButton from "../components/custom/button/scrollButton";
 
 const Home: NextPage = () => {
 
@@ -24,6 +24,7 @@ const Home: NextPage = () => {
             title={t('home.title')}
             subTitle={t('home.subtitle')}
         />
+        <ScrollButton/>
         <TechStack />
         <Stats />
         <Services />

@@ -9,7 +9,7 @@ export const Stats = () => {
   const isMobile = useMediaQuery('(max-width: 900px)')
 
   return (
-    <SecondBlock>
+    <SecondBlock id={"stats-block"}>
       <SecondBlockTitle>
         {t('home.stats.title')}
       </SecondBlockTitle>

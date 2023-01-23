@@ -7,7 +7,7 @@ const TechStack = () => {
   const isMobileScreen = useMediaQuery('(max-width:768px)');
 
   return (
-    <div className={"stack-bar"}>
+    <div className={"stack-bar"} id={"stack-bar"}>
       <Grid alignItems={'center'} columns={{ xs: 2, md: 12 }} justifyContent={'space-between'} container sx={{ p: 0, m: 0 }}>
         <Grid item xs={1} md={3} order={1}>
           <Typography sx={{

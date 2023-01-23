@@ -27,7 +27,7 @@ const BlockchainProjects = () => {
   const isMobileScreen = useMediaQuery('(max-width:768px)');
 
   return (
-    <Container disableGutters sx={{
+    <Container disableGutters id={'blockchain-block'} sx={{
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',

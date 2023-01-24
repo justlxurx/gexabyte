@@ -19,7 +19,7 @@ const ScrollButton:React.FC = () => {
 
     const arrName = ['main-block', 'stats-block', 'services-block', 'blockchain-block', 'news-block']
 
-    const scrollToElement = () => {
+    const handeToScrollTop = () => {
         const elements = arrName.map((item, index) => {
             const element = document.getElementById(item);
             if (element) {
@@ -35,10 +35,6 @@ const ScrollButton:React.FC = () => {
         })
         const filterElem = elements.filter((item) => item !== null)
         window.scrollTo({top: filterElem[filterElem.length - 1] as number, behavior: 'smooth'});
-    }
-
-    const handeToScrollTop = () => {
-        scrollToElement()
     }
     return (
         <>

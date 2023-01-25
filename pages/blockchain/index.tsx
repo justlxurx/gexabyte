@@ -106,7 +106,7 @@ const BlockChainLeftSide = styled.div`
 
 `
 
-const BlockchainTitle = styled.p`
+const BlockchainTitle = styled.h1`
   font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 600;

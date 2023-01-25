@@ -100,7 +100,7 @@ const StyledWrapper = styled.div`
     padding: 16px;
   }
 `
-const StyledTitle = styled.p`
+const StyledTitle = styled.h1`
   font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 700;

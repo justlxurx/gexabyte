@@ -55,7 +55,7 @@ const Footer = () => {
               <StyledTypography title={'Web&Mobile development'} link={'/webdev'} />
             </Stack>
           </Grid>
-          <Grid item xs={1} md={1}>
+          <Grid item xs={1} md={2}>
             <Stack direction={'column'}>
               <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Projects</Typography>
               <StyledTypography title={'Blockchain projects'} link={'/projects?tab=blockchain'}/>
@@ -63,8 +63,8 @@ const Footer = () => {
               <StyledTypography title={'Web&Mobile app projects'} link={'/projects?tab=webdev'} />
             </Stack>
           </Grid>
-          <Grid item xs={2} md={2}>
-            <Stack direction={{ xs: 'row', md: 'column' }} alignItems={{ xs: 'center', md: 'end' }} justifyContent={{ xs: 'space-between' }}>
+          <Grid item xs={2} md={1}>
+            <Stack direction={{ xs: 'row', md: 'column' }} alignItems={{ xs: 'center', md: 'start' }} justifyContent={{ xs: 'space-between' }}>
               <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>{t('footer.keepInTouch')}</Typography>
               <SocialMedia/>
             </Stack>

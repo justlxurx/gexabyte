@@ -22,7 +22,7 @@ export const Stats = () => {
 
         {isMobile &&
           <StatsOneBlock>
-            <StatsNumber>211+</StatsNumber>
+            <StatsNumber>150+</StatsNumber>
             <StatsText>{t('home.stats.blockchainWeb')}</StatsText>
           </StatsOneBlock>
         }
@@ -98,7 +98,7 @@ const StatsOneBlock = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 223px;
+  max-width: 233px;
   width: 100%;
 `
 
@@ -115,7 +115,7 @@ const StatsText = styled.div`
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 140%;
+  line-height: 20px;
   color: #667085;
   @media (min-width: 601px) {
     width: 100%;

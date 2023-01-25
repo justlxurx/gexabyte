@@ -34,7 +34,7 @@ const WebProjects = () => {
       flexDirection: 'column',
       padding: { xs: '0.75rem', md: 0 }
     }}>
-      <Typography variant='h1' sx={{
+      <Typography variant='h2' sx={{
         fontSize: {
           xs: '32px', md: '56px'
         },
@@ -42,6 +42,9 @@ const WebProjects = () => {
         textAlign: {
           xs: 'start',
           md: 'left'
+        },
+        fontWeight: {
+            xs: '700'
         }
       }}>
         Web & Mobile <br />Development Projects

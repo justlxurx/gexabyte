@@ -33,7 +33,7 @@ const BlockchainProjects = () => {
       flexDirection: 'column',
       padding: { xs: '0.75rem', md: 0 }
     }}>
-      <Typography variant='h1' sx={{
+      <Typography variant={'h2'} sx={{
         fontSize: {
           xs: '32px', md: '56px'
         },

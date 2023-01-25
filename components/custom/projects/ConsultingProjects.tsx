@@ -35,7 +35,7 @@ const ConsultingProjects = () => {
       padding: { xs: '0.75rem', md: 0 },
       mt: '50px'
     }}>
-      <Typography variant='h1' sx={{
+      <Typography variant='h2' sx={{
         fontSize: {
           xs: '32px', md: '56px'
         },
@@ -43,7 +43,10 @@ const ConsultingProjects = () => {
         textAlign: {
           xs: 'start',
           md: 'left'
-        }
+        },
+          fontWeight: {
+            xs: '700'
+          }
       }}>
         Consulting <br /> Projects
       </Typography>

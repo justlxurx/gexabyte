@@ -95,7 +95,7 @@ const WebImage = styled.div`
     margin-top: -5vw;
   }
 `
-const WebTitle = styled.p`
+const WebTitle = styled.h1`
   font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 600;

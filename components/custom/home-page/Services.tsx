@@ -54,7 +54,7 @@ const Services = () => {
         mb: '2rem',
       }}>
         <Stack direction={'column'}>
-          <Typography variant={'h1'} sx={{
+          <Typography variant={'h2'} sx={{
             fontSize: {
               xs: '32px',
               md: '56px'
@@ -63,7 +63,7 @@ const Services = () => {
           }}>
             What We Can
           </Typography>
-          <Typography variant={'h1'} sx={{
+          <Typography variant={'h2'} sx={{
             fontSize: {
               xs: '32px',
               md: '56px'

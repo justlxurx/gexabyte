@@ -33,7 +33,7 @@ export const Stats = () => {
         </StatsOneBlock>
 
         {!isMobile && <StatsOneBlock>
-          <StatsNumber>211+</StatsNumber>
+          <StatsNumber>150+</StatsNumber>
           <StatsText>{t('home.stats.blockchainWeb')}</StatsText>
         </StatsOneBlock>}
       </StatsWrapper>

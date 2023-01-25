@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import Image from 'next/image'
 import {arrowLeftV2} from "@public/icons";
+import Head from "next/head";
 
 const Projects = () => {
   const [value, setValue] = React.useState(0)
@@ -29,6 +30,10 @@ const Projects = () => {
 
   return (
     <div>
+      <Head>
+        <title>TechCulture / Projects</title>
+        <meta name='description' content='Blockchain development projects.' />
+      </Head>
       <StyledWrapper>
         <StyledTitleArea>
           <StyledTitle>Projects</StyledTitle>

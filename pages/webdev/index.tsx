@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
+import Head from "next/head";
 
 const Webdev = () => {
   const { pathname } = useRouter()
@@ -22,14 +23,16 @@ const Webdev = () => {
   }
   return (
     <Wrapper>
+      <Head>
+        <title>TechCulture / Web & Mobile development</title>
+        <meta name='description' content='Web applications for automating processes and solving business problems using modern technologies.' />
+      </Head>
       <FirstBlock>
         <WebLeftSide>
-
           <WebTitle>Web & Mobile development</WebTitle>
           <WebSubtitle>
             Web applications for automating processes and solving business problems using modern technologies.
           </WebSubtitle>
-
           <Link href={'#contact'}><StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton></Link>
           <Link href={'/projects'}>
             <StyledTextButton>

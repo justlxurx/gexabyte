@@ -6,6 +6,7 @@ import { DeFiService } from 'components/UI/molecules/DeFiService/DeFiService'
 import { OurExpertiseBlockchain } from 'components/UI/molecules/OurExpertise/OurExpertiseBlockchain'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import Head from 'next/head'
 
 const BlockChain = () => {
   const [reftp, setReftp] = useState<HTMLElement | null>(null)
@@ -22,6 +23,10 @@ const BlockChain = () => {
 
   return (
     <Wrapper>
+      <Head>
+        <title>TechCulture / Blockchain development</title>
+        <meta name='description' content='Development of blockchain products for your ideas' />
+      </Head>
       <FirstBlock>
         <BlockChainLeftSide>
 

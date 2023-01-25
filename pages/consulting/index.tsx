@@ -4,6 +4,7 @@ import { StatsConsulting } from 'components/custom/StatsConsulting'
 import { OurExpertiseConsulting } from 'components/UI/molecules/OurExpertise/OurExpertiseConsulting'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import Head from "next/head";
 
 const Consulting = () => {
   const [reftp, setReftp] = useState<HTMLElement | null>(null)
@@ -19,6 +20,10 @@ const Consulting = () => {
   }
   return (
     <Wrapper>
+      <Head>
+        <title>TechCulture / Blockchain Consulting</title>
+        <meta name='description' content='Development of tokenomics, consulting on the technical and business part of your product.' />
+      </Head>
       <FirstBlock>
         <BlockChainLeftSide>
           <BlockchainTitle>Blockchain Consulting</BlockchainTitle>

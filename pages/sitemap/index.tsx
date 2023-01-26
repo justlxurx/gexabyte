@@ -1,5 +1,5 @@
 import React from 'react';
-import * as S from './style'
+import * as S from '../../components/UI/style/style'
 import Head from "next/head";
 
 const SitemapPage = () => {

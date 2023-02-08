@@ -78,7 +78,8 @@ export const News = () => {
 
   const getData = async () => {
     const response = await axios.get<IBlog[]>('https://techculture.tech/api/blog/list')
-    setBlogs(response.data.filter((item) => item.id !== 3 && item.id !== 12))
+    const data = response.data.filter((item) => item.id !== 3 && item.id !== 12)
+    setBlogs(data.sort((a, b) =>  a.id - b.id))
   };
   const isMobile = useMediaQuery('(max-width: 600px)')
 
@@ -98,6 +99,7 @@ export const News = () => {
       </StyledFlexArea>
 
       <Swiper
+        initialSlide={3}
         slidesPerView={isMobile ? 1 : 3}
         spaceBetween={30}
         slidesPerGroup={isMobile ? 1 : 3}
@@ -106,7 +108,6 @@ export const News = () => {
         pagination={{
           clickable: false
         }}
-
         navigation={{ nextEl: "#swiper-forward", prevEl: "#swiper-back" }}
         modules={[Navigation]}
         className="swiper"
@@ -117,7 +118,7 @@ export const News = () => {
               <div className={'image'}>
                 <img src={`https://techculture.tech${item.image}`} width={'100%'} height={320} alt={item.title}/>
               </div>
-              <p className={'theme'}>{item.category}</p>
+              <p className={'theme'}>{item.category} {item.id}</p>
               <StyledCardTitle className={classNames(`${item.link && 'link'}`)}>{item.title}</StyledCardTitle>
               <p className={'text'}>{item.content}</p>
               {item.link && <StyledActionButton><a href={item.link}>learn more</a></StyledActionButton>}

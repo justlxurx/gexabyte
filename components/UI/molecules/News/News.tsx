@@ -118,7 +118,7 @@ export const News = () => {
               <div className={'image'}>
                 <img src={`https://techculture.tech${item.image}`} width={'100%'} height={320} alt={item.title}/>
               </div>
-              <p className={'theme'}>{item.category} {item.id}</p>
+              <p className={'theme'}>{item.category}</p>
               <StyledCardTitle className={classNames(`${item.link && 'link'}`)}>{item.title}</StyledCardTitle>
               <p className={'text'}>{item.content}</p>
               {item.link && <StyledActionButton><a href={item.link}>learn more</a></StyledActionButton>}

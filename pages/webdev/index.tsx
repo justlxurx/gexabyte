@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import WebProjects from 'components/custom/projects/WebProjects'
+import GlobalLayout from 'components/layouts/GlobalLayout'
 import { OurExpertiseWeb } from 'components/UI/molecules/OurExpertise/OurExpertiseWeb'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -22,33 +23,34 @@ const Webdev = () => {
     reftp?.scrollIntoView({ behavior: 'smooth' });
   }
   return (
-    <Wrapper>
-      <Head>
-        <title>TechCulture / Web & Mobile development</title>
-        <meta name='description' content='Web applications for automating processes and solving business problems using modern technologies.' />
-      </Head>
-      <FirstBlock>
-        <WebLeftSide>
-          <WebTitle>Web & Mobile development</WebTitle>
-          <WebSubtitle>
-            Web applications for automating processes and solving business problems using modern technologies.
-          </WebSubtitle>
-          <Link href={'#contact'}><StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton></Link>
-          <Link href={'/projects'}>
-            <StyledTextButton>
-              <OrangeText>&gt;&gt;</OrangeText>
-              &nbsp;see all projects
-            </StyledTextButton>
-          </Link>
-        </WebLeftSide>
-        <WebImage>
-          <Image src={`/images/WebFirstblog.svg`} layout={"fill"} alt={'WebFirstblog'} priority={true} objectFit={"contain"}/>
-        </WebImage>
-      </FirstBlock>
-      <OurExpertiseWeb />
-      <WebProjects />
-    </Wrapper>
-
+    <GlobalLayout>
+      <Wrapper>
+        <Head>
+          <title>TechCulture / Web & Mobile development</title>
+          <meta name='description' content='Web applications for automating processes and solving business problems using modern technologies.' />
+        </Head>
+        <FirstBlock>
+          <WebLeftSide>
+            <WebTitle>Web & Mobile development</WebTitle>
+            <WebSubtitle>
+              Web applications for automating processes and solving business problems using modern technologies.
+            </WebSubtitle>
+            <Link href={'#contact'}><StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton></Link>
+            <Link href={'/projects'}>
+              <StyledTextButton>
+                <OrangeText>&gt;&gt;</OrangeText>
+                &nbsp;see all projects
+              </StyledTextButton>
+            </Link>
+          </WebLeftSide>
+          <WebImage>
+            <Image src={`/images/WebFirstblog.svg`} layout={"fill"} alt={'WebFirstblog'} priority={true} objectFit={"contain"}/>
+          </WebImage>
+        </FirstBlock>
+        <OurExpertiseWeb />
+        <WebProjects />
+      </Wrapper>
+    </GlobalLayout>
   )
 }
 

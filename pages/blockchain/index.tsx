@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import BlockchainProjects from 'components/custom/projects/BlockchainProjects'
 import RoundedAnimation from 'components/custom/RoundedAnimation'
+import GlobalLayout from 'components/layouts/GlobalLayout'
 import { BlockchainAnimation } from 'components/UI/molecules/BlockchainAnimation/BlockchainAnimation'
 import { DeFiService } from 'components/UI/molecules/DeFiService/DeFiService'
 import { OurExpertiseBlockchain } from 'components/UI/molecules/OurExpertise/OurExpertiseBlockchain'
@@ -22,69 +23,70 @@ const BlockChain = () => {
   }
 
   return (
-    <Wrapper>
-      <Head>
-        <title>TechCulture / Blockchain development</title>
-        <meta name='description' content='Development of blockchain products for your ideas' />
-      </Head>
-      <FirstBlock>
-        <BlockChainLeftSide>
+    <GlobalLayout>
+      <Wrapper>
+        <Head>
+          <title>TechCulture / Blockchain development</title>
+          <meta name='description' content='Development of blockchain products for your ideas' />
+        </Head>
+        <FirstBlock>
+          <BlockChainLeftSide>
 
-          <BlockchainTitle>Blockchain development</BlockchainTitle>
-          <BlockchainSubtitle>
-          Development of blockchain products for your ideas
-          </BlockchainSubtitle>
-          <StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton>
-          <Link href={'/projects'}>
-            <StyledTextButton>
-              <OrangeText>&gt;&gt;</OrangeText>
-              &nbsp;see all projects
-            </StyledTextButton>
-          </Link>
-        </BlockChainLeftSide>
-        <BlockchainAnimation />
-      </FirstBlock>
+            <BlockchainTitle>Blockchain development</BlockchainTitle>
+            <BlockchainSubtitle>
+              Development of blockchain products for your ideas          
+            </BlockchainSubtitle>
+            <StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton>
+            <Link href='/projects'>
+              <StyledTextButton>
+                <OrangeText>&gt;&gt;</OrangeText>
+                &nbsp;see all projects
+              </StyledTextButton>
+            </Link>
+          </BlockChainLeftSide>
+          <BlockchainAnimation />
+        </FirstBlock>
 
-      <SecondBlock>
-        <SecondBlockTitle>
-          We offer<br />
-          <OrangeText>informed solutions</OrangeText><br />
-          with a&nbsp;<OrangeText>creative approach.</OrangeText>
-        </SecondBlockTitle>
+        <SecondBlock>
+          <SecondBlockTitle>
+            We offer<br />
+            <OrangeText>informed solutions</OrangeText><br />
+            with a&nbsp;<OrangeText>creative approach.</OrangeText>
+          </SecondBlockTitle>
 
-        <StatsWrapper>
-          <StatsOneBlock>
-            <StatsNumber>40+</StatsNumber>
-            <StatsText>Blockchain developers</StatsText>
-          </StatsOneBlock>
+          <StatsWrapper>
+            <StatsOneBlock>
+              <StatsNumber>40+</StatsNumber>
+              <StatsText>Blockchain developers</StatsText>
+            </StatsOneBlock>
 
-          <StatsOneBlock>
-            <StatsNumber>6+</StatsNumber>
-            <StatsText>Blockchain development experience</StatsText>
-          </StatsOneBlock>
+            <StatsOneBlock>
+              <StatsNumber>6+</StatsNumber>
+              <StatsText>Blockchain development experience</StatsText>
+            </StatsOneBlock>
 
-          <StatsOneBlock>
-            <StatsNumber>211+</StatsNumber>
-            <StatsText>Blockchain and web development </StatsText>
-          </StatsOneBlock>
+            <StatsOneBlock>
+              <StatsNumber>211+</StatsNumber>
+              <StatsText>Blockchain and web development </StatsText>
+            </StatsOneBlock>
 
-          <StatsOneBlock>
-            <StatsNumber>12+</StatsNumber>
-            <StatsText>We work on different blockchain networks</StatsText>
-          </StatsOneBlock>
-        </StatsWrapper>
+            <StatsOneBlock>
+              <StatsNumber>12+</StatsNumber>
+              <StatsText>We work on different blockchain networks</StatsText>
+            </StatsOneBlock>
+          </StatsWrapper>
 
-        <SecondBlockAnimation>
-          <RoundedAnimation />
-        </SecondBlockAnimation>
-      </SecondBlock>
+          <SecondBlockAnimation>
+            <RoundedAnimation />
+          </SecondBlockAnimation>
+        </SecondBlock>
 
-      <OurExpertiseBlockchain />
-      <DeFiService />
-      <BlockchainProjects />
+        <OurExpertiseBlockchain />
+        <DeFiService />
+        <BlockchainProjects />
 
-    </Wrapper>
-
+      </Wrapper>
+    </GlobalLayout>
   )
 }
 

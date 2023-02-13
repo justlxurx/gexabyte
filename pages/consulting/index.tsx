@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import ConsultingProjects from 'components/custom/projects/ConsultingProjects'
 import { StatsConsulting } from 'components/custom/StatsConsulting'
+import GlobalLayout from 'components/layouts/GlobalLayout'
 import { OurExpertiseConsulting } from 'components/UI/molecules/OurExpertise/OurExpertiseConsulting'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -19,40 +20,35 @@ const Consulting = () => {
     reftp?.scrollIntoView({ behavior: 'smooth' });
   }
   return (
-    <Wrapper>
-      <Head>
-        <title>TechCulture / Blockchain Consulting</title>
-        <meta name='description' content='Development of tokenomics, consulting on the technical and business part of your product.' />
-      </Head>
-      <FirstBlock>
-        <BlockChainLeftSide>
-          <BlockchainTitle>Blockchain Consulting</BlockchainTitle>
-          <BlockchainSubtitle>
-            Development of tokenomics, consulting on the technical and business part of your product.
-          </BlockchainSubtitle>
-
-          <StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton>
-          <Link href={'/projects'}>
-            <StyledTextButton>
-              <OrangeText>&gt;&gt;</OrangeText>
-              &nbsp;see all projects
-            </StyledTextButton>
-          </Link>
-
-        </BlockChainLeftSide>
-
-        <GraphicWrapper>
-          <img src={'/images/graphicConsulting.svg'} className={'graph'} alt={'graphicConsulting'}/>
-        </GraphicWrapper>
-
-      </FirstBlock>
-
-      <StatsConsulting />
-      <OurExpertiseConsulting />
-      <ConsultingProjects />
-
-    </Wrapper>
-
+    <GlobalLayout>
+      <Wrapper>
+        <Head>
+          <title>TechCulture / Blockchain Consulting</title>
+          <meta name='description' content='Development of tokenomics, consulting on the technical and business part of your product.' />
+        </Head>
+        <FirstBlock>
+          <BlockChainLeftSide>
+            <BlockchainTitle>Blockchain Consulting</BlockchainTitle>
+            <BlockchainSubtitle>
+              Development of tokenomics, consulting on the technical and business part of your product.
+            </BlockchainSubtitle>
+            <StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton>
+            <Link href='/projects'>
+              <StyledTextButton>
+                <OrangeText>&gt;&gt;</OrangeText>
+                &nbsp;see all projects
+              </StyledTextButton>
+            </Link>
+          </BlockChainLeftSide>
+          <GraphicWrapper>
+            <img src='/images/graphic 1.svg' className='graph' />
+          </GraphicWrapper>
+        </FirstBlock>
+        <StatsConsulting />
+        <OurExpertiseConsulting />
+        <ConsultingProjects />
+      </Wrapper>
+    </GlobalLayout>
   )
 }
 
@@ -172,7 +168,6 @@ const StyledTextButton = styled.button`
     font-size: 14px;
     width: auto;
   }
-
 `
 
 const OrangeText = styled.span`

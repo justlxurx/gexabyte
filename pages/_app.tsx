@@ -1,6 +1,5 @@
 import { ThemeProvider } from '@emotion/react';
 import type { AppProps } from 'next/app';
-import GlobalLayout from '../components/layouts/GlobalLayout';
 import '../styles/global/globals.scss';
 import i18n from "i18next";
 import { initReactI18next, useTranslation } from "react-i18next";
@@ -55,9 +54,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Script>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <GlobalLayout>
-          <Component {...pageProps} />
-        </GlobalLayout>
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   )

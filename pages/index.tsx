@@ -7,13 +7,14 @@ import { useTranslation } from 'react-i18next'
 import Services from '../components/custom/home-page/Services'
 import TestVideo from "../components/UI/TestVideo";
 import ScrollButton from "../components/custom/button/scrollButton";
+import GlobalLayout from 'components/layouts/GlobalLayout'
 
 const Home: NextPage = () => {
 
   const { t } = useTranslation();
 
   return (
-    <>
+    <GlobalLayout>
       <div style={{ minHeight: '100vh', marginBottom: '4rem', overflow: "hidden"}}>
         {/*<FirstBlockLayout*/}
         {/*  title={t('home.title')}*/}
@@ -31,7 +32,7 @@ const Home: NextPage = () => {
         <BlockchainProjects />
         <News />
       </div>
-    </>
+    </GlobalLayout>
   )
 }
 

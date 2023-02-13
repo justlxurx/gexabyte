@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { Box, Tab, Tabs } from '@mui/material'
+import GlobalLayout from 'components/layouts/GlobalLayout'
 import { AllProjectsBlockchain } from 'components/UI/molecules/AllProjects/AllProjectsBlockchain'
 import { AllProjectsConsulting } from 'components/UI/molecules/AllProjects/AllProjectsConsulting'
 import { AllProjectsWebDev } from 'components/UI/molecules/AllProjects/AllProjectsWebDev'
@@ -29,7 +30,7 @@ const Projects = () => {
   }, [query, pathname])
 
   return (
-    <div>
+    <GlobalLayout>
       <Head>
         <title>TechCulture / Projects</title>
         <meta name='description' content='Blockchain development projects.' />
@@ -65,7 +66,7 @@ const Projects = () => {
           </StyledButton>
         </Link>
       </Box>
-    </div>
+    </GlobalLayout>
 
   )
 }

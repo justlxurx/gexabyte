@@ -69,6 +69,10 @@ export default function Document() {
               <link
                   href={"https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;300;400;700&display=swap"}
                   rel={"stylesheet"} />
+              <link 
+                  href={"https://fonts.googleapis.com/css2?family=Inter&family=Raleway:wght@500&display=swap"}
+                  rel={"stylesheet"}
+              />
               <meta name={"yandex-verification"} content={"7dc73ea1ff609887"} />
               <meta name={"google-site-verification"} content={"google3df4a9246fc2a6df"} />
               <script

@@ -79,7 +79,7 @@ export const News = () => {
   const getData = async () => {
     const response = await axios.get<IBlog[]>('https://techculture.tech/api/blog/list')
     const data = response.data.filter((item) => item.id !== 3 && item.id !== 12)
-    setBlogs(data.sort((a, b) =>  a.id - b.id))
+    setBlogs(data.sort((a, b) =>  a.id - b.id).reverse())
   };
   const isMobile = useMediaQuery('(max-width: 600px)')
 

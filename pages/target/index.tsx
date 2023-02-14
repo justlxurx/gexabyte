@@ -55,7 +55,8 @@ const Target = () => {
             >
                 Blockchain community 
                 by 
-                <Typography 
+                <Typography
+                    component="span" 
                     color={"#F0B270"}
                     fontFamily='Raleway'
                     fontWeight={700}

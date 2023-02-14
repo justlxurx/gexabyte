@@ -90,8 +90,24 @@ export const AboutUs = () => {
             </Typography>
             <Box
                 position={'absolute'}
-                left={"36%"}
-                top={'70%'}
+                sx={{
+                    left: {
+                        lg: '36%',
+                        xs: 'unset'
+                    },
+                    top: {
+                        lg: '70%',
+                        xs: 'unset'
+                    },
+                    right: {
+                        lg: 'unset',
+                        xs: 0
+                    },
+                    transform: {
+                        lg: 'scaleY(1)',
+                        xs: 'scaleY(-1) rotate(270deg)'
+                    }
+                }}
             >
                 <img
                     src={arrow.src}

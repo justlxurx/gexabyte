@@ -8,6 +8,7 @@ import investors from 'public/icons/investors.svg'
 import others from 'public/icons/other people.svg'
 import Image from "next/image";
 import { TelegramLink } from "components/UI/atoms/TelegramLink";
+import styled from '@emotion/styled'
 
 const profits = [
     {
@@ -48,6 +49,12 @@ const profits = [
     }
 ]
 
+
+const Gradient = styled.span`
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(90.65deg, #FFBA73 3.52%, #6100FF 103.85%);
+`
 export const ChannelProfit = () => {
     return <Box
         sx={{
@@ -57,17 +64,27 @@ export const ChannelProfit = () => {
             }
         }}
     >
-        <Typography
-            fontFamily={'Raleway'}
-            fontStyle={'normal'}
-            fontWeight={800}
-            fontSize={'48px'}
-            lineHeight={'120%'}
-            textAlign={'center'}
-            color={'linear-gradient(90.65deg, #FFBA73 3.52%, #6100FF 103.85%)'}
+        <Box
+            color={'transparent'}
         >
-            Канал будет полезен
-        </Typography>
+            <Typography
+                fontFamily={'NeueMachina-Ultrabold'}
+                fontStyle={'normal'}
+                fontWeight={800}
+                lineHeight={'120%'}
+                textAlign={'center'}
+                sx={{
+                    fontSize: {
+                        md: '48px',
+                        xs: '26px'
+                    }
+                }}
+            >
+                <Gradient>
+                    Канал будет полезен
+                </Gradient>
+            </Typography>
+        </Box>
         <Box
             display={'flex'}
             flexWrap={'wrap'}
@@ -117,10 +134,15 @@ export const ChannelProfit = () => {
                             fontSize={'18px'}
                             lineHeight={'120%'}
                             color={'#e4e4e4'}
+                            margin={'0 auto'}
                             sx={{
                                 fontSize: {
                                     md: '18px',
                                     xs: '16px'
+                                },
+                                maxWidth: {
+                                    md: profit.id === '5' ? '185px' : '326px',
+                                    xs: profit.id === '2' || profit.id === '6' ? '263px' : profit.id === '3' ? '315px' : '343px',
                                 }
                             }}
                         >
@@ -133,10 +155,14 @@ export const ChannelProfit = () => {
                             fontWeight={500}
                             lineHeight={'120%'}
                             color={'#b1b1b1'}
+                            margin={'0 auto'}
                             sx={{
                                 fontSize: {
                                     md: '16px',
                                     xs: '14px'
+                                },
+                                maxWidth: {
+                                    xs: profit.id === '2' || profit.id === '6' ? '263px' : profit.id === '3' ? '315px' : '343px',
                                 }
                             }}
                         >
@@ -151,7 +177,7 @@ export const ChannelProfit = () => {
             height={'56px'}
             margin={'auto'}
         >
-            <TelegramLink/>
+            <TelegramLink center mw={'349px'}/>
         </Box>
     </Box>
 }

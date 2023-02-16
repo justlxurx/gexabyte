@@ -214,3 +214,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'NeueMachineLight';
+    src: url('NeueMachina-Light.otf');
+}
+
+@font-face {
+    font-family: 'NeueMachineRegular';
+    src: url('NeueMachina-Regular.otf');
+}
+
+@font-face {
+    font-family: 'NeueMachina-Ultrabold';
+    src: url('NeueMachina-Ultrabold.otf');
+}

@@ -53,7 +53,7 @@ export const AboutUs = () => {
         >
         <Box>
             <Typography
-                fontFamily={'Raleway'}
+                fontFamily={'NeueMachina-Ultrabold'}
                 fontWeight={700}
                 sx={{
                     textAlign: {
@@ -130,6 +130,7 @@ export const AboutUs = () => {
                         borderRadius={'12px'}
                         bgcolor={'#232323'}
                         display={'flex'}
+                        alignItems={'center'}
                         gap={'24px'}
                         padding={'16px 24px'}
                         minWidth={'600px'}

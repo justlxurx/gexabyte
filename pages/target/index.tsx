@@ -1,8 +1,8 @@
 import React from "react"
-import { Box, Typography } from "@mui/material"
+import { Box, Typography, useMediaQuery } from "@mui/material"
 import bg_grad from "public/images/bg-gradient.png"
 import tc from "public/images/tc_logo.png"
-import tg from 'public/icons/tg.svg'
+import grad from "public/images/bg_grad.png"
 import hello from 'public/icons/hello.svg'
 import Image from "next/image"
 import { AboutUs } from "components/UI/molecules/Target/AboutUs"
@@ -12,12 +12,13 @@ import { TelegramLink } from "components/UI/atoms/TelegramLink"
 
 const Target = () => {
 
+    const matches = useMediaQuery('(min-width: 568px)')
 
     return <Box padding={"56px 0 86px"}
             style={{
-                backgroundImage: `url(${bg_grad.src})`,
+                backgroundImage: `url(${matches ? bg_grad.src : grad.src})`,
                 backgroundRepeat: 'repeat',
-                backgroundPosition: 'center',
+                backgroundPosition: 'top',
                 backgroundSize: 'cover'
             }}
         >
@@ -54,7 +55,7 @@ const Target = () => {
                 }}
             >
                 Blockchain community 
-                by 
+                by {"  "}
                 <Typography
                     component="span" 
                     color={"#F0B270"}
@@ -80,6 +81,10 @@ const Target = () => {
                     fontSize: {
                         md: '22px',
                         xs: '16px'
+                    },
+                    color: {
+                        md: '#D9D9D9',
+                        xs: '#C1C1C1'
                     }
                 }}
             >
@@ -98,6 +103,10 @@ const Target = () => {
                     alignItems: {
                         md: 'flex-start',
                         xs: 'center'
+                    },
+                    padding: {
+                        md: '72px 0 0',
+                        xs: '48px 0 0'
                     }
                 }}
             >
@@ -108,18 +117,19 @@ const Target = () => {
                     borderRadius={"32px"}
                     padding={"10px 40px"}
                     display={"flex"}
+                    alignItems={'center'}
                     gap={"8px"}
-                    sx={{
-                        fontSize: {
-                            sm: '22px',
-                            xs: '16px'
-                        }
-                    }}
                 >
                     <Typography
                         color={"#fff"}
                         fontSize={"22px"}
                         fontFamily='Raleway'
+                        sx={{
+                            fontSize: {
+                                md: '22px',
+                                xs: '16px'
+                            }
+                        }}    
                     >
                         Хочу стать спикером
                     </Typography>

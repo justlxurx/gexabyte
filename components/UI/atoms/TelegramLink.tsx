@@ -3,8 +3,12 @@ import { Box, Typography } from "@mui/material"
 import Image from "next/image"
 import tg from 'public/icons/tg.svg'
 
+interface IProps {
+    center?: boolean;
+    mw?: string;
+}
 
-export const TelegramLink = () => (
+export const TelegramLink = ({center, mw}: IProps) => (
     <Box
         bgcolor={"#2699D5"}
         border={"1px solid #000000"}
@@ -15,6 +19,18 @@ export const TelegramLink = () => (
             padding: {
                 sm: '12px 32px',
                 xs: '16px 20px'
+            },
+            maxWidth: {
+                md: 'unset',
+                xs: mw ? mw : 'unset',
+            },
+            margin: {
+                md: 'unset',
+                xs: center ? 'auto' : 'unset'
+            },
+            justifyContent: {
+                md: 'unset',
+                xs: center ? 'center' : 'unset'
             }
         }}
     >
@@ -29,7 +45,7 @@ export const TelegramLink = () => (
             fontFamily='Raleway'
             sx={{
                 fontSize: {
-                    sm: '22px',
+                    md: '22px',
                     xs: '16px'
                 }
             }}

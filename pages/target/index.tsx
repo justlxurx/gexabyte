@@ -5,6 +5,7 @@ import tc from "public/images/tc_logo.png"
 import grad from "public/images/bg_grad.png"
 import hello from 'public/icons/hello.svg'
 import Image from "next/image"
+import Link from 'next/link'
 import { AboutUs } from "components/UI/molecules/Target/AboutUs"
 import { ChannelProfit } from "components/UI/molecules/Target/ChannelProfit"
 import { TelegramLink } from "components/UI/atoms/TelegramLink"
@@ -111,35 +112,39 @@ const Target = () => {
                 }}
             >
                 <TelegramLink/>
-                <Box
-                    bgcolor={"#363636"}
-                    border={"1px solid #4A4A4A"}
-                    borderRadius={"32px"}
-                    padding={"10px 40px"}
-                    display={"flex"}
-                    alignItems={'center'}
-                    gap={"8px"}
-                >
-                    <Typography
-                        color={"#fff"}
-                        fontSize={"22px"}
-                        fontFamily='Raleway'
-                        sx={{
-                            fontSize: {
-                                md: '22px',
-                                xs: '16px'
-                            }
-                        }}    
-                    >
-                        Хочу стать спикером
-                    </Typography>
-                    <Image
-                        src={hello}
-                        width={30}
-                        height={36}
-                        alt="Hand Hello"
-                    />
-                </Box>
+                <Link href="https://web.telegram.org/k/#@basimam20">
+                    <a target={'_blank'}>
+                        <Box
+                            bgcolor={"#363636"}
+                            border={"1px solid #4A4A4A"}
+                            borderRadius={"32px"}
+                            padding={"10px 40px"}
+                            display={"flex"}
+                            alignItems={'center'}
+                            gap={"8px"}
+                        >
+                            <Typography
+                                color={"#fff"}
+                                fontSize={"22px"}
+                                fontFamily='Raleway'
+                                sx={{
+                                    fontSize: {
+                                        md: '22px',
+                                        xs: '16px'
+                                    }
+                                }}    
+                            >
+                                Хочу стать спикером
+                            </Typography>
+                            <Image
+                                src={hello}
+                                width={30}
+                                height={36}
+                                alt="Hand Hello"
+                            />
+                        </Box>
+                    </a>
+                </Link>
             </Box>
             <Box
                 marginTop={'72px'}

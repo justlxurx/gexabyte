@@ -29,7 +29,7 @@ const Home: NextPage = () => {
         <TechStack />
         <Stats />
         <Services />
-        <BlockchainProjects />
+        {/*<BlockchainProjects />*/}
         <News />
       </div>
     </GlobalLayout>

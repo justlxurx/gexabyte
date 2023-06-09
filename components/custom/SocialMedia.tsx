@@ -16,15 +16,6 @@ const SocialMedia = () => {
       <a href={socialURL.telegram}>
         <Image src={telegramIcon} width={'24px'} height={'24px'} alt={'telegramIcon'}/>
       </a>
-      <a href={socialURL.facebook}>
-        <Image src={facebookIcon} width={'24px'} height={'24px'} alt={'facebookIcon'}/>
-      </a>
-      <a href={socialURL.git}>
-        <Image src={GitIcon} width={'24px'} height={'24px'} alt={'GitIcon'}/>
-      </a>
-      <a href={socialURL.be}>
-        <Image src={BeIcon} width={'24px'} height={'24px'} alt={'BeIcon'}/>
-      </a>
     </Stack>
   )
 }

@@ -11,20 +11,23 @@ import Dropdown from '../Dropdown';
 import {logoIcon} from "@public/icons";
 
 export const dropdownContent = [
-  {
-    title: 'Solutions',
-    menu: true,
-    link: '#',
-    items: [
-      { title: 'Blockchain Development', link: '/blockchain' },
-      { title: 'Blokchain Consulting', link: '/consulting' },
-      { title: 'Web&Mobile Development', link: '/webdev' }]
-  },
-  {
-    title: 'Projects',
-    menu: false,
-    link: '/projects',
-  },
+  // {
+  //   title: 'Solutions',
+  //   menu: false,
+  //   link: '#',
+  //   items: [
+  //     { title: 'Blockchain Development', link: '/blockchain' },
+  //     { title: 'Blokchain Consulting', link: '/consulting' },
+  //     { title: 'Web&Mobile Development', link: '/webdev' }]
+  // },
+  // {
+  //   title: 'Projects',
+  //   menu: false,
+  //   link: '/projects',
+  // },
+  { title: 'Web3 Solution Development', menu: false, link: '/blockchain' },
+  { title: 'Cryptosystem Design', menu: false, link: '/consulting' },
+  { title: 'White Label Products', menu: false, link: '/webdev' }
 ]
 
 const AppBarDesktop: React.FC = () => {

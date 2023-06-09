@@ -49,20 +49,20 @@ const Footer = () => {
           </Grid>
           <Grid item xs={1} md={1}>
             <Stack direction={'column'}>
-              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Solutions</Typography>
-              <StyledTypography title={'Blockchain Developement'} link={'/blockchain'} />
-              <StyledTypography title={'Blockchain consulting'} link={'/consulting'} />
-              <StyledTypography title={'Web&Mobile development'} link={'/webdev'} />
+              {/*<Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Solutions</Typography>*/}
+              <StyledTypography title={t('home.help.blockchain.title')} link={'/blockchain'} />
+              <StyledTypography title={t('home.help.consulting.title')} link={'/consulting'} />
+              <StyledTypography title={t('home.help.webMobile.title')} link={'/webdev'} />
             </Stack>
           </Grid>
-          <Grid item xs={1} md={2}>
-            <Stack direction={'column'}>
-              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Projects</Typography>
-              <StyledTypography title={'Blockchain projects'} link={'/projects?tab=blockchain'}/>
-              <StyledTypography title={'Consulting projects'} link={'/projects?tab=consulting'} />
-              <StyledTypography title={'Web&Mobile app projects'} link={'/projects?tab=webdev'} />
-            </Stack>
-          </Grid>
+          {/*<Grid item xs={1} md={2}>*/}
+          {/*  <Stack direction={'column'}>*/}
+          {/*    <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Projects</Typography>*/}
+          {/*    <StyledTypography title={'Blockchain projects'} link={'/projects?tab=blockchain'}/>*/}
+          {/*    <StyledTypography title={'Consulting projects'} link={'/projects?tab=consulting'} />*/}
+          {/*    <StyledTypography title={'Web&Mobile app projects'} link={'/projects?tab=webdev'} />*/}
+          {/*  </Stack>*/}
+          {/*</Grid>*/}
           <Grid item xs={2} md={1}>
             <Stack direction={{ xs: 'row', md: 'column' }} alignItems={{ xs: 'center', md: 'start' }} justifyContent={{ xs: 'space-between' }}>
               <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>{t('footer.keepInTouch')}</Typography>

@@ -160,7 +160,7 @@ const ContactUsForm = () => {
                           fontFamily: 'Helvetica Neue',
                           width: { xs: '126px', md: '100%' },
                       }}>
-                          Blockchain Development
+                          {t('home.help.blockchain.title')}
                       </Button>
                   </Grid>
                   <Grid item xs={1}>
@@ -175,7 +175,7 @@ const ContactUsForm = () => {
                           },
                           fontFamily: 'Helvetica Neue'
                       }}>
-                          Blockchain Consulting
+                          {t('home.help.consulting.title')}
                       </Button>
                   </Grid>
                   <Grid item xs={1}>
@@ -191,7 +191,7 @@ const ContactUsForm = () => {
                           fontFamily: 'Helvetica Neue',
                           fontStyle: 'normal',
                       }}>
-                          Web&mobile development
+                          {t('home.help.webMobile.title')}
                       </Button>
                   </Grid>
               </Grid>

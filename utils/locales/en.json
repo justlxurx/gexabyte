@@ -43,15 +43,15 @@
     "help": {
       "title": "what we can help you with",
       "blockchain": {
-        "title": "blockchain development",
+        "title": "web3 solution development",
         "text": "We create and deploy public, closed, hybrid blockchain solutions for various spheres, as well as DEFI and blockchain projects for the crypto industry."
       },
       "consulting": {
-        "title": "blockchain consulting",
+        "title": "cryptosystem design",
         "text": "We provide consulting services in the following areas: tokenomics, smart contract audit, business analytics, White&Light paper and technical documentation"
       },
       "webMobile": {
-        "title": "web and mobile development",
+        "title": "white labeled products",
         "text": "Development of web and mobile applications for iOS and Android with a user-friendly interface for automating processes and solving business problems using modern technologies"
       }
     },

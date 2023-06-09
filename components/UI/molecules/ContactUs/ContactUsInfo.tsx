@@ -70,19 +70,19 @@ const ContactUsInfo = () => {
           mb: '1rem'
         }}>sales@techculture.tech</Typography>
       </a>
-      <Typography style={{
-        color: '#F0B270',
-        fontSize: '16px',
-        fontWeight: 600,
-      }}>{t('contactUsForm.hr')}</Typography>
-      <a href={socialURL.hrDepartment}>
-        <Typography sx={{
-          textDecoration: 'underline',
-          fontSize: '16px',
-          fontWeight: 600,
-          mb: '1rem'
-        }}>hr@techculture.tech</Typography>
-      </a>
+      {/*<Typography style={{*/}
+      {/*  color: '#F0B270',*/}
+      {/*  fontSize: '16px',*/}
+      {/*  fontWeight: 600,*/}
+      {/*}}>{t('contactUsForm.hr')}</Typography>*/}
+      {/*<a href={socialURL.hrDepartment}>*/}
+      {/*  <Typography sx={{*/}
+      {/*    textDecoration: 'underline',*/}
+      {/*    fontSize: '16px',*/}
+      {/*    fontWeight: 600,*/}
+      {/*    mb: '1rem'*/}
+      {/*  }}>hr@techculture.tech</Typography>*/}
+      {/*</a>*/}
       <Typography sx={{
         fontSize: '16px',
         fontWeight: 600,

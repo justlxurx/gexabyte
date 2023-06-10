@@ -24,17 +24,17 @@ import {
 const networks = [
     bitcoinIcon,
     etheriumIcon,
-    cosmosIcon,
+    //cosmosIcon,
     fantomIcon,
     avalancheIcon,
-    polkadotIcon,
+    //polkadotIcon,
     atomIcon,
     tronIcon,
     polygonIcon,
     arbitrumIcon,
-    solanaIcon,
+    //solanaIcon,
     binanceSCIcon,
-    cardanoIcon,
+    //cardanoIcon,
 ]
 
 export const Networks: FC = () => {

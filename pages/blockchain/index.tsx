@@ -66,7 +66,7 @@ const BlockChain = () => {
             </StatsOneBlock>
 
             <StatsOneBlock>
-              <StatsNumber>211+</StatsNumber>
+              <StatsNumber>50+</StatsNumber>
               <StatsText>Blockchain and web development </StatsText>
             </StatsOneBlock>
 

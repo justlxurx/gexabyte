@@ -16,15 +16,15 @@ const Products = [
     'NFT marketplace',
     'Mobile App with integration web3&smart contract',
     'Crypto Exchange',
-    'Staking',
+    'Musical platform',
     'DeFI&CeFi Wallet',
     'Metaverse'
 ]
 const SmartContract = [
     'Tokens and Crypto Wallets',
-    'Staking&Farming', 'NFT Mint',
+    'Staking', 'NFT Mint',
     'NFT Generation', 'IDO/ICO',
-    'Token'
+    'Farming'
 ]
 const networks = [
     'bitcoin.svg',

@@ -16,10 +16,10 @@ export const TokenomicsDev = () => {
     <div>
       <StyledWrapper>
         <StyledTitle>
-          Tokenomics is the <span className={'orange'}>internal economics</span> of the project.
+          Tokenomics is an <span className={'orange'}>economic model</span> of a token
         </StyledTitle>
         <StyledText>
-          “The task of any tokenomics is to change the behavior of people under a certain system limitation, so that users do exactly what, according to tokenomics, is necessary in the interests of the project and its goals”
+          “The goal of any tokenomics is to change the behavior of users in a project under a certain system constraint. This is achieved by optimal consensus, where each side gets what it needs”
         </StyledText>
         <StyledSubtitle>
           Technologies used in the development of the tokenomics model:

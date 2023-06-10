@@ -6,24 +6,24 @@ export const StatsConsulting = () => {
   return (
     <SecondBlock>
       <SecondBlockTitle>
-      We create digital services for large businesses.
+          We create complex products using blockchain
       </SecondBlockTitle>
 
       <StatsWrapper>
         <StatsOneBlock>
-          <StatsNumber>10+</StatsNumber>
-          <StatsText>The best blockchain experts</StatsText>
+          {/*<StatsNumber>10+</StatsNumber>*/}
+          <StatsText>Our goal is to create sustainable economic models using game theory, behavioral economics, sociology, computer science, focused on improving people's lives</StatsText>
         </StatsOneBlock>
 
-        <StatsOneBlock>
-          <StatsNumber>5+</StatsNumber>
-          <StatsText>Blockchain consulting experience</StatsText>
-        </StatsOneBlock>
+        {/*<StatsOneBlock>*/}
+        {/*  <StatsNumber>5+</StatsNumber>*/}
+        {/*  <StatsText>Blockchain consulting experience</StatsText>*/}
+        {/*</StatsOneBlock>*/}
 
-        <StatsOneBlock>
-          <StatsNumber>20+</StatsNumber>
-          <StatsText>Projects successfully operating and receiving our services </StatsText>
-        </StatsOneBlock>
+        {/*<StatsOneBlock>*/}
+        {/*  <StatsNumber>20+</StatsNumber>*/}
+        {/*  <StatsText>Projects successfully operating and receiving our services </StatsText>*/}
+        {/*</StatsOneBlock>*/}
       </StatsWrapper>
 
       <SecondBlockAnimation>
@@ -87,7 +87,7 @@ const StatsOneBlock = styled.div`
   flex-direction: column;
   gap: 16px;
   @media (min-width: 601px) {
-    max-width: 120px;
+    max-width: 340px; //120px;
   }
 `
 
@@ -103,10 +103,10 @@ const StatsText = styled.div`
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 20px;//18px;
   line-height: 140%;
   color: #667085;
   @media (min-width: 601px) {
-    width: 230px;
+    width: 340px; //230px;
   }
 `

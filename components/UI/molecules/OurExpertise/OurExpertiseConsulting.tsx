@@ -31,25 +31,25 @@ export const OurExpertiseConsulting: FC<IProps> = () => {
   return (
     <StyledWrapper>
       <StyledFlexArea>
-        <StyledTitle>Our expertise\\</StyledTitle>
-        <StyledTabArea>
-          <Box sx={{ borderBottom: 1, borderColor: '#464646' }}>
-            <Tabs value={value} onChange={handleChange} textColor={'secondary'} indicatorColor={"secondary"} sx={{ fontWeight: 700 }}>
-              {value === 0
-                ? <Tab label={"Tokenomics development"} sx={{ fontWeight: 700 }} />
-                : <Tab label={"Tokenomics development"} sx={{ fontWeight: 400 }} />
-              }
-              {value === 1
-                ? <Tab label={"Whitepaper development"} sx={{ fontWeight: 700 }} />
-                : <Tab label={"Whitepaper development"} sx={{ fontWeight: 400 }} />
-              }
-              {value === 2
-                ? <Tab label={"Technical task development"} sx={{ fontWeight: 700 }} />
-                : <Tab label={"Technical task development"} sx={{ fontWeight: 400 }} />
-              }
-            </Tabs>
-          </Box>
-        </StyledTabArea>
+        <StyledTitle>Tokenomics development\\</StyledTitle>
+        {/*<StyledTabArea>*/}
+        {/*  <Box sx={{ borderBottom: 1, borderColor: '#464646' }}>*/}
+        {/*    <Tabs value={value} onChange={handleChange} textColor={'secondary'} indicatorColor={"secondary"} sx={{ fontWeight: 700 }}>*/}
+        {/*      {value === 0*/}
+        {/*        ? <Tab label={"Tokenomics development"} sx={{ fontWeight: 700 }} />*/}
+        {/*        : <Tab label={"Tokenomics development"} sx={{ fontWeight: 400 }} />*/}
+        {/*      }*/}
+        {/*      {value === 1*/}
+        {/*        ? <Tab label={"Whitepaper development"} sx={{ fontWeight: 700 }} />*/}
+        {/*        : <Tab label={"Whitepaper development"} sx={{ fontWeight: 400 }} />*/}
+        {/*      }*/}
+        {/*      {value === 2*/}
+        {/*        ? <Tab label={"Technical task development"} sx={{ fontWeight: 700 }} />*/}
+        {/*        : <Tab label={"Technical task development"} sx={{ fontWeight: 400 }} />*/}
+        {/*      }*/}
+        {/*    </Tabs>*/}
+        {/*  </Box>*/}
+        {/*</StyledTabArea>*/}
         <StyledTabAreaMobile>
         <div className={styles.dropdown}>
           <StyledLabel>

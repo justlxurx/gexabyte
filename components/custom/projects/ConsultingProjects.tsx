@@ -48,7 +48,7 @@ const ConsultingProjects = () => {
             xs: '700'
           }
       }}>
-        Consulting <br /> Projects
+          Portfolio
       </Typography>
       <Grid container gridTemplateColumns={'repeat(auto-fill, minmax(700px, 1fr))'} spacing={1}>
         {isMobileScreen ?

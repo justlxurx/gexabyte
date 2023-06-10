@@ -3,11 +3,11 @@ import Image from 'next/image'
 import React from 'react'
 
 const stages = [
-  "Conducting competitors' analysis on tokenomics. ",
-  "Visual mapping of the ecosystem and casual loops of the projects. ",
-  "Transforming visual map into code to simulate the economy. ",
-  "Adjusting economy through different models and methods. ",
-  "Final parameter sweeps with 'What if'  - questions. ",
+  "Аgent-based modeling. ",
+  "Designing a visual cryptosystem map. ",
+  "Audit of the current tokenomics of the project. ",
+  "Creating a digital twin. ",
+  "Stress testing of the system. ",
   "Final report as a presentation with Plotly dashboards, graphics and conclusions."
 ]
 
@@ -43,10 +43,10 @@ export const TokenomicsDev = () => {
         </StyledFlex>
       </StyledWrapper>
 
-      <StyledTitle>Stages of tokenomics development</StyledTitle>
-      <StyledGrayText>
-        Development of project tokenomics based on complete information about the project.
-      </StyledGrayText>
+      <StyledTitle>Developing an economic model of the token</StyledTitle>
+      {/*<StyledGrayText>*/}
+      {/*  Development of project tokenomics based on complete information about the project.*/}
+      {/*</StyledGrayText>*/}
 
       <StyledCardsGrid>
         {stages.map((item, idx) => (

@@ -160,7 +160,7 @@ const ContactUsForm = () => {
                           fontFamily: 'Helvetica Neue',
                           width: { xs: '126px', md: '100%' },
                       }}>
-                          {t('home.help.blockchain.title')}
+                          {t('home.help.web3.title')}
                       </Button>
                   </Grid>
                   <Grid item xs={1}>
@@ -175,7 +175,7 @@ const ContactUsForm = () => {
                           },
                           fontFamily: 'Helvetica Neue'
                       }}>
-                          {t('home.help.consulting.title')}
+                          {t('home.help.cryptosystem.title')}
                       </Button>
                   </Grid>
                   <Grid item xs={1}>
@@ -191,7 +191,7 @@ const ContactUsForm = () => {
                           fontFamily: 'Helvetica Neue',
                           fontStyle: 'normal',
                       }}>
-                          {t('home.help.webMobile.title')}
+                          {t('home.help.whitelabeled.title')}
                       </Button>
                   </Grid>
               </Grid>

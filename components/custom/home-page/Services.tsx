@@ -15,20 +15,20 @@ const Services = () => {
   const services = useMemo(() => {
     return [
       {
-        title: t('home.help.blockchain.title'),
-        description: t('home.help.blockchain.text'),
+        title: t('home.help.web3.title'),
+        description: t('home.help.web3.text'),
         icon: '/icons/bd.svg',
         link: '/blockchain'
       },
       {
-        title: t('home.help.consulting.title'),
-        description: t('home.help.consulting.text'),
+        title: t('home.help.cryptosystem.title'),
+        description: t('home.help.cryptosystem.text'),
         icon: '/icons/bc.svg',
         link: '/consulting'
       },
       {
-        title: t('home.help.webMobile.title'),
-        description: t('home.help.webMobile.text'),
+        title: t('home.help.whitelabeled.title'),
+        description: t('home.help.whitelabeled.text'),
         icon: '/icons/wd.svg',
         link: '/webdev'
       }
@@ -142,7 +142,7 @@ const StyledTextArea = styled.div`
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 24px;
     color: #A8B1D1;
   }
@@ -158,6 +158,7 @@ const StyledIcon = styled.img`
 `
 
 const StyledButton = styled.button`
+  margin-top: auto;//for stick the button to bottom
   display: flex;
   align-items: center;
   justify-content: space-between;

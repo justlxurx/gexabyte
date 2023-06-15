@@ -50,9 +50,9 @@ const Footer = () => {
           <Grid item xs={1} md={1}>
             <Stack direction={'column'}>
               {/*<Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Solutions</Typography>*/}
-              <StyledTypography title={t('home.help.web3.title')} link={'/blockchain'} />
-              <StyledTypography title={t('home.help.cryptosystem.title')} link={'/consulting'} />
-              <StyledTypography title={t('home.help.whitelabeled.title')} link={'/webdev'} />
+              <StyledTypography title={t('footer.web3')} link={'/blockchain'} />
+              <StyledTypography title={t('footer.cryptosystem')} link={'/consulting'} />
+              <StyledTypography title={t('footer.whitelabeled')} link={'/webdev'} />
             </Stack>
           </Grid>
           {/*<Grid item xs={1} md={2}>*/}

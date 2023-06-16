@@ -38,6 +38,7 @@ export {default as pythonIcon } from './python.svg'
 export {default as kotlin1Icon } from './kotlin1.svg'
 export {default as swift1Icon } from './swift1.svg'
 export {default as phpIcon } from './php.svg'
+export {default as goIcon} from './goIcon.svg'
 
 
 export {default as arrowDownIcon } from './arrowDownIcon.svg'

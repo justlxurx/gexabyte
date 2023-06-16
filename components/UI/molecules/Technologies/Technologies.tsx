@@ -13,9 +13,10 @@ import {
     arrowLeftIcon,
     arrowRightIcon,
     jvscrptIcon,
-    kotlin1Icon, phpIcon,
+    kotlin1Icon, reactIcon, //phpIcon,
     pythonIcon,
-    rustIcon,
+    goIcon,
+    //rustIcon,
     solidityIcon, swift1Icon,
     tsIcon
 } from "@public/icons";
@@ -23,12 +24,14 @@ import {
 const technologies = [
     solidityIcon,
     tsIcon,
-    rustIcon,
+    goIcon,
+    //rustIcon,
     jvscrptIcon,
     pythonIcon,
     kotlin1Icon,
     swift1Icon,
-    phpIcon,
+    reactIcon
+    //phpIcon,
 ]
 
 export const Technologies: FC = () => {

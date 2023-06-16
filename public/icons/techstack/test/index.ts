@@ -24,6 +24,7 @@ import VLXIcon from './velasvlxIcon.svg'
 import vueIcon from './vueIcon.svg'
 import python from './pythonIcon.svg'
 import all from './All.svg'
+import goIcon from './goIcon.svg'
 
 // export {default as angularIcon} from './angularIcon.svg'
 // export {default as avalancheIcon} from './avalancheIcon.svg'
@@ -62,7 +63,7 @@ export const allLogo = [
     ponyIcon,
     compoundIcon,
     binanceIcon,
-    solanaIcon,
+    //solanaIcon,
     pythonIcon,
     raydiumIcon,
     swiftIcon,
@@ -71,7 +72,8 @@ export const allLogo = [
     kotlinIcon,
     metaMaskIcon,
     reactIcon,
-    rustIcon,
+    //rustIcon,
+    goIcon,
     solidityIcon,
     tsIcon,
     avalancheIcon,
@@ -80,6 +82,7 @@ export const allLogo = [
     vueIcon,
     ghostIcon,
     all,
+
     angularIcon,
     bunnyIcon,
     ellipseIcon,
@@ -87,8 +90,8 @@ export const allLogo = [
     ponyIcon,
     compoundIcon,
     binanceIcon,
-    solanaIcon,
-    python,
+    //solanaIcon,
+    pythonIcon,
     raydiumIcon,
     swiftIcon,
     javaIcon,

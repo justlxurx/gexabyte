@@ -31,9 +31,9 @@ const Webdev = () => {
         </Head>
         <FirstBlock>
           <WebLeftSide>
-            <WebTitle>Web & Mobile development</WebTitle>
+            <WebTitle>White Labeled Products</WebTitle>
             <WebSubtitle>
-              Web applications for automating processes and solving business problems using modern technologies.
+              Ready-made Web3 solutions
             </WebSubtitle>
             <Link href={'#contact'}><StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton></Link>
             <Link href={'/projects'}>
@@ -43,12 +43,12 @@ const Webdev = () => {
               </StyledTextButton>
             </Link>
           </WebLeftSide>
-          <WebImage>
-            <Image src={`/images/WebFirstblog.svg`} layout={"fill"} alt={'WebFirstblog'} priority={true} objectFit={"contain"}/>
-          </WebImage>
+          {/*<WebImage>*/}
+          {/*  <Image src={`/images/WebFirstblog.svg`} layout={"fill"} alt={'WebFirstblog'} priority={true} objectFit={"contain"}/>*/}
+          {/*</WebImage>*/}
         </FirstBlock>
-        <OurExpertiseWeb />
-        <WebProjects />
+        {/*<OurExpertiseWeb />*/}
+        {/*<WebProjects />*/}
       </Wrapper>
     </GlobalLayout>
   )

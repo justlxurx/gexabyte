@@ -50,17 +50,17 @@ const BlockchainProjects = () => {
         {isMobileScreen ?
           projects.mobile.map((src, idx) => (
             <Grid item xs={12} md={12} key={idx} sx={{ my: '12px' }}>
-              <Link href={'/projects'} passHref>
+              {/*<Link href={'/projects'} passHref>*/}
                 <a><img src={src} width={'100%'} alt={`image${idx}BlockChainProject`}/></a>
-              </Link>
+              {/*</Link>*/}
             </Grid>
           ))
           :
           projects.desktop.map((src, idx) => (
             <Grid item xs={12} md={ImageGrid[idx]} key={idx}>
-              <Link href={'/projects'} passHref>
+              {/*<Link href={'/projects'} passHref>*/}
                 <a><img src={src} width={'100%'} alt={`image${idx}BlockChainProject`}/></a>
-              </Link>
+              {/*</Link>*/}
             </Grid>
           ))
         }
@@ -72,28 +72,28 @@ const BlockchainProjects = () => {
               md: '2rem'
             }
           }}>
-            <Link href={'/projects?tab=blockchain'}>
-              <Button
-                variant={'contained'}
-                sx={{
-                  fontSize: {
-                    xs: '18px',
-                    md: '22px'
-                  },
-                  fontWeight: 700,
-                  width: {
-                    xs: '100%',
-                    md: '254px'
-                  },
-                  height: {
-                    xs: '50px',
-                    md: '80px'
-                  },
-                  textTransform: 'uppercase'
-                }}>
-                {t('button.more')}
-              </Button>
-            </Link>
+            {/*<Link href={'/projects?tab=blockchain'}>*/}
+            {/*  <Button*/}
+            {/*    variant={'contained'}*/}
+            {/*    sx={{*/}
+            {/*      fontSize: {*/}
+            {/*        xs: '18px',*/}
+            {/*        md: '22px'*/}
+            {/*      },*/}
+            {/*      fontWeight: 700,*/}
+            {/*      width: {*/}
+            {/*        xs: '100%',*/}
+            {/*        md: '254px'*/}
+            {/*      },*/}
+            {/*      height: {*/}
+            {/*        xs: '50px',*/}
+            {/*        md: '80px'*/}
+            {/*      },*/}
+            {/*      textTransform: 'uppercase'*/}
+            {/*    }}>*/}
+            {/*    {t('button.more')}*/}
+            {/*  </Button>*/}
+            {/*</Link>*/}
           </Box>
         </Grid>
       </Grid>

@@ -37,12 +37,12 @@ const BlockChain = () => {
               Development of blockchain products for your ideas          
             </BlockchainSubtitle>
             <StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton>
-            <Link href='/projects'>
-              <StyledTextButton>
-                <OrangeText>&gt;&gt;</OrangeText>
-                &nbsp;see all projects
-              </StyledTextButton>
-            </Link>
+            {/*<Link href='/projects'>*/}
+            {/*  <StyledTextButton>*/}
+            {/*    <OrangeText>&gt;&gt;</OrangeText>*/}
+            {/*    &nbsp;see all projects*/}
+            {/*  </StyledTextButton>*/}
+            {/*</Link>*/}
           </BlockChainLeftSide>
           <BlockchainAnimation />
         </FirstBlock>

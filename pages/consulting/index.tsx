@@ -23,23 +23,23 @@ const Consulting = () => {
     <GlobalLayout>
       <Wrapper>
         <Head>
-          <title>TechCulture / Cryptosystem Design</title>
+          <title>Bloxxa / Cryptosystem Design</title>
           <meta name='description' content='Development of tokenomics, consulting on the technical and business part of your product.' />
         </Head>
         <FirstBlock>
-          <BlockChainLeftSide>
-            <BlockchainTitle>Cryptosystem Design</BlockchainTitle>
-            {/*<BlockchainSubtitle>*/}
+          <CryptosystemLeftSide>
+            <CryptosystemTitle>Cryptosystem Design</CryptosystemTitle>
+            {/*<CryptosystemSubtitle>*/}
             {/*  Development of tokenomics, consulting on the technical and business part of your product.*/}
-            {/*</BlockchainSubtitle>*/}
+            {/*</CryptosystemSubtitle>*/}
             <StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton>
-            <Link href='/projects'>
-              <StyledTextButton>
-                <OrangeText>&gt;&gt;</OrangeText>
-                &nbsp;see all projects
-              </StyledTextButton>
-            </Link>
-          </BlockChainLeftSide>
+            {/*<Link href='/projects'>*/}
+            {/*  <StyledTextButton>*/}
+            {/*    <OrangeText>&gt;&gt;</OrangeText>*/}
+            {/*    &nbsp;see all projects*/}
+            {/*  </StyledTextButton>*/}
+            {/*</Link>*/}
+          </CryptosystemLeftSide>
           <GraphicWrapper>
             <img src='/images/graphic 1.svg' className='graph' />
           </GraphicWrapper>
@@ -71,7 +71,7 @@ const FirstBlock = styled.div`
   }
 `
 
-const BlockChainLeftSide = styled.div`
+const CryptosystemLeftSide = styled.div`
 
 `
 
@@ -93,7 +93,7 @@ const GraphicWrapper = styled.div`
 
 `
 
-const BlockchainTitle = styled.h1`
+const CryptosystemTitle = styled.h1`
   font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 600;
@@ -108,7 +108,7 @@ const BlockchainTitle = styled.h1`
   }
 `
 
-const BlockchainSubtitle = styled.p`
+const CryptosystemSubtitle = styled.p`
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 300;

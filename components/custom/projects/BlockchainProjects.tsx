@@ -64,38 +64,38 @@ const BlockchainProjects = () => {
             </Grid>
           ))
         }
-        <Grid item xs={12}>
-          <Box sx={{
-            textAlign: 'center',
-            mt: {
-              xs: '12px',
-              md: '2rem'
-            }
-          }}>
-            {/*<Link href={'/projects?tab=blockchain'}>*/}
-            {/*  <Button*/}
-            {/*    variant={'contained'}*/}
-            {/*    sx={{*/}
-            {/*      fontSize: {*/}
-            {/*        xs: '18px',*/}
-            {/*        md: '22px'*/}
-            {/*      },*/}
-            {/*      fontWeight: 700,*/}
-            {/*      width: {*/}
-            {/*        xs: '100%',*/}
-            {/*        md: '254px'*/}
-            {/*      },*/}
-            {/*      height: {*/}
-            {/*        xs: '50px',*/}
-            {/*        md: '80px'*/}
-            {/*      },*/}
-            {/*      textTransform: 'uppercase'*/}
-            {/*    }}>*/}
-            {/*    {t('button.more')}*/}
-            {/*  </Button>*/}
-            {/*</Link>*/}
-          </Box>
-        </Grid>
+        {/*<Grid item xs={12}>*/}
+        {/*  <Box sx={{*/}
+        {/*    textAlign: 'center',*/}
+        {/*    mt: {*/}
+        {/*      xs: '12px',*/}
+        {/*      md: '2rem'*/}
+        {/*    }*/}
+        {/*  }}>*/}
+        {/*    <Link href={'/projects?tab=blockchain'}>*/}
+        {/*      <Button*/}
+        {/*        variant={'contained'}*/}
+        {/*        sx={{*/}
+        {/*          fontSize: {*/}
+        {/*            xs: '18px',*/}
+        {/*            md: '22px'*/}
+        {/*          },*/}
+        {/*          fontWeight: 700,*/}
+        {/*          width: {*/}
+        {/*            xs: '100%',*/}
+        {/*            md: '254px'*/}
+        {/*          },*/}
+        {/*          height: {*/}
+        {/*            xs: '50px',*/}
+        {/*            md: '80px'*/}
+        {/*          },*/}
+        {/*          textTransform: 'uppercase'*/}
+        {/*        }}>*/}
+        {/*        {t('button.more')}*/}
+        {/*      </Button>*/}
+        {/*    </Link>*/}
+        {/*  </Box>*/}
+        {/*</Grid>*/}
       </Grid>
     </Container>
   )

@@ -26,23 +26,23 @@ const Webdev = () => {
     <GlobalLayout>
       <Wrapper>
         <Head>
-          <title>TechCulture / Web & Mobile development</title>
+          <title>Bloxxa / White Labeled Products</title>
           <meta name='description' content='Web applications for automating processes and solving business problems using modern technologies.' />
         </Head>
         <FirstBlock>
-          <WebLeftSide>
-            <WebTitle>White Labeled Products</WebTitle>
-            <WebSubtitle>
+          <WhiteLabelLeftSide>
+            <WhiteLabelTitle>White Labeled Products</WhiteLabelTitle>
+            <WhiteLabelSubtitle>
               Ready-made Web3 solutions
-            </WebSubtitle>
+            </WhiteLabelSubtitle>
             <Link href={'#contact'}><StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton></Link>
-            <Link href={'/projects'}>
-              <StyledTextButton>
-                <OrangeText>&gt;&gt;</OrangeText>
-                &nbsp;see all projects
-              </StyledTextButton>
-            </Link>
-          </WebLeftSide>
+            {/*<Link href={'/projects'}>*/}
+            {/*  <StyledTextButton>*/}
+            {/*    <OrangeText>&gt;&gt;</OrangeText>*/}
+            {/*    &nbsp;see all projects*/}
+            {/*  </StyledTextButton>*/}
+            {/*</Link>*/}
+          </WhiteLabelLeftSide>
           {/*<WebImage>*/}
           {/*  <Image src={`/images/WebFirstblog.svg`} layout={"fill"} alt={'WebFirstblog'} priority={true} objectFit={"contain"}/>*/}
           {/*</WebImage>*/}
@@ -76,7 +76,7 @@ const FirstBlock = styled.div`
   }
 `
 
-const WebLeftSide = styled.div`
+const WhiteLabelLeftSide = styled.div`
 
 `
 
@@ -100,7 +100,7 @@ const WebImage = styled.div`
     margin-top: -5vw;
   }
 `
-const WebTitle = styled.h1`
+const WhiteLabelTitle = styled.h1`
   font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 600;
@@ -111,7 +111,7 @@ const WebTitle = styled.h1`
   margin-bottom: 31px;
 `
 
-const WebSubtitle = styled.p`
+const WhiteLabelSubtitle = styled.p`
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 300;

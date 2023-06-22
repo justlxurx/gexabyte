@@ -26,16 +26,15 @@ const BlockChain = () => {
     <GlobalLayout>
       <Wrapper>
         <Head>
-          <title>TechCulture / Blockchain development</title>
+          <title>Bloxxa / Web3 Solution Development</title>
           <meta name='description' content='Development of blockchain products for your ideas' />
         </Head>
         <FirstBlock>
-          <BlockChainLeftSide>
-
-            <BlockchainTitle>Blockchain development</BlockchainTitle>
-            <BlockchainSubtitle>
+          <Web3LeftSide>
+            <Web3Title>Web3 Solution Development</Web3Title>
+            <Web3Subtitle>
               Development of blockchain products for your ideas          
-            </BlockchainSubtitle>
+            </Web3Subtitle>
             <StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton>
             {/*<Link href='/projects'>*/}
             {/*  <StyledTextButton>*/}
@@ -43,7 +42,7 @@ const BlockChain = () => {
             {/*    &nbsp;see all projects*/}
             {/*  </StyledTextButton>*/}
             {/*</Link>*/}
-          </BlockChainLeftSide>
+          </Web3LeftSide>
           <BlockchainAnimation />
         </FirstBlock>
 
@@ -109,11 +108,11 @@ const FirstBlock = styled.div`
   }
 `
 
-const BlockChainLeftSide = styled.div`
+const Web3LeftSide = styled.div`
 
 `
 
-const BlockchainTitle = styled.h1`
+const Web3Title = styled.h1`
   font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 600;
@@ -128,7 +127,7 @@ const BlockchainTitle = styled.h1`
   }
 `
 
-const BlockchainSubtitle = styled.p`
+const Web3Subtitle = styled.p`
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 300;

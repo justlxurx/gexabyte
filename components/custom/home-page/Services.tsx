@@ -77,11 +77,11 @@ const Services = () => {
             <span style={{ color: theme.palette.primary.main }}>Help You</span> With
           </Typography>
         </Stack>
-        <Link href={'/projects'}>
-          <MUILink sx={{ cursor: 'pointer', fontFamily: 'Poppins', color: '#B3B3B3' }}>
-            EXPLORE OUT PROJECTS {'>'}
-          </MUILink>
-        </Link>
+        {/*<Link href={'/projects'}>*/}
+        {/*  <MUILink sx={{ cursor: 'pointer', fontFamily: 'Poppins', color: '#B3B3B3' }}>*/}
+        {/*    EXPLORE OUT PROJECTS {'>'}*/}
+        {/*  </MUILink>*/}
+        {/*</Link>*/}
       </Box>
       <Grid container columns={3} spacing={1} gridAutoRows={'1fr'} rowGap={3}>
         {services.map((service, idx) => (

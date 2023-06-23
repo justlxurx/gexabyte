@@ -7,7 +7,7 @@ import {logoRawIcon, logoTextIcon} from "@public/icons";
 
 const links = [
   { link: '/solutions', title: 'solutions' },
-  { link: '/projects', title: 'projects' },
+  // { link: '/projects', title: 'projects' },
   { link: '/company', title: 'company' },
   { link: '/blog', title: 'blog' },
 ]

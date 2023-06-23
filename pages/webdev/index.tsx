@@ -48,7 +48,7 @@ const Webdev = () => {
           {/*</WebImage>*/}
         </FirstBlock>
         {/*<OurExpertiseWeb />*/}
-        {/*<WebProjects />*/}
+        <WebProjects />
       </Wrapper>
     </GlobalLayout>
   )

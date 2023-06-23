@@ -97,4 +97,17 @@ export const allLogo = [
     javaIcon,
     jsIcon,
 
+    kotlinIcon,
+    metaMaskIcon,
+    reactIcon,
+    //rustIcon,
+    goIcon,
+    solidityIcon,
+    tsIcon,
+    avalancheIcon,
+    fantomIcon,
+    VLXIcon,
+    vueIcon,
+    ghostIcon,
+    all,
 ]

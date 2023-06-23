@@ -1,10 +1,9 @@
 .stack-bar {
   width: 100%;
   position: relative;
-  padding: '2rem 4rem';
   display: flex;
   align-items: center;
-  display: space-around;
+  justify-content: space-around;
   padding: 1rem 1rem;
 
   @media (min-width: 768px) {
@@ -89,7 +88,7 @@
 
 .slider-track {
   display: flex;
-  width: calc(75px * 41);
+  width: calc(75px * 54);
 }
 
 .slide {
@@ -111,7 +110,7 @@
   }
 
   100% {
-    margin-left: -1875px;
+    margin-left: -1800px;
   }
 }
 

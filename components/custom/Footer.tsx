@@ -52,7 +52,7 @@ const Footer = () => {
               {/*<Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Solutions</Typography>*/}
               <StyledTypography title={t('footer.web3')} link={'/web3'} />
               <StyledTypography title={t('footer.cryptosystem')} link={'/cryptosystem'} />
-              <StyledTypography title={t('footer.whitelabeled')} link={'/webdev'} />
+              <StyledTypography title={t('footer.whitelabeled')} link={'/whitelabel'} />
             </Stack>
           </Grid>
           {/*<Grid item xs={1} md={2}>*/}

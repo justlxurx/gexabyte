@@ -27,7 +27,7 @@ export const dropdownContent = [
   // },
   { title: 'Web3 Solution Development', menu: false, link: '/web3' },
   { title: 'Cryptosystem Design', menu: false, link: '/cryptosystem' },
-  { title: 'White Label Products', menu: false, link: '/webdev' }
+  { title: 'White Label Products', menu: false, link: '/whitelabel' }
 ]
 
 const AppBarDesktop: React.FC = () => {

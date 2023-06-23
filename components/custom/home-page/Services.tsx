@@ -30,7 +30,7 @@ const Services = () => {
         title: t('home.help.whitelabeled.title'),
         description: t('home.help.whitelabeled.text'),
         icon: '/icons/wd.svg',
-        link: '/webdev'
+        link: '/whitelabel'
       }
     ]
   }, [t])

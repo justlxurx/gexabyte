@@ -1,6 +1,6 @@
 import { Stats } from 'components/custom/home-page/Stats'
 import TechStack from 'components/custom/home-page/TechStack'
-import BlockchainProjects from 'components/custom/projects/BlockchainProjects'
+import Web3Projects from 'components/custom/projects/Web3Projects'
 import { News } from 'components/UI/molecules/News/News'
 import type { NextPage } from 'next'
 import { useTranslation } from 'react-i18next'
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
         <TechStack />
         <Stats />
         <Services />
-        {/*<BlockchainProjects />*/}
+        {/*<Web3Projects />*/}
         <News />
       </div>
     </GlobalLayout>

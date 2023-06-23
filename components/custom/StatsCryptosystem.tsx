@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import React from 'react'
 import RoundedAnimation from './RoundedAnimation'
 
-export const StatsConsulting = () => {
+export const StatsCryptosystem = () => {
   return (
     <SecondBlock>
       <SecondBlockTitle>

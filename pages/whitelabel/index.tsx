@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import WebProjects from 'components/custom/projects/WebProjects'
+import WhiteLabelProjects from 'components/custom/projects/WhiteLabelProjects'
 import GlobalLayout from 'components/layouts/GlobalLayout'
 import { OurExpertiseWeb } from 'components/UI/molecules/OurExpertise/OurExpertiseWeb'
 import Image from 'next/image'
@@ -48,7 +48,7 @@ const Webdev = () => {
           {/*</WebImage>*/}
         </FirstBlock>
         {/*<OurExpertiseWeb />*/}
-        <WebProjects />
+        <WhiteLabelProjects />
       </Wrapper>
     </GlobalLayout>
   )

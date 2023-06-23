@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import React from 'react'
 import { SmartContractDev } from './SmartContractDev/SmartContractDev'
 
-export const OurExpertiseBlockchain = () => {
+export const OurExpertiseWeb3 = () => {
   return (
     <StyledWrapper>
       <StyledTitle>Our expertise\\</StyledTitle>

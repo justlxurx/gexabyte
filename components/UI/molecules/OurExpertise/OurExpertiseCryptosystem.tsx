@@ -15,7 +15,7 @@ const tabs = ['Tokenomics development', 'Whitepaper development', 'Technical tas
 interface IProps {
 }
 
-export const OurExpertiseConsulting: FC<IProps> = () => {
+export const OurExpertiseCryptosystem: FC<IProps> = () => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {

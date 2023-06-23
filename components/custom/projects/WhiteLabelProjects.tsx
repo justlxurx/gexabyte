@@ -41,7 +41,7 @@ const projectsWL = [
 
 const ImageGrid = [8, 4, 6, 6, 4, 4, 4]
 
-const WebProjects = () => {
+const WhiteLabelProjects = () => {
   const isMobileScreen = useMediaQuery('(max-width:768px)');
   const [isExtended] = React.useState(false);
 
@@ -152,7 +152,7 @@ const WebProjects = () => {
   )
 }
 
-export default WebProjects;
+export default WhiteLabelProjects;
 
 const ProjectWLTitle = styled.p`
   font-weight: 700;

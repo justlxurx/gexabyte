@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
-import ConsultingProjects from 'components/custom/projects/ConsultingProjects'
-import { StatsConsulting } from 'components/custom/StatsConsulting'
+import CryptosystemProjects from 'components/custom/projects/CryptosystemProjects'
+import { StatsCryptosystem } from 'components/custom/StatsCryptosystem'
 import GlobalLayout from 'components/layouts/GlobalLayout'
-import { OurExpertiseConsulting } from 'components/UI/molecules/OurExpertise/OurExpertiseConsulting'
+import { OurExpertiseCryptosystem } from 'components/UI/molecules/OurExpertise/OurExpertiseCryptosystem'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Head from "next/head";
@@ -44,9 +44,9 @@ const Consulting = () => {
             <img src='/images/graphic 1.svg' className='graph' />
           </GraphicWrapper>
         </FirstBlock>
-        <StatsConsulting />
-        <OurExpertiseConsulting />
-        <ConsultingProjects />
+        <StatsCryptosystem />
+        <OurExpertiseCryptosystem />
+        <CryptosystemProjects />
       </Wrapper>
     </GlobalLayout>
   )

@@ -1,10 +1,10 @@
 import styled from '@emotion/styled'
-import BlockchainProjects from 'components/custom/projects/BlockchainProjects'
+import Web3Projects from 'components/custom/projects/Web3Projects'
 import RoundedAnimation from 'components/custom/RoundedAnimation'
 import GlobalLayout from 'components/layouts/GlobalLayout'
 import { BlockchainAnimation } from 'components/UI/molecules/BlockchainAnimation/BlockchainAnimation'
 import { DeFiService } from 'components/UI/molecules/DeFiService/DeFiService'
-import { OurExpertiseBlockchain } from 'components/UI/molecules/OurExpertise/OurExpertiseBlockchain'
+import { OurExpertiseWeb3 } from 'components/UI/molecules/OurExpertise/OurExpertiseWeb3'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
@@ -80,9 +80,9 @@ const BlockChain = () => {
           </SecondBlockAnimation>
         </SecondBlock>
 
-        <OurExpertiseBlockchain />
+        <OurExpertiseWeb3 />
         <DeFiService />
-        <BlockchainProjects />
+        <Web3Projects />
 
       </Wrapper>
     </GlobalLayout>

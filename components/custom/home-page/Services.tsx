@@ -24,7 +24,7 @@ const Services = () => {
         title: t('home.help.cryptosystem.title'),
         description: t('home.help.cryptosystem.text'),
         icon: '/icons/bc.svg',
-        link: '/consulting'
+        link: '/cryptosystem'
       },
       {
         title: t('home.help.whitelabeled.title'),

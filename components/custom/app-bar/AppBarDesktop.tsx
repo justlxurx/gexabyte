@@ -26,7 +26,7 @@ export const dropdownContent = [
   //   link: '/projects',
   // },
   { title: 'Web3 Solution Development', menu: false, link: '/web3' },
-  { title: 'Cryptosystem Design', menu: false, link: '/consulting' },
+  { title: 'Cryptosystem Design', menu: false, link: '/cryptosystem' },
   { title: 'White Label Products', menu: false, link: '/webdev' }
 ]
 

@@ -18,7 +18,7 @@ const Services = () => {
         title: t('home.help.web3.title'),
         description: t('home.help.web3.text'),
         icon: '/icons/bd.svg',
-        link: '/blockchain'
+        link: '/web3'
       },
       {
         title: t('home.help.cryptosystem.title'),

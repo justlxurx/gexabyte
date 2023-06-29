@@ -5,13 +5,20 @@ import { useTranslation } from 'react-i18next';
 
 const projects = {
   desktop: [
-      '/images/musical platform.svg',
-      '/images/defi app.svg',
-      '/images/crowdfunding.png',
-      '/images/nft.png',
-      '/images/euphoria.png',
-      '/images/defi.svg',
-      '/images/emm.svg'
+      //'/images/musical platform.svg',
+      '/images/musical platform upd.svg',
+      //'/images/defi app.svg',
+      '/images/defi app upd.svg',
+      //'/images/crowdfunding.png',
+      '/images/crowdfunding platform upd.png',
+      //'/images/nft.png',
+      '/images/nft marketplace upd.png',
+      //'/images/euphoria.png',
+      '/images/euphoria upd.png',
+      //'/images/defi.svg',
+      '/images/dexoo upd.svg',
+      //'/images/emm.svg'
+      '/images/emm upd.svg'
   ],
   mobile: [
       '/images/projects/mobile/rokkmob.svg',

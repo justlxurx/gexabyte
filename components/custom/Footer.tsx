@@ -72,7 +72,7 @@ const Footer = () => {
         </Grid>
       </Container>
       <Container sx={{ px: { xs: '16px', md: '0px' }, py: '30px', display: { xs: 'block', md: 'flex' }, alignItems: 'center', gap: '80px' }}>
-        <StyledCopyright>© 2023 BLOXXA</StyledCopyright>
+        <StyledCopyright>© 2023 TechCulture</StyledCopyright>
       </Container>
     </StyledFooter>
   )

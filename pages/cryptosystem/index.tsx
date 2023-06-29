@@ -23,7 +23,7 @@ const Consulting = () => {
     <GlobalLayout>
       <Wrapper>
         <Head>
-          <title>Bloxxa / Cryptosystem Design</title>
+          <title>TechCulture / Cryptosystem Design</title>
           <meta name='description' content='Development of tokenomics, consulting on the technical and business part of your product.' />
         </Head>
         <FirstBlock>
@@ -40,9 +40,9 @@ const Consulting = () => {
             {/*  </StyledTextButton>*/}
             {/*</Link>*/}
           </CryptosystemLeftSide>
-          <GraphicWrapper>
-            <img src='/images/graphic 1.svg' className='graph' />
-          </GraphicWrapper>
+          {/*<GraphicWrapper>*/}
+          {/*  <img src='/images/graphic 1.svg' className='graph' />*/}
+          {/*</GraphicWrapper>*/}
         </FirstBlock>
         <StatsCryptosystem />
         <OurExpertiseCryptosystem />

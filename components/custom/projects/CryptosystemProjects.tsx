@@ -4,13 +4,20 @@ import React from 'react';
 
 const projects = {
   desktop: [
-      '/images/fiat.png',
-      '/images/myrig.png',
-      '/images/gamestone.png',
-      '/images/crypto bank.png',
-      '/images/gambling platform.png',
-      '/images/defi wallet.png',
-      '/images/astana hub.png'
+      //'/images/fiat.png',
+      '/images/fiat upd.png',
+      //'/images/myrig.png',
+      '/images/myrig upd.png',
+      //'/images/gamestone.png',
+      '/images/gamestone upd.png',
+      //'/images/crypto bank.png',
+      '/images/crypto bank upd.png',
+      //'/images/gambling platform.png',
+      '/images/gambling platform upd.png',
+      //'/images/defi wallet.png',
+      '/images/defi wallet upd.png',
+      //'/images/astana hub.png',
+      '/images/astana hub upd.png'
   ],
   mobile: [
       '/images/fiat mobile.png',

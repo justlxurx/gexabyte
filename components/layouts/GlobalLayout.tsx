@@ -19,10 +19,10 @@ const GlobalLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Bloxxa - Blockchain development & consulting company</title>
+        <title>TechCulture - Blockchain development & consulting company</title>
         <meta property="og:title" content="Bloxxa" key="title" />
         <meta name="description" content="We create complex products using artificial intelligence, cloud solutions, blockchain and computer vision" />
-        <link rel="icon" href="/bloxxaLogo.svg" />
+        <link rel="icon" href="/favicon.svg" />
         <meta name="keywords" content={SEOkeywords?.join(",")} />
       </Head>
       {matches ? <AppBarDesktop /> : <AppBarMobile />}

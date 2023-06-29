@@ -24,14 +24,14 @@ const Dropdown: React.FC<DropdownProps> = ({ data }) => {
           {data.title}
         </StyledLink>
       </Link>
-      {data.menu && <img src={DropdownIcon.src}  alt={'DropdownIcon'}/>}
-      <div className={styles.dropdown_content}>
-        {data.items?.map((i, idx) => (
-          <Link href={i.link} key={idx}>
-            {i.title}
-          </Link>
-        ))}
-      </div>
+      {/*{data.menu && <img src={DropdownIcon.src}  alt={'DropdownIcon'}/>}*/}
+      {/*<div className={styles.dropdown_content}>*/}
+      {/*  {data.items?.map((i, idx) => (*/}
+      {/*    <Link href={i.link} key={idx}>*/}
+      {/*      {i.title}*/}
+      {/*    </Link>*/}
+      {/*  ))}*/}
+      {/*</div>*/}
     </div>
   )
 }

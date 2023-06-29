@@ -12,7 +12,7 @@ export const StatsCryptosystem = () => {
       <StatsWrapper>
         <StatsOneBlock>
           {/*<StatsNumber>10+</StatsNumber>*/}
-          <StatsText>Our goal is to create sustainable economic models using game theory, behavioral economics, sociology, computer science, focused on improving people's lives</StatsText>
+          <StatsText>Our goal is to create sustainable economic models using game theory, behavioral economics, sociology, computer science, focused on improving people&apos;s lives</StatsText>
         </StatsOneBlock>
 
         {/*<StatsOneBlock>*/}

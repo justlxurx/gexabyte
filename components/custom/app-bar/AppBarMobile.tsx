@@ -76,24 +76,24 @@ const AppBarMobile: React.FC = () => {
           </Link>
         ))} */}
         {dropdownContent.map((item, idx) => (
-          item.items?.length ?
-            <Accordion sx={{ bgcolor: '#000000' }} key={idx}>
-              <AccordionSummary
-                expandIcon={<Image src={arrowDownGrayIcon} alt={'arrowDownGrayIcon'}/>}
-                aria-controls={"panel2a-content"}
-                id={"panel2a-header"}
-              >
-                <Typography sx={{ fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
-              </AccordionSummary>
-              <AccordionDetails >
-                {item.items.map((itemY, idy) => (
-                  <Link href={itemY.link} key={idy}>
-                    <Typography style={{ cursor: 'pointer' }} sx={{ m: '1rem', fontSize: '22px', fontWeight: 500, color: '#A8B1D1' }}>{itemY.title}</Typography>
-                  </Link>
-                ))}
-              </AccordionDetails>
-            </Accordion>
-            :
+          // item.items?.length ?
+          //   <Accordion sx={{ bgcolor: '#000000' }} key={idx}>
+          //     <AccordionSummary
+          //       expandIcon={<Image src={arrowDownGrayIcon} alt={'arrowDownGrayIcon'}/>}
+          //       aria-controls={"panel2a-content"}
+          //       id={"panel2a-header"}
+          //     >
+          //       <Typography sx={{ fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
+          //     </AccordionSummary>
+          //     <AccordionDetails >
+          //       {item.items.map((itemY, idy) => (
+          //         <Link href={itemY.link} key={idy}>
+          //           <Typography style={{ cursor: 'pointer' }} sx={{ m: '1rem', fontSize: '22px', fontWeight: 500, color: '#A8B1D1' }}>{itemY.title}</Typography>
+          //         </Link>
+          //       ))}
+          //     </AccordionDetails>
+          //   </Accordion>
+          //   :
             <Link href={item.link} key={idx}>
               <Typography key={idx} sx={{ m: '1rem', fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
             </Link>

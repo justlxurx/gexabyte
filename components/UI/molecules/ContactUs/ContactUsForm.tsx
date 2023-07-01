@@ -7,6 +7,9 @@ import { useTranslation } from 'react-i18next';
 import { IContactUsForm } from 'types/IContactUsForm';
 import { contactUsSchema } from 'utils/validations/contactUsSchema';
 import {socialURL} from "../../../custom/socialURL";
+import {telegramIcon} from "@public/icons/social-media";
+import Image from "next/image";
+import {margin} from "@mui/system";
 
 const ContactUsForm = () => {
   const {t} = useTranslation()
@@ -219,7 +222,8 @@ const ContactUsForm = () => {
                       fontWeight: 700,
                       fontFamily: 'Poppins'
                   }}>
-                      {t('button.letsChatInTelegram')}
+                      <p style={{margin: '0 10px 0 0'}}>{t('button.letsChatInTelegram')}</p>
+                      <Image src={telegramIcon}/>
                   </Button>
               </a>
           </form>

@@ -1,0 +1,47 @@
+.readAnim{
+    animation-name: readAnimation;
+    animation-iteration-count: infinite;
+    transition: color 0s linear;
+    animation-duration: 10s;
+}
+
+@keyframes readAnimation {
+    0%{
+        color: #FFFFFF;
+    }
+    10%{
+        color: #667085;
+    }
+}
+
+.part1{
+    animation-delay: 1s;
+}
+
+.part2{
+    animation-delay: 2s;
+}
+
+.part3{
+    animation-delay: 3s;
+}
+
+.part4{
+    animation-delay: 4s;
+}
+
+.part5{
+    animation-delay: 5s;
+}
+
+.part6{
+    animation-delay: 6s;
+}
+
+.part7{
+    animation-delay: 7s;
+}
+
+.part8{
+    animation-delay: 8s;
+}

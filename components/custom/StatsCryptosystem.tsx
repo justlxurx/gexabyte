@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import React from 'react'
 import RoundedAnimation from './RoundedAnimation'
+import styles from '../../styles/components/StatsCryptosystem.module.scss'
 
 export const StatsCryptosystem = () => {
   return (
@@ -12,7 +13,16 @@ export const StatsCryptosystem = () => {
       <StatsWrapper>
         <StatsOneBlock>
           {/*<StatsNumber>10+</StatsNumber>*/}
-          <StatsText>Our goal is to create sustainable economic models using game theory, behavioral economics, sociology, computer science, focused on improving people&apos;s lives</StatsText>
+          <StatsText>
+              <span className={`${styles.readAnim} ${styles.part1}`}>Our goal</span>
+              <span className={`${styles.readAnim} ${styles.part2}`}> is to create</span>
+              <span className={`${styles.readAnim} ${styles.part3}`}> sustainable economic models</span>
+              <span className={`${styles.readAnim} ${styles.part4}`}> using game theory,</span>
+              <span className={`${styles.readAnim} ${styles.part5}`}> behavioral economics,</span>
+              <span className={`${styles.readAnim} ${styles.part6}`}> sociology,</span>
+              <span className={`${styles.readAnim} ${styles.part7}`}> computer science,</span>
+              <span className={`${styles.readAnim} ${styles.part8}`}> focused on improving people&apos;s lives</span>
+          </StatsText>
         </StatsOneBlock>
 
         {/*<StatsOneBlock>*/}
@@ -103,9 +113,10 @@ const StatsText = styled.div`
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 300;
-  font-size: 20px;//18px;
+  font-size: 24px;//18px;
   line-height: 140%;
   color: #667085;
+  transform: translateX(70px);
   @media (min-width: 601px) {
     width: 340px; //230px;
   }

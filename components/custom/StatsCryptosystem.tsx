@@ -120,4 +120,8 @@ const StatsText = styled.div`
   @media (min-width: 601px) {
     width: 340px; //230px;
   }
+  
+  @media (max-width: 1180px) {
+    transform: translateX(0);
+  }
 `

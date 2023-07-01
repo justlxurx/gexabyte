@@ -26,12 +26,12 @@ const Webdev = () => {
     <GlobalLayout>
       <Wrapper>
         <Head>
-          <title>TechCulture / White Labeled Products</title>
+          <title>TechCulture / White Label Products</title>
           <meta name='description' content='Web applications for automating processes and solving business problems using modern technologies.' />
         </Head>
         <FirstBlock>
           <WhiteLabelLeftSide>
-            <WhiteLabelTitle>White Labeled Products</WhiteLabelTitle>
+            <WhiteLabelTitle>White Label Products</WhiteLabelTitle>
             <WhiteLabelSubtitle>
               Ready-made Web3 solutions
             </WhiteLabelSubtitle>

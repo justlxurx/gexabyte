@@ -6,7 +6,7 @@ export const StatsCryptosystem = () => {
   return (
     <SecondBlock>
       <SecondBlockTitle>
-          We create complex products using blockchain
+          We create complex systems
       </SecondBlockTitle>
 
       <StatsWrapper>

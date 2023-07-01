@@ -13,7 +13,7 @@ const SocialMedia = () => {
       <a href={socialURL.linkedIn}>
         <Image src={linkedInIcon} width={'24px'} height={'24px'} alt={'linkedInIcon'}/>
       </a>
-      <a href={socialURL.telegram}>
+      <a href={socialURL.telegramForum}>
         <Image src={telegramIcon} width={'24px'} height={'24px'} alt={'telegramIcon'}/>
       </a>
     </Stack>

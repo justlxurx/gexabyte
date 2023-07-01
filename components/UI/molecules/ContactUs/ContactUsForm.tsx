@@ -191,7 +191,7 @@ const ContactUsForm = () => {
                           fontFamily: 'Helvetica Neue',
                           fontStyle: 'normal',
                       }}>
-                          {t('home.help.whitelabeled.title')}
+                          {t('home.help.whitelabel.title')}
                       </Button>
                   </Grid>
               </Grid>

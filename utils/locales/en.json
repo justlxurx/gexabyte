@@ -26,7 +26,7 @@
     "keepInTouch": "Keep In Touch",
     "web3": "web3 solution development",
     "cryptosystem": "cryptosystem design",
-    "whitelabeled": "white labeled products"
+    "whitelabel": "white label products"
   },
   "home": {
     "title": "Web3 solutions for your business",
@@ -40,7 +40,7 @@
     "stats": {
       "title": "We create complex products using blockchain",
       "completedProjects": "Number of completed projects",
-      "experience": "Years of blockchain and web development experience",
+      "experience": "Years of blockchain development experience",
       "blockchainWeb": "Blockchain and web development"
     },
     "help": {
@@ -53,8 +53,8 @@
         "title": "cryptosystem design",
         "text": "Modeling of profit growth taking into account potential costs under different scenarios"
       },
-      "whitelabeled": {
-        "title": "white labeled products",
+      "whitelabel": {
+        "title": "white label products",
         "text": "Customize to your requirements and deploy the product in a short time"
       }
     },

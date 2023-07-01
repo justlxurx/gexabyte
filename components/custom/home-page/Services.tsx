@@ -27,8 +27,8 @@ const Services = () => {
         link: '/cryptosystem'
       },
       {
-        title: t('home.help.whitelabeled.title'),
-        description: t('home.help.whitelabeled.text'),
+        title: t('home.help.whitelabel.title'),
+        description: t('home.help.whitelabel.text'),
         icon: '/icons/wd.svg',
         link: '/whitelabel'
       }

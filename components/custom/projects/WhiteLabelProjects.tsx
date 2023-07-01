@@ -67,7 +67,7 @@ const WhiteLabelProjects = () => {
             xs: '700'
         }
       }}>
-        White Labeled <br /> Projects
+        White Label <br /> Projects
       </Typography>
       <Grid container gridTemplateColumns={'repeat(auto-fill, minmax(700px, 1fr))'} spacing={1}>
         {isMobileScreen ?

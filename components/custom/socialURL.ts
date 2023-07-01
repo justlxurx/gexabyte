@@ -1,8 +1,9 @@
 
 export const socialURL = {
-    'instagram': "https://instagram.com/tech.culture.it?igshid=YmMyMTA2M2Y=",
-    'linkedIn': "https://kz.linkedin.com/in/techculture",
+    'instagram': "https://www.instagram.com/techc.tech/",
+    'linkedIn': "https://www.linkedin.com/company/techcompanyalmaty",
     'telegram': "https://t.me/tech_culture_dev",
+    'telegramForum' : "https://t.me/blockchaintechC",
     'facebook': "https://www.facebook.com/tech.culture.it",
     'git': "https://github.com/Blockchain-TechCulture",
     'be': '123',

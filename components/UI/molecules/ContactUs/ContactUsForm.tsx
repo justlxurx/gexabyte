@@ -220,10 +220,15 @@ const ContactUsForm = () => {
                       color: '#FFFFFF',
                       fontSize: '16px',
                       fontWeight: 700,
-                      fontFamily: 'Poppins'
+                      fontFamily: 'Poppins',
+                      position: 'relative'
                   }}>
                       <p style={{margin: '0 10px 0 0'}}>{t('button.letsChatInTelegram')}</p>
                       <Image src={telegramIcon}/>
+                      <TopBorder/>
+                      <BottomBorder/>
+                      <RightBorder/>
+                      <LeftBorder/>
                   </Button>
               </a>
           </form>
@@ -243,4 +248,73 @@ const StyledInputLabel = styled.p`
   margin-bottom: 8px;
   color: #FFFFFF;
   text-transform: capitalize;
+`
+
+const TopBorder = styled.span`
+  width: 0;
+  border-radius: inherit;
+  border-top: rgb(240, 178, 112) 6px solid;
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: horizontalAnimation 2s linear infinite;
+  
+  @keyframes horizontalAnimation {
+    from{
+      width: 0;
+    }
+    75%{
+      width: 100%;
+    }
+    75.01%{
+      width: 0;
+    }
+  }
+`
+
+const BottomBorder = styled.span`
+  width: 0;
+  border-radius: inherit;
+  border-bottom: rgb(240, 178, 112) 6px solid;
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  animation: horizontalAnimation 2s linear infinite;
+`
+
+const RightBorder = styled.span`
+  width: 100%;
+  border-radius: inherit;
+  border-right: rgb(240, 178, 112) 6px solid;
+  height: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  animation: verticalAnimation 2s linear infinite;
+
+  @keyframes verticalAnimation {
+    75%{
+      height: 0;
+    }
+    to{
+      height: 100%;
+    }
+  }
+`
+
+const LeftBorder = styled.span`
+  width: 100%;
+  border-radius: inherit;
+  border-left: rgb(240, 178, 112) 6px solid;
+  height: 0;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: verticalAnimation 2s linear infinite;
 `

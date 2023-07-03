@@ -20,7 +20,7 @@ const GlobalLayout: React.FC<MainLayoutProps> = ({ children }) => {
     <>
       <Head>
         <title>TechCulture - Blockchain development & consulting company</title>
-        <meta property="og:title" content="Bloxxa" key="title" />
+        <meta property="og:title" content="TechCulture" key="title" />
         <meta name="description" content="We create complex products using artificial intelligence, cloud solutions, blockchain and computer vision" />
         <link rel="icon" href="/favicon.svg" />
         <meta name="keywords" content={SEOkeywords?.join(",")} />

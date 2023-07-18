@@ -2,6 +2,7 @@ import { Box, Button, Container, Grid, Typography, useMediaQuery } from '@mui/ma
 import Link from 'next/link';
 import React from 'react';
 import styled from '@emotion/styled'
+import Image from "next/image";
 
 const projects = {
   desktop: [
@@ -22,20 +23,24 @@ const projects = {
 
 const projectsWL = [
     {
-        title: 'CRYPTO EXCHANGE CEFI',
-        description: 'Centralized cryptocurrency exchange are platforms that allow users to trade cryptos.'
+        title: ['CRYPTO', 'EXCHANGE CEFI'],
+        description: 'Centralized cryptocurrency exchange are platforms that allow users to trade cryptos.',
+        background: '/images/projects/bg-crypto-cefi.svg'
     },
     {
-        title: 'NFT MARKETPLACE',
-        description: 'NFT Marketplace is a blockchain-based online platform to sell and buy non-fungible tokens (NFTs).'
+        title: ['NFT', 'MARKETPLACE'],
+        description: 'NFT Marketplace is a blockchain-based online platform to sell and buy non-fungible tokens (NFTs).',
+        background: '/images/projects/nft-marketplace.svg'
     },
     {
-        title: 'DEFI WALLET',
-        description: 'DeFi wallet is non-custodial (only those with seed phrase or private key can access funds) wallet that stores your cryptocurrency assets.'
+        title: ['DEFI', 'WALLET'],
+        description: 'DeFi wallet is non-custodial (only those with seed phrase or private key can access funds) wallet that stores your cryptocurrency assets.',
+        background: '/images/projects/defi-wallet.svg'
     },
     {
-        title: 'CEFI WALLET',
-        description: 'CeFi wallet is a platform that stores your cryptocurrency assets. It owned and managed by a centralized third party.'
+        title: ['CEFI', 'WALLET'],
+        description: 'CeFi wallet is a platform that stores your cryptocurrency assets. It owned and managed by a centralized third party.',
+        background: '/images/projects/cefi-wallet.svg'
     }
 ]
 
@@ -85,15 +90,16 @@ const WhiteLabelProjects = () => {
           ))
           :
           projectsWL.map((el, idx) => (
-            <Grid item xs={12} md={6} key={idx}>
-              <div style={{backgroundColor: '#1F1F1F', borderRadius: '4px', padding: '25px 30px', height: '100%'}}>
-                  <ProjectWLTitle>
-                      <OrderNumber>{idx+1}</OrderNumber>{el.title}
-                  </ProjectWLTitle>
-                  <ProjectWLDesc>
-                      {el.description}
-                  </ProjectWLDesc>
-              </div>
+            <Grid item xs={12} md={6} key={idx} style={{position: 'relative'}}>
+                <Image src={el.background} width={'687px'} height={'416px'}/>
+                <ProjectWLTitle>
+                    {el.title[0]}
+                    <br/>
+                    {el.title[1]}
+                </ProjectWLTitle>
+                <ProjectWLDesc>
+                    {el.description}
+                </ProjectWLDesc>
             </Grid>
           ))
         }
@@ -156,9 +162,12 @@ export default WhiteLabelProjects;
 
 const ProjectWLTitle = styled.p`
   font-weight: 700;
-  font-size: 26px;
+  font-size: 40px;
   text-transform: uppercase;
   margin-bottom: 14px;
+  position: absolute;
+  top: -10px;
+  left: 40px;
   
   @media (max-width: 768px){
     font-size: 19px;
@@ -183,9 +192,13 @@ const OrderNumber = styled.span`
 `
 
 const ProjectWLDesc = styled.p`
-  padding-inline: 55px 20px;
   margin-top: 0;
   font-size: 18px;
+  position: absolute;
+  width: 608px;
+  left: 40px;
+  top: 240px;
+  
 
   @media (max-width: 768px){
     font-size: 14px;

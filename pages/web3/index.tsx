@@ -26,7 +26,7 @@ const BlockChain = () => {
     <GlobalLayout>
       <Wrapper>
         <Head>
-          <title>TechCulture / Web3 Solution Development</title>
+          <title>TechCompany / Web3 Solution Development</title>
           <meta name='description' content='Development of blockchain products for your ideas' />
         </Head>
         <FirstBlock>

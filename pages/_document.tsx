@@ -4,7 +4,7 @@ export default function Document() {
     const schema =   {
         "@context": "http://schema.org",
         "@type": "Organization",
-        "name": "TechCulture",
+        "name": "TechCompany",
         "description": "Blockchain development & consulting company. We create complex products using blockchain and web technologies.",
         "url": "https://techculture.tech",
         "email": "sales@techculture.tech",
@@ -99,14 +99,14 @@ export default function Document() {
                   type="application/ld+json"
                   dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
               />
-              <meta property="og:title" content="TechCulture" />
+              <meta property="og:title" content="TechCompany" />
               <meta property="og:type" content="website" />
               <meta property="og:url" content="https://techculture.tech" />
               <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToDdR0wlXPDtQsXDZC124pHLHiqMKhP1aeio2lVna5IA&s" />
               <meta property="og:image:type" content="image/png" />
               <meta property="og:image:width" content="400" />
               <meta property="og:image:height" content="300" />
-              <meta property="og:image:alt" content="Logo TechCulture" />
+              <meta property="og:image:alt" content="Logo TechCompany" />
           </Head>
           <body>
           <Main />

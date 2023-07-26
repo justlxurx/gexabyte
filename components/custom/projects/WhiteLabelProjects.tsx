@@ -281,6 +281,7 @@ const ProjectWLWrapper = styled.div`
   
   @media(max-width: 768px){
     padding-inline: 15px;
+    padding-bottom: 50px;
   }
 `
 
@@ -509,6 +510,10 @@ const ContactUsButton = styled.button`
   border: none;
   cursor: pointer;
   font-weight: 700;
+
+  &:hover, &:active{
+    color: #736AE4;
+  }
 `
 
 const TabPanelTags = styled.div`
@@ -583,6 +588,13 @@ const ProjectWLButton = styled.button`
 
   &:hover {
     cursor: pointer;
+  }
+  
+  @media(max-width: 768px){
+    height: 50px;
+    width: 170px;
+    font-size: 18px;
+    bottom: 20px;
   }
 `
 
@@ -704,6 +716,10 @@ const MobileContactUsButton = styled.button`
   cursor: pointer;
   font-weight: 700;
   width: 100%;
+  
+  &:active{
+    background: #8F86FF;
+  }
 `
 
 const ProjectWLMobileTags = styled.div`

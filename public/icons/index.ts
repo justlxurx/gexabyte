@@ -63,6 +63,6 @@ export {default as checkIcon } from './check.svg'
 export {default as scrollIcon } from './scrollIcon.svg'
 
 
-export {default as logoRawIcon } from '../logo-raw.svg'
-export {default as logoIcon } from '../logo.svg'
-export {default as logoTextIcon } from '../logo-text.svg'
+export {default as logoRawIcon } from '../tech company.svg'
+export {default as logoIcon } from '../tech company.svg'
+export {default as logoTextIcon } from '../tech company.svg'

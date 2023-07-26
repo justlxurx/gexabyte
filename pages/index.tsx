@@ -8,6 +8,7 @@ import Services from '../components/custom/home-page/Services'
 import TestVideo from "../components/UI/TestVideo";
 import ScrollButton from "../components/custom/button/scrollButton";
 import GlobalLayout from 'components/layouts/GlobalLayout'
+import Partners from "../components/custom/home-page/Partners";
 
 const Home: NextPage = () => {
 
@@ -27,6 +28,7 @@ const Home: NextPage = () => {
         />
         <ScrollButton/>
         <TechStack />
+        <Partners/>
         <Stats />
         <Services />
         {/*<Web3Projects />*/}

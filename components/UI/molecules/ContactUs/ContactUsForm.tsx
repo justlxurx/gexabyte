@@ -225,10 +225,10 @@ const ContactUsForm = () => {
                   }}>
                       <p style={{margin: '0 10px 0 0'}}>{t('button.letsChatInTelegram')}</p>
                       <Image src={telegramIcon}/>
-                      <TopBorder/>
-                      <BottomBorder/>
-                      <RightBorder/>
-                      <LeftBorder/>
+                      {/*<TopBorder/>*/}
+                      {/*<BottomBorder/>*/}
+                      {/*<RightBorder/>*/}
+                      {/*<LeftBorder/>*/}
                   </Button>
               </a>
           </form>

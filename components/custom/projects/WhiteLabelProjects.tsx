@@ -7,8 +7,6 @@ import {useRouter} from "next/router";
 type ProjectWL = {
     title: string[],
     description: string,
-    background: string,
-    extendedBg: string,
     tags: string[],
     isActive: boolean,
     className: string
@@ -18,8 +16,6 @@ const initialProjectsWL: ProjectWL[] = [
     {
         title: ['Crypto', 'Exchange CeFi'],
         description: 'Centralized cryptocurrency exchange are platforms that allow users to trade cryptos.',
-        background: '/images/projects/bg-crypto-cefi.svg',
-        extendedBg: '/images/projects/extend-crypto-exchange.png',
         tags: ['Feature list', 'Spot trading', 'Markup and Markdown', 'Referral program', 'Liquidity aggregator', 'Authorization using login and password', 'Creating wallets upon registration', 'Connecting fiat payment services', 'Connecting your own / third party KYC service', 'Connecting your own / third party support service', 'Connecting your own / third party crypto fiat exchange service', 'P2P exchange'],
         isActive: false,
         className: 'project-0'
@@ -27,8 +23,6 @@ const initialProjectsWL: ProjectWL[] = [
     {
         title: ['NFT', 'Marketplace'],
         description: 'NFT Marketplace is a blockchain-based online platform to sell and buy non-fungible tokens (NFTs).',
-        background: '/images/projects/nft-marketplace.svg',
-        extendedBg: '/images/projects/extend-nft-marketplace.png',
         tags: ['Creating NFT collections', 'Convenient category search system', 'Trade history by event, item name, price, buyer, seller, date', 'Creating and downloading NFTs for artists', 'Development of wallet or integration with MyEtherWallet, Coinbase Wallet, Metamask, TrustWallet', 'Operations for the sale and purchase of NFT products'],
         isActive: false,
         className: 'project-1'
@@ -36,8 +30,6 @@ const initialProjectsWL: ProjectWL[] = [
     {
         title: ['DeFi', 'Wallet'],
         description: 'DeFi wallet is non-custodial (only those with seed phrase or private key can access funds) wallet that stores your cryptocurrency assets.',
-        background: '/images/projects/defi-wallet.svg',
-        extendedBg: '/images/projects/extend-defi.png',
         tags: ['DeFi staking', 'DEX swap (exchange)', 'Add liquidity'],
         isActive: false,
         className: 'project-2'
@@ -45,8 +37,6 @@ const initialProjectsWL: ProjectWL[] = [
     {
         title: ['CeFi', 'Wallet'],
         description: 'CeFi wallet is a platform that stores your cryptocurrency assets. It owned and managed by a centralized third party.',
-        background: '/images/projects/cefi-wallet.svg',
-        extendedBg: '/images/projects/extend-cefi.png',
         tags: ['CeFi wallet', 'P2P exchange', 'Buy/Sell', 'Admin panel', 'KYC', 'History'],
         isActive: false,
         className: 'project-3'
@@ -86,13 +76,16 @@ const WhiteLabelProjects = () => {
 
     const onTabChange = (e: React.MouseEvent<HTMLButtonElement>) => {
         !isExtended && setExtended(true)
+
         const value = parseInt((e.target as HTMLButtonElement).value, 10);
+
         const newState = projectsWL.map((project, idx) => {
             if(value === idx) project.isActive = true;
             else project.isActive = false;
 
             return project
         })
+
         setActiveTab(value)
         setProjectsWl(newState)
     }
@@ -120,56 +113,7 @@ const WhiteLabelProjects = () => {
             }}>
                 White Label <br/> Projects
             </Typography>
-            <Grid container gridTemplateColumns={'repeat(auto-fill, minmax(700px, 1fr))'} style={{margin: '0'}} spacing={1}>
-                {isMobileScreen && isExtended &&
-                        <ModalWrapper>
-                            <Container disableGutters sx={{
-                                mb: '6rem',
-                                minHeight: '100vh',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                padding: {xs: '0.75rem', md: 0}
-                            }}>
-                                <Grid item xs={12} md={6} style={{margin: '0'}}>
-                                    <div style={{
-                                        width: '100%',
-                                        height: '100vh',
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        margin: '0'
-                                    }} onClick={e => setExtended(false)}>
-                                        <ProjectWLMobileWrapper className={projectsWL[activeTab].className} onClick={e => e.stopPropagation()}>
-                                            <ProjectWLMobileTitleWrapper>
-                                                <div style={{display: "flex", justifyContent: 'flex-start', alignItems: 'center', fontSize: 'inherit'}}>
-                                                    <TitleMark/>
-                                                    <p style={{margin: '0', fontSize: 'inherit'}}>{projectsWL[activeTab].title.join(" ").toLowerCase()}</p>
-                                                </div>
-                                                <img src="/images/projects/mobile/close-btn.svg" width={'30px'} height={'30px'} alt="close button" onClick={e => setExtended(false)}/>
-                                            </ProjectWLMobileTitleWrapper>
-                                            <ProjectWLMobileTitle>{projectsWL[activeTab].title[0]}<br/>{projectsWL[activeTab].title[1]}</ProjectWLMobileTitle>
-                                            <ProjectWLMobileDesc>{projectsWL[activeTab].description}</ProjectWLMobileDesc>
-                                            <MobileContactUsWrapper>
-                                                <p style={{margin: 0}}>WANT A DEMONSTRATION?</p>
-                                                <Link href={'#contact-us'}><MobileContactUsButton onClick={handleScroll}>
-                                                    <img src="/images/projects/Arrow%2012.svg" alt="right arrow"
-                                                         width={'42px'}/>
-                                                    <p>CONTACT US</p>
-                                                </MobileContactUsButton></Link>
-                                            </MobileContactUsWrapper>
-                                            <ProjectWLMobileTags>
-                                                {projectsWL[activeTab].tags.map((tag, idx) => (
-                                                    <ProjectWLMobileTag key={idx}>
-                                                        {tag}
-                                                    </ProjectWLMobileTag>
-                                                ))}
-                                            </ProjectWLMobileTags>
-                                        </ProjectWLMobileWrapper>
-                                    </div>
-                                </Grid>
-                            </Container>
-                        </ModalWrapper>
-                }
+            <Grid container gridTemplateColumns={'repeat(auto-fill, minmax(700px, 1fr))'} style={{margin: '0'}}>
                 {!isExtended &&
                     projectsWL.map((el, idx) => (
                         <Grid item xs={12} md={6} key={idx} style={{padding: '4px', margin: '0'}}>
@@ -190,7 +134,7 @@ const WhiteLabelProjects = () => {
                     ))
                 }
                 {!isMobileScreen && isExtended &&
-                    <ModalWrapper>
+                    <ModalWrapper onClick={e => setExtended(false)}>
                         <Container disableGutters sx={{
                             mb: '6rem',
                             minHeight: '100vh',
@@ -198,17 +142,17 @@ const WhiteLabelProjects = () => {
                             flexDirection: 'column',
                             padding: {xs: '0.75rem', md: 0}
                         }}>
-                            <Grid container gridTemplateColumns={'repeat(auto-fill, minmax(700px, 1fr))'} spacing={1}>
+                            <Grid container gridTemplateColumns={'repeat(auto-fill, minmax(700px, 1fr))'} style={{margin: '0'}} spacing={1}>
                                 <div style={{
                                     width: '100%',
                                     height: '100vh',
                                     display: 'flex',
                                     justifyContent: 'center',
                                     alignItems: 'center'
-                                }} onClick={e => setExtended(false)}>
+                                }}>
                                     <ProjectWLTabWrapper onClick={e => e.stopPropagation()}>
                                         <TabList tabs={projectsWL} onTabChange={onTabChange}/>
-                                        <TabPanel role="tabpanel" className={projectsWL[activeTab]!.className}>
+                                        <TabPanel role="tabpanel" className={projectsWL.at(activeTab)!.className!}>
                                             <TabPanelTitle>{projectsWL[activeTab]!.title[0]}<br/>{projectsWL[activeTab]!.title[1]}
                                             </TabPanelTitle>
                                             <TabPanelDescription>{projectsWL[activeTab]!.description}</TabPanelDescription>
@@ -227,6 +171,55 @@ const WhiteLabelProjects = () => {
                                             </TabPanelTags>
                                         </TabPanel>
                                     </ProjectWLTabWrapper>
+                                </div>
+                            </Grid>
+                        </Container>
+                    </ModalWrapper>
+                }
+                {isMobileScreen && isExtended &&
+                    <ModalWrapper>
+                        <Container disableGutters sx={{
+                            mb: '6rem',
+                            minHeight: '100vh',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            padding: {xs: '0.75rem', md: 0}
+                        }}>
+                            <Grid item xs={12} md={12} style={{margin: '0'}}>
+                                <div style={{
+                                    width: '100%',
+                                    height: '100vh',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    margin: '0'
+                                }} onClick={e => setExtended(false)}>
+                                    <ProjectWLMobileWrapper className={projectsWL.at(activeTab)!.className!} onClick={e => e.stopPropagation()}>
+                                        <ProjectWLMobileTitleWrapper>
+                                            <div style={{display: "flex", justifyContent: 'flex-start', alignItems: 'center', fontSize: 'inherit'}}>
+                                                <TitleMark/>
+                                                <p style={{margin: '0', fontSize: 'inherit'}}>{projectsWL[activeTab].title.join(" ").toLowerCase()}</p>
+                                            </div>
+                                            <img src="/images/projects/mobile/close-btn.svg" width={'30px'} height={'30px'} alt="close button" onClick={e => setExtended(false)}/>
+                                        </ProjectWLMobileTitleWrapper>
+                                        <ProjectWLMobileTitle>{projectsWL[activeTab].title[0]}<br/>{projectsWL[activeTab].title[1]}</ProjectWLMobileTitle>
+                                        <ProjectWLMobileDesc>{projectsWL[activeTab].description}</ProjectWLMobileDesc>
+                                        <MobileContactUsWrapper>
+                                            <p style={{margin: 0}}>WANT A DEMONSTRATION?</p>
+                                            <Link href={'#contact-us'}><MobileContactUsButton onClick={handleScroll}>
+                                                <img src="/images/projects/Arrow%2012.svg" alt="right arrow"
+                                                     width={'42px'}/>
+                                                <p>CONTACT US</p>
+                                            </MobileContactUsButton></Link>
+                                        </MobileContactUsWrapper>
+                                        <ProjectWLMobileTags>
+                                            {projectsWL[activeTab].tags.map((tag, idx) => (
+                                                <ProjectWLMobileTag key={idx}>
+                                                    {tag}
+                                                </ProjectWLMobileTag>
+                                            ))}
+                                        </ProjectWLMobileTags>
+                                    </ProjectWLMobileWrapper>
                                 </div>
                             </Grid>
                         </Container>
@@ -409,9 +402,9 @@ const TabPanel = styled.div`
 `
 
 const TabPanelTitle = styled.p`
-  margin: 0 0 5px;
-  padding: 20px 0 0 20px;
-  font-size: 46px;
+  margin: 0 0 10px;
+  padding: 15px 0 0 20px;
+  font-size: 40px;
   font-weight: 700;
   z-index: 2000;
   position: relative;
@@ -420,20 +413,32 @@ const TabPanelTitle = styled.p`
   //  font-size: 60px;
   //}
 
-  @media(max-width: 960px){
+  @media(max-width: 1255px){
     font-size: 32px;
+  }
+  
+  @media(max-width: 866px){
+    font-size: 28px;
   }
 `
 
 const TabPanelDescription = styled.p`
   font-size: 20px;
-  margin: 0 0 5px;
+  margin: 0 0 20px;
   padding: 0 0 0 20px;
   max-width: 45%;
   color: rgba(255, 255, 255, 0.74);
   z-index: 2000;
   position: relative;
 
+  @media(max-width: 1255px){
+    font-size: 18px;
+  }
+
+  @media(max-width: 866px){
+    font-size: 16px;
+  }
+  
   //@media(max-width: 1250px){
   //  font-size: 22px;
   //  margin-bottom: 20px;
@@ -465,9 +470,18 @@ const ContactUsWrapper = styled.div`
   align-items: center; 
   font-size: 20px; 
   margin: 0 0 10px;
-  padding: 5px 0 0 20px;
+  padding: 0 0 0 20px;
   z-index: 2000;
   position: relative;
+
+  @media(max-width: 1255px){
+    font-size: 18px;
+  }
+
+  @media(max-width: 866px){
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
 
   //@media(max-width: 1250px){
   //  font-size: 22px;
@@ -542,8 +556,18 @@ const TabPanelTags = styled.div`
 const TabPanelTag = styled.span`
   background-color: #313030;
   padding: 10px;
-  font-size: 16px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.74);
+  font-weight: 700;
+
+  @media(max-width: 1255px){
+    font-size: 15px;
+  }
+
+  @media(max-width: 866px){
+    font-size: 14px;
+    padding: 7px;
+  }
 
   //@media(max-width: 1250px){
   //  font-size: 18px;
@@ -633,8 +657,10 @@ const ModalWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1300;
   background-color: rgba(0,0,0,0.9);
   cursor: pointer;
@@ -642,12 +668,14 @@ const ModalWrapper = styled.div`
 
 const ProjectWLMobileWrapper = styled.div`
   width: 100%;
+  max-height: 90vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right;
   padding: 20px 15px;
   border-radius: 5px;
   border: #736AE4 2px solid;
+  overflow: auto;
   
   &.project-0{
     background-image: url("/images/projects/mobile/mobile-crypto-exhange.png");

@@ -404,26 +404,31 @@ const TabPanel = styled.div`
 const TabPanelTitle = styled.p`
   margin: 0 0 10px;
   padding: 15px 0 0 20px;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 700;
   z-index: 2000;
   position: relative;
+  
+  @media(max-width: 1140px){
+    padding-top: 10px;
+    font-size: 24px;
+  }
 
   //@media(max-width: 1250px){
   //  font-size: 60px;
   //}
 
-  @media(max-width: 1255px){
-    font-size: 32px;
-  }
-  
-  @media(max-width: 866px){
-    font-size: 28px;
-  }
+  //@media(max-width: 1255px){
+  //  font-size: 32px;
+  //}
+  //
+  //@media(max-width: 866px){
+  //  font-size: 28px;
+  //}
 `
 
 const TabPanelDescription = styled.p`
-  font-size: 20px;
+  font-size: 16px;
   margin: 0 0 20px;
   padding: 0 0 0 20px;
   max-width: 45%;
@@ -431,13 +436,18 @@ const TabPanelDescription = styled.p`
   z-index: 2000;
   position: relative;
 
-  @media(max-width: 1255px){
-    font-size: 18px;
+  @media(max-width: 1140px){
+    font-size: 14px;
+    margin-bottom: 10px;
   }
-
-  @media(max-width: 866px){
-    font-size: 16px;
-  }
+  
+  //@media(max-width: 1255px){
+  //  font-size: 18px;
+  //}
+  //
+  //@media(max-width: 866px){
+  //  font-size: 16px;
+  //}
   
   //@media(max-width: 1250px){
   //  font-size: 22px;
@@ -468,20 +478,24 @@ const ContactUsWrapper = styled.div`
   justify-content: flex-start;
   gap: 90px; 
   align-items: center; 
-  font-size: 20px; 
+  font-size: 16px; 
   margin: 0 0 10px;
   padding: 0 0 0 20px;
   z-index: 2000;
   position: relative;
 
-  @media(max-width: 1255px){
-    font-size: 18px;
+  @media(max-width: 1140px){
+    font-size: 14px;
   }
 
-  @media(max-width: 866px){
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
+  //@media(max-width: 1255px){
+  //  font-size: 18px;
+  //}
+  //
+  //@media(max-width: 866px){
+  //  font-size: 16px;
+  //  margin-bottom: 5px;
+  //}
 
   //@media(max-width: 1250px){
   //  font-size: 22px;
@@ -556,18 +570,26 @@ const TabPanelTags = styled.div`
 const TabPanelTag = styled.span`
   background-color: #313030;
   padding: 10px;
-  font-size: 18px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.74);
   font-weight: 700;
 
-  @media(max-width: 1255px){
-    font-size: 15px;
+  @media(max-width: 1140px){
+    font-size: 12px;
   }
 
-  @media(max-width: 866px){
-    font-size: 14px;
-    padding: 7px;
+  @media(max-width: 820px){
+    font-size: 11px;
   }
+
+  //@media(max-width: 1255px){
+  //  font-size: 15px;
+  //}
+  //
+  //@media(max-width: 866px){
+  //  font-size: 14px;
+  //  padding: 7px;
+  //}
 
   //@media(max-width: 1250px){
   //  font-size: 18px;
@@ -646,7 +668,7 @@ const ProjectWLDesc = styled.p`
 
 const ProjectWLTabWrapper = styled.div`
   width: 100%;
-  height: min(80%, 840px);
+  height: 500px;
   background-color: #736AE4;
   border-radius: 12px 12px 0 0;
   padding-top: 15px;

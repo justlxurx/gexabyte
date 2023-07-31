@@ -74,37 +74,81 @@ const Partners = () => {
                 <StyledTitle>
                     Partners
                 </StyledTitle>
-                <StyledControllers>
-                    <StyledController id={"prevControl"}>
-                        <Image src={arrowLeftIcon} width={40} height={40}/>
-                    </StyledController>
-                    <StyledController id={"nextControl"}>
-                        <Image src={arrowRightIcon} width={40} height={40}/>
-                    </StyledController>
-                </StyledControllers>
+                {/*<StyledControllers>*/}
+                {/*    <StyledController id={"prevControl"}>*/}
+                {/*        <Image src={arrowLeftIcon} width={40} height={40}/>*/}
+                {/*    </StyledController>*/}
+                {/*    <StyledController id={"nextControl"}>*/}
+                {/*        <Image src={arrowRightIcon} width={40} height={40}/>*/}
+                {/*    </StyledController>*/}
+                {/*</StyledControllers>*/}
             </WrapperTitleControllers>
+            <MarqueeWrapper>
+                <Marquee>
+                    <MarqueeInner>
+                        {partners.map((partner) => (
+                            <ImageWrapper key={partner.title}><Image src={partner.img} width={150}
+                                                                     height={60}/></ImageWrapper>
+                        ))}
+                    </MarqueeInner>
+                    <MarqueeInner>
+                        {partners.map((partner) => (
+                            <ImageWrapper key={partner.title}><Image src={partner.img} width={150}
+                                                                     height={60}/></ImageWrapper>
+                        ))}
+                    </MarqueeInner>
+                </Marquee>
+            </MarqueeWrapper>
+            {/*<Swiper slidesPerView={setSliderAmount()}*/}
+            {/*        spaceBetween={20}*/}
+            {/*        slidesPerGroup={setSliderAmount()}*/}
+            {/*        loop={true}*/}
+            {/*        loopFillGroupWithBlank={true}*/}
+            {/*        pagination={{*/}
+            {/*            clickable: false*/}
+            {/*        }}*/}
 
-            <Swiper slidesPerView={setSliderAmount()}
-                    spaceBetween={20}
-                    slidesPerGroup={setSliderAmount()}
-                    loop={true}
-                    loopFillGroupWithBlank={true}
-                    pagination={{
-                        clickable: false
-                    }}
-
-                    navigation={{ nextEl: "#nextControl", prevEl: "#prevControl" }}
-                    modules={[Navigation]}
-                    className={"mySwiper"}>
-                {partners.map((partner) => (
-                    <SwiperSlide key={partner.title}>
-                        <ImageWrapper><Image src={partner.img} width={150} height={50}/></ImageWrapper>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+            {/*        navigation={{ nextEl: "#nextControl", prevEl: "#prevControl" }}*/}
+            {/*        modules={[Navigation]}*/}
+            {/*        className={"mySwiper"}>*/}
+            {/*    {partners.map((partner) => (*/}
+            {/*        <SwiperSlide key={partner.title}>*/}
+            {/*            <ImageWrapper><Image src={partner.img} width={150} height={50}/></ImageWrapper>*/}
+            {/*        </SwiperSlide>*/}
+            {/*    ))}*/}
+            {/*</Swiper>*/}
         </StyledWrapper>
     );
 };
+
+const MarqueeWrapper = styled.div`
+  width: 100%;
+  overflow: hidden;
+`
+
+const Marquee = styled.div`
+  display: flex;
+  width: 4800px;
+  animation: marquee 20s linear infinite;
+  
+  @keyframes marquee{
+    from{
+      translate: 0;
+    }
+    to{
+      translate: -2400px;
+    }
+  }
+`
+
+const MarqueeInner = styled.div`
+  display: flex;
+  width: 2400px;
+  align-items: center;
+  justify-content: space-around;
+`
+
+
 
 const StyledWrapper = styled.div`
   padding: 30px 96px;
@@ -147,6 +191,7 @@ const StyledController = styled.button`
 `
 
 const ImageWrapper = styled.div`
+  width: 180px;
   padding: 15px;
   border-radius: 5px;
   background: #171717;

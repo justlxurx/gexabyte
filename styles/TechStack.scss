@@ -81,35 +81,37 @@
 }
 
 .slider:after {
-  right: 0;
+  right: -1px;
   top: 0;
   transform: rotateZ(180deg);
 }
 
 .slider-track {
   display: flex;
-  width: calc(75px * 54);
+  //width: 2000px;
+  //justify-content: space-around;
+  //align-items: center;
 }
 
 .slide {
   height: 50px;
   width: 75px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 1rem;
 }
 
 .slide-first {
   @extend .slide;
-  animation: scroll 15s linear infinite;
+  animation: scroll 10s linear infinite;
 }
 
 @keyframes scroll {
-  0% {
+  from {
     margin-left: 0px;
   }
 
-  100% {
+  to {
     margin-left: -1800px;
   }
 }

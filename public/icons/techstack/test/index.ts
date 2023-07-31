@@ -84,9 +84,9 @@ export const allLogo = [
     all,
 
     angularIcon,
+    phpIcon,
     bunnyIcon,
     ellipseIcon,
-    phpIcon,
     ponyIcon,
     compoundIcon,
     binanceIcon,
@@ -95,19 +95,5 @@ export const allLogo = [
     raydiumIcon,
     swiftIcon,
     javaIcon,
-    jsIcon,
-
-    kotlinIcon,
-    metaMaskIcon,
-    reactIcon,
-    //rustIcon,
-    goIcon,
-    solidityIcon,
-    tsIcon,
-    avalancheIcon,
-    fantomIcon,
-    VLXIcon,
-    vueIcon,
-    ghostIcon,
-    all,
+    jsIcon
 ]

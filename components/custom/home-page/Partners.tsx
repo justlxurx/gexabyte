@@ -12,7 +12,7 @@ const partners = [
     {
         title: "qazdev",
         img: "/images/partners/qazdev.svg",
-        href: "https://kz.linkedin.com/company/qazdevelop"
+        href: "https://qazdev.team/"
     },
     {
         title: "hexens",
@@ -22,7 +22,7 @@ const partners = [
     {
         title: "Blockchain Center",
         img: "/images/partners/blockchain center.svg",
-        href: "https://kz.linkedin.com/company/centerofblockchain"
+        href: "https://taplink.cc/centerofblockchain"
     },
     {
         title: "GMT LEGAL",
@@ -52,7 +52,7 @@ const partners = [
     {
         title: "Qamalladin University",
         img: "/images/partners/qamalladin.svg",
-        href: "https://qamalladin.university/kaz"
+        href: "https://qamalladin.university/"
     },
     {
         title: "ALMA University",

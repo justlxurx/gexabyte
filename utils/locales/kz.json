@@ -1,6 +1,6 @@
 {
   "header": {
-    "web3": "Web 3.0 Әзірлемелеу",
+    "web3": "Web 3.0 Бағдарламалау",
     "tokendesign": "Токен Дизайн",
     "whiteLabel": "White Label Өнімдері",
     "projects": "projects",
@@ -20,22 +20,22 @@
   },
   "footer": {
     "solutions": "шешімдер ",
-    "blockchainDev": "блокчейн әзірлемелеу",
-    "webMobDev": "веб және мобильді жобаларды әзірлемелеу",
+    "blockchainDev": "блокчейн бағдарламалау",
+    "webMobDev": "веб және мобильді жобаларды жасау",
     "blockchainConsulting": "блокчейн консалтинг",
     "projects": "жобалар",
     "blockchain": "блокчейн",
     "consulting": "консалтинг",
     "webDev": "веб және мобильді қосымшалар",
     "keepInTouch": "Байланыста болыңыз",
-    "web3": "web 3.0 әзірлемелеу",
+    "web3": "web 3.0 бағдарламалау",
     "tokendesign": "токен дизайн",
     "whitelabel": "white label өнімдері"
   },
   "home": {
     "title": "Бизнесіңізге арналған web 3.0 шешімдері",
     "subtitle": "Web 3.0 шешімдерімен болашақты өзгертіңіз",
-    "ourTechstack": "Біздің тех. стэк",
+    "ourTechstack": "Біздің техстэгіміз",
     "ourPartners": "Біздің серіктестеріміз",
     "BLOCKCHAIN DEVELOPMENT": {
       "title": "Blockchain development & consulting company",
@@ -44,8 +44,8 @@
     "stats": {
       "title": "Күрделі жүйелерді жобалау",
       "completedProjects": "Іске асырылған жобалар саны",
-      "experience": "Блокчейн әзірлемелеудегі тәжірибе",
-      "blockchainWeb": "Блокчейн мен веб әзірлемелеу"
+      "experience": "Блокчейн бағдарламалаудағы тәжірибе",
+      "blockchainWeb": "Блокчейн мен веб бағдарламалау"
     },
     "help": {
       "title1": "Біз Сізге",
@@ -83,7 +83,7 @@
   },
   "web3": {
     "title": "Web 3.0 Бағдарламалау",
-    "subtitle": "Идеяларыңыз бойынша блокчейн жобасын әзірлеу",
+    "subtitle": "Идеяларыңыз бойынша блокчейн жобасын жасау",
     "stats": {
       "title": [
         "Ұсыныстарымыз",
@@ -97,7 +97,7 @@
       "stat4": "Әртүрлі блокчейн желілерінде жұмыс істейміз"
     },
     "expertise": {
-      "title": "Біздің тәжірибеміз",
+      "title": "Біздің құзырымыз",
       "products": "Өнімдер",
       "contracts": "Смарт-контрактылар",
       "contractDev": {

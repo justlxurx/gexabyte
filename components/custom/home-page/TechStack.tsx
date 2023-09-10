@@ -1,10 +1,13 @@
 import React from "react";
 import { Grid, Typography, useMediaQuery } from "@mui/material";
 import StackSlider from "./StackSlider";
+import {useTranslation} from "react-i18next";
 
 
 const TechStack = () => {
   const isMobileScreen = useMediaQuery('(max-width:768px)');
+
+  const {t, i18n} = useTranslation();
 
   return (
     <div className={"stack-bar"} id={"stack-bar"}>
@@ -13,10 +16,10 @@ const TechStack = () => {
           <Typography sx={{
             fontSize: '32px',
             fontWeight: 700,
-            fontFamily: 'Readex Pro',
+            fontFamily: i18n.language === 'en' ? 'Readex Pro' : 'Geometria, sans-serif',
             whiteSpace: 'nowrap'
           }}>
-            Our Techstack
+            {t('home.ourTechstack')}
           </Typography>
         </Grid>
         <Grid item xs={2} md={8} order={isMobileScreen ? 2 : 1}>

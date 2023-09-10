@@ -1,28 +1,30 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
-import React from 'react'
-
-const stages = [
-  "Аgent-based modeling. ",
-  "Designing a visual cryptosystem map. ",
-  "Audit of the current tokenomics of the project. ",
-  "Creating a digital twin. ",
-  "Stress testing of the system. ",
-  "Final report as a presentation with Plotly dashboards, graphics and conclusions."
-]
+import React, {useMemo} from 'react'
+import {useTranslation} from "react-i18next";
 
 export const TokenomicsDev = () => {
+
+  const {t, i18n} = useTranslation()
+
+  const stages: string[] = useMemo(() => {
+
+    const arr: string[] = t('tokenDesign.stats.tokenomics.development.stages', {returnObjects: true})
+
+    return arr
+  }, [t])
+
   return (
     <div>
       <StyledWrapper>
-        <StyledTitle>
-          Tokenomics is an <span className={'orange'}>economic model</span> of a token
+        <StyledTitle className={i18n.language === 'en' ? '' : 'geometria'}>
+          {t('tokenDesign.stats.tokenomics.subtitle.0')}<span className={'orange'}>{t('tokenDesign.stats.tokenomics.subtitle.1')}</span>{t('tokenDesign.stats.tokenomics.subtitle.2')}
         </StyledTitle>
-        <StyledText>
-          “The goal of any tokenomics is to change the behavior of users in a project under a certain system constraint. This is achieved by optimal consensus, where each side gets what it needs”
+        <StyledText className={i18n.language === 'en' ? '' : 'nunito'}>
+          {t('tokenDesign.stats.tokenomics.description')}
         </StyledText>
-        <StyledSubtitle>
-          Technologies used in the development of the tokenomics model:
+        <StyledSubtitle className={i18n.language === 'en' ? '' : 'nunito'}>
+          {t('tokenDesign.stats.tokenomics.technologies')}
         </StyledSubtitle>
         <StyledChart>
           <Image src={'/images/char.png'} width={'555px'} height={'611px'} alt={'char'} priority={false}/>
@@ -43,14 +45,14 @@ export const TokenomicsDev = () => {
         </StyledFlex>
       </StyledWrapper>
 
-      <StyledTitle>Developing an economic model of the token</StyledTitle>
+      <StyledTitle className={i18n.language === 'en' ? '' : 'geometria'}>{t('tokenDesign.stats.tokenomics.development.title')}</StyledTitle>
       {/*<StyledGrayText>*/}
       {/*  Development of project tokenomics based on complete information about the project.*/}
       {/*</StyledGrayText>*/}
 
       <StyledCardsGrid>
         {stages.map((item, idx) => (
-          <StyledCard key={idx}>
+          <StyledCard className={i18n.language === 'en' ? '' : 'nunito'} key={idx}>
             <div className={'number'}>{idx + 1}</div>
             <p className={'text'}>{item}</p>
           </StyledCard>
@@ -93,6 +95,10 @@ const StyledTitle = styled.p`
   .orange {
     color: #F0B270;
   }
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 
 const StyledSubtitle = styled(StyledTitle)`
@@ -103,6 +109,10 @@ const StyledSubtitle = styled(StyledTitle)`
   @media (max-width: 600px) {
     font-size: 18px;
     width: 100%;
+  }
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
   }
 `
 
@@ -117,6 +127,10 @@ const StyledText = styled.p`
   margin-bottom: 105px;
   @media (max-width: 600px) {
     width: 100%;
+  }
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
   }
 `
 
@@ -207,12 +221,14 @@ const StyledCard = styled.div`
   border-radius: 4px;
   gap: 28px;
   padding: 0 30px;
+  font-family: 'Poppins';
 
   @media (max-width: 600px) {
    width: 100%;
   }
 
   .number {
+    font-family: inherit;
     width: 39px;
     height: 39px;
     display: flex;
@@ -224,14 +240,16 @@ const StyledCard = styled.div`
   }
 
   .text {
-    font-family: 'Poppins';
+    font-family: inherit;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 155.5%;
     color: #FFFFFF;
   }
-
-
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
+  }
 `
 

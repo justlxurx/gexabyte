@@ -1,62 +1,34 @@
 import {Container, Grid, Typography, useMediaQuery} from '@mui/material';
 import Link from 'next/link';
-import React, {useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import styled from '@emotion/styled'
 import {useRouter} from "next/router";
+import {useTranslation} from "react-i18next";
+import i18n from "i18next";
 
 type ProjectWL = {
     title: string[],
     description: string,
     tags: string[],
-    isActive: boolean,
-    className: string
+    className?: string
 }
-
-const initialProjectsWL: ProjectWL[] = [
-    {
-        title: ['Crypto', 'Exchange CeFi'],
-        description: 'Centralized cryptocurrency exchange are platforms that allow users to trade cryptos.',
-        tags: ['Feature list', 'Spot trading', 'Markup and Markdown', 'Referral program', 'Liquidity aggregator', 'Authorization using login and password', 'Creating wallets upon registration', 'Connecting fiat payment services', 'Connecting your own / third party KYC service', 'Connecting your own / third party support service', 'Connecting your own / third party crypto fiat exchange service', 'P2P exchange'],
-        isActive: false,
-        className: 'project-0'
-    },
-    {
-        title: ['NFT', 'Marketplace'],
-        description: 'NFT Marketplace is a blockchain-based online platform to sell and buy non-fungible tokens (NFTs).',
-        tags: ['Creating NFT collections', 'Convenient category search system', 'Trade history by event, item name, price, buyer, seller, date', 'Creating and downloading NFTs for artists', 'Development of wallet or integration with MyEtherWallet, Coinbase Wallet, Metamask, TrustWallet', 'Operations for the sale and purchase of NFT products'],
-        isActive: false,
-        className: 'project-1'
-    },
-    {
-        title: ['DeFi', 'Wallet'],
-        description: 'DeFi wallet is non-custodial (only those with seed phrase or private key can access funds) wallet that stores your cryptocurrency assets.',
-        tags: ['DeFi staking', 'DEX swap (exchange)', 'Add liquidity'],
-        isActive: false,
-        className: 'project-2'
-    },
-    {
-        title: ['CeFi', 'Wallet'],
-        description: 'CeFi wallet is a platform that stores your cryptocurrency assets. It owned and managed by a centralized third party.',
-        tags: ['CeFi wallet', 'P2P exchange', 'Buy/Sell', 'Admin panel', 'KYC', 'History'],
-        isActive: false,
-        className: 'project-3'
-    }
-]
 
 
 interface ITabListProps {
     tabs: ProjectWL[],
-    onTabChange: (event: React.MouseEvent<HTMLButtonElement>) => void;
+    onTabChange: (event: React.MouseEvent<HTMLButtonElement>) => void,
+    activeTabIndex: number
 }
 
 const WhiteLabelProjects = () => {
     const isMobileScreen = useMediaQuery('(max-width:768px)');
     const [isExtended, setExtended] = useState(false);
-    const [projectsWL, setProjectsWl] = useState(initialProjectsWL);
     const [activeTab, setActiveTab] = useState(0);
 
     const [reftp, setReftp] = React.useState<HTMLElement | null>(null)
     const { pathname } = useRouter()
+
+    const {t, i18n } = useTranslation()
 
     React.useEffect(() => {
         if(isExtended) document.body.style.overflow = 'hidden';
@@ -74,20 +46,28 @@ const WhiteLabelProjects = () => {
         reftp?.scrollIntoView({ behavior: 'smooth' });
     }
 
+    const projectsWL: ProjectWL[] = useMemo(() => {
+
+        const arr: ProjectWL[] = t('whiteLabel.projects', {returnObjects: true})
+
+        const newArr: ProjectWL[] = arr.map((el, idx) => {
+            return {
+                ...el,
+                isActive: false,
+                className: `project-${idx}`
+            }
+        })
+
+        return newArr
+    }, [t])
+
+
     const onTabChange = (e: React.MouseEvent<HTMLButtonElement>) => {
         !isExtended && setExtended(true)
 
         const value = parseInt((e.target as HTMLButtonElement).value, 10);
 
-        const newState = projectsWL.map((project, idx) => {
-            if(value === idx) project.isActive = true;
-            else project.isActive = false;
-
-            return project
-        })
-
         setActiveTab(value)
-        setProjectsWl(newState)
     }
 
     return (
@@ -109,25 +89,26 @@ const WhiteLabelProjects = () => {
                 },
                 fontWeight: {
                     xs: '700'
-                }
+                },
+                fontFamily: i18n.language === 'en' ? 'Readex Pro' : 'Geometria, sans-serif'
             }}>
-                White Label <br/> Projects
+                {t('whiteLabel.projectTitle.0')} <br/> {t('whiteLabel.projectTitle.1')}
             </Typography>
             <Grid container gridTemplateColumns={'repeat(auto-fill, minmax(700px, 1fr))'} style={{margin: '0'}}>
                 {!isExtended &&
                     projectsWL.map((el, idx) => (
                         <Grid item xs={12} md={6} key={idx} style={{padding: '4px', margin: '0'}}>
                             <ProjectWLWrapper className={el.className}>
-                                <ProjectWLTitle>
+                                <ProjectWLTitle className={i18n.language === 'en' ? '' : 'geometria'}>
                                     {el.title[0]}
                                     <br/>
                                     {el.title[1]}
                                 </ProjectWLTitle>
-                                <ProjectWLDesc>
+                                <ProjectWLDesc className={i18n.language === 'en' ? '' : 'nunito'}>
                                     {el.description}
                                 </ProjectWLDesc>
-                                <ProjectWLButton value={idx} onClick={onTabChange}>
-                                    MORE
+                                <ProjectWLButton className={i18n.language === 'en' ? '' : 'nunito'} value={idx} onClick={onTabChange}>
+                                    {t('button.more')}
                                 </ProjectWLButton>
                             </ProjectWLWrapper>
                         </Grid>
@@ -151,20 +132,20 @@ const WhiteLabelProjects = () => {
                                     alignItems: 'center'
                                 }}>
                                     <ProjectWLTabWrapper onClick={e => e.stopPropagation()}>
-                                        <TabList tabs={projectsWL} onTabChange={onTabChange}/>
+                                        <TabList tabs={projectsWL} onTabChange={onTabChange} activeTabIndex={activeTab}/>
                                         <TabPanel role="tabpanel" className={projectsWL.at(activeTab)!.className!}>
-                                            <TabPanelTitle>{projectsWL[activeTab]!.title[0]}<br/>{projectsWL[activeTab]!.title[1]}
+                                            <TabPanelTitle className={i18n.language === 'en' ? '' : 'geometria'}>{projectsWL[activeTab]!.title[0]}<br/>{projectsWL[activeTab]!.title[1]}
                                             </TabPanelTitle>
-                                            <TabPanelDescription>{projectsWL[activeTab]!.description}</TabPanelDescription>
-                                            <ContactUsWrapper>
-                                                <p>WANT A DEMONSTRATION?</p>
+                                            <TabPanelDescription className={i18n.language === 'en' ? '' : 'nunito'}>{projectsWL[activeTab]!.description}</TabPanelDescription>
+                                            <ContactUsWrapper className={i18n.language === 'en' ? '' : 'nunito'}>
+                                                <p>{t('whiteLabel.demonstration')}</p>
                                                 <Link href={'#contact-us'}><ContactUsButton onClick={handleScroll}>
                                                     <img src="/images/projects/Arrow%2012.svg" alt="right arrow"
                                                          width={'42px'}/>
-                                                    <p>CONTACT US</p>
+                                                    <p style={{textTransform: 'uppercase', fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'}}>{t('button.contactUs')}</p>
                                                 </ContactUsButton></Link>
                                             </ContactUsWrapper>
-                                            <TabPanelTags>
+                                            <TabPanelTags className={i18n.language === 'en' ? '' : 'nunito'}>
                                                 {projectsWL[activeTab].tags.map((tag, idx) => (
                                                     <TabPanelTag key={idx}>{tag}</TabPanelTag>
                                                 ))}
@@ -198,21 +179,21 @@ const WhiteLabelProjects = () => {
                                         <ProjectWLMobileTitleWrapper>
                                             <div style={{display: "flex", justifyContent: 'flex-start', alignItems: 'center', fontSize: 'inherit'}}>
                                                 <TitleMark/>
-                                                <p style={{margin: '0', fontSize: 'inherit'}}>{projectsWL[activeTab].title.join(" ").toLowerCase()}</p>
+                                                <p style={{margin: '0', fontSize: 'inherit', fontFamily: i18n.language === 'en' ? 'Readex Pro' : 'Geometria, sans-serif'}}>{projectsWL[activeTab].title.join(" ").toLowerCase()}</p>
                                             </div>
                                             <img src="/images/projects/mobile/close-btn.svg" width={'30px'} height={'30px'} alt="close button" onClick={e => setExtended(false)}/>
                                         </ProjectWLMobileTitleWrapper>
-                                        <ProjectWLMobileTitle>{projectsWL[activeTab].title[0]}<br/>{projectsWL[activeTab].title[1]}</ProjectWLMobileTitle>
-                                        <ProjectWLMobileDesc>{projectsWL[activeTab].description}</ProjectWLMobileDesc>
-                                        <MobileContactUsWrapper>
-                                            <p style={{margin: 0}}>WANT A DEMONSTRATION?</p>
+                                        <ProjectWLMobileTitle className={i18n.language === 'en' ? '' : 'geometria'}>{projectsWL[activeTab].title[0]}<br/>{projectsWL[activeTab].title[1]}</ProjectWLMobileTitle>
+                                        <ProjectWLMobileDesc className={i18n.language === 'en' ? '' : 'nunito'}>{projectsWL[activeTab].description}</ProjectWLMobileDesc>
+                                        <MobileContactUsWrapper className={i18n.language === 'en' ? '' : 'nunito'}>
+                                            <p style={{margin: 0}}>{t('whiteLabel.demonstration')}</p>
                                             <Link href={'#contact-us'}><MobileContactUsButton onClick={handleScroll}>
                                                 <img src="/images/projects/Arrow%2012.svg" alt="right arrow"
                                                      width={'42px'}/>
-                                                <p>CONTACT US</p>
+                                                <p style={{textTransform: "uppercase", fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'}}>{t('button.contactUs')}</p>
                                             </MobileContactUsButton></Link>
                                         </MobileContactUsWrapper>
-                                        <ProjectWLMobileTags>
+                                        <ProjectWLMobileTags className={i18n.language === 'en' ? '' : 'nunito'}>
                                             {projectsWL[activeTab].tags.map((tag, idx) => (
                                                 <ProjectWLMobileTag key={idx}>
                                                     {tag}
@@ -233,12 +214,12 @@ const WhiteLabelProjects = () => {
 export default WhiteLabelProjects;
 
 
-const TabList: React.FC<ITabListProps> = ({tabs, onTabChange}) => {
+const TabList: React.FC<ITabListProps> = ({tabs, onTabChange, activeTabIndex}) => {
     return (
         <TabListUL role={'tablist'}>
             {tabs.map((tab, idx) => (
-                <TabListLI key={idx}>
-                    <TabListButton onClick={onTabChange} className={tab.isActive ? "active" : ""} value={idx}>
+                <TabListLI className={i18n.language === 'en' ? '' : 'geometria'} key={idx}>
+                    <TabListButton onClick={onTabChange} className={idx === activeTabIndex ? "active" : ""} value={idx}>
                         <TabListMark/>{tab.title.join(" ").toLowerCase()}
                     </TabListButton>
                 </TabListLI>))}
@@ -290,6 +271,12 @@ const TabListUL = styled.ul`
 
 const TabListLI = styled.li`
   width: 25%;
+  
+  font-family: 'Readex Pro';
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 
 const TabListMark = styled.span`
@@ -326,6 +313,7 @@ const TabListButton = styled.button`
   border: none;
   border-radius: 6px 6px 0 0;
   cursor: pointer;
+  font-family: inherit;
 
   &.active {
     background-color: #1F1F1F;
@@ -408,10 +396,15 @@ const TabPanelTitle = styled.p`
   font-weight: 700;
   z-index: 2000;
   position: relative;
+  font-family: 'Readex Pro';
   
   @media(max-width: 1140px){
     padding-top: 10px;
     font-size: 24px;
+  }
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
   }
 
   //@media(max-width: 1250px){
@@ -435,10 +428,15 @@ const TabPanelDescription = styled.p`
   color: rgba(255, 255, 255, 0.74);
   z-index: 2000;
   position: relative;
+  font-family: 'Poppins';
 
   @media(max-width: 1140px){
     font-size: 14px;
     margin-bottom: 10px;
+  }
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
   }
   
   //@media(max-width: 1255px){
@@ -483,9 +481,14 @@ const ContactUsWrapper = styled.div`
   padding: 0 0 0 20px;
   z-index: 2000;
   position: relative;
+  font-family: 'Poppins';
 
   @media(max-width: 1140px){
     font-size: 14px;
+  }
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
   }
 
   //@media(max-width: 1255px){
@@ -553,6 +556,11 @@ const TabPanelTags = styled.div`
   padding: 0 0 0 20px;
   z-index: 2000;
   position: relative;
+  font-family: 'Poppins';
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
+  }
 
   //@media(max-width: 1250px){
   //  top: 390px;
@@ -573,6 +581,7 @@ const TabPanelTag = styled.span`
   font-size: 14px;
   color: rgba(255, 255, 255, 0.74);
   font-weight: 700;
+  font-family: inherit;
 
   @media(max-width: 1140px){
     font-size: 12px;
@@ -621,7 +630,7 @@ const ProjectWLButton = styled.button`
   height: 80px;
   background: #FFFFFF;
   border-radius: 4px;
-  font-family: 'Readex Pro';
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
   font-size: 22px;
@@ -642,6 +651,10 @@ const ProjectWLButton = styled.button`
     font-size: 18px;
     bottom: 20px;
   }
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
+  }
 `
 
 const ProjectWLTitle = styled.p`
@@ -650,9 +663,14 @@ const ProjectWLTitle = styled.p`
   text-transform: uppercase;
   margin: 0 0 70px;
   max-width: 100%;
+  font-family: 'Readex Pro';
 
   @media (max-width: 768px) {
     font-size: 30px;
+  }
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
   }
 `
 
@@ -660,9 +678,14 @@ const ProjectWLDesc = styled.p`
   margin: 0 0 30px;
   font-size: 22px;
   max-width: 100%;
+  font-family: 'Poppins';
 
   @media (max-width: 768px) {
     font-size: 18px;
+  }
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
   }
 `
 
@@ -733,6 +756,11 @@ const ProjectWLMobileTitle = styled.p`
   font-weight: 700;
   font-size: 36px;
   margin: 0 0 10px 0;
+  font-family: 'Readex Pro';
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 
 const ProjectWLMobileDesc = styled.p`
@@ -740,6 +768,11 @@ const ProjectWLMobileDesc = styled.p`
   color: rgba(255, 255, 255, 0.74);
   font-size: 17px;
   margin: 0 0 40px 0;
+  font-family: 'Poppins';
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
+  }
 `
 
 const MobileContactUsWrapper = styled.div`
@@ -752,6 +785,11 @@ const MobileContactUsWrapper = styled.div`
   margin: 0 0 20px;
   padding: 0;
   font-size: 17px;
+  font-family: 'Poppins';
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
+  }
 `
 
 const MobileContactUsButton = styled.button`
@@ -778,6 +816,11 @@ const ProjectWLMobileTags = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
+  font-family: 'Poppins';
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
+  }
 `
 
 const ProjectWLMobileTag = styled.p`
@@ -787,4 +830,5 @@ const ProjectWLMobileTag = styled.p`
   font-size: 15px;
   color: rgba(255, 255, 255, 0.74);
   font-weight: 700;
+  font-family: inherit;
 `

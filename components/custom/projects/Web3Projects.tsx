@@ -30,7 +30,7 @@ const projects = {
 const ImageGrid = [8, 4, 6, 6, 4, 4, 4]
 
 const Web3Projects = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const isMobileScreen = useMediaQuery('(max-width:768px)');
 
   return (
@@ -49,9 +49,10 @@ const Web3Projects = () => {
           xs: 'start',
           md: 'left'
         },
-        maxWidth: '700px'
+        maxWidth: '700px',
+        fontFamily: i18n.language === 'en' ? 'Readex Pro' : 'Geometria, sans-serif'
       }}>
-        {t('home.projects.title')}
+        {t('web3.projects')}
       </Typography>
       <Grid container gridTemplateColumns={'repeat(auto-fill, minmax(700px, 1fr))'} spacing={1}>
         {isMobileScreen ?

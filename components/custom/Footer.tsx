@@ -9,7 +9,7 @@ import {logoIcon} from "@public/icons";
 import SocialMedia from "./SocialMedia";
 
 const Footer = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const { asPath } = useRouter()
   const [reftp, setReftp] = React.useState<HTMLElement | null>(null)
 
@@ -29,7 +29,7 @@ const Footer = () => {
         <Grid container columns={{ xs: 2, md: 5 }} spacing={5}>
           <Grid item xs={2} md={1}>
             <Stack direction={'column'} spacing={1} alignItems={'flex-start'}>
-              <Image src={logoIcon} width={120} height={50} alt={'logo'}/>
+              <Image src={logoIcon} width={120} height={80} alt={'logo'}/>
               <Button fullWidth onClick={handleScroll} sx={{
                 bgcolor: '#F000000',
                 border: '2px solid #F0B270',
@@ -38,6 +38,7 @@ const Footer = () => {
                 fontWeight: 700,
                 fontSize: '16px',
                 textTransform: 'none',
+                fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif',
                 width: {
                   xs: '50%',
                   md: '100%'
@@ -50,9 +51,9 @@ const Footer = () => {
           <Grid item xs={1} md={1}>
             <Stack direction={'column'}>
               {/*<Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Solutions</Typography>*/}
-              <StyledTypography title={t('footer.web3')} link={'/web3'} />
-              <StyledTypography title={t('footer.cryptosystem')} link={'/cryptosystem'} />
-              <StyledTypography title={t('footer.whitelabel')} link={'/whitelabel'} />
+              <StyledTypography title={t('footer.web3')} link={'/web3'} font={i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'} />
+              <StyledTypography title={t('footer.tokendesign')} link={'/tokendesign'} font={i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'} />
+              <StyledTypography title={t('footer.whitelabel')} link={'/whitelabel'} font={i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'} />
             </Stack>
           </Grid>
           {/*<Grid item xs={1} md={2}>*/}
@@ -65,7 +66,7 @@ const Footer = () => {
           {/*</Grid>*/}
           <Grid item xs={2} md={1}>
             <Stack direction={{ xs: 'row', md: 'column' }} alignItems={{ xs: 'center', md: 'start' }} justifyContent={{ xs: 'space-between' }}>
-              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>{t('footer.keepInTouch')}</Typography>
+              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif', mb: '1rem' }}>{t('footer.keepInTouch')}</Typography>
               <SocialMedia/>
             </Stack>
           </Grid>
@@ -83,11 +84,12 @@ export default Footer
 interface StyledTypographyProps {
   title: string
   link: string
+  font: string
 }
 
-const StyledTypography: React.FC<StyledTypographyProps> = ({ title, link }) => (
+const StyledTypography: React.FC<StyledTypographyProps> = ({ title, link, font}) => (
   <Link href={link}>
-    <Typography sx={{ fontSize: '16px', textTransform: 'capitalize', color: '#667085', cursor: 'pointer', mb: '1rem' }}>
+    <Typography sx={{ fontSize: '16px', textTransform: 'capitalize', color: '#667085', cursor: 'pointer', mb: '1rem', fontFamily: font }}>
       {title}
     </Typography>
   </Link>

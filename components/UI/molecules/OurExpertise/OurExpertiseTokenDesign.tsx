@@ -8,6 +8,7 @@ import { TechnicalTaskDev } from './TechnicalTaskDev/TechnicalTaskDev'
 import { TokenomicsDev } from './TokenomicsDev/TokenomicsDev'
 import { WhitepaperDev } from './WhitepaperDev/WhitepaperDev'
 import {arrowDownIcon} from "@public/icons";
+import {useTranslation} from "react-i18next";
 
 
 const tabs = ['Tokenomics development', 'Whitepaper development', 'Technical task development '];
@@ -15,8 +16,10 @@ const tabs = ['Tokenomics development', 'Whitepaper development', 'Technical tas
 interface IProps {
 }
 
-export const OurExpertiseCryptosystem: FC<IProps> = () => {
+export const OurExpertiseTokenDesign: FC<IProps> = () => {
   const [value, setValue] = useState(0);
+
+  const {t, i18n} = useTranslation()
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -31,7 +34,7 @@ export const OurExpertiseCryptosystem: FC<IProps> = () => {
   return (
     <StyledWrapper>
       <StyledFlexArea>
-        <StyledTitle>Tokenomics development\\</StyledTitle>
+        <StyledTitle className={i18n.language === 'en' ? '' : 'geometria'}>{t('tokenDesign.stats.tokenomics.title')}\\</StyledTitle>
         {/*<StyledTabArea>*/}
         {/*  <Box sx={{ borderBottom: 1, borderColor: '#464646' }}>*/}
         {/*    <Tabs value={value} onChange={handleChange} textColor={'secondary'} indicatorColor={"secondary"} sx={{ fontWeight: 700 }}>*/}
@@ -199,4 +202,8 @@ const StyledTitle = styled.p`
   line-height: 117.5%;
   color: #FFFFFF;
   width: 414px;
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `

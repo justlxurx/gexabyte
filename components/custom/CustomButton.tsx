@@ -1,6 +1,7 @@
 import { Button } from '@mui/material';
 import React from 'react';
 import { theme } from '../../utils/theme';
+import {useTranslation} from "react-i18next";
 
 interface CustomButtonProps {
   title: string,
@@ -11,6 +12,8 @@ interface CustomButtonProps {
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({ title, handleClick, bgcolor, rounded = false, fullWidth = false }) => {
+
+  const {i18n} = useTranslation()
 
   return (
     <Button
@@ -24,6 +27,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({ title, handleClick, bgcolor
         fontSize: '16px',
         textTransform: 'none',
         fontWeight: 700,
+        fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif',
         '&:hover': {
           bgcolor
         }

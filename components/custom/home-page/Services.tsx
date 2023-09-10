@@ -10,7 +10,7 @@ import {arrowRightBlueIcon} from "@public/icons";
 
 
 const Services = () => {
-  const { t } = useTranslation()
+  const { t , i18n} = useTranslation()
 
   const services = useMemo(() => {
     return [
@@ -21,10 +21,10 @@ const Services = () => {
         link: '/web3'
       },
       {
-        title: t('home.help.cryptosystem.title'),
-        description: t('home.help.cryptosystem.text'),
+        title: t('home.help.tokendesign.title'),
+        description: t('home.help.tokendesign.text'),
         icon: '/icons/bc.svg',
-        link: '/cryptosystem'
+        link: '/tokendesign'
       },
       {
         title: t('home.help.whitelabel.title'),
@@ -59,9 +59,10 @@ const Services = () => {
               xs: '32px',
               md: '56px'
             },
-            fontWeight: 700
+            fontWeight: 700,
+            fontFamily: i18n.language === 'en' ? 'Readex Pro' : 'Geometria, sans-serif'
           }}>
-            What We Can
+            {t('home.help.title1')}
           </Typography>
           <Typography variant={'h2'} sx={{
             fontSize: {
@@ -72,9 +73,10 @@ const Services = () => {
             mb: {
               xs: '34px',
               md: 0
-            }
+            },
+            fontFamily: i18n.language === 'en' ? 'Readex Pro' : 'Geometria, sans-serif'
           }}>
-            <span style={{ color: theme.palette.primary.main }}>Help You</span> With
+            <span style={{ color: theme.palette.primary.main }}>{t('home.help.title2')}</span> {t('home.help.title3')}
           </Typography>
         </Stack>
         {/*<Link href={'/projects'}>*/}
@@ -89,12 +91,12 @@ const Services = () => {
             <StyledCard>
               <StyledIcon src={service.icon} />
               <StyledTextArea >
-                <p>{service.title}</p>
-                <span>{service.description}</span>
+                <p style={{fontFamily: i18n.language === 'en' ? 'Readex Pro' : 'Geometria, sans-serif'}}>{service.title}</p>
+                <span style={{fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'}}>{service.description}</span>
               </StyledTextArea>
               <Link href={service.link}>
                 <StyledButton>
-                  <span>{t('button.moreDetails')}</span>
+                  <span style={{fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'}}>{t('button.moreDetails')}</span>
                   <Image src={arrowRightBlueIcon} width={'25px'} height={'8px'} alt={service.title}/>
                 </StyledButton>
               </Link>
@@ -129,7 +131,6 @@ const StyledTextArea = styled.div`
   margin-bottom: 27px;
 
   & p {
-    font-family: 'Readex Pro';
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
@@ -139,7 +140,6 @@ const StyledTextArea = styled.div`
   }
 
   & span {
-    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -163,10 +163,9 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: space-between;
   width: 200px;
-  height: 48px;
   background: rgba(115, 106, 228, 0.15);
   border-radius: 4px;
-  padding: 12px 24px;
+  padding: 14px 24px;
   border: none;
   :hover {
     cursor: pointer;
@@ -178,7 +177,6 @@ const StyledButton = styled.button`
   }
 
   & span {
-    font-family: 'Readex Pro';
     font-style: normal;
     font-weight: 700;
     font-size: 18px;

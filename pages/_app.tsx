@@ -8,6 +8,7 @@ import './../styles/TechStack.scss';
 import { CssBaseline } from '@mui/material';
 import translationEN from 'utils/locales/en.json';
 import translationRU from 'utils/locales/ru.json';
+import translationKZ from 'utils/locales/kz.json';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Script from 'next/script';
@@ -21,6 +22,9 @@ i18n
       },
       ru: {
         translation: translationRU
+      },
+      kz: {
+        translation: translationKZ
       }
     },
     lng: 'en',

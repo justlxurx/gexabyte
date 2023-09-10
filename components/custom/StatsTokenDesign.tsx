@@ -1,27 +1,47 @@
 import styled from '@emotion/styled'
-import React from 'react'
+import React, {useMemo} from 'react'
 import RoundedAnimation from './RoundedAnimation'
 import styles from '../../styles/components/StatsCryptosystem.module.scss'
+import {useTranslation} from "react-i18next";
 
-export const StatsCryptosystem = () => {
+const classesAnim = [
+    styles.part1,
+    styles.part2,
+    styles.part3,
+    styles.part4,
+    styles.part5,
+    styles.part6,
+    styles.part7,
+    styles.part8
+]
+
+export const StatsTokenDesign = () => {
+
+  const {t, i18n} = useTranslation()
+
+  const statText: string[] = useMemo(() => {
+      return t('tokenDesign.stats.text', {returnObjects: true})
+  }, [t])
+
   return (
     <SecondBlock>
-      <SecondBlockTitle>
-          We create complex systems
+      <SecondBlockTitle className={i18n.language === 'en' ? '' : 'geometria'}>
+          {t('tokenDesign.stats.title')}
       </SecondBlockTitle>
 
       <StatsWrapper>
         <StatsOneBlock>
           {/*<StatsNumber>10+</StatsNumber>*/}
-          <StatsText>
-              <span className={`${styles.readAnim} ${styles.part1}`}>Our goal</span>
-              <span className={`${styles.readAnim} ${styles.part2}`}> is to create</span>
-              <span className={`${styles.readAnim} ${styles.part3}`}> sustainable economic models</span>
-              <span className={`${styles.readAnim} ${styles.part4}`}> using game theory,</span>
-              <span className={`${styles.readAnim} ${styles.part5}`}> behavioral economics,</span>
-              <span className={`${styles.readAnim} ${styles.part6}`}> sociology,</span>
-              <span className={`${styles.readAnim} ${styles.part7}`}> computer science,</span>
-              <span className={`${styles.readAnim} ${styles.part8}`}> focused on improving people&apos;s lives</span>
+          <StatsText className={i18n.language === 'en' ? '' : 'nunito'}>
+              {statText.map((el, idx) => (<span key={el} className={`${styles.readAnim} ${classesAnim[idx]}`}>{el}</span>))}
+              {/*<span className={`${styles.readAnim} ${styles.part1}`}>Our goal</span>*/}
+              {/*<span className={`${styles.readAnim} ${styles.part2}`}> is to create</span>*/}
+              {/*<span className={`${styles.readAnim} ${styles.part3}`}> sustainable economic models</span>*/}
+              {/*<span className={`${styles.readAnim} ${styles.part4}`}> using game theory,</span>*/}
+              {/*<span className={`${styles.readAnim} ${styles.part5}`}> behavioral economics,</span>*/}
+              {/*<span className={`${styles.readAnim} ${styles.part6}`}> sociology,</span>*/}
+              {/*<span className={`${styles.readAnim} ${styles.part7}`}> computer science,</span>*/}
+              {/*<span className={`${styles.readAnim} ${styles.part8}`}> focused on improving people&apos;s lives</span>*/}
           </StatsText>
         </StatsOneBlock>
 
@@ -79,6 +99,10 @@ const SecondBlockTitle = styled.div`
   @media (max-width: 600px) {
     font-size: 32px;
   }
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 
 const StatsWrapper = styled.div`
@@ -123,5 +147,9 @@ const StatsText = styled.div`
   
   @media (max-width: 1180px) {
     transform: translateX(0);
+  }
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
   }
 `

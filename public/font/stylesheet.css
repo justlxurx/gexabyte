@@ -228,3 +228,19 @@
     font-family: 'NeueMachina-Ultrabold';
     src: url('NeueMachina-Ultrabold.otf');
 }
+
+@font-face {
+    font-family: 'Geometria', sans-serif;
+    src: local('Geometria'),
+    url("geometria_medium.otf") format('opentype');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Geometria', sans-serif;
+    src: local('Geometria'),
+    url("geometria_bold.otf") format('opentype');
+    font-style: normal;
+    font-weight: 700;
+}

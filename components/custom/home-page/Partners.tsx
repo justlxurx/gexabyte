@@ -6,6 +6,7 @@ import Image from "next/image"
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation} from "swiper";
 import Link from "next/link";
+import {useTranslation} from "react-i18next";
 
 
 const partners = [
@@ -50,6 +51,16 @@ const partners = [
         href: "https://infinitytechnologies.ch/"
     },
     {
+        title: "ColdStack",
+        img: "/images/partners/cold stack.svg",
+        href: "https://coldstack.io/"
+    },
+    {
+        title: "Crypton &Studio",
+        img: "/images/partners/crypton studio.svg",
+        href: "https://crypton.studio/en"
+    },
+    {
         title: "Qamalladin University",
         img: "/images/partners/qamalladin.svg",
         href: "https://qamalladin.university/"
@@ -72,20 +83,13 @@ const partners = [
 ]
 
 const Partners = () => {
-    const isMobileScreen = useMediaQuery('(max-width:768px)');
-    const isLaptopScreen = useMediaQuery('(max-width:1024px)');
-
-    const setSliderAmount = () => {
-        if(isMobileScreen) return 2;
-        else if(isLaptopScreen) return 4;
-        return 6;
-    }
+    const {t, i18n} = useTranslation()
 
     return (
         <StyledWrapper>
             <WrapperTitleControllers>
-                <StyledTitle>
-                    Partners
+                <StyledTitle className={i18n.language === 'en' ? '' : 'geometria'}>
+                    {t('home.ourPartners')}
                 </StyledTitle>
                 {/*<StyledControllers>*/}
                 {/*    <StyledController id={"prevControl"}>*/}
@@ -149,22 +153,22 @@ const MarqueeWrapper = styled.div`
 
 const Marquee = styled.div`
   display: flex;
-  width: 4800px;
-  animation: marquee 20s linear infinite;
+  width: 5400px;
+  animation: marquee 15s linear infinite;
   
   @keyframes marquee{
     from{
       translate: 0;
     }
     to{
-      translate: -2400px;
+      translate: -2700px;
     }
   }
 `
 
 const MarqueeInner = styled.div`
   display: flex;
-  width: 2400px;
+  width: 2700px;
   align-items: center;
   justify-content: space-around;
 `
@@ -193,6 +197,10 @@ const StyledTitle = styled.p`
   font-size: 32px;
   line-height: 110%;
   margin: 0;
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 
 const StyledControllers = styled.div`

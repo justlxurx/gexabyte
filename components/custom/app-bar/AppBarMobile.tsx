@@ -1,12 +1,14 @@
-import { Accordion, AccordionDetails, AccordionSummary, AppBar, Box, Drawer, IconButton, Stack, Toolbar, Typography } from '@mui/material'; import Image from 'next/image';
+import { Accordion, AccordionDetails, AccordionSummary, AppBar, Box, Drawer, IconButton, Stack, Toolbar, Typography } from '@mui/material';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, {useMemo} from 'react';
 import { theme } from '../../../utils/theme';
 import CustomButton from '../CustomButton';
 import SocialMedia from '../SocialMedia';
-import { dropdownContent } from './AppBarDesktop';
 import {arrowDownGrayIcon, burgerIcon, closeIcon, logoRawIcon} from "@public/icons";
+import {useTranslation} from "react-i18next";
+import LocaleButton from "../home-page/LocaleButton";
 
 const AppBarMobile: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -15,6 +17,16 @@ const AppBarMobile: React.FC = () => {
   if (typeof window !== 'undefined') {
     reftp = document.getElementById("contact-us");
   }
+
+  const {t, i18n} = useTranslation()
+
+  const dropdownContent = useMemo(() => {
+    return [
+      { title: t('header.web3'), menu: false, link: '/web3' },
+      { title: t('header.tokendesign'), menu: false, link: '/tokendesign' },
+      { title: t('header.whiteLabel'), menu: false, link: '/whitelabel' }
+    ]
+  }, [t])
 
   const changeMenu = () => {
     setIsOpen(prev => !prev);
@@ -54,10 +66,10 @@ const AppBarMobile: React.FC = () => {
 
         <Box sx={{ flexGrow: 1 }}>
           <Link href='/'>
-            <Image src={logoRawIcon} width={'50px'} height={'50px'} style={{ cursor: 'pointer' }} alt={'logoRaw'}/>
+            <Image src={logoRawIcon} width={'70px'} height={'70px'} style={{ cursor: 'pointer' }} alt={'logoRaw'}/>
           </Link>
         </Box>
-        <CustomButton title={'Get in Touch'} bgcolor={'transparent'} handleClick={handleScroll} />
+        <CustomButton title={t('button.getInTouch')} bgcolor={'transparent'} handleClick={handleScroll} />
       </Toolbar>
       <Drawer
         anchor={'left'}
@@ -95,15 +107,16 @@ const AppBarMobile: React.FC = () => {
           //   </Accordion>
           //   :
             <Link href={item.link} key={idx}>
-              <Typography key={idx} sx={{ m: '1rem', fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
+              <Typography key={idx} sx={{ m: '1rem', fontSize: '24px', fontWeight: 500, color: '#A8B1D1', fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif' }}>{item.title}</Typography>
             </Link>
         ))}
         <Stack direction='row' sx={{ mt: 'auto' }}>
           <SocialMedia />
-          {/* <Stack direction='row' spacing={2} sx={{ ml: 'auto' }}>
+           <Stack direction='row' spacing={2} sx={{ ml: 'auto' }}>
             <LocaleButton text='ENG' locale='en' />
             <LocaleButton text='RUS' locale='ru' />
-          </Stack> */}
+            <LocaleButton text='KAZ' locale='kz' />
+          </Stack>
         </Stack>
       </Drawer>
     </AppBar >

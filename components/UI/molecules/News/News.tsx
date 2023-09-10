@@ -72,7 +72,7 @@ interface IBlog {
 }
 
 export const News = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   const [blogs, setBlogs] = useState<IBlog[]>([]);
 
@@ -87,7 +87,7 @@ export const News = () => {
   return (
     <StyledWrapper id={'news-block'}>
       <StyledFlexArea>
-        <StyledTitle>{t('home.news.title')}</StyledTitle>
+        <StyledTitle className={i18n.language === 'en' ? '' : 'geometria'}>{t('home.news.title')}</StyledTitle>
         <div>
           <StyledPaginationButton id={"swiper-back"}>
             <Image src={arrowLeftIcon} width={'24px'} height={'24px'} alt={'arrowLeftIcon'}/>
@@ -152,6 +152,10 @@ const StyledTitle = styled.p`
   line-height: 100%;
   text-transform: capitalize;
   color: #FFFFFF;
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 
 const StyledFlexArea = styled.div`

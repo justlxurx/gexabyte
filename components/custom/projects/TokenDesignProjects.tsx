@@ -1,6 +1,7 @@
 import { Box, Button, Container, Grid, Typography, useMediaQuery } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
+import {useTranslation} from "react-i18next";
 
 const projects = {
   desktop: [
@@ -28,9 +29,10 @@ const projects = {
 
 const ImageGrid = [8, 4, 6, 6, 4, 4, 4]
 
-const CryptosystemProjects = () => {
+const TokenDesignProjects = () => {
   const isMobileScreen = useMediaQuery('(max-width:768px)');
   const [isExtended] = React.useState(false);
+  const {t, i18n} = useTranslation()
 
 
   return (
@@ -53,9 +55,10 @@ const CryptosystemProjects = () => {
         },
           fontWeight: {
             xs: '700'
-          }
+          },
+          fontFamily: i18n.language === 'en' ? 'Readex Pro' : 'Geometria, sans-serif'
       }}>
-          Portfolio
+          {t('tokenDesign.stats.tokenomics.portfolio')}
       </Typography>
       <Grid container gridTemplateColumns={'repeat(auto-fill, minmax(700px, 1fr))'} spacing={1}>
         {isMobileScreen ?
@@ -130,4 +133,4 @@ const CryptosystemProjects = () => {
   )
 }
 
-export default CryptosystemProjects;
+export default TokenDesignProjects;

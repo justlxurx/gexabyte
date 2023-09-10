@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
 import Head from "next/head";
+import {useTranslation} from "react-i18next";
 
 const Webdev = () => {
   const { pathname } = useRouter()
@@ -18,6 +19,8 @@ const Webdev = () => {
       setReftp(document.getElementById("contact-us"))
     }
   }, [pathname])
+
+  const {t, i18n} = useTranslation()
 
   const handleScroll = () => {
     reftp?.scrollIntoView({ behavior: 'smooth' });
@@ -31,11 +34,11 @@ const Webdev = () => {
         </Head>
         <FirstBlock>
           <WhiteLabelLeftSide>
-            <WhiteLabelTitle>White Label Products</WhiteLabelTitle>
-            <WhiteLabelSubtitle>
-              Ready-made Web3 solutions
+            <WhiteLabelTitle className={i18n.language === 'en' ? '' : 'geometria'}>{t('whiteLabel.title')}</WhiteLabelTitle>
+            <WhiteLabelSubtitle className={i18n.language === 'en' ? '' : 'nunito'}>
+              {t('whiteLabel.subtitle')}
             </WhiteLabelSubtitle>
-            <Link href={'#contact'}><StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton></Link>
+            <Link href={'#contact'}><StyledContainedButton className={i18n.language === 'en' ? '' : 'nunito'} onClick={handleScroll}>{t('button.contactUs')}</StyledContainedButton></Link>
             {/*<Link href={'/projects'}>*/}
             {/*  <StyledTextButton>*/}
             {/*    <OrangeText>&gt;&gt;</OrangeText>*/}
@@ -109,6 +112,10 @@ const WhiteLabelTitle = styled.h1`
   letter-spacing: -0.025em;
   color: #FFFFFF;
   margin-bottom: 31px;
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 
 const WhiteLabelSubtitle = styled.p`
@@ -122,6 +129,10 @@ const WhiteLabelSubtitle = styled.p`
   @media (max-width: 768px) {
     font-size: 14px;
   }
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
+  }
 `
 
 const StyledContainedButton = styled.button`
@@ -130,7 +141,7 @@ const StyledContainedButton = styled.button`
   height: 80px;
   background: #736AE4;
   border-radius: 4px;
-  font-family: 'Readex Pro';
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
   font-size: 22px;
@@ -146,6 +157,10 @@ const StyledContainedButton = styled.button`
     width: 152px;
     height: 50px;
     font-size: 14px;
+  }
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
   }
 `
 

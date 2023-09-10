@@ -12,7 +12,7 @@ interface FirstBlockLayoutProps {
 }
 
 const TestVideo: React.FC<FirstBlockLayoutProps> = ({ title, subTitle }) => {
-    const { t } = useTranslation()
+    const { t, i18n } = useTranslation()
 
     const { pathname } = useRouter()
 
@@ -31,10 +31,10 @@ const TestVideo: React.FC<FirstBlockLayoutProps> = ({ title, subTitle }) => {
     return (
         <Container id={'main-block'}>
             <BlockTitle>
-                <Title>
+                <Title className={i18n.language === 'en' ? '' : 'geometria'}>
                     {title}
                 </Title>
-                <SubTitle>
+                <SubTitle className={i18n.language === 'en' ? '' : 'nunito'}>
                     {subTitle}
                 </SubTitle>
                 <Button
@@ -42,7 +42,7 @@ const TestVideo: React.FC<FirstBlockLayoutProps> = ({ title, subTitle }) => {
                     sx={{
                         width: { xs: '100%', md: '185px' },
                         bgcolor: theme.palette.primary.main,
-                        color: '#FFFFFF', fontFamily: 'Poppins',
+                        color: '#FFFFFF', fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif',
                         fontWeight: 700,
                         fontSize: '18px',
                         ':hover': { bgcolor: theme.palette.primary.main }
@@ -124,6 +124,10 @@ const Title = styled.h1`
     letter-spacing: 0.025rem;
     margin-bottom: 0;
   }
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 const SubTitle = styled.h2<{color?: string}>`
   font-family: Poppins;
@@ -140,5 +144,9 @@ const SubTitle = styled.h2<{color?: string}>`
     max-width: 70%;
     line-height: 150%;
     margin-top: 2rem;
+  }
+
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
   }
 `

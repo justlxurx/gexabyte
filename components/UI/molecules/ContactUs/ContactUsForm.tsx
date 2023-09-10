@@ -10,9 +10,10 @@ import {socialURL} from "../../../custom/socialURL";
 import {telegramIcon} from "@public/icons/social-media";
 import Image from "next/image";
 import {margin} from "@mui/system";
+import {red} from "@mui/material/colors";
 
 const ContactUsForm = () => {
-  const {t} = useTranslation()
+  const {t, i18n } = useTranslation()
 
   const [services, setServices] = React.useState({
     bd: false,
@@ -56,15 +57,15 @@ const ContactUsForm = () => {
                       md: '48px'
                   },
                   fontWeight: 600,
-                  fontFamily: 'Readex Pro',
+                  fontFamily: i18n.language === 'en' ? 'Readex Pro' : 'Geometria, sans-serif',
                   mb: '1rem'
               }}>
                   {t('contactUsForm.formTitle')}
               </Typography>
-              <StyledInputLabel>{t('contactUsForm.name')}</StyledInputLabel>
+              <StyledInputLabel className={i18n.language === 'en' ? '' : 'nunito'}>{t('contactUsForm.name')}</StyledInputLabel>
               <TextField
                   id={"bootstrap-input1"}
-                  placeholder={'Your name'}
+                  placeholder={t('contactUsForm.placeholders.name')}
                   value={form.name}
                   name={'name'}
                   onChange={handleChange}
@@ -74,8 +75,12 @@ const ContactUsForm = () => {
                   sx={{
                       bgcolor: '#FFFFFF',
                       borderRadius: '4px',
-                      input: { color: '#667085' },
+                      input: { color: '#667085', fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif' },
                       mb: !errors.name ? '16px' : '0px',
+                      fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif',
+                      "::placeholder": {
+                          fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'
+                      }
                   }}
               />
               {!!errors.name &&
@@ -83,7 +88,7 @@ const ContactUsForm = () => {
                       {errors.name}
                   </Typography>
               }
-              <StyledInputLabel>{t('contactUsForm.email')}</StyledInputLabel>
+              <StyledInputLabel className={i18n.language === 'en' ? '' : 'nunito'}>{t('contactUsForm.email')}</StyledInputLabel>
               <TextField
                   id={"bootstrap-input2"}
                   value={form.email}
@@ -93,38 +98,45 @@ const ContactUsForm = () => {
                   error={!!errors.email}
                   fullWidth
                   required
-                  placeholder={'you@company.com'}
+                  placeholder={t('contactUsForm.placeholders.email')}
                   sx={{
                       bgcolor: '#FFFFFF',
                       borderRadius: '4px',
-                      input: { color: '#667085' },
+                      input: { color: '#667085', fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'},
                       mb: !errors.email ? '16px' : '0px',
-
+                      fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif',
+                      "::placeholder": {
+                          fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'
+                      }
                   }} />
               {!!errors.email &&
                   <Typography variant={'caption'} color={'red'}>
                       {errors.email}
                   </Typography>
               }
-              <StyledInputLabel>{t('contactUsForm.company')}</StyledInputLabel>
+              <StyledInputLabel className={i18n.language === 'en' ? '' : 'nunito'}>{t('contactUsForm.company')}</StyledInputLabel>
               <TextField
                   value={form.company}
                   name={'company'}
                   onChange={handleChange}
                   error={!!errors.company}
                   required
-                  id={"bootstrap-input3"} fullWidth placeholder={'Company name'} sx={{
+                  id={"bootstrap-input3"} fullWidth placeholder={t('contactUsForm.placeholders.company')} sx={{
                   bgcolor: '#FFFFFF',
                   borderRadius: '4px',
                   mb: !errors.company ? '16px' : '0px',
-                  input: { color: '#667085' },
+                  input: { color: '#667085', fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif' },
+                  fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif',
+                  "::placeholder": {
+                      fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'
+                  }
               }} />
               {!!errors.company &&
                   <Typography variant={'caption'} color={'red'}>
                       {errors.company}
                   </Typography>
               }
-              <StyledInputLabel>{t('contactUsForm.help')}</StyledInputLabel>
+              <StyledInputLabel className={i18n.language === 'en' ? '' : 'nunito'}>{t('contactUsForm.help')}</StyledInputLabel>
               <TextField
                   id={"bootstrap-input4"}
                   value={form.info}
@@ -135,13 +147,17 @@ const ContactUsForm = () => {
                   required
                   rows={3}
                   error={!!errors.info}
-                  placeholder={'Tell us a little about the project...'}
-                  inputProps={{ style: { color: '#667085' } }}
+                  placeholder={t('contactUsForm.placeholders.help')}
+                  inputProps={{ style: { color: '#667085', fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'} }}
                   sx={{
                       bgcolor: '#FFFFFF',
                       borderRadius: '4px',
                       mb: !errors.info ? '16px' : '0px',
-                      input: { color: '#667085' },
+                      input: { color: '#667085', fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif' },
+                      fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif',
+                      "::placeholder": {
+                          fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'
+                      }
                   }}
               />
               {!!errors.info &&
@@ -149,9 +165,9 @@ const ContactUsForm = () => {
                       {errors.info}
                   </Typography>
               }
-              <StyledInputLabel>Services</StyledInputLabel>
-              <Grid container columns={3} spacing={1}>
-                  <Grid item xs={1}>
+              <StyledInputLabel className={i18n.language === 'en' ? '' : 'nunito'}>{t('contactUsForm.services')}</StyledInputLabel>
+              <Grid container columns={3} spacing={1} alignItems={'stretch'}>
+                  <Grid item xs={1} width={'100%'}>
                       <Button variant={'outlined'} onClick={() => setServices(prev => ({ ...prev, bd: !prev.bd }))} sx={{
                           borderColor: services.bd ? '#F0B270' : '#2D2D2D',
                           color: services.bd ? '#F0B270' : '#2D2D2D',
@@ -160,15 +176,17 @@ const ContactUsForm = () => {
                           ':hover': {
                               borderColor: services.bd ? '#F0B270' : '#2D2D2D',
                           },
-                          fontFamily: 'Helvetica Neue',
+                          height: '100%',
+                          fontFamily: i18n.language === 'en' ? 'Helvetica Neue' : 'Nunito, sans-serif',
                           width: { xs: '126px', md: '100%' },
                       }}>
                           {t('home.help.web3.title')}
                       </Button>
                   </Grid>
-                  <Grid item xs={1}>
+                  <Grid item xs={1} width={'100%'}>
                       <Button variant={'outlined'} onClick={() => setServices(prev => ({ ...prev, bc: !prev.bc }))} sx={{
                           width: { xs: '126px', md: '100%' },
+                          height: '100%',
                           borderColor: services.bc ? '#F0B270' : '#2D2D2D',
                           color: services.bc ? '#F0B270' : '#2D2D2D',
                           fontSize: { xs: '14px', md: '18px' },
@@ -176,12 +194,12 @@ const ContactUsForm = () => {
                           ':hover': {
                               borderColor: services.bc ? '#F0B270' : '#2D2D2D',
                           },
-                          fontFamily: 'Helvetica Neue'
+                          fontFamily: i18n.language === 'en' ? 'Helvetica Neue' : 'Nunito, sans-serif'
                       }}>
-                          {t('home.help.cryptosystem.title')}
+                          {t('home.help.tokendesign.title')}
                       </Button>
                   </Grid>
-                  <Grid item xs={1}>
+                  <Grid item xs={1} width={'100%'}>
                       <Button variant='outlined' onClick={() => setServices(prev => ({ ...prev, wd: !prev.wd }))} sx={{
                           borderColor: services.wd ? '#F0B270' : '#2D2D2D',
                           color: services.wd ? '#F0B270' : '#2D2D2D',
@@ -191,8 +209,9 @@ const ContactUsForm = () => {
                               borderColor: services.wd ? '#F0B270' : '#2D2D2D',
                           },
                           width: { xs: '126px', md: '100%' },
-                          fontFamily: 'Helvetica Neue',
+                          fontFamily: i18n.language === 'en' ? 'Helvetica Neue' : 'Nunito, sans-serif',
                           fontStyle: 'normal',
+                          height: '100%'
                       }}>
                           {t('home.help.whitelabel.title')}
                       </Button>
@@ -208,7 +227,7 @@ const ContactUsForm = () => {
                       color: '#FFFFFF',
                       fontSize: '16px',
                       fontWeight: 700,
-                      fontFamily: 'Poppins',
+                      fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif',
                       mt: '32px'
                   }}>
                   {t('button.getStarted')}
@@ -220,7 +239,7 @@ const ContactUsForm = () => {
                       color: '#FFFFFF',
                       fontSize: '16px',
                       fontWeight: 700,
-                      fontFamily: 'Poppins',
+                      fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif',
                       position: 'relative'
                   }}>
                       <p style={{margin: '0 10px 0 0'}}>{t('button.letsChatInTelegram')}</p>
@@ -248,6 +267,10 @@ const StyledInputLabel = styled.p`
   margin-bottom: 8px;
   color: #FFFFFF;
   text-transform: capitalize;
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
+  }
 `
 
 const TopBorder = styled.span`

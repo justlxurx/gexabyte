@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import {socialURL} from "../../../custom/socialURL";
 
 const ContactUsInfo = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const isMobileScreen = useMediaQuery('(max-width:600px)')
 
   return (
@@ -33,7 +33,7 @@ const ContactUsInfo = () => {
       <Typography sx={{
         fontSize: '32px',
         fontWeight: 700,
-        fontFamily: 'Readex Pro',
+        fontFamily: i18n.language === 'en' ? 'Readex Pro' : 'Geometria, sans-serif',
         width: {
           xs: '100%',
           md: '60%'
@@ -48,26 +48,30 @@ const ContactUsInfo = () => {
         color: '#F0B270',
         fontSize: '16px',
         fontWeight: 600,
+        fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif',
       }}>{t('contactUsForm.address')}</Typography>
         <a href={socialURL.twoGis}>
         <Typography sx={{
           textDecoration: 'underline',
           fontSize: '16px',
           fontWeight: 600,
-          mb: '1rem'
+          mb: '1rem',
+          fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'
         }}>Almaty, Markova 22/37</Typography>
       </a>
       <Typography sx={{
         color: '#F0B270',
         fontSize: '16px',
         fontWeight: 600,
+        fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'
       }}>{t('contactUsForm.sales')}</Typography>
       <a href={socialURL.salesDepartment}>
         <Typography sx={{
           textDecoration: 'underline',
           fontSize: '16px',
           fontWeight: 600,
-          mb: '1rem'
+          mb: '1rem',
+          fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'
         }}>sales@techculture.tech</Typography>
       </a>
       {/*<Typography style={{*/}
@@ -86,7 +90,8 @@ const ContactUsInfo = () => {
       <Typography sx={{
         fontSize: '16px',
         fontWeight: 600,
-        color: '#F0B270'
+        color: '#F0B270',
+        fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'
       }}>{t('contactUsForm.socialMedia')}</Typography>
       <SocialMedia />
     </div>

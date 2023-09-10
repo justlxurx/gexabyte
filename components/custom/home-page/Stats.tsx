@@ -5,16 +5,16 @@ import { useTranslation } from 'react-i18next'
 import RoundedAnimation from '../RoundedAnimation'
 
 export const Stats = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const isMobile = useMediaQuery('(max-width: 900px)')
 
   return (
     <SecondBlock id={"stats-block"}>
-      <SecondBlockTitle>
+      <SecondBlockTitle className={i18n.language === 'en' ? '' : 'geometria'}>
         {t('home.stats.title')}
       </SecondBlockTitle>
 
-      <StatsWrapper>
+      <StatsWrapper className={i18n.language === 'en' ? '' : 'geometria'}>
         <StatsOneBlock>
           <StatsNumber>40+</StatsNumber>
           <StatsText>{t('home.stats.completedProjects')}</StatsText>
@@ -81,9 +81,14 @@ const SecondBlockTitle = styled.div`
   @media (max-width: 600px) {
     font-size: 32px;
   }
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 
 const StatsWrapper = styled.div`
+  font-family: 'Readex Pro';
   display: flex;
   justify-content: space-around;
   margin-top: 50px;
@@ -92,9 +97,14 @@ const StatsWrapper = styled.div`
     grid-template-columns: 1fr 1fr;
     gap: 34px;
   }
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 
 const StatsOneBlock = styled.div`
+  font-family: inherit;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -111,7 +121,7 @@ const StatsNumber = styled.div`
   color: #736AE4;
 `
 const StatsText = styled.div`
-  font-family: 'Poppins';
+  font-family: inherit;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;

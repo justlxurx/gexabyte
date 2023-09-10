@@ -1,5 +1,8 @@
 {
   "header": {
+    "web3": "Web 3.0 Solution Development",
+    "tokendesign": "Token Design",
+    "whiteLabel": "White Label Products",
     "projects": "projects",
     "solutions": "solutions"
   },
@@ -12,30 +15,31 @@
     "letsChatInTelegram": "Let’s chat in Telegram",
     "seeAllProjects": "See All Projects",
     "exploreOurProjects": "Больше о наших проектах",
-    "learnMore": "Learn More"
+    "learnMore": "Learn More",
+    "contactUs": "Contact us"
   },
   "footer": {
     "solutions": "solutions",
     "blockchainDev": "Blockchain Development",
-    "webMobDev": "Web&Mobile development",
+    "webMobDev": "Web & Mobile development",
     "blockchainConsulting": "Blockchain consulting",
     "projects": "projects",
     "blockchain": "Blockchain",
     "consulting": "Consulting",
     "webdev": "Web & Mobile app",
     "keepInTouch": "Keep In Touch",
-    "web3": "web3 solution development",
-    "cryptosystem": "cryptosystem design",
+    "web3": "web 3.0 solution development",
+    "tokendesign": "token design",
     "whitelabel": "white label products"
   },
   "home": {
-    "title": "Web3 solutions for your business",
-    "subtitle": "Transforming the Future with Web3 Solutions",
-    "Our Techstack": "Our Techstack",
-    "WHAT WE CAN HELP YOU WITH": "WHAT WE CAN HELP YOU WITH",
+    "title": "Web 3.0 solutions for your business",
+    "subtitle": "Transforming the Future with Web 3.0 Solutions",
+    "ourTechstack": "Our Techstack",
+    "ourPartners": "Our Partners",
     "BLOCKCHAIN DEVELOPMENT": {
       "title": "Blockchain development & consulting company",
-      "description": "We create and deploy public, closed, hybrid blockchain solutions for various spheres, as well as DEFI and blockchain projects for the crypto industry."
+      "description": "We create and deploy public, closed, hybrid blockchain solutions for various spheres, as well as DeFi and blockchain projects for the crypto industry."
     },
     "stats": {
       "title": "Complex systems engineering",
@@ -44,22 +48,21 @@
       "blockchainWeb": "Blockchain and web development"
     },
     "help": {
-      "title": "what we can help you with",
+      "title1": "What We Can",
+      "title2": "Help You",
+      "title3": "with",
       "web3": {
-        "title": "web3 solution development",
+        "title": "web 3.0 solution development",
         "text": "Create blockchain solutions for your business"
       },
-      "cryptosystem": {
-        "title": "cryptosystem design",
+      "tokendesign": {
+        "title": "token design",
         "text": "Modeling of profit growth taking into account potential costs under different scenarios"
       },
       "whitelabel": {
         "title": "white label products",
         "text": "Customize to your requirements and deploy the product in a short time"
       }
-    },
-    "projects": {
-      "title": "Blockchain Development Projects"
     },
     "news": {
       "title": "latest news",
@@ -78,14 +81,126 @@
       }
     }
   },
-  "blockchain": {
-
+  "web3": {
+    "title": "Web 3.0 Solution Development",
+    "subtitle": "Development of blockchain products for your ideas",
+    "stats": {
+      "title": [
+        "We offer",
+        "informed solutions",
+        "with a",
+        "creative approach."
+      ],
+      "stat1": "Blockchain developers",
+      "stat2": "Blockchain development experience",
+      "stat3": "Blockchain and web development",
+      "stat4": "We work on different blockchain networks"
+    },
+    "expertise": {
+      "title": "Our expertise",
+      "products": "Products",
+      "contracts": "Smart Contracts",
+      "contractDev": {
+        "products": [
+          "NFT marketplace",
+          "Mobile App with integration web 3 & smart contract",
+          "Crypto Exchange",
+          "Musical platform",
+          "DeFi & CeFi Wallet",
+          "Metaverse"
+        ],
+        "smartContracts": [
+          "Tokens and Crypto Wallets",
+          "Staking",
+          "NFT Mint",
+          "NFT Generation",
+          "IDO/ICO",
+          "Farming"
+        ],
+        "networks": {
+          "title": "Using such networks:"
+        },
+        "technologies": {
+          "title": "Technologies:"
+        }
+      }
+    },
+    "defi": "DeFi service we are working with",
+    "projects": "Blockchain development projects"
   },
-  "consulting": {
-
+  "tokenDesign": {
+    "title": "Token Design",
+    "stats": {
+      "title": "We create complex systems",
+      "text": [
+        "Our goal",
+        " is to create",
+        " sustainable economic models",
+        " using game theory,",
+        " behavioral economics,",
+        " sociology,",
+        " computer science,",
+        " focused on improving lives of people"
+      ],
+      "tokenomics": {
+        "title": "Tokenomics development",
+        "subtitle": [
+          "Tokenomics is an",
+          " economic model",
+          " of a token"
+        ],
+        "description": "“The goal of any tokenomics is to change the behavior of users in a project under a certain system constraint. This is achieved by optimal consensus, where each side gets what it needs.”",
+        "technologies": "Technologies used in the development of the tokenomics model:",
+        "development": {
+          "title": "Developing an economic model of the token",
+          "stages": [
+            "Agent-based modeling.",
+            "Designing a visual tokendesign map.",
+            "Audit of the current tokenomics of the project.",
+            "Creating a digital twin.",
+            "Stress testing of the system.",
+            "Final report as a presentation with Plotly dashboards, graphics and conclusions."
+          ]
+        },
+        "portfolio": "Portfolio"
+      }
+    }
   },
-  "webdev": {
-
+  "whiteLabel": {
+    "title": "White Label Products",
+    "subtitle": "Ready-made Web3 solutions",
+    "demonstration": "WANT A DEMONSTRATION?",
+    "projectTitle": ["White Label", "Projects"],
+    "projects": [
+      {
+        "title": ["Crypto", "Exchange CeFi"],
+        "description": "Centralized cryptocurrency exchange are platforms that allow users to trade cryptos.",
+        "tags": ["Feature list", "Spot trading", "Markup and Markdown", "Referral program", "Liquidity aggregator", "Authorization using login and password", "Creating wallets upon registration", "Connecting fiat payment services", "Connecting your own / third party KYC service", "Connecting your own / third party support service", "Connecting your own / third party crypto fiat exchange service", "P2P exchange"]
+      },
+      {
+        "title": ["NFT", "Marketplace"],
+        "description": "NFT Marketplace is a blockchain-based online platform to sell and buy non-fungible tokens (NFTs).",
+        "tags": ["Creating NFT collections", "Convenient category search system", "Trade history by event, item name, price, buyer, seller, date", "Creating and downloading NFTs for artists", "Development of wallet or integration with MyEtherWallet, Coinbase Wallet, Metamask, TrustWallet", "Operations for the sale and purchase of NFT products"]
+      },
+      {
+        "title": [
+          "DeFi", "Wallet"
+        ],
+        "description": "DeFi wallet is non-custodial (only those with seed phrase or private key can access funds) wallet that stores your cryptocurrency assets.",
+        "tags": [
+          "DeFi staking", "DEX swap (exchange)", "Add liquidity"
+        ]
+      },
+      {
+        "title": [
+          "CeFi", "Wallet"
+        ],
+        "description": "CeFi wallet is a platform that stores your cryptocurrency assets. It owned and managed by a centralized third party.",
+        "tags": [
+          "CeFi wallet", "P2P exchange", "Buy/Sell", "Admin panel", "KYC", "History"
+        ]
+      }
+    ]
   },
   "contactUsForm": {
     "title": "Contact us and unleash your ideas",
@@ -97,6 +212,13 @@
     "email": "email",
     "company": "company",
     "help": "how can we help?",
-    "formTitle": "Let’s switch your business to Digital"
+    "formTitle": "Let’s switch your business to Digital",
+    "services": "Services",
+    "placeholders": {
+      "name": "Your name",
+      "email": "you@company.com",
+      "company": "Company name",
+      "help": "Tell us a little about the project..."
+    }
   }
 }

@@ -20,6 +20,7 @@ import {
     polkadotIcon, polygonIcon, solanaIcon,
     tronIcon
 } from "@public/icons";
+import {useTranslation} from "react-i18next";
 
 const networks = [
     bitcoinIcon,
@@ -41,9 +42,11 @@ export const Networks: FC = () => {
   const isMobile = useMediaQuery('(max-width: 600px)')
   const listRef = useRef<HTMLDivElement>(null);
 
+  const {t, i18n} = useTranslation()
+
   return (
     <div>
-      <StyledTitle>Using such networks:</StyledTitle>
+      <StyledTitle className={i18n.language === 'en' ? '' : 'geometria'}>{t('web3.expertise.contractDev.networks.title')}</StyledTitle>
       <StyledSwiperArea>
         <Swiper
           slidesPerView={isMobile ? 3 : 6}
@@ -130,6 +133,10 @@ const StyledTitle = styled.p`
   font-size: 24px;
   line-height: 137%;
   color: #FFFFFF;
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 
 const StyledPaginationButton = styled.button`

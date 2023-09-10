@@ -25,6 +25,7 @@ import {
   uniswapIcon,
   venusIcon
 } from "@public/icons";
+import {useTranslation} from "react-i18next";
 
 
 const DeFiTechs = [
@@ -44,11 +45,12 @@ const DeFiTechs = [
 
 export const DeFiService: FC = () => {
   const isMobile = useMediaQuery('(max-width: 600px)')
+  const {t, i18n} = useTranslation()
 
   return (
     <StyledWrapper>
       <StyledFlexArea>
-        <StyledTitle>DeFi service we are working with</StyledTitle>
+        <StyledTitle className={i18n.language === 'en' ? '' : 'geometria'}>{t('web3.defi')}</StyledTitle>
         <StyledPagination>
           <StyledPaginationButton id={"swiper-back"}>
             <Image src={arrowLeftIcon} width={'24px'} height={'24px'} alt={'arrowLeftIcon'}/>
@@ -117,6 +119,10 @@ const StyledTitle = styled.p`
 
   @media (max-width: 600px) {
     font-size: 28px;
+  }
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
   }
 `
 

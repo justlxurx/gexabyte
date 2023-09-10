@@ -6,8 +6,9 @@ import { BlockchainAnimation } from 'components/UI/molecules/BlockchainAnimation
 import { DeFiService } from 'components/UI/molecules/DeFiService/DeFiService'
 import { OurExpertiseWeb3 } from 'components/UI/molecules/OurExpertise/OurExpertiseWeb3'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import React, {ReactNode, useEffect, useState} from 'react'
 import Head from 'next/head'
+import {useTranslation} from "react-i18next";
 
 const BlockChain = () => {
   const [reftp, setReftp] = useState<HTMLElement | null>(null)
@@ -17,6 +18,8 @@ const BlockChain = () => {
       setReftp(document.getElementById("contact-us"))
     }
   }, [])
+
+  const {t, i18n} = useTranslation()
 
   const handleScroll = () => {
     reftp?.scrollIntoView({ behavior: 'smooth' });
@@ -31,11 +34,11 @@ const BlockChain = () => {
         </Head>
         <FirstBlock>
           <Web3LeftSide>
-            <Web3Title>Web3 Solution Development</Web3Title>
-            <Web3Subtitle>
-              Development of blockchain products for your ideas          
+            <Web3Title className={i18n.language === 'en' ? '' : 'geometria'}>{t('web3.title')}</Web3Title>
+            <Web3Subtitle className={i18n.language === 'en' ? '' : 'nunito'}>
+              {t('web3.subtitle')}
             </Web3Subtitle>
-            <StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton>
+            <StyledContainedButton className={i18n.language === 'en' ? '' : 'nunito'} onClick={handleScroll}>{t('button.contactUs')}</StyledContainedButton>
             {/*<Link href='/projects'>*/}
             {/*  <StyledTextButton>*/}
             {/*    <OrangeText>&gt;&gt;</OrangeText>*/}
@@ -46,32 +49,32 @@ const BlockChain = () => {
           <BlockchainAnimation />
         </FirstBlock>
 
-        <SecondBlock>
+        <SecondBlock className={i18n.language === 'en' ? '' : 'geometria'}>
           <SecondBlockTitle>
-            We offer<br />
-            <OrangeText>informed solutions</OrangeText><br />
-            with a&nbsp;<OrangeText>creative approach.</OrangeText>
+            {t('web3.stats.title.0')}<br />
+            <OrangeText>{t('web3.stats.title.1')}</OrangeText><br />
+            {t('web3.stats.title.2')}&nbsp;<OrangeText>{t('web3.stats.title.3')}</OrangeText>
           </SecondBlockTitle>
 
           <StatsWrapper>
             <StatsOneBlock>
               <StatsNumber>40+</StatsNumber>
-              <StatsText>Blockchain developers</StatsText>
+              <StatsText>{t('web3.stats.stat1')}</StatsText>
             </StatsOneBlock>
 
             <StatsOneBlock>
               <StatsNumber>6+</StatsNumber>
-              <StatsText>Blockchain development experience</StatsText>
+              <StatsText>{t('web3.stats.stat2')}</StatsText>
             </StatsOneBlock>
 
             <StatsOneBlock>
               <StatsNumber>50+</StatsNumber>
-              <StatsText>Blockchain and web development </StatsText>
+              <StatsText>{t('web3.stats.stat3')}</StatsText>
             </StatsOneBlock>
 
             <StatsOneBlock>
               <StatsNumber>12+</StatsNumber>
-              <StatsText>We work on different blockchain networks</StatsText>
+              <StatsText>{t('web3.stats.stat4')}</StatsText>
             </StatsOneBlock>
           </StatsWrapper>
 
@@ -125,6 +128,10 @@ const Web3Title = styled.h1`
   @media (max-width: 600px) {
     font-size: 28px;
   }
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 
 const Web3Subtitle = styled.p`
@@ -139,6 +146,10 @@ const Web3Subtitle = styled.p`
     font-size: 12px;
     margin-bottom: 30px;
   }
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
+  }
 `
 
 const StyledContainedButton = styled.button`
@@ -147,7 +158,7 @@ const StyledContainedButton = styled.button`
   height: 80px;
   background: #736AE4;
   border-radius: 4px;
-  font-family: 'Readex Pro';
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
   font-size: 22px;
@@ -163,6 +174,10 @@ const StyledContainedButton = styled.button`
     width: 152px;
     height: 50px;
     font-size: 14px;
+  }
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
   }
 `
 
@@ -206,6 +221,10 @@ const SecondBlock = styled.div`
     padding: 16px;
     grid-template-columns: 1fr;
   }
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 
 const SecondBlockAnimation = styled.div`
@@ -215,7 +234,7 @@ const SecondBlockAnimation = styled.div`
 `
 
 const SecondBlockTitle = styled.div`
-  font-family: 'Readex Pro';
+  font-family: inherit;
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
@@ -233,6 +252,7 @@ const StatsWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+  font-family: inherit;
 `
 
 const StatsOneBlock = styled.div`
@@ -251,7 +271,7 @@ const StatsNumber = styled.div`
   color: #736AE4;
 `
 const StatsText = styled.div`
-  font-family: 'Poppins';
+  font-family: inherit;
   font-style: normal;
   font-weight: 300;
   font-size: 18px;

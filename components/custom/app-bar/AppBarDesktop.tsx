@@ -9,30 +9,24 @@ import * as React from 'react';
 import CustomButton from '../CustomButton';
 import Dropdown from '../Dropdown';
 import {logoIcon} from "@public/icons";
+import {useTranslation} from "react-i18next";
+import {useMemo} from "react";
+import LocaleButton from "../home-page/LocaleButton";
 
-export const dropdownContent = [
-  // {
-  //   title: 'Solutions',
-  //   menu: false,
-  //   link: '#',
-  //   items: [
-  //     { title: 'Blockchain Development', link: '/blockchain' },
-  //     { title: 'Blokchain Consulting', link: '/consulting' },
-  //     { title: 'Web&Mobile Development', link: '/webdev' }]
-  // },
-  // {
-  //   title: 'Projects',
-  //   menu: false,
-  //   link: '/projects',
-  // },
-  { title: 'Web3 Solution Development', menu: false, link: '/web3' },
-  { title: 'Cryptosystem Design', menu: false, link: '/cryptosystem' },
-  { title: 'White Label Products', menu: false, link: '/whitelabel' }
-]
 
 const AppBarDesktop: React.FC = () => {
   const { pathname } = useRouter()
   const [reftp, setReftp] = React.useState<HTMLElement | null>(null)
+
+  const {t, i18n} = useTranslation();
+
+  const dropdownContent = useMemo(() => {
+    return [
+      { title: t('header.web3'), menu: false, link: '/web3' },
+      { title: t('header.tokendesign'), menu: false, link: '/tokendesign' },
+      { title: t('header.whiteLabel'), menu: false, link: '/whitelabel' }
+    ]
+  }, [t])
 
   React.useEffect(() => {
     if (typeof window !== "undefined") {
@@ -58,7 +52,7 @@ const AppBarDesktop: React.FC = () => {
         }}>
           <div style={{ display: "flex" }}>
             <Link href={'/'}>
-              <Image src={logoIcon} width={100} height={60} style={{ cursor: 'pointer' }} alt={'logo'}/>
+              <Image src={logoIcon} width={110} height={90} style={{ cursor: 'pointer' }} alt={'logo'}/>
             </Link>
 
             <Stack direction={'row'} gap={'2rem'} fontSize={'16px'} style={{ marginLeft: "10vw" }}>
@@ -70,11 +64,14 @@ const AppBarDesktop: React.FC = () => {
             </Stack>
           </div>
           <Stack direction={'row'} gap={'0.5rem'} spacing={2} alignItems={'center'}>
-            {/* <LocaleButton text='ENG' locale='en' />
-            <LocaleButton text='RUS' locale='ru' /> */}
+            <div style={{display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '10px'}}>
+              <LocaleButton text='ENG' locale='en' />
+              <LocaleButton text='RUS' locale='ru' />
+              <LocaleButton text='KAZ' locale='kz' />
+            </div>
             <Link href={'#contact-us'}>
               <CustomButton
-                title={'Get in Touch'}
+                title={t('button.getInTouch')}
                 bgcolor={'transparent'}
                 handleClick={handleScroll}
               />

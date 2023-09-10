@@ -13,8 +13,8 @@ const SitemapPage = () => {
             <S.StyledLink href={'https://techculture.tech'}>Main page</S.StyledLink>
             <S.LinkTitle>Solution</S.LinkTitle>
             <S.BlockLink>
-                <S.StyledLink href={'https://techculture.tech/web3'}>Web3 Solution Development</S.StyledLink>
-                <S.StyledLink href={'https://techculture.tech/cryptosystem'}>Cryptosystem Design</S.StyledLink>
+                <S.StyledLink href={'https://techculture.tech/web3'}>Web 3.0 Solution Development</S.StyledLink>
+                <S.StyledLink href={'https://techculture.tech/tokendesign'}>Token Design</S.StyledLink>
                 <S.StyledLink href={'https://techculture.tech/whitelabel'}>White Label Products</S.StyledLink>
             </S.BlockLink>
             {/*<S.LinkTitle>Project</S.LinkTitle>*/}

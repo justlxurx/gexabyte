@@ -1,14 +1,17 @@
 import styled from '@emotion/styled'
-import CryptosystemProjects from 'components/custom/projects/CryptosystemProjects'
-import { StatsCryptosystem } from 'components/custom/StatsCryptosystem'
+import TokenDesignProjects from '../../components/custom/projects/TokenDesignProjects'
+import { StatsTokenDesign } from '../../components/custom/StatsTokenDesign'
 import GlobalLayout from 'components/layouts/GlobalLayout'
-import { OurExpertiseCryptosystem } from 'components/UI/molecules/OurExpertise/OurExpertiseCryptosystem'
+import { OurExpertiseTokenDesign } from '../../components/UI/molecules/OurExpertise/OurExpertiseTokenDesign'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Head from "next/head";
+import {useTranslation} from "react-i18next";
 
 const Consulting = () => {
   const [reftp, setReftp] = useState<HTMLElement | null>(null)
+
+  const {t, i18n} = useTranslation()
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -19,34 +22,35 @@ const Consulting = () => {
   const handleScroll = () => {
     reftp?.scrollIntoView({ behavior: 'smooth' });
   }
+
   return (
     <GlobalLayout>
       <Wrapper>
         <Head>
-          <title>TechCompany / Cryptosystem Design</title>
+          <title>TechCompany / Token Design</title>
           <meta name='description' content='Development of tokenomics, consulting on the technical and business part of your product.' />
         </Head>
         <FirstBlock>
-          <CryptosystemLeftSide>
-            <CryptosystemTitle>Cryptosystem Design</CryptosystemTitle>
-            {/*<CryptosystemSubtitle>*/}
+          <TokenDesignLeftSide>
+            <TokenDesignTitle className={i18n.language === 'en' ? '' : 'geometria'}>{t('tokenDesign.title')}</TokenDesignTitle>
+            {/*<TokenDesignSubtitle>*/}
             {/*  Development of tokenomics, consulting on the technical and business part of your product.*/}
-            {/*</CryptosystemSubtitle>*/}
-            <StyledContainedButton onClick={handleScroll}>contact us</StyledContainedButton>
+            {/*</TokenDesignSubtitle>*/}
+            <StyledContainedButton className={i18n.language === 'en' ? '' : 'nunito'} onClick={handleScroll}>{t('button.contactUs')}</StyledContainedButton>
             {/*<Link href='/projects'>*/}
             {/*  <StyledTextButton>*/}
             {/*    <OrangeText>&gt;&gt;</OrangeText>*/}
             {/*    &nbsp;see all projects*/}
             {/*  </StyledTextButton>*/}
             {/*</Link>*/}
-          </CryptosystemLeftSide>
+          </TokenDesignLeftSide>
           {/*<GraphicWrapper>*/}
           {/*  <img src='/images/graphic 1.svg' className='graph' />*/}
           {/*</GraphicWrapper>*/}
         </FirstBlock>
-        <StatsCryptosystem />
-        <OurExpertiseCryptosystem />
-        <CryptosystemProjects />
+        <StatsTokenDesign />
+        <OurExpertiseTokenDesign />
+        <TokenDesignProjects />
       </Wrapper>
     </GlobalLayout>
   )
@@ -71,7 +75,7 @@ const FirstBlock = styled.div`
   }
 `
 
-const CryptosystemLeftSide = styled.div`
+const TokenDesignLeftSide = styled.div`
 
 `
 
@@ -93,7 +97,7 @@ const GraphicWrapper = styled.div`
 
 `
 
-const CryptosystemTitle = styled.h1`
+const TokenDesignTitle = styled.h1`
   font-family: 'Readex Pro';
   font-style: normal;
   font-weight: 600;
@@ -106,9 +110,13 @@ const CryptosystemTitle = styled.h1`
   @media (max-width: 600px) {
     font-size: 28px;
   }
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 
-const CryptosystemSubtitle = styled.p`
+const TokenDesignSubtitle = styled.p`
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 300;
@@ -144,6 +152,10 @@ const StyledContainedButton = styled.button`
     width: 152px;
     height: 50px;
     font-size: 14px;
+  }
+  
+  &.nunito{
+    font-family: 'Nunito', sans-serif;
   }
 `
 

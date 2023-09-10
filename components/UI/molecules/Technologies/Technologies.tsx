@@ -20,6 +20,7 @@ import {
     solidityIcon, swift1Icon,
     tsIcon
 } from "@public/icons";
+import {useTranslation} from "react-i18next";
 
 const technologies = [
     solidityIcon,
@@ -36,10 +37,11 @@ const technologies = [
 
 export const Technologies: FC = () => {
   const isMobile = useMediaQuery('(max-width: 600px)')
+  const {t, i18n} = useTranslation();
 
   return (
     <div>
-      <StyledTitle>Technologies:</StyledTitle>
+      <StyledTitle className={i18n.language === 'en' ? '' : 'geometria'}>{t('web3.expertise.contractDev.technologies.title')}</StyledTitle>
 
       <StyledSwiperArea>
         <Swiper
@@ -131,6 +133,10 @@ const StyledTitle = styled.p`
   font-size: 24px;
   line-height: 137%;
   color: #FFFFFF;
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 
 const StyledPaginationButton = styled.button`

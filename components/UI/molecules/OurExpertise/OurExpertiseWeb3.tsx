@@ -1,11 +1,15 @@
 import styled from '@emotion/styled'
 import React from 'react'
 import { SmartContractDev } from './SmartContractDev/SmartContractDev'
+import {useTranslation} from "react-i18next";
 
 export const OurExpertiseWeb3 = () => {
+
+  const {t, i18n} = useTranslation()
+
   return (
     <StyledWrapper>
-      <StyledTitle>Our expertise\\</StyledTitle>
+      <StyledTitle className={i18n.language === 'en' ? '' : 'geometria'}>{t('web3.expertise.title')}\\</StyledTitle>
       <SmartContractDev />
     </StyledWrapper>
   )
@@ -29,5 +33,9 @@ const StyledTitle = styled.p`
   letter-spacing: 0.025em;
   text-transform: uppercase;
   color: #FFFFFF;
+  
+  &.geometria{
+    font-family: 'Geometria', sans-serif;
+  }
 `
 

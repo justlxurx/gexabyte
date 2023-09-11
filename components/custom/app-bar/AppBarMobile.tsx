@@ -66,7 +66,7 @@ const AppBarMobile: React.FC = () => {
 
         <Box sx={{ flexGrow: 1 }}>
           <Link href='/'>
-            <Image src={logoRawIcon} width={'70px'} height={'70px'} style={{ cursor: 'pointer' }} alt={'logoRaw'}/>
+            <Image src={logoRawIcon} width={'32px'} height={'32px'} style={{ cursor: 'pointer' }} alt={'logoRaw'}/>
           </Link>
         </Box>
         <CustomButton title={t('button.getInTouch')} bgcolor={'transparent'} handleClick={handleScroll} />

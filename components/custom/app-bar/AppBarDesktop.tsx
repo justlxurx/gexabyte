@@ -52,7 +52,7 @@ const AppBarDesktop: React.FC = () => {
         }}>
           <div style={{ display: "flex" }}>
             <Link href={'/'}>
-              <Image src={logoIcon} width={110} height={90} style={{ cursor: 'pointer' }} alt={'logo'}/>
+              <Image src={logoIcon} width={100} height={50} style={{ cursor: 'pointer' }} alt={'logo'}/>
             </Link>
 
             <Stack direction={'row'} gap={'2rem'} fontSize={'16px'} style={{ marginLeft: "10vw" }}>

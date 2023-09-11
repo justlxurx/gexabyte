@@ -29,7 +29,7 @@ const Footer = () => {
         <Grid container columns={{ xs: 2, md: 5 }} spacing={5}>
           <Grid item xs={2} md={1}>
             <Stack direction={'column'} spacing={1} alignItems={'flex-start'}>
-              <Image src={logoIcon} width={120} height={80} alt={'logo'}/>
+              <Image src={logoIcon} width={120} height={50} alt={'logo'}/>
               <Button fullWidth onClick={handleScroll} sx={{
                 bgcolor: '#F000000',
                 border: '2px solid #F0B270',
@@ -73,7 +73,7 @@ const Footer = () => {
         </Grid>
       </Container>
       <Container sx={{ px: { xs: '16px', md: '0px' }, py: '30px', display: { xs: 'block', md: 'flex' }, alignItems: 'center', gap: '80px' }}>
-        <StyledCopyright>© 2023 TechCompany</StyledCopyright>
+        <StyledCopyright>© {new Date().getFullYear()} TechCulture</StyledCopyright>
       </Container>
     </StyledFooter>
   )

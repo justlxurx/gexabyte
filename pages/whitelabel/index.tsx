@@ -29,7 +29,7 @@ const Webdev = () => {
     <GlobalLayout>
       <Wrapper>
         <Head>
-          <title>TechCompany / White Label Products</title>
+          <title>TechCulture / White Label Products</title>
           <meta name='description' content='Web applications for automating processes and solving business problems using modern technologies.' />
         </Head>
         <FirstBlock>

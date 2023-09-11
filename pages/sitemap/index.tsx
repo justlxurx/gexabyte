@@ -6,7 +6,7 @@ const SitemapPage = () => {
     return (
         <S.Wrapper>
             <Head>
-                <title>TechCompany / Sitemap</title>
+                <title>TechCulture / Sitemap</title>
                 <meta name='description' content='Sitemap TechCulture' />
             </Head>
             <S.Title>Sitemap</S.Title>

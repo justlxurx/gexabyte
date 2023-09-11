@@ -27,7 +27,7 @@ const Consulting = () => {
     <GlobalLayout>
       <Wrapper>
         <Head>
-          <title>TechCompany / Token Design</title>
+          <title>TechCulture / Token Design</title>
           <meta name='description' content='Development of tokenomics, consulting on the technical and business part of your product.' />
         </Head>
         <FirstBlock>

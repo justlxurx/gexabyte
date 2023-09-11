@@ -10,7 +10,7 @@ interface MainLayoutProps {
   children: React.ReactNode
 }
 
-const SEOkeywords = ['tech company', 'blockchain', 'etc'];
+const SEOkeywords = ['tech culture', 'blockchain', 'etc'];
 
 const GlobalLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const theme = useTheme();
@@ -19,8 +19,8 @@ const GlobalLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <>
       <Head>
-        <title>TechCompany - Blockchain development & consulting company</title>
-        <meta property="og:title" content="TechCompany" key="title" />
+        <title>TechCulture - Blockchain development & consulting company</title>
+        <meta property="og:title" content="TechCulture" key="title" />
         <meta name="description" content="We create complex products using artificial intelligence, cloud solutions, blockchain and computer vision" />
         <link rel="icon" href="/favicon.svg" />
         <meta name="keywords" content={SEOkeywords?.join(",")} />

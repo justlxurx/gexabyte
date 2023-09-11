@@ -18,7 +18,7 @@ const Target = () => {
 
     return <>
         <Head>
-            <title>TechCompany / Target</title>
+            <title>TechCulture / Target</title>
         </Head> 
         <Box padding={"56px 0 86px"}
             style={{

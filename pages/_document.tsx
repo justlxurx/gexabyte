@@ -4,7 +4,7 @@ export default function Document() {
     const schema =   {
         "@context": "http://schema.org",
         "@type": "Organization",
-        "name": "TechCompany",
+        "name": "TechCulture",
         "description": "Blockchain development & consulting company. We create complex products using blockchain and web technologies.",
         "url": "https://techculture.tech",
         "email": "sales@techculture.tech",

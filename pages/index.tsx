@@ -32,7 +32,7 @@ const Home: NextPage = () => {
         <Stats />
         <Services />
         {/*<Web3Projects />*/}
-        <News />
+        {/*<News />*/}
       </div>
     </GlobalLayout>
   )

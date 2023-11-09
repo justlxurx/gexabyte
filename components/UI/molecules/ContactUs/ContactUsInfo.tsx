@@ -72,7 +72,7 @@ const ContactUsInfo = () => {
           fontWeight: 600,
           mb: '1rem',
           fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'
-        }}>sales@techculture.tech</Typography>
+        }}>aa@techculture.tech</Typography>
       </a>
       {/*<Typography style={{*/}
       {/*  color: '#F0B270',*/}

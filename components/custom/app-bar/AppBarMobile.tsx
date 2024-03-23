@@ -1,126 +1,153 @@
-import { Accordion, AccordionDetails, AccordionSummary, AppBar, Box, Drawer, IconButton, Stack, Toolbar, Typography } from '@mui/material';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import React, {useMemo} from 'react';
-import { theme } from '../../../utils/theme';
-import CustomButton from '../CustomButton';
-import SocialMedia from '../SocialMedia';
-import {arrowDownGrayIcon, burgerIcon, closeIcon, logoRawIcon} from "@public/icons";
-import {useTranslation} from "react-i18next";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  AppBar,
+  Box,
+  Drawer,
+  IconButton,
+  Stack,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useMemo } from "react";
+import { theme } from "../../../utils/theme";
+import CustomButton from "../CustomButton";
+import SocialMedia from "../SocialMedia";
+import { burgerIcon, closeIcon, logo2 } from "@public/icons";
+import { useTranslation } from "react-i18next";
 import LocaleButton from "../home-page/LocaleButton";
 
 const AppBarMobile: React.FC = () => {
-  const [isOpen, setIsOpen] = React.useState(false)
-  const { pathname } = useRouter()
+  const [isOpen, setIsOpen] = React.useState(false);
+  const { pathname } = useRouter();
   let reftp: HTMLElement | null = null;
-  if (typeof window !== 'undefined') {
+  if (typeof window !== "undefined") {
     reftp = document.getElementById("contact-us");
   }
 
-  const {t, i18n} = useTranslation()
+  const { t, i18n } = useTranslation();
 
   const dropdownContent = useMemo(() => {
     return [
-      { title: t('header.web3'), menu: false, link: '/web3' },
-      { title: t('header.tokendesign'), menu: false, link: '/tokendesign' },
-      { title: t('header.whiteLabel'), menu: false, link: '/whitelabel' }
-    ]
-  }, [t])
+      { title: t("header.technologies"), menu: false, link: "" },
+      { title: t("header.partners"), menu: false, link: "#partner-block" },
+      { title: t("header.numbers"), menu: false, link: "#stats-block" },
+      { title: t("header.services"), menu: false, link: "#services-block" },
+      { title: t("header.contacts"), menu: false, link: "#contact-us" },
+    ];
+  }, [t]);
 
   const changeMenu = () => {
-    setIsOpen(prev => !prev);
-  }
-
-  const handleScroll = () => {
-    reftp?.scrollIntoView({ behavior: 'smooth' });
-  }
+    setIsOpen((prev) => !prev);
+  };
 
   React.useEffect(() => {
-    setIsOpen(false)
-  }, [pathname])
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
-    <AppBar position="sticky" sx={{
-      bgcolor: 'rgba(0, 0, 0, 0.65)',
-      padding: '8px 8px',
-      backdropFilter: 'blur(21px)',
-      position: 'relative',
-      zIndex: theme.zIndex.drawer + 1,
-    }}>
-      <Toolbar>
-        <IconButton
-          size={"large"}
-          edge={"start"}
-          color={"inherit"}
-          aria-label={"menu"}
-          sx={{ mr: 2 }}
-          onClick={changeMenu}
-        >
-          {isOpen ?
-            <Image src={closeIcon} width={'32px'} height={'32px'} alt={'closeIcon'}/>
-            :
-            <Image src={burgerIcon} width={'32px'} height={'32px'} alt={'burgerIcon'}/>
-          }
-        </IconButton>
-
+    <AppBar
+      // position="sticky"
+      sx={{
+        borderBottomLeftRadius: "20px",
+        borderBottomRightRadius: "20px",
+        bgcolor: "white",
+        padding: "8px 8px",
+        backdropFilter: "blur(24px)",
+        position: "relative",
+        zIndex: theme.zIndex.drawer + 1,
+        boxShadow: { xs: 0, md: "0px 4px 8px rgba(0, 0, 0, 0.06)" },
+      }}
+    >
+      <Toolbar sx={{ justifyContent: "space-between" }}>
         <Box sx={{ flexGrow: 1 }}>
-          <Link href='/'>
-            <Image src={logoRawIcon} width={'32px'} height={'32px'} style={{ cursor: 'pointer' }} alt={'logoRaw'}/>
+          <Link href="/">
+            <Image
+              src={logo2}
+              width={"80px"}
+              height={"32px"}
+              style={{ cursor: "pointer" }}
+              alt={"logoRaw"}
+            />
           </Link>
         </Box>
-        <CustomButton title={t('button.getInTouch')} bgcolor={'transparent'} handleClick={handleScroll} />
+        <IconButton
+          size={"large"}
+          edge={"end"}
+          color={"inherit"}
+          aria-label={"menu"}
+          sx={{}}
+          onClick={changeMenu}
+        >
+          {isOpen ? (
+            <Image
+              src={closeIcon}
+              width={"32px"}
+              height={"32px"}
+              alt={"closeIcon"}
+            />
+          ) : (
+            <Image
+              src={burgerIcon}
+              width={"30px"}
+              height={"30px"}
+              alt={"burgerIcon"}
+            />
+          )}
+        </IconButton>
       </Toolbar>
       <Drawer
-        anchor={'left'}
+        anchor={"top"}
         open={isOpen}
         onClose={changeMenu}
         sx={{
-          display: { xs: 'block' },
-          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '100%', bgcolor: '#000000', padding: '2rem' },
+          display: { xs: "block" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: "100%",
+            bgcolor: "white",
+            padding: "2rem",
+            borderBottomLeftRadius: "20px",
+            borderBottomRightRadius: "20px",
+            boxShadow: 0,
+          },
         }}
         disableScrollLock={true}
       >
         <Toolbar />
-        {/* {dropdownContent.map((item, idx) => (
-          <Link href={item.link} key={idx}>
-            <Typography key={idx} sx={{ fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
-          </Link>
-        ))} */}
         {dropdownContent.map((item, idx) => (
-          // item.items?.length ?
-          //   <Accordion sx={{ bgcolor: '#000000' }} key={idx}>
-          //     <AccordionSummary
-          //       expandIcon={<Image src={arrowDownGrayIcon} alt={'arrowDownGrayIcon'}/>}
-          //       aria-controls={"panel2a-content"}
-          //       id={"panel2a-header"}
-          //     >
-          //       <Typography sx={{ fontSize: '24px', fontWeight: 500, color: '#A8B1D1' }}>{item.title}</Typography>
-          //     </AccordionSummary>
-          //     <AccordionDetails >
-          //       {item.items.map((itemY, idy) => (
-          //         <Link href={itemY.link} key={idy}>
-          //           <Typography style={{ cursor: 'pointer' }} sx={{ m: '1rem', fontSize: '22px', fontWeight: 500, color: '#A8B1D1' }}>{itemY.title}</Typography>
-          //         </Link>
-          //       ))}
-          //     </AccordionDetails>
-          //   </Accordion>
-          //   :
-            <Link href={item.link} key={idx}>
-              <Typography key={idx} sx={{ m: '1rem', fontSize: '24px', fontWeight: 500, color: '#A8B1D1', fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif' }}>{item.title}</Typography>
-            </Link>
+          <Link href={item.link} key={idx}>
+            <Typography
+              onClick={changeMenu}
+              key={idx}
+              sx={{
+                cursor: "pointer",
+                textAlign: "center",
+                textTransform: "uppercase",
+                m: "12px",
+                fontSize: "14px",
+                fontWeight: 700,
+                color: "#16151E",
+                fontFamily:
+                  i18n.language === "en" ? "Poppins" : "Arial, sans-serif",
+              }}
+            >
+              {item.title}
+            </Typography>
+          </Link>
         ))}
-        <Stack direction='row' sx={{ mt: 'auto' }}>
-          <SocialMedia />
-           <Stack direction='row' spacing={2} sx={{ ml: 'auto' }}>
-            <LocaleButton text='ENG' locale='en' />
-            <LocaleButton text='RUS' locale='ru' />
-            <LocaleButton text='KAZ' locale='kz' />
-          </Stack>
+        <Stack direction="row" spacing={4} sx={{ m: "38px auto 0px" }}>
+          <LocaleButton text="EN" locale="en" />
+          <LocaleButton text="RUS" locale="ru" />
+          <LocaleButton text="KAZ" locale="kz" />
         </Stack>
       </Drawer>
-    </AppBar >
-  )
-}
+    </AppBar>
+  );
+};
 
-export default AppBarMobile
+export default AppBarMobile;

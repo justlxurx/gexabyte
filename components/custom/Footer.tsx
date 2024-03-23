@@ -1,110 +1,139 @@
-import styled from '@emotion/styled'
-import { Button, Container, Grid, Stack, Typography } from '@mui/material'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import React from 'react'
-import { useTranslation } from 'react-i18next'
-import {logoIcon} from "@public/icons";
+import styled from "@emotion/styled";
+import { Button, Container, Grid, Stack, Typography } from "@mui/material";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { logoIcon } from "@public/icons";
 import SocialMedia from "./SocialMedia";
 
 const Footer = () => {
-  const { t, i18n } = useTranslation()
-  const { asPath } = useRouter()
-  const [reftp, setReftp] = React.useState<HTMLElement | null>(null)
+  const { t, i18n } = useTranslation();
+  const { asPath } = useRouter();
+  const [reftp, setReftp] = React.useState<HTMLElement | null>(null);
 
   React.useEffect(() => {
     if (typeof window !== "undefined") {
-      setReftp(document.getElementById("contact-us"))
+      setReftp(document.getElementById("contact-us"));
     }
-  }, [asPath])
+  }, [asPath]);
 
   const handleScroll = () => {
-    reftp?.scrollIntoView({ behavior: 'smooth' });
-  }
+    reftp?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <StyledFooter>
-      <Container disableGutters maxWidth={"xl"} sx={{ padding: { xs: '16px 16px', md: '12px 80px' } }}>
-        <Grid container columns={{ xs: 2, md: 5 }} spacing={5}>
-          <Grid item xs={2} md={1}>
-            <Stack direction={'column'} spacing={1} alignItems={'flex-start'}>
-              <Image src={logoIcon} width={120} height={50} alt={'logo'}/>
-              <Button fullWidth onClick={handleScroll} sx={{
-                bgcolor: '#F000000',
-                border: '2px solid #F0B270',
-                color: '#FFFFFF',
-                borderRadius: '1px',
-                fontWeight: 700,
-                fontSize: '16px',
-                textTransform: 'none',
-                fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif',
-                width: {
-                  xs: '50%',
-                  md: '100%'
-                }
-              }}>
-                {t('button.getInTouch')}
-              </Button>
-            </Stack>
-          </Grid>
-          <Grid item xs={1} md={1}>
-            <Stack direction={'column'}>
-              {/*<Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Solutions</Typography>*/}
-              <StyledTypography title={t('footer.web3')} link={'/web3'} font={i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'} />
-              <StyledTypography title={t('footer.tokendesign')} link={'/tokendesign'} font={i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'} />
-              <StyledTypography title={t('footer.whitelabel')} link={'/whitelabel'} font={i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'} />
-            </Stack>
-          </Grid>
-          {/*<Grid item xs={1} md={2}>*/}
-          {/*  <Stack direction={'column'}>*/}
-          {/*    <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Readex Pro', mb: '1rem' }}>Projects</Typography>*/}
-          {/*    <StyledTypography title={'Blockchain projects'} link={'/projects?tab=blockchain'}/>*/}
-          {/*    <StyledTypography title={'Consulting projects'} link={'/projects?tab=consulting'} />*/}
-          {/*    <StyledTypography title={'Web&Mobile app projects'} link={'/projects?tab=webdev'} />*/}
-          {/*  </Stack>*/}
-          {/*</Grid>*/}
-          <Grid item xs={2} md={1}>
-            <Stack direction={{ xs: 'row', md: 'column' }} alignItems={{ xs: 'center', md: 'start' }} justifyContent={{ xs: 'space-between' }}>
-              <Typography sx={{ fontSize: '18px', fontWeight: '700', fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif', mb: '1rem' }}>{t('footer.keepInTouch')}</Typography>
-              <SocialMedia/>
-            </Stack>
-          </Grid>
-        </Grid>
-      </Container>
-      <Container sx={{ px: { xs: '16px', md: '0px' }, py: '30px', display: { xs: 'block', md: 'flex' }, alignItems: 'center', gap: '80px' }}>
-        <StyledCopyright>© {new Date().getFullYear()} TechCulture</StyledCopyright>
+      <StyledImage>
+        <Image src={logoIcon} width={57} height={74} alt={"logo"} />
+      </StyledImage>
+      <Container
+        disableGutters
+        maxWidth={"xl"}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          gap: "32px",
+        }}
+      >
+        <Stack
+          justifyContent={"center"}
+          alignItems={"center"}
+          sx={{
+            flexDirection: { xs: "column", md: "row" },
+            gap: { xs: "32px", md: "48px" },
+          }}
+        >
+          <StyledTypography
+            title={t("footer.technologies")}
+            link={"/"}
+            font={i18n.language === "en" ? "Poppins" : "Arial, sans-serif"}
+          />
+          <StyledTypography
+            title={t("footer.partners")}
+            link={"#partner-block"}
+            font={i18n.language === "en" ? "Poppins" : "Nunito, sans-serif"}
+          />
+          <StyledTypography
+            title={t("footer.numbers")}
+            link={"#stats-block"}
+            font={i18n.language === "en" ? "Poppins" : "Nunito, sans-serif"}
+          />
+          <StyledTypography
+            title={t("footer.services")}
+            link={"#services-block"}
+            font={i18n.language === "en" ? "Poppins" : "Nunito, sans-serif"}
+          />
+          <StyledTypography
+            title={t("footer.contacts")}
+            link={"#contact-us"}
+            font={i18n.language === "en" ? "Poppins" : "Nunito, sans-serif"}
+          />
+        </Stack>
+        <SocialMedia />
+        <StyledCopyright>
+          © {new Date().getFullYear()} TechCulture. {t("footer.rights")}
+        </StyledCopyright>
       </Container>
     </StyledFooter>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
 
 interface StyledTypographyProps {
-  title: string
-  link: string
-  font: string
+  title: string;
+  link: string;
+  font: string;
 }
 
-const StyledTypography: React.FC<StyledTypographyProps> = ({ title, link, font}) => (
+const StyledTypography: React.FC<StyledTypographyProps> = ({
+  title,
+  link,
+  font,
+}) => (
   <Link href={link}>
-    <Typography sx={{ fontSize: '16px', textTransform: 'capitalize', color: '#667085', cursor: 'pointer', mb: '1rem', fontFamily: font }}>
+    <Typography
+      sx={{
+        fontSize: "16px",
+        textTransform: "capitalize",
+        color: "white",
+        cursor: "pointer",
+        fontFamily: font,
+        margin: "0",
+      }}
+    >
       {title}
     </Typography>
   </Link>
-)
+);
 
 const StyledFooter = styled.footer`
   margin-top: auto;
-`
-
+  padding: 50px 0;
+  background: #1b1a24;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 54px;
+`;
+const StyledImage = styled.div`
+  display: flex;
+  justify-content: center;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
 const StyledCopyright = styled.span`
-  font-family: 'Open Sans';
+  font-family: "Arial";
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 150%;
-  color: #556174;
+  color: white;
+  opacity: 0.56;
   cursor: pointer;
-`
+  text-align: center;
+`;

@@ -1,189 +1,186 @@
-import styled from '@emotion/styled';
-import { Box, Container, Stack, Typography, Link as MUILink, Grid } from '@mui/material';
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { theme } from '../../../utils/theme';
-import {arrowRightBlueIcon} from "@public/icons";
-
-
+import styled from "@emotion/styled";
+import { Box, Stack, Typography, Link as MUILink } from "@mui/material";
+import React, { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
-  const { t , i18n} = useTranslation()
+  const { t, i18n } = useTranslation();
 
   const services = useMemo(() => {
     return [
       {
-        title: t('home.help.web3.title'),
-        description: t('home.help.web3.text'),
-        icon: '/icons/bd.svg',
-        link: '/web3'
+        color: "#120C27",
+        bgcolor: "#736AE4",
+        title: t("home.help.blockchain.title"),
+        description: [
+          t("home.help.blockchain.text1"),
+          t("home.help.blockchain.text2"),
+          t("home.help.blockchain.text3"),
+          t("home.help.blockchain.text4"),
+          t("home.help.blockchain.text5"),
+        ],
+        lastText: t("home.help.blockchain.text6"),
+        link: "/web3",
       },
       {
-        title: t('home.help.tokendesign.title'),
-        description: t('home.help.tokendesign.text'),
-        icon: '/icons/bc.svg',
-        link: '/tokendesign'
+        color: "#462905",
+        bgcolor: "#F0B270",
+        title: t("home.help.tokendesign.title"),
+        description: [
+          t("home.help.tokendesign.text1"),
+          t("home.help.tokendesign.text2"),
+          t("home.help.tokendesign.text3"),
+          t("home.help.tokendesign.text4"),
+          t("home.help.tokendesign.text5"),
+        ],
+        lastText: t("home.help.tokendesign.text6"),
+        link: "/tokendesign",
       },
-      {
-        title: t('home.help.whitelabel.title'),
-        description: t('home.help.whitelabel.text'),
-        icon: '/icons/wd.svg',
-        link: '/whitelabel'
-      }
-    ]
-  }, [t])
+    ];
+  }, [t]);
 
   return (
-    <Container id={'services-block'} sx={{
-      mb: '6rem',
-      minWidth: '375px',
-    }}>
-      <Box sx={{
-        display: 'flex',
-        flexDirection: {
-          xs: 'column',
-          md: 'row'
-        },
-        justifyContent: 'space-between',
-        alignItems: {
-          xs: 'flex-start',
-          md: 'flex-end'
-        },
-        mb: '2rem',
-      }}>
-        <Stack direction={'column'}>
-          <Typography variant={'h2'} sx={{
+    <Stack
+      id={"services-block"}
+      sx={{
+        padding: { md: "0 80px", xs: "0 25px" },
+        margin: { md: "130px 0", xs: "64px 0 87px" },
+      }}
+    >
+      <Stack
+        direction={"column"}
+        sx={{ marginBottom: { xs: "40px", md: "75px" } }}
+      >
+        <Typography
+          variant={"h2"}
+          sx={{
             fontSize: {
-              xs: '32px',
-              md: '56px'
+              xs: "28px",
+              md: "48px",
+            },
+            color: "#020210",
+            fontWeight: 700,
+            fontFamily:
+              i18n.language === "en" ? "Readex Pro" : "Arial, sans-serif",
+          }}
+        >
+          {t("home.help.title1")}
+        </Typography>
+        <Typography
+          variant={"h2"}
+          sx={{
+            fontSize: {
+              xs: "28px",
+              md: "48px",
             },
             fontWeight: 700,
-            fontFamily: i18n.language === 'en' ? 'Readex Pro' : 'Geometria, sans-serif'
-          }}>
-            {t('home.help.title1')}
-          </Typography>
-          <Typography variant={'h2'} sx={{
-            fontSize: {
-              xs: '32px',
-              md: '56px'
-            },
-            fontWeight: 700,
-            mb: {
-              xs: '34px',
-              md: 0
-            },
-            fontFamily: i18n.language === 'en' ? 'Readex Pro' : 'Geometria, sans-serif'
-          }}>
-            <span style={{ color: theme.palette.primary.main }}>{t('home.help.title2')}</span> {t('home.help.title3')}
-          </Typography>
-        </Stack>
-        {/*<Link href={'/projects'}>*/}
-        {/*  <MUILink sx={{ cursor: 'pointer', fontFamily: 'Poppins', color: '#B3B3B3' }}>*/}
-        {/*    EXPLORE OUT PROJECTS {'>'}*/}
-        {/*  </MUILink>*/}
-        {/*</Link>*/}
-      </Box>
-      <Grid container columns={3} spacing={1} gridAutoRows={'1fr'} rowGap={3}>
+            color: "#020210",
+            fontFamily:
+              i18n.language === "en" ? "Readex Pro" : "Arial, sans-serif",
+          }}
+        >
+          {t("home.help.title2")}
+        </Typography>
+      </Stack>
+      <Stack
+        sx={{
+          flexDirection: { xs: "column", md: "row" },
+          gap: { xs: "20px", md: "70px" },
+        }}
+      >
         {services.map((service, idx) => (
-          <Grid item xs={3} md={1} key={idx}>
-            <StyledCard>
-              <StyledIcon src={service.icon} />
-              <StyledTextArea >
-                <p style={{fontFamily: i18n.language === 'en' ? 'Readex Pro' : 'Geometria, sans-serif'}}>{service.title}</p>
-                <span style={{fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'}}>{service.description}</span>
-              </StyledTextArea>
-              <Link href={service.link}>
-                <StyledButton>
-                  <span style={{fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'}}>{t('button.moreDetails')}</span>
-                  <Image src={arrowRightBlueIcon} width={'25px'} height={'8px'} alt={service.title}/>
-                </StyledButton>
-              </Link>
-            </StyledCard>
-          </Grid>
+          <StyledCard key={idx}>
+            <StyledTextArea>
+              <h4
+                style={{
+                  fontFamily:
+                    i18n.language === "en" ? "Readex Pro" : "Arial, sans-serif",
+                  color: `${service.color}`,
+                  backgroundColor: `${service.bgcolor}`,
+                }}
+              >
+                {service.title}
+              </h4>
+              {/* {service.description} */}
+              {service.description.map((text, index) => (
+                <p
+                  key={index}
+                  style={{
+                    fontFamily:
+                      i18n.language === "en" ? "Poppins" : "Nunito, sans-serif",
+                    borderBottom: "1px solid black",
+                  }}
+                >
+                  {text}
+                  <br /> {/* Добавляем перенос строки между текстами */}
+                </p>
+              ))}
+              <p
+                style={{
+                  fontFamily:
+                    i18n.language === "en" ? "Poppins" : "Nunito, sans-serif",
+                }}
+              >
+                {service.lastText}
+              </p>
+            </StyledTextArea>
+          </StyledCard>
         ))}
-      </Grid>
-    </Container>
-  )
-}
+      </Stack>
+    </Stack>
+  );
+};
 
-export default Services
+export default Services;
 
 const StyledCard = styled.div`
-  width: 100%;
-  height: 435px;
-  background: #171717;
+  width: 602px;
+  background: #f7f8fa;
+  border: 1px solid #eaebef;
   display: flex;
   flex-direction: column;
-  padding: 26px 48px;
-  :hover {
-    background: #242424;
-  }
-
-  @media (max-width: 600px) {
+  padding: 41px 17px;
+  border-radius: 20px;
+  @media (max-width: 768px) {
     width: 100%;
     height: 100%;
+    padding: 25px;
   }
-`
+`;
 
 const StyledTextArea = styled.div`
-  margin-bottom: 27px;
-
-  & p {
-    font-style: normal;
+  width: fit-content;
+  & h4 {
+    font-style: "Arial";
     font-weight: 700;
-    font-size: 28px;
+    font-size: 26px;
     line-height: 118%;
-    text-transform: uppercase;
-    color: #F0B270;
+    text-transform: initial;
+    border-radius: 23.15px;
+    padding: 53px 0px;
+    text-align: center;
+    margin: 0 0 20px;
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 
-  & span {
-    font-style: normal;
+  & p {
+    font-style: "Arial";
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
-    color: #A8B1D1;
-  }
-`
-
-const StyledIcon = styled.img`
-  width: 60px;
-  height: 60px;
-  padding: 15px;
-  background: rgba(115, 106, 228, 0.15);
-  border-radius: 50%;
-  margin-bottom: 20px;
-`
-
-const StyledButton = styled.button`
-  margin-top: auto;//for stick the button to bottom
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 200px;
-  background: rgba(115, 106, 228, 0.15);
-  border-radius: 4px;
-  padding: 14px 24px;
-  border: none;
-  :hover {
-    cursor: pointer;
-  }
-
-  @media (max-width: 600px) {
-    width: 191.77px;
-    height: 48px;
-  }
-
-  & span {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
-    color: #736AE4;
-    :hover {
-      text-decoration: underline;
+    color: #020210;
+    padding-top: 22px;
+    margin: 0 26px;
+    @media (max-width: 768px) {
+      font-size: 10px;
+      padding: 12px 0;
+      margin: 0;
+      line-height: 11.5px;
     }
   }
-`
+  @media (max-width: 768px) {
+    width: auto;
+  }
+`;

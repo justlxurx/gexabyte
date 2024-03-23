@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import React from 'react';
-import styles from '../../styles/components/Dropdown.module.scss';
-import DropdownIcon from '@public/icons/arrowDownGray.svg';
-import styled from '@emotion/styled';
-import {useTranslation} from "react-i18next";
+import Link from "next/link";
+import React from "react";
+import styles from "../../styles/components/Dropdown.module.scss";
+import DropdownIcon from "@public/icons/arrowDownGray.svg";
+import styled from "@emotion/styled";
+import { useTranslation } from "react-i18next";
 
 interface DropdownProps {
   data: {
@@ -12,19 +12,18 @@ interface DropdownProps {
     link: string;
     items?: {
       title: string;
-      link: string
+      link: string;
     }[];
-  }
+  };
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ data }) => {
-
-  const {i18n} = useTranslation()
+  const { i18n } = useTranslation();
 
   return (
-    <div className={styles.dropdown}>
+    <div className={styles.dropdown} style={{ gap: "12px" }}>
       <Link href={data.link}>
-        <StyledLink className={i18n.language === 'en' ? '' : 'nunito'}>
+        <StyledLink className={i18n.language === "en" ? "" : "nunito"}>
           {data.title}
         </StyledLink>
       </Link>
@@ -36,21 +35,31 @@ const Dropdown: React.FC<DropdownProps> = ({ data }) => {
       {/*    </Link>*/}
       {/*  ))}*/}
       {/*</div>*/}
+      <span
+        style={{
+          aspectRatio: "1",
+          width: "4px",
+          backgroundColor: "grey",
+          borderRadius: "50%",
+          opacity: "50%",
+        }}
+      ></span>
     </div>
-  )
-}
+  );
+};
 
-export default Dropdown
+export default Dropdown;
 
 const StyledLink = styled.span`
-  font-family: 'Poppins';
+  font-family: "Arial";
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  color: #FFFFFF;
-  
-  &.nunito{
-    font-family: 'Nunito', sans-serif;
-  }
-`
+  font-weight: 700;
+  font-size: 12px;
+  // line-height: 12px;
+  color: #16151e;
+  text-transform: uppercase;
+
+  // &.nunito {
+  //   font-family: "Nunito", sans-serif;
+  // }
+`;

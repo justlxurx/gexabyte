@@ -1,0 +1,14 @@
+.contactForm {
+  padding: 32px 48px;
+  border: 1px solid #e0e4ea;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .contactForm {
+    padding: 0px;
+    border: none;
+    border-top: 1px solid #e0e4ea;
+    border-radius: unset;
+  }
+}

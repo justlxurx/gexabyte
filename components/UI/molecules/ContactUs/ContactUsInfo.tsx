@@ -1,101 +1,135 @@
-import { Box, Typography, useMediaQuery } from '@mui/material';
-import SocialMedia from 'components/custom/SocialMedia';
-import { useTranslation } from 'react-i18next';
-import {socialURL} from "../../../custom/socialURL";
+import { Box, Typography, useMediaQuery, Stack } from "@mui/material";
+import SocialMedia from "components/custom/SocialMedia";
+import { useTranslation } from "react-i18next";
+import { socialURL } from "../../../custom/socialURL";
 
 const ContactUsInfo = () => {
-  const { t, i18n } = useTranslation()
-  const isMobileScreen = useMediaQuery('(max-width:600px)')
+  const { t, i18n } = useTranslation();
+  const isMobileScreen = useMediaQuery("(max-width:600px)");
 
   return (
-    <div style={{ padding: '30px' }}>
-      {isMobileScreen ?
+    <div
+      style={{
+        paddingTop: "20px",
+        borderTop: "1px solid #E0E4EA",
+      }}
+    >
+      {isMobileScreen ? (
         <>
-          <Box sx={{
-              position: 'absolute',
-              top: '105vh',
-              height: '100px',
-              width: '100%',
+          <Box
+            sx={{
+              position: "absolute",
+              top: "105vh",
+              height: "100px",
+              width: "100%",
               zIndex: -1,
-              background: 'linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)'
-          }}>
-          </Box>
-          <video autoPlay muted loop id={"myVideo"} style={{ width: '200vw', top: '130vh', visibility: 'visible', position: 'absolute', zIndex: -2, left: '-55%', transform: 'rotate(90deg)' }}>
-            <source src={"/videos/Emitter.mp4"} type="video/mp4" />
-          </video>
+              background:
+                "linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)",
+            }}
+          ></Box>
         </>
-        :
-        <video autoPlay muted loop id={"myVideo"} style={{ height: '100%', visibility: 'visible', position: 'absolute', zIndex: -2, left: '-30%', transform: 'rotate(90deg)' }}>
-          <source src={"/videos/Emitter.mp4"} type={"video/mp4"} />
-        </video>
-      }
+      ) : (
+        ""
+      )}
 
-      <Typography sx={{
-        fontSize: '32px',
-        fontWeight: 700,
-        fontFamily: i18n.language === 'en' ? 'Readex Pro' : 'Geometria, sans-serif',
-        width: {
-          xs: '100%',
-          md: '60%'
-        },
-        textTransform: 'capitalize',
-        mb: '1.25rem',
-        lineHeight: '100%'
-      }}>
-        {t('contactUsForm.title')}
+      <Typography
+        sx={{
+          color: "#020210",
+          fontSize: { xs: "18px", md: "36px" },
+          fontWeight: 700,
+          fontFamily:
+            i18n.language === "en" ? "Readex Pro" : "Arial, sans-serif",
+          width: {
+            xs: "100%",
+            md: "60%",
+          },
+          textTransform: "capitalize",
+          mb: { xs: "20px", md: "28px" },
+        }}
+      >
+        {t("footer.contacts")}
       </Typography>
-      <Typography sx={{
-        color: '#F0B270',
-        fontSize: '16px',
-        fontWeight: 600,
-        fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif',
-      }}>{t('contactUsForm.address')}</Typography>
+      <Stack direction={"row"}>
+        <Typography
+          sx={{
+            color: "#020210",
+            fontSize: { xs: "12px", md: "16px" },
+            fontWeight: 600,
+            fontFamily:
+              i18n.language === "en" ? "Poppins" : "Arial, sans-serif",
+          }}
+        >
+          {t("contactUsForm.address")}:
+        </Typography>
         <a href={socialURL.twoGis}>
-        <Typography sx={{
-          textDecoration: 'underline',
-          fontSize: '16px',
-          fontWeight: 600,
-          mb: '1rem',
-          fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'
-        }}>Almaty, Markova 22/37</Typography>
-      </a>
-      <Typography sx={{
-        color: '#F0B270',
-        fontSize: '16px',
-        fontWeight: 600,
-        fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'
-      }}>{t('contactUsForm.sales')}</Typography>
-      <a href={socialURL.salesDepartment}>
-        <Typography sx={{
-          textDecoration: 'underline',
-          fontSize: '16px',
-          fontWeight: 600,
-          mb: '1rem',
-          fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'
-        }}>aa@techculture.tech</Typography>
-      </a>
-      {/*<Typography style={{*/}
-      {/*  color: '#F0B270',*/}
-      {/*  fontSize: '16px',*/}
-      {/*  fontWeight: 600,*/}
-      {/*}}>{t('contactUsForm.hr')}</Typography>*/}
-      {/*<a href={socialURL.hrDepartment}>*/}
-      {/*  <Typography sx={{*/}
-      {/*    textDecoration: 'underline',*/}
-      {/*    fontSize: '16px',*/}
-      {/*    fontWeight: 600,*/}
-      {/*    mb: '1rem'*/}
-      {/*  }}>hr@techculture.tech</Typography>*/}
-      {/*</a>*/}
-      <Typography sx={{
-        fontSize: '16px',
-        fontWeight: 600,
-        color: '#F0B270',
-        fontFamily: i18n.language === 'en' ? 'Poppins' : 'Nunito, sans-serif'
-      }}>{t('contactUsForm.socialMedia')}</Typography>
-      <SocialMedia />
+          <Typography
+            sx={{
+              color: "#020210",
+              fontSize: { xs: "12px", md: "16px" },
+              fontWeight: 400,
+              mb: { xs: "20px", md: "32px" },
+              fontFamily:
+                i18n.language === "en" ? "Poppins" : "Arial, sans-serif",
+            }}
+          >
+            Almaty, Markova 22/37
+          </Typography>
+        </a>
+      </Stack>
+      <Stack direction={"row"}>
+        <Typography
+          sx={{
+            color: "#020210",
+            fontSize: { xs: "12px", md: "16px" },
+            fontWeight: 600,
+            fontFamily:
+              i18n.language === "en" ? "Poppins" : "Arial, sans-serif",
+          }}
+        >
+          Email:
+        </Typography>
+        <a href={socialURL.salesDepartment}>
+          <Typography
+            sx={{
+              color: "#020210",
+              fontSize: { xs: "12px", md: "16px" },
+              fontWeight: 400,
+              mb: { xs: "20px", md: "32px" },
+              fontFamily:
+                i18n.language === "en" ? "Poppins" : "Arial, sans-serif",
+            }}
+          >
+            aa@techculture.tec
+          </Typography>
+        </a>
+      </Stack>
+      <Stack direction={"row"}>
+        <Typography
+          sx={{
+            color: "#020210",
+            fontSize: { xs: "12px", md: "16px" },
+            fontWeight: 600,
+            fontFamily:
+              i18n.language === "en" ? "Poppins" : "Arial, sans-serif",
+          }}
+        >
+          {t("contactUsForm.time")}
+        </Typography>
+        <Typography
+          sx={{
+            color: "#020210",
+            fontSize: { xs: "12px", md: "16px" },
+            fontWeight: 400,
+            mb: { xs: "20px", md: "32px" },
+            fontFamily:
+              i18n.language === "en" ? "Poppins" : "Arial, sans-serif",
+          }}
+        >
+          {t("contactUsForm.timeValue")}
+        </Typography>
+      </Stack>
     </div>
-  )
-}
+  );
+};
 
-export default ContactUsInfo
+export default ContactUsInfo;

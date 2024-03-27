@@ -169,7 +169,6 @@ const OpenProjects = () => {
                   height: "574px",
                   backgroundPositionY: "70%",
                   backgroundRepeat: "no-repeat",
-                  // backgroundColor: color,
                   borderRadius: "10px",
                   padding: "46px 30px",
                   display: "flex",

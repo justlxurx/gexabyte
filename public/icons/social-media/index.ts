@@ -5,6 +5,8 @@
 export { default as BeIcon } from "./SocialBeIcon.svg";
 export { default as GitIcon } from "./SocialGitIcon.svg";
 
+export { default as linkedinIcon } from "./linkedin.svg";
+export { default as instaIcon } from "./insta.svg";
 export { default as telegaIcon } from "./telega.svg";
 export { default as facebookIcon } from "./facebook.svg";
 export { default as youtubeIcon } from "./youtube.svg";

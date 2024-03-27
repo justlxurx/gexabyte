@@ -8,6 +8,8 @@ import {
   telegaIcon,
   youtubeIcon,
   facebookIcon,
+  linkedinIcon,
+  instaIcon,
 } from "@public/icons/social-media";
 
 const SocialMedia = () => {
@@ -15,46 +17,30 @@ const SocialMedia = () => {
     <Stack
       direction={"row"}
       justifyContent={"center"}
-      sx={{ gap: { xs: "30px", md: "48px" } }}
+      sx={{ gap: { xs: "20px", md: "30px" } }}
     >
       <a href={socialURL.instagram}>
         <Image
-          src={twitterIcon}
-          width={"24px"}
-          height={"24px"}
+          src={instaIcon}
+          width={"20px"}
+          height={"20px"}
           alt={"instagramIcon"}
-        />
-      </a>
-      <a href={socialURL.linkedIn}>
-        <Image
-          src={telegaIcon}
-          width={"24px"}
-          height={"24px"}
-          alt={"linkedInIcon"}
-        />
-      </a>
-      <a href={socialURL.linkedIn}>
-        <Image
-          src={youtubeIcon}
-          width={"24px"}
-          height={"24px"}
-          alt={"linkedInIcon"}
-        />
-      </a>
-      <a href={socialURL.linkedIn}>
-        <Image
-          src={facebookIcon}
-          width={"24px"}
-          height={"24px"}
-          alt={"linkedInIcon"}
         />
       </a>
       <a href={socialURL.telegramForum}>
         <Image
-          src={discordIcon}
-          width={"24px"}
-          height={"24px"}
+          src={telegaIcon}
+          width={"20px"}
+          height={"20px"}
           alt={"telegramIcon"}
+        />
+      </a>
+      <a href={socialURL.linkedIn}>
+        <Image
+          src={linkedinIcon}
+          width={"20px"}
+          height={"20px"}
+          alt={"linkedInIcon"}
         />
       </a>
     </Stack>

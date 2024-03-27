@@ -19,7 +19,6 @@ const TechStack = () => {
       >
         <Grid
           item
-          // xs={1}
           md={2}
           order={1}
           sx={{ display: "flex", flexDirection: { sx: "row", md: "column" } }}

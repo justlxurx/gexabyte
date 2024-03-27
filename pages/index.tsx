@@ -9,7 +9,6 @@ import TestVideo from "../components/UI/TestVideo";
 import ScrollButton from "../components/custom/button/scrollButton";
 import GlobalLayout from "components/layouts/GlobalLayout";
 import Partners from "../components/custom/home-page/Partners";
-import NDAProjects from "components/custom/projects/NDAProjects";
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
@@ -29,7 +28,6 @@ const Home: NextPage = () => {
         <Services />
         <Partners />
         <MainProjects />
-        {/* <NDAProjects /> */}
       </div>
     </GlobalLayout>
   );

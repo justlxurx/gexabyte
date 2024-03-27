@@ -222,23 +222,6 @@ const NDAProjects = () => {
                     {subtitle}
                   </Typography>
                 </Stack>
-                <Button
-                  sx={{
-                    fontFamily: "Arial",
-                    fontWeight: 700,
-                    fontSize: {
-                      md: "15px",
-                      lg: "23px",
-                    },
-                    color: "white",
-                    textTransform: "inherit",
-                    display: "flex",
-                    gap: "44px",
-                  }}
-                >
-                  {t("button.knowMore")}
-                  <img src="/images/right.svg" alt="" />
-                </Button>
               </Box>
             </Grid>
           ))}

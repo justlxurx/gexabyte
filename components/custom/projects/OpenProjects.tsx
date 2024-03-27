@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { a } from "react-spring";
 
 const projects = {
   mobile: [
@@ -32,7 +33,7 @@ const OpenProjects = () => {
       img: "/images/project1.svg",
       title: t("home.projects.title1"),
       subtitle: t("home.projects.subtitle1"),
-      link: "",
+      link: "www.fob.kz",
       width: "40%",
       img2: "/images/mobile_project1.svg",
     },
@@ -41,7 +42,7 @@ const OpenProjects = () => {
       img: "/images/project2.svg",
       title: t("home.projects.title2"),
       subtitle: t("home.projects.subtitle2"),
-      link: "",
+      link: "www.uwbo.org",
       width: "90%",
       img2: "/images/mobile_project2.svg",
     },
@@ -50,7 +51,7 @@ const OpenProjects = () => {
       img: "/images/project3.svg",
       title: t("home.projects.title3"),
       subtitle: t("home.projects.subtitle3"),
-      link: "",
+      link: "www.bloxxa.tech",
       width: "100%",
       img2: "/images/mobile_project3.svg",
     },
@@ -59,7 +60,7 @@ const OpenProjects = () => {
       img: "/images/project4.svg",
       title: t("home.projects.title4"),
       subtitle: t("home.projects.subtitle4"),
-      link: "",
+      link: "www.tokenize.kz",
       width: "40%",
       img2: "/images/mobile_project4.svg",
     },
@@ -68,7 +69,6 @@ const OpenProjects = () => {
       img: "/images/project5.svg",
       title: t("home.projects.title5"),
       subtitle: t("home.projects.subtitle5"),
-      link: "",
       width: "95%",
       img2: "/images/mobile_project5.svg",
     },
@@ -77,7 +77,7 @@ const OpenProjects = () => {
       img: "/images/project6.svg",
       title: t("home.projects.title6"),
       subtitle: t("home.projects.subtitle6"),
-      link: "",
+      link: "www.euphoria.games",
       width: "90%",
       img2: "/images/mobile_project6.svg",
     },
@@ -86,7 +86,7 @@ const OpenProjects = () => {
       img: "/images/project7.svg",
       title: t("home.projects.title7"),
       subtitle: t("home.projects.subtitle7"),
-      link: "",
+      link: "www.ustaking.io",
       width: "90%",
       img2: "/images/mobile_project7.svg",
     },
@@ -101,63 +101,125 @@ const OpenProjects = () => {
       {isMobileScreen
         ? content.map(({ img, title, subtitle, link, color, img2 }, idx) => (
             <Grid item xs={12} md={12} key={idx} sx={{ padding: "10px 0" }}>
-              <Box
-                sx={{
-                  backgroundColor: color,
-                  height: "381px",
-                  borderRadius: "10px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  alignItems: "start",
-                  gap: "30px",
-                }}
-              >
-                <Stack
-                  spacing={1.25}
-                  sx={{ width: "100%", padding: "20px 20px 0" }}
-                >
-                  <Typography
+              {link ? (
+                <a href={link} target="_blank" rel="noreferrer">
+                  <Box
                     sx={{
-                      fontFamily: "Arial",
-                      fontSize: {
-                        md: "24px",
-                        lg: "34px",
-                      },
-                      fontWeight: "700",
-                      lineHeight: "39.1px",
-                      color: "white",
+                      backgroundColor: color,
+                      height: "381px",
+                      borderRadius: "10px",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                      alignItems: "start",
+                      gap: "30px",
                     }}
                   >
-                    {title}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontFamily: "Arial",
-                      fontSize: {
-                        md: "12px",
-                        lg: "14px",
-                      },
-                      fontWeight: "400",
-                      color: "white",
-                    }}
-                  >
-                    {subtitle}
-                  </Typography>
-                </Stack>
-                <div
-                  style={{
+                    <Stack
+                      spacing={1.25}
+                      sx={{ width: "100%", padding: "20px 20px 0" }}
+                    >
+                      <Typography
+                        sx={{
+                          fontFamily: "Arial",
+                          fontSize: {
+                            md: "24px",
+                            lg: "34px",
+                          },
+                          fontWeight: "700",
+                          lineHeight: "39.1px",
+                          color: "white",
+                        }}
+                      >
+                        {title}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontFamily: "Arial",
+                          fontSize: {
+                            md: "12px",
+                            lg: "14px",
+                          },
+                          fontWeight: "400",
+                          color: "white",
+                        }}
+                      >
+                        {subtitle}
+                      </Typography>
+                    </Stack>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "end",
+                        width: "100%",
+                        backgroundImage: `url(${img2})`,
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "bottom right",
+                        height: "250px",
+                        backgroundSize: "contain",
+                      }}
+                    ></div>
+                  </Box>
+                </a>
+              ) : (
+                <Box
+                  sx={{
+                    backgroundColor: color,
+                    height: "381px",
+                    borderRadius: "10px",
                     display: "flex",
-                    justifyContent: "end",
-                    width: "100%",
-                    backgroundImage: `url(${img2})`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "bottom right",
-                    height: "250px",
-                    backgroundSize: "contain",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    alignItems: "start",
+                    gap: "30px",
                   }}
-                ></div>
-              </Box>
+                >
+                  <Stack
+                    spacing={1.25}
+                    sx={{ width: "100%", padding: "20px 20px 0" }}
+                  >
+                    <Typography
+                      sx={{
+                        fontFamily: "Arial",
+                        fontSize: {
+                          md: "24px",
+                          lg: "34px",
+                        },
+                        fontWeight: "700",
+                        lineHeight: "39.1px",
+                        color: "white",
+                      }}
+                    >
+                      {title}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontFamily: "Arial",
+                        fontSize: {
+                          md: "12px",
+                          lg: "14px",
+                        },
+                        fontWeight: "400",
+                        color: "white",
+                      }}
+                    >
+                      {subtitle}
+                    </Typography>
+                  </Stack>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "end",
+                      width: "100%",
+                      backgroundImage: `url(${img2})`,
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "bottom right",
+                      height: "250px",
+                      backgroundSize: "contain",
+                    }}
+                  ></div>
+                </Box>
+              )}
             </Grid>
           ))
         : content.map(({ color, img, title, subtitle, link, width }, idx) => (
@@ -206,23 +268,29 @@ const OpenProjects = () => {
                     {subtitle}
                   </Typography>
                 </Stack>
-                <Button
-                  sx={{
-                    fontFamily: "Arial",
-                    fontWeight: 700,
-                    fontSize: {
-                      md: "15px",
-                      lg: "23px",
-                    },
-                    color: "white",
-                    textTransform: "inherit",
-                    display: "flex",
-                    gap: "44px",
-                  }}
-                >
-                  {t("button.knowMore")}
-                  <img src="/images/right.svg" alt="" />
-                </Button>
+                {link ? (
+                  <a href={link} target="_blank" rel="noreferrer">
+                    <Button
+                      sx={{
+                        fontFamily: "Arial",
+                        fontWeight: 700,
+                        fontSize: {
+                          md: "15px",
+                          lg: "23px",
+                        },
+                        color: "white",
+                        textTransform: "inherit",
+                        display: "flex",
+                        gap: "44px",
+                      }}
+                    >
+                      {t("button.knowMore")}
+                      <img src="/images/right.svg" alt="" />
+                    </Button>
+                  </a>
+                ) : (
+                  ""
+                )}
               </Box>
             </Grid>
           ))}

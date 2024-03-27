@@ -51,7 +51,7 @@ const Web3Projects = () => {
           sx={{
             color: "black",
             fontSize: {
-              xs: "48px",
+              xs: "28px",
               md: "56px",
             },
             textAlign: {

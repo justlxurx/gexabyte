@@ -103,25 +103,21 @@ const Partners = () => {
             md={2.4}
             sx={{ display: "flex", justifyContent: "center" }}
           >
-            <Link href={partner.href} target={"_blank"}>
-              <a
-                target={"_blank"}
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <ImageWrappper>
-                  <img
-                    src={partner.img}
-                    alt="logo"
-                    width="100%"
-                    height="100%"
-                  />
-                </ImageWrappper>
-              </a>
-            </Link>
+            <a
+              href={partner.href}
+              rel="noreferrer"
+              target="_blank"
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                zIndex: "100",
+              }}
+            >
+              <ImageWrappper>
+                <img src={partner.img} alt="logo" width="100%" height="100%" />
+              </ImageWrappper>
+            </a>
           </Grid>
         ))}
       </Grid>
@@ -204,7 +200,7 @@ const StyledTitle = styled.h4`
     font-family: "Geometria", sans-serif;
   }
   @media (max-width: 768px) {
-    font-size: 48px;
+    font-size: 28px;
     font-family: "Arial";
     width: 100%;
     justify-content: start;

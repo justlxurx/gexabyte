@@ -181,6 +181,7 @@ const Title = styled.h1`
     font-size: 28px;
     line-height: 32.2px;
     letter-spacing: -1px;
+    width: 100%;
   }
 
   &.geometria {

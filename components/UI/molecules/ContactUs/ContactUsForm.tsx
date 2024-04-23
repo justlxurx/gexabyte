@@ -25,7 +25,7 @@ const ContactUsForm = () => {
       name: "",
       email: "",
       company: "",
-      info: "",
+      budget: "",
       type: "consulting, developement",
     },
     onSubmit: async (values) => {
@@ -332,14 +332,14 @@ const ContactUsForm = () => {
         </StyledInputLabel>
         <TextField
           id={"bootstrap-input4"}
-          value={form.info}
+          value={form.budget}
           name={"info"}
           onChange={handleChange}
           fullWidth
           multiline
           required
           rows={1}
-          error={!!errors.info}
+          error={!!errors.budget}
           placeholder={t("contactUsForm.placeholders.budget")}
           inputProps={{
             style: {
@@ -364,9 +364,9 @@ const ContactUsForm = () => {
             },
           }}
         />
-        {!!errors.info && (
+        {!!errors.budget && (
           <Typography variant={"caption"} color={"red"}>
-            {errors.info}
+            {errors.budget}
           </Typography>
         )}
         <Button

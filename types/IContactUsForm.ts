@@ -1,8 +1,7 @@
-
 export interface IContactUsForm {
-  name: string
-  email: string
-  company: string
-  info: string
-  type: string
+  name: string;
+  email: string;
+  company: string;
+  budget: string;
+  type: string;
 }

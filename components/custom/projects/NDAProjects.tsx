@@ -140,7 +140,7 @@ const NDAProjects = () => {
                         lg: "34px",
                       },
                       fontWeight: "700",
-                      lineHeight: "39.1px",
+                      lineHeight: { xs: "27.6px", md: "39.1px" },
                       color: "white",
                     }}
                   >

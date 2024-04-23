@@ -1,18 +1,18 @@
-import styled from '@emotion/styled'
-import { useMediaQuery } from '@mui/material'
-import Image from 'next/image'
-import { useTranslation } from 'react-i18next'
+import styled from "@emotion/styled";
+import { useMediaQuery } from "@mui/material";
+import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-import { Navigation } from "swiper"
-import { Swiper, SwiperSlide } from 'swiper/react'
-import classNames from 'classnames'
-import {arrowLeftIcon, arrowRightIcon} from "@public/icons";
+import { Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import classNames from "classnames";
+import { arrowLeftIcon, arrowRightIcon } from "@public/icons";
 import axios from "axios";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 // const NewsData = [
 //   {
@@ -63,37 +63,55 @@ import {useEffect, useState} from "react";
 // ]
 
 interface IBlog {
-  "id": number,
-  "title": string,
-  "category": string,
-  "content": string,
-  "link": string,
-  "image": string,
+  id: number;
+  title: string;
+  category: string;
+  content: string;
+  link: string;
+  image: string;
 }
 
 export const News = () => {
-  const { t, i18n } = useTranslation()
+  const { t, i18n } = useTranslation();
 
   const [blogs, setBlogs] = useState<IBlog[]>([]);
 
   const getData = async () => {
-    const response = await axios.get<IBlog[]>('https://techculture.tech/api/blog/list')
-    const data = response.data.filter((item) => item.id !== 3 && item.id !== 12)
-    setBlogs(data.sort((a, b) =>  a.id - b.id).reverse())
+    const response = await axios.get<IBlog[]>(
+      "https://techculture.tech/api/blog/list"
+    );
+    const data = response.data.filter(
+      (item) => item.id !== 3 && item.id !== 12
+    );
+    setBlogs(data.sort((a, b) => a.id - b.id).reverse());
   };
-  const isMobile = useMediaQuery('(max-width: 600px)')
+  const isMobile = useMediaQuery("(max-width: 600px)");
 
-  useEffect(() => {getData()}, [])
+  useEffect(() => {
+    getData();
+  }, []);
   return (
-    <StyledWrapper id={'news-block'}>
+    <StyledWrapper id={"news-block"}>
       <StyledFlexArea>
-        <StyledTitle className={i18n.language === 'en' ? '' : 'geometria'}>{t('home.news.title')}</StyledTitle>
+        <StyledTitle className={i18n.language === "en" ? "" : "geometria"}>
+          {t("home.news.title")}
+        </StyledTitle>
         <div>
           <StyledPaginationButton id={"swiper-back"}>
-            <Image src={arrowLeftIcon} width={'24px'} height={'24px'} alt={'arrowLeftIcon'}/>
+            <Image
+              src={arrowLeftIcon}
+              width={"24px"}
+              height={"24px"}
+              alt={"arrowLeftIcon"}
+            />
           </StyledPaginationButton>
           <StyledPaginationButton id={"swiper-forward"}>
-            <Image src={arrowRightIcon} width={'24px'} height={'24px'} alt={'arrowRightIcon'}/>
+            <Image
+              src={arrowRightIcon}
+              width={"24px"}
+              height={"24px"}
+              alt={"arrowRightIcon"}
+            />
           </StyledPaginationButton>
         </div>
       </StyledFlexArea>
@@ -106,7 +124,7 @@ export const News = () => {
         loop={true}
         loopFillGroupWithBlank={true}
         pagination={{
-          clickable: false
+          clickable: false,
         }}
         navigation={{ nextEl: "#swiper-forward", prevEl: "#swiper-back" }}
         modules={[Navigation]}
@@ -115,24 +133,37 @@ export const News = () => {
         {blogs.map((item, idx) => (
           <SwiperSlide key={idx} className={"swiper-slide"}>
             <StyledNewCard>
-              <div className={'image'}>
-                <img src={`https://techculture.tech${item.image}`} width={'100%'} height={320} alt={item.title}/>
+              <div className={"image"}>
+                <img
+                  src={`https://techculture.tech${item.image}`}
+                  width={"100%"}
+                  height={320}
+                  alt={item.title}
+                />
               </div>
-              <p className={'theme'}>{item.category}</p>
+              <p className={"theme"}>{item.category}</p>
               <StyledActionButton>
                 <a href={item.link}>
-                  <StyledCardTitle className={classNames(`${item.link && 'link'}`)}>{item.title}</StyledCardTitle>
+                  <StyledCardTitle
+                    className={classNames(`${item.link && "link"}`)}
+                  >
+                    {item.title}
+                  </StyledCardTitle>
                 </a>
               </StyledActionButton>
-              <p className={'text'}>{item.content}</p>
-              {item.link && <StyledActionButton><a href={item.link}>learn more</a></StyledActionButton>}
+              <p className={"text"}>{item.content}</p>
+              {item.link && (
+                <StyledActionButton>
+                  <a href={item.link}>learn more</a>
+                </StyledActionButton>
+              )}
             </StyledNewCard>
           </SwiperSlide>
         ))}
       </Swiper>
     </StyledWrapper>
-  )
-}
+  );
+};
 
 const StyledWrapper = styled.div`
   padding: 80px;
@@ -142,21 +173,21 @@ const StyledWrapper = styled.div`
   @media (max-width: 800px) {
     padding: 24px;
   }
-`
+`;
 
 const StyledTitle = styled.p`
-  font-family: 'Readex Pro';
+  font-family: "Readex Pro";
   font-style: normal;
   font-weight: 700;
   font-size: 46px;
   line-height: 100%;
   text-transform: capitalize;
-  color: #FFFFFF;
-  
-  &.geometria{
-    font-family: 'Geometria', sans-serif;
+  color: #ffffff;
+
+  &.geometria {
+    font-family: "Geometria", sans-serif;
   }
-`
+`;
 
 const StyledFlexArea = styled.div`
   display: flex;
@@ -167,7 +198,7 @@ const StyledFlexArea = styled.div`
     align-items: flex-start;
     margin-bottom: 20px;
   }
-`
+`;
 
 const StyledPaginationButton = styled.button`
   width: 40px;
@@ -179,7 +210,7 @@ const StyledPaginationButton = styled.button`
   border: none;
   cursor: pointer;
   margin-right: 30px;
-`
+`;
 
 const StyledNewCard = styled.div`
   flex: 0 0 100%;
@@ -202,19 +233,19 @@ const StyledNewCard = styled.div`
   }
 
   .theme {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
     text-transform: uppercase;
-    color: #F0B270;
+    color: #f0b270;
     mix-blend-mode: normal;
     margin-bottom: 0;
   }
 
   .text {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -222,26 +253,25 @@ const StyledNewCard = styled.div`
     color: rgba(255, 255, 255, 0.62);
     mix-blend-mode: luminosity;
   }
-
-`
+`;
 
 const StyledCardTitle = styled.p`
-  font-family: 'Readex Pro';
+  font-family: "Readex Pro";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 28px;
   cursor: pointer;
-  color: #FFFFFF;
+  color: #ffffff;
 
   &.link {
     text-decoration-line: underline;
   }
-`
+`;
 
 const StyledActionButton = styled(StyledCardTitle)`
   text-transform: capitalize;
   cursor: pointer;
   margin-top: auto;
   text-decoration-line: underline;
-`
+`;
